@@ -1,10 +1,10 @@
-<header class="th-header header-default onepage-nav">
+<header class="th-header header-default onepage-nav"> 
         <div class="menu-top">
             <div class="container">
                 <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-logo">
-                            <a href="/"><img src="../assets/img/Logo.png" alt="Donat"></a>
+                            <a href="/"><img src="../assets/img/Logo.png" alt="logo-ceeac"></a>
                         </div>
                     </div>
                     <div class="col-auto d-none d-md-block">
@@ -12,7 +12,7 @@
                             <div class="info-card">
                                 <div class="box-content">
                                     <p class="box-text">Adresse:</p>
-                                    <h4 class="box-title"><a href="https://www.google.com/maps">Bd Triomphal, Libreville, Gabon</a></h4>
+                                    <h4 class="box-title"><a href="https://maps.app.goo.gl/eRuYww4DayfLzmzC7">Bd Triomphal, Libreville, Gabon</a></h4>
                                 </div>
                             </div>
                             <div class="info-card">
@@ -24,7 +24,7 @@
                             <div class="info-card">
                                 <div class="box-content">
                                     <p class="box-text">Email:</p>
-                                    <h4 class="box-title"><a href="mailto:info@donat.com">contact@prasmesti.com</a></h4>
+                                    <h4 class="box-title"><a href="mailto:contact@prasmesti.com">contact@prasmesti.com</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -47,22 +47,22 @@
                     <div class="menu-area-wrap">
                         <div class="col-auto d-inline-block d-lg-none">
                             <div class="header-logo">
-                                <a href="/"><img src="../assets/img/logo.png" alt="Donat"></a>
+                                <a href="/"><img src="../assets/img/Logo.png" alt="Logo.png"></a>
                             </div>
                         </div>
                         <nav class="main-menu d-none d-lg-block">
                             <ul>
                                 <li class="active">
-                                    <a href="/" style="color: #ff5528;">Acceuil</a>
+                                    <a href="/" style="color: #ff5528;">Accueil</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Présentation</a>
+                                    <a href="../presentation">Présentation</a>
                                     <ul class="sub-menu">
-                                        <li><a href="/presentation">Qu'est-ce que le PRASMESTI? </a></li>
-                                        <li><a href="/expectations">Les attentes</a></li>
-                                        <li><a href="/objectives">En résumé, les objectifs</a></li>
-                                        <li><a href="/teams">Les responsables du projet</a></li>
-                                        <li><a href="/about">Mot du president et du commissaires</a></li>
+                                        <li><a href="../presentation">Qu'est-ce que le PRASMESTI? </a></li>
+                                        <li><a href="../expectations">Les attentes</a></li>
+                                        <li><a href="../objectives">En résumé, les objectifs</a></li>
+                                        <li><a href="../teams">Les responsables du projet</a></li>
+                                        <li><a href="../about">Mot du president et du commissaires</a></li>
 
                                     </ul>
                                 </li>
