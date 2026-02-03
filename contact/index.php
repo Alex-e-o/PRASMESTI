@@ -75,7 +75,7 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="/"><img src="../assets/img/Logo.png" alt="Donat"></a>
+                <a href="/"><img src="../assets/img/Logo.png" alt="Logo.png"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>

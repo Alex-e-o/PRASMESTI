@@ -71,7 +71,7 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="../../"><img src="../../assets/img/Logo.png" alt="Donat"></a>
+                <a href="../../"><img src="../../assets/img/Logo.png" alt="Logo.png"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -101,7 +101,7 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Etat de mise en oeuvres</a>
+                    <a href="#">État de mise en oeuvres</a>
                     <ul class="sub-menu">
                         <li><a href="#">Angola </a></li>
                         <li><a href="#">Burundi</a></li>
