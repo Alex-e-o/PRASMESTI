@@ -40,9 +40,9 @@
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
                                     <li><a href="#"></a></li>
-                                    <li><a href="../">Accueil</a></li>
+                                    <li><a href="../index.php">Accueil</a></li>
                                     <li><a href="../presentation">Présentation</a></li>
-                                    <li><a href="#">Textes Normatifs</a></li>
+                                    <li><a href="../">Textes Normatifs</a></li>
                                     <li><a href="#">Etat de mise en oeuvres</a></li>
                                     <li><a href="#">Propriété intellectuelle</a></li>
                                     <li><a href="#">Innovations</a></li>
