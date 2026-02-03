@@ -93,7 +93,7 @@
             <div class="th-mobile-menu">
                 <ul>
                     <li class="">
-                        <a href="/" style="color: #ff5528;">Acceuil</a>
+                        <a href="/" style="color: #ff5528;">Accueil</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Présentation</a>

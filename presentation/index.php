@@ -177,7 +177,7 @@
             <div class="th-mobile-menu">
                 <ul>
                     <li class="">
-                        <a href="/" style="color: #ff5528;">Acceuil</a>
+                        <a href="/" style="color: #ff5528;">Accueil</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Présentation</a>
@@ -248,7 +248,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Les attentes</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="/">Acceuil</a></li>
+                    <li><a href="/">Accueil</a></li>
                     <li>Les attentes</li>
                 </ul>
             </div>
@@ -342,7 +342,7 @@
 
                         <div class="corps7 element13" id="element13">
                             <h4>Le PRASMESTI : améliorer l’image de marque de l’Éducation, Formation, Sciences, Technologie et Innovation en Afrique centrale</h4>
-                            Le PRASMESTI est un portail collaboratif de l’Éducation, Formation, Sciences, Technologie et Innovation de la Communauté. Son design, sa page d’accueil, ses arborescences, ses fonctionnalités... doivent respecter une charte graphique de la CEEAC et en cohérence avec l’image de marque renvoyer par l’Agenda 2063 et l’Agenda 2030. <br /><br />
+                            Le PRASMESTI est un portail collaboratif de l’Éducation, Formation, Sciences, Technologie et Innovation de la Communauté. Son design, sa page d’Accueil, ses arborescences, ses fonctionnalités... doivent respecter une charte graphique de la CEEAC et en cohérence avec l’image de marque renvoyer par l’Agenda 2063 et l’Agenda 2030. <br /><br />
 
                             Les usagers, entrant de plus en plus dans l’univers du PRASMESTI, assimileront plus facilement la plateforme collaborative régionale et les objectifs assignés par les deux grands Agendas qui encadrent et orientent le développement du capital humain régional.
                         </div>

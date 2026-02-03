@@ -94,7 +94,7 @@
             <div class="th-mobile-menu">
                 <ul>
                     <li class="">
-                        <a href="/" style="color: #ff5528;">Acceuil</a>
+                        <a href="/" style="color: #ff5528;">Accueil</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Présentation</a>
@@ -154,7 +154,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Details Responsables du projet</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.html">Acceuil</a></li>
+                    <li><a href="index.html">Accueil</a></li>
                     <li>Details Responsables du projet</li>
                 </ul>
             </div>

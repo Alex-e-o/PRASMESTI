@@ -45,7 +45,7 @@
 					<h4>Le PRASMESTI : améliorer l’image de marque de l’Éducation, Formation, Sciences, Technologie et Innovation en Afrique centrale</h4>
 					Le PRASMESTI est un portail collaboratif de l’Éducation, Formation, Sciences, Technologie et Innovation de la Communauté, en abrégé PRASMESTI, renvoie à la couleur verte qui fait allusion à la relation que ce portail doit s’efforcer entre l’Éducation, Sciences, Technologie et Innovation et le respect de l’environnement : les ODD.	 <br /><br /> 
 
-					Son design, sa page d’accueil, ses arborescences, ses fonctionnalités... doivent respecter une charte graphique de la CEEAC et en cohérence avec l’image de marque renvoyer par l’Agenda 2063 et l’Agenda 2030. <br /><br />
+					Son design, sa page d’Accueil, ses arborescences, ses fonctionnalités... doivent respecter une charte graphique de la CEEAC et en cohérence avec l’image de marque renvoyer par l’Agenda 2063 et l’Agenda 2030. <br /><br />
 
 					Les usagers, entrant de plus en plus dans l’univers du PRASMESTI, assimileront plus facilement la plateforme collaborative régionale et les objectifs assignés par les deux grands Agendas qui encadrent et orientent le développement du capital humain régional.
 				</div>
