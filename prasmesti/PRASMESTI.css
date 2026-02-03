@@ -1,0 +1,9 @@
+body {
+    font-family:  Arial, Times New Roman,Trebuchet MS, sans-serif;
+	/*background-color: black;*/
+}
+
+.corpsPresentation, .corpsAttentes, .corpsObjectif{
+    /*border: 1px solid black;*/
+    margin: 0 15px 0 15px;
+}

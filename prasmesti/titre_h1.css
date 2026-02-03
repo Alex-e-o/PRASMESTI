@@ -1,0 +1,80 @@
+h1 {
+	text-align: center;
+	font-size: 2.4em;
+	color: red;
+	font-weight: bolder;
+	font-style: initial;
+	font-variant: small-caps;
+	text-shadow: 1px 2px 4px #D96A58;
+}
+
+table {
+	position: revert;
+	right: 100px;
+}
+
+.img_CEEAC {
+    position: revert;
+    max-height: 190px;
+    margin-left: -10px;
+    padding-right: 15px;
+    margin-top: -4px; /*none*/
+}
+
+/*
+.colonneMilieu {
+	margin-right: 10px;
+}
+
+.part_1; .part_12{
+	font-size: 1.3em;
+	color: red;
+	font-weight: bolder;
+	font-variant: small-caps;
+	text-shadow: 1px 2px 4px #D96A58;
+	width: 70%;
+	margin: auto;
+}
+
+.colonneGauche {
+	display: block;
+	margin-top: 28px; 4px
+}
+*/
+
+.box {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 35px 35px 35px;
+    gap: 10px;
+    margin-bottom: 96px;
+}
+
+.part1 {
+	grid-row: 1;
+	grid-column: 1;
+}
+
+.part2 {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.part3 {
+	grid-column: 1;
+	grid-row: 3;
+}
+
+.image {
+	grid-column: 2;
+	grid-row: 1 / 4;
+}
+
+.part1, .part2, .part3 {
+	padding-top: 27px;
+}

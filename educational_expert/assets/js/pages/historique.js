@@ -1,0 +1,12 @@
+new gridjs.Grid({columns:[{name:"ID",formatter:function(e){return gridjs.html('<span class="fw-semibold">'+e+"</span>")}},"Nom","Prenom","Rôle","Tâches effectuées",é="Date"],pagination:{limit:10},sort:!0,search:!0,data:[
+    ["001", "Moussavou", "Jean-Pierre", "Administrateur", "Mis à jour les données des États membres, Configuré les accès utilisateurs", "07 Jan, 2025"],
+    ["002", "Ondo", "Marie-Claude", "Intervenant", "Consulté les indicateurs régionaux, Généré un rapport mensuel", "06 Jan, 2025"],
+    ["003", "Nzengue", "André", "Assistant", "Archivé un rapport de réunion, Ajouté une note explicative", "05 Jan, 2025"],
+    ["004", "Mba", "Georges", "Intervenant", "Validé une intervention technique, Approuvé une fiche d’évaluation", "04 Jan, 2025"],
+    ["005", "Essono", "Chantal", "Administrateur", "Rejeté une demande d'accès, Modifié les droits d'un utilisateur", "03 Jan, 2025"],
+    ["006", "Obiang", "Pauline", "Assistant", "Consulté les rapports de suivi, Archivé un plan d’action régional", "02 Jan, 2025"],
+    ["007", "Ngoua", "Jacques", "Intervenant", "Créé une intervention sur une plateforme régionale, Soumis un rapport préliminaire", "01 Jan, 2025"],
+    ["008", "Minkoue", "Thérèse", "Administrateur", "Clôturé un rapport annuel, Ajouté un utilisateur technique", "31 Déc, 2024"],
+    ["009", "Bouka", "Stéphane", "Assistant", "Validé une note technique, Consulté les tableaux de suivi des indicateurs", "30 Déc, 2024"],
+    ["010", "Ekogha", "Mireille", "Intervenant", "Ajouté un plan de collaboration interétatique, Clôturé une tâche liée aux formations", "29 Déc, 2024"]
+]}).render(document.getElementById("table-invoices-list")),flatpickr("#datepicker-range",{mode:"range"}),flatpickr("#datepicker-invoice");var currentTab=0;function showTab(e){var t=document.getElementsByClassName("wizard-tab");t[e].style.display="block",document.getElementById("prevBtn").style.display=0==e?"none":"inline",e==t.length-1?document.getElementById("nextBtn").innerHTML="Add":document.getElementById("nextBtn").innerHTML="Suivant",fixStepIndicator(e)}function nextPrev(e){var t=document.getElementsByClassName("wizard-tab");t[currentTab].style.display="none",(currentTab+=e)>=t.length&&(t[currentTab-=e].style.display="block"),showTab(currentTab)}function fixStepIndicator(e){for(var t=document.getElementsByClassName("list-item"),a=0;a<t.length;a++)t[a].className=t[a].className.replace(" active","");t[e].className+=" active"}showTab(currentTab);
