@@ -18,7 +18,7 @@
                         <div class="info-card">
                             <div class="box-content">
                                 <p class="box-text">Téléphone:</p>
-                                <h4 class="box-title"><a href="tel:16336547896">+241 36 54 78 96</a></h4>
+                                <h4 class="box-title"><a href="tel:16336547896">+241 77 05 66 49</a></h4>
                             </div>
                         </div>
                         <div class="info-card">
