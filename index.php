@@ -66,7 +66,7 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="/"><img src="C:\MAMP\htdocs\bak_prasmesti-ceeac-2-2-2026_16-4\assets\img" alt="Donat"></a>
+                <a href="/"><img src="C:\MAMP\htdocs\PRASMESTI\assets\img\Logo.png" alt="Donat"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -135,7 +135,7 @@ Hero Area
         <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="hero-inner" data-bg-src="../assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
+                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-xl-12">
@@ -158,7 +158,7 @@ Hero Area
 
                 </div>
                 <div class="swiper-slide">
-                    <div class="hero-inner" data-bg-src="../assets/img/banner/Image_2.jpg" data-overlay="black4" data-opacity="5">
+                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_2.jpg" data-overlay="black4" data-opacity="5">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-xl-12">
@@ -187,11 +187,11 @@ Hero Area
     <!--==============================
 Service Area  
 ==============================-->
-    <section class="overflow-hidden space" id="service-sec" data-bg-src="../assets/img/bg/gray-bg1.png" data-overlay="gray" data-opacity="6">
+    <section class="overflow-hidden space" id="service-sec" data-bg-src="assets/img/bg/gray-bg1.png" data-overlay="gray" data-opacity="6">
         <div class="shape-mockup service-bg-shape1-2 d-xxl-inline-block d-none" data-top="35%" data-left="0">
             <div class="color-masking">
-                <div class="masking-src" data-mask-src="../assets/img/shape/hand-shape2.png"></div>
-                <img src="../assets/img/shape/hand-shape2.png" alt="img">
+                <div class="masking-src" data-mask-src="assets/img/shape/hand-shape2.png"></div>
+                <img src="assets/img/shape/hand-shape2.png" alt="img">
             </div>
         </div>
         <div class="service-bg-shape1-3 d-xxl-inline-block d-none"></div>
@@ -245,14 +245,14 @@ About Area
 ==============================-->
     <div class="overflow-hidden space" id="about-sec">
         <div class="shape-mockup about-bg-shape1-1 jump-reverse" data-top="10%" data-right="5%">
-            <img src="../assets/img/shape/heart-shape1.png" alt="shape">
+            <img src="assets/img/shape/heart-shape1.png" alt="shape">
         </div>
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-xl-7">
                     <div class="img-box1">
                         <div class="img1">
-                            <img src="../assets/img/normal/about_1_1.png" alt="About">
+                            <img src="assets/img/normal/about_1_1.png" alt="About">
                         </div>
                     </div>
                 </div>
@@ -292,9 +292,9 @@ Cta Area
         <div class="container z-index-common " data-pos-for="#donation-sec" data-sec-pos="bottom-half">
             <div class="row gy-4">
                 <div class="col-lg-6">
-                    <div class="cta-card" data-bg-src="../assets/img/bg/cta-bg1-1.jpg">
-                        <div class="shape-mockup cta-card-bg-shape" data-bottom="0" data-right="0" data-mask-src="../assets/img/shape/cta_shape1_1.png">
-                            <img src="../assets/img/shape/cta_shape1_1.png" alt="img">
+                    <div class="cta-card" data-bg-src="assets/img/bg/cta-bg1-1.jpg">
+                        <div class="shape-mockup cta-card-bg-shape" data-bottom="0" data-right="0" data-mask-src="assets/img/shape/cta_shape1_1.png">
+                            <img src="assets/img/shape/cta_shape1_1.png" alt="img">
                         </div>
                         <h3 class="box-title">Projets & Initiatives</h3>
                         <p class="box-text">Le PRASMESTI développe activement l’amélioration de l’éducation, des sciences et de l’innovation dans notre
@@ -303,9 +303,9 @@ Cta Area
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="cta-card style2" data-bg-src="../assets/img/bg/cta-bg1-2.jpg">
-                        <div class="shape-mockup cta-card-bg-shape" data-bottom="0" data-left="0" data-mask-src="../assets/img/shape/cta_shape1_1.png">
-                            <img src="../assets/img/shape/cta_shape1_1.png" alt="img">
+                    <div class="cta-card style2" data-bg-src="assets/img/bg/cta-bg1-2.jpg">
+                        <div class="shape-mockup cta-card-bg-shape" data-bottom="0" data-left="0" data-mask-src="assets/img/shape/cta_shape1_1.png">
+                            <img src="assets/img/shape/cta_shape1_1.png" alt="img">
                         </div>
                         <h3 class="box-title">Etat de mise en oeuvres</h3>
                         <p class="box-text">Le PRASMESTI s’appuie sur une stratégie progressive pour garantir une adoption effective de ses objectifs par les États
@@ -322,7 +322,7 @@ Cta Area
     ==============================-->
 
 
-    <section class="space bg-gray" data-bg-src="../assets/img/bg/donation-bg1-1.png" id="donation-sec">
+    <section class="space bg-gray" data-bg-src="assets/img/bg/donation-bg1-1.png" id="donation-sec">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -338,9 +338,9 @@ Cta Area
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="donation-card" data-theme-color="">
-                                <div class="donation-card-shape" data-mask-src="../assets/img/donation/donation-card-bg-shape1-1.png"></div>
+                                <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-bg-shape1-1.png"></div>
                                 <div class="box-thumb">
-                                    <img src="../assets/img/donation/donation1-1.jpg" alt="image">
+                                    <img src="assets/img/donation/donation1-1.jpg" alt="image">
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="#">Pour un État membre, il s’agit de présenter éditeur de logiciel...</a></h3>
@@ -353,9 +353,9 @@ Cta Area
 
                         <div class="swiper-slide">
                             <div class="donation-card" data-theme-color="var(--theme-color2)">
-                                <div class="donation-card-shape" data-mask-src="../assets/img/donation/donation-card-bg-shape1-1.png"></div>
+                                <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-bg-shape1-1.png"></div>
                                 <div class="box-thumb">
-                                    <img src="../assets/img/donation/donation1-2.jpg" alt="image">
+                                    <img src="assets/img/donation/donation1-2.jpg" alt="image">
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="#">Pour un éditeur de logiciel, il s’agirait de mettre en avant ses offres d’audit.</a></h3>
@@ -368,9 +368,9 @@ Cta Area
 
                         <div class="swiper-slide">
                             <div class="donation-card" data-theme-color="#FF5528">
-                                <div class="donation-card-shape" data-mask-src="../assets/img/donation/donation-card-bg-shape1-1.png"></div>
+                                <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-bg-shape1-1.png"></div>
                                 <div class="box-thumb">
-                                    <img src="../assets/img/donation/donation1-3.jpg" alt="image">
+                                    <img src="assets/img/donation/donation1-3.jpg" alt="image">
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="#">Pour un bureau d’études, il s’agit de mettre en avant tous leurs panels de prestations</a></h3>
@@ -406,7 +406,7 @@ Cta Area
                                 <div class="blog-img">
                                     <a href="#">
                                         <div class="blog-img-shape1"></div>
-                                        <img src="../assets/img/blog/blog_1_1.jpg" alt="blog image">
+                                        <img src="assets/img/blog/blog_1_1.jpg" alt="blog image">
                                     </a>
                                 </div>
                                 <div class="blog-content">
@@ -428,7 +428,7 @@ Cta Area
                                 <div class="blog-img">
                                     <a href="#">
                                         <div class="blog-img-shape1"></div>
-                                        <img src="../assets/img/blog/blog_1_2.jpg" alt="blog image">
+                                        <img src="assets/img/blog/blog_1_2.jpg" alt="blog image">
                                     </a>
                                 </div>
                                 <div class="blog-content">
@@ -449,7 +449,7 @@ Cta Area
                                 <div class="blog-img">
                                     <a href="#">
                                         <div class="blog-img-shape1"></div>
-                                        <img src="../assets/img/blog/blog_1_4.jpg" alt="blog image">
+                                        <img src="assets/img/blog/blog_1_4.jpg" alt="blog image">
                                     </a>
                                 </div>
                                 <div class="blog-content">
@@ -470,7 +470,7 @@ Cta Area
                                 <div class="blog-img">
                                     <a href="#">
                                         <div class="blog-img-shape1"></div>
-                                        <img src="../assets/img/blog/blog_1_3.jpg" alt="blog image">
+                                        <img src="assets/img/blog/blog_1_3.jpg" alt="blog image">
                                     </a>
                                 </div>
                                 <div class="blog-content">
@@ -501,17 +501,17 @@ Cta Area
     ==============================-->
     <div class="overflow-hidden space" id="about-sec">
         <div class="shape-mockup about-bg-shape2-1 jump-reverse" data-top="10%" data-right="5%">
-            <img src="../assets/img/shape/heart-shape1.png" alt="shape">
+            <img src="assets/img/shape/heart-shape1.png" alt="shape">
         </div>
         <div class="container">
             <div class="row gx-60 gy-60 align-items-center">
                 <div class="col-xl-6 col-lg-10">
                     <div class="img-box2">
                         <div class="img1">
-                            <img src="../assets/img/normal/about_2_1.jpg" alt="About">
+                            <img src="assets/img/normal/about_2_1.jpg" alt="About">
                         </div>
                         <div class="img2 jump">
-                            <img src="../assets/img/normal/Image_1.jpg" alt="About">
+                            <img src="assets/img/normal/Image_1.jpg" alt="About">
                         </div>
                     </div>
                 </div>
@@ -548,52 +548,52 @@ Cta Area
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Gabon.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Gabon.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Angola.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Angola.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Burundi.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Burundi.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Cameroun.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Cameroun.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Centrafrique.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Centrafrique.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Congo.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Congo.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Guinée-Équatoriale.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Guinée-Équatoriale.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/RDC.png" alt="Brand Logo">
+                                <img src="assets/img/brand/RDC.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Rwanda.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Rwanda.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../assets/img/brand/Sao_Tomé.png" alt="Brand Logo">
+                                <img src="assets/img/brand/Sao_Tomé.png" alt="Brand Logo">
                             </a>
                         </div>
                     </div>
@@ -624,23 +624,23 @@ Cta Area
     All Js File
 ============================== -->
     <!-- Jquery -->
-    <script src="../assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
     <!-- Swiper Js -->
-    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
     <!-- Bootstrap -->
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <!-- Magnific Popup -->
-    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <!-- Counter Up -->
-    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
     <!-- Range Slider -->
-    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
     <!-- Isotope Filter -->
-    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
 
     <!-- Main Js File -->
-    <script src="../assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
