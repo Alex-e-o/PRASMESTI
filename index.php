@@ -61,7 +61,7 @@
 </head>
 
 <body>
-
+    <!-- JE SAIS PAS POURQUOI CE TRUC EST LÀ MAIS IL A AUCUNE INCIDENCE SUR LE CODE :)))))))))
     <div class="th-menu-wrapper">
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
@@ -122,7 +122,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!--==============================
 	Header Area
