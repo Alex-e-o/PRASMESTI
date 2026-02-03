@@ -151,7 +151,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Objectifs</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="/">Accueil</a></li>
+                    <li>Présentation</li>
                     <li>Objectifs</li>
                 </ul>
             </div>

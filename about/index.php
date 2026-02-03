@@ -152,7 +152,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mot du Président de la CEEAC et du Commissaire</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li>Présentation</li>
                     <li>Mot du Président de la CEEAC et du Commissaire</li>
                 </ul>
             </div>

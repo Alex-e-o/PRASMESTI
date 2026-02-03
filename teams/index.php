@@ -159,7 +159,7 @@ Header Area
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Responsables du projet</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.html">Accueil</a></li>
+                    <li>Présentation</li>
                     <li>Responsables du projet</li>
                 </ul>
             </div>
