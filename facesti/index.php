@@ -93,7 +93,7 @@
             <div class="th-mobile-menu">
                 <ul>
                     <li class="">
-                        <a href="/" style="color: #FFC107;">Acceuil</a>
+                        <a href="/" style="color: #FFC107;">Accueil</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Présentation</a>
@@ -153,7 +153,7 @@ Header Area
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">FACESTI</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="/">Acceuil</a></li>
+                    <li><a href="/">Accueil</a></li>
                     <li>FACESTI</li>
                 </ul>
             </div>

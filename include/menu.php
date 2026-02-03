@@ -6,12 +6,12 @@
       <div class="th-menu-area text-center">
           <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
           <div class="mobile-logo">
-              <a href="/"><img src="../assets/img/Logo.png" alt="Donat"></a>
+              <a href="/"><img src="../assets/img/Logo.png" alt="Logo.png"></a>
           </div>
           <div class="th-mobile-menu">
               <ul>
                   <li class="">
-                      <a href="/">Acceuil</a>
+                      <a href="/">Accueil</a>
                   </li>
                   <li class="menu-item-has-children">
                       <a href="#">Présentation</a>
@@ -75,7 +75,7 @@
               <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
                   <div class="col-auto d-none d-lg-block">
                       <div class="header-logo">
-                          <a href="/"><img src="../assets/img/Logo.png" alt="Donat"></a>
+                          <a href="/"><img src="../assets/img/Logo.png" alt="Logo.png"></a>
                       </div>
                   </div>
                   <div class="col-auto d-none d-md-block">
@@ -119,13 +119,13 @@
                   <div class="menu-area-wrap">
                       <div class="col-auto d-inline-block d-lg-none">
                           <div class="header-logo">
-                              <a href="/"><img src="../assets/img/logo.png" alt="Donat"></a>
+                              <a href="/"><img src="../assets/img/Logo.png" alt="Logo.png"></a>
                           </div>
                       </div>
                       <nav class="main-menu d-none d-lg-block">
                           <ul>
                               <li class="active">
-                                  <a href="/">Acceuil</a>
+                                  <a href="/">Accueil</a>
                               </li>
                               <li class="menu-item-has-children">
                                   <a href="#" style="color: #FFC107;">Présentation</a>

@@ -53,7 +53,7 @@
                     <nav class="main-menu d-none d-lg-block">
                         <ul>
                             <li class="active">
-                                <a href="../" style="color: #ff5528;">Acceuil</a>
+                                <a href="../" style="color: #ff5528;">Accueil</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="#">Présentation</a>

@@ -76,7 +76,7 @@
             <div class="th-mobile-menu">
                 <ul>
                     <li class="">
-                        <a href="/" style="color: #ff5528;">Acceuil</a>
+                        <a href="/" style="color: #ff5528;">Accueil</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Présentation</a>
@@ -138,7 +138,7 @@ Header Area
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Adoption des Règlements pour les Organes de la CEEAC</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Acceuil</a></li>
+                    <li><a href="index.php">Accueil</a></li>
                     <li>Adoption des Règlements pour les Organes de la CEEAC</li>
                 </ul>
             </div>

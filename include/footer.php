@@ -4,7 +4,7 @@
                 <div class="subscribe-box">
                     <div class="row gy-40 align-items-center justify-content-center">
                         <div class="col-xl-6">
-                            <h4 class="subscribe-box_title">tenez-vous informé régulièrement</h4>
+                            <h4 class="subscribe-box_title">Tenez-vous informé régulièrement</h4>
                             <p class="subscribe-box_text">Suivre les initiatives et les projets qui transforment l’Afrique centrale.</p>
                         </div>
                         <div class="col-xl-6 col-lg-8">
@@ -40,13 +40,13 @@
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
                                     <li><a href="#"></a></li>
-                                    <li><a href="/">Acceuil</a></li>
-                                    <li><a href="/presentation">Présentation</a></li>
+                                    <li><a href="../">Accueil</a></li>
+                                    <li><a href="../presentation">Présentation</a></li>
                                     <li><a href="#">Textes Normatifs</a></li>
                                     <li><a href="#">Etat de mise en oeuvres</a></li>
                                     <li><a href="#">Propriété intellectuelle</a></li>
                                     <li><a href="#">Innovations</a></li>
-                                    <li><a href="/gallery">Galeries</a></li>
+                                    <li><a href="../gallery">Galeries</a></li>
 
                                 </ul>
                             </div>
@@ -57,13 +57,13 @@
                             <h3 class="widget_title">En savoir plus</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="/news">Actualités</a></li>
+                                    <li><a href="../news">Actualités</a></li>
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="#">Projets</a></li>
                                     <li><a href="#">FACESTI</a></li>
                                     <li><a href="#">ARESTI</a></li>
                                     <li><a href="#">PRASME</a></li>
-                                    <li><a href="/contact">Contactez-nous</a></li>
+                                    <li><a href="../contact">Contactez-nous</a></li>
                                 </ul>
                             </div>
                         </div>
