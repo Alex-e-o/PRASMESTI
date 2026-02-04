@@ -137,7 +137,7 @@ Service Area
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="title-area text-center">
-                        <span class="sub-title">Pourquoi le PRASMESTI ?</span>
+                        <span class="sub-title">Pourquoi le PRASMESTI ? Parce que j'en ai décidé ainsi.</span>
                         <h2 class="sec-title" style="text-transform: none;">Améliorer l’image de marque de l’Éducation</h2>
                     </div>
                 </div>
