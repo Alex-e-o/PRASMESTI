@@ -141,7 +141,7 @@
                             aria-expanded="false">
                             <img class="rounded-circle header-profile-user" src="assets/images/users/Blaise_OSSENE.jpg"
                                 alt="Header Avatar">
-                            <span class="d-none d-xl-inline-block ms-2 fw-medium font-size-15" style="color: #fff;">Blaise OSSENE</span>
+                            <span class="d-none d-xl-inline-block ms-2 fw-medium font-size-15" style="color: #fff;">David Blaise OSSENE</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
                             <div class="p-3 border-bottom">

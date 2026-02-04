@@ -61,69 +61,6 @@
 </head>
 
 <body>
-    <!-- JE SAIS PAS POURQUOI CE TRUC EST LÀ MAIS IL A AUCUNE INCIDENCE SUR LE CODE :)))))))))
-    <div class="th-menu-wrapper">
-        <div class="th-menu-area text-center">
-            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo">
-                <a href="/"><img src="C:\MAMP\htdocs\PRASMESTI\assets\img\Logo.png" alt="Donat"></a>
-            </div>
-            <div class="th-mobile-menu">
-                <ul>
-                    <li class="">
-                        <a href="/" style="color: #ff5528;">Accueil</a>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Présentation</a>
-                        <ul class="sub-menu">
-                            <li class="#"><a href="/presentation">Qu'est-ce que le PRASMESTI? </a>
-                            <li><a href="/expectations">Les attentes</a></li>
-                            <li><a href="#">En résumé, les objectifs</a></li>
-                            <li><a href="/teams">Les responsables du projet</a></li>
-
-                    </li>
-                </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Textes Normatifs</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Textes normatifs continentaux et internationaux</a></li>
-                        <li><a href="#">Politique sectorielle en afrique centrale</a></li>
-                        <li><a href="#">Stratégie sectorielle en afrique centrale</a></li>
-                        <li><a href="#">Projets sectorielles en afrique centrale</a></li>
-                        <li><a href="#">Stratégies dans les documents cadres</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Etat de mise en oeuvres</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Angola </a></li>
-                        <li><a href="#">Burundi</a></li>
-                        <li><a href="#">Cameroun</a></li>
-                        <li><a href="#">Centrafrique</a></li>
-                        <li><a href="#">République du Congo</a></li>
-                        <li><a href="/Gabon">Gabon</a></li>
-                        <li><a href="#">Guinée Equatoriale</a></li>
-                        <li><a href="#">République Démocratique du Congo</a></li>
-                        <li><a href="#">Rwanda</a></li>
-                        <li><a href="#">Sao Tomé et Principe</a></li>
-                        <li><a href="#">Tchad</a></li>
-                    </ul>
-                </li>
-                <li>
-                <li><a href="#">Propriété intellectuelle</a></li>
-                </li>
-                <li>
-                <li><a href="#">Innovations </a></li>
-                </li>
-                <li>
-                <li><a href="/news">Actualités</a></li>
-                </li>
-                </ul>
-            </div>
-        </div>
-    </div>-->
-
     <!--==============================
 	Header Area
     ==============================-->
@@ -170,8 +107,8 @@ Hero Area
                                             </span>
                                         </h1>
                                         <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                            <a href="/news" class="th-btn style4">Nos actualités <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                            <a href="/contact" class="th-btn style3 d-lg-block d-none">Découvrir nos objectifs</a>
+                                            <a href="news" class="th-btn style4">Nos actualités <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                            <a href="contact" class="th-btn style3 d-lg-block d-none">Découvrir nos objectifs</a>
                                         </div>
                                     </div>
                                 </div>
