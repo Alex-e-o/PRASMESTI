@@ -8,36 +8,28 @@
                     </div>
                 </div>
                 <div class="col-auto d-none d-md-block">
-                        <div class="info-card-wrap">
-                            <div class="info-card">
-                                <div class="box-content">
-                                    <p class="box-text">Adresse:</p>
-                                    <h4 class="box-title"><a href="https://maps.app.goo.gl/eRuYww4DayfLzmzC7">Bd Triomphal, Libreville, Gabon</a></h4>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="box-content">
-                                    <p class="box-text">Téléphone:</p>
-                                    <h4 class="box-title"><a href="tel:16336547896">+241 77 05 66 49</a></h4>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="box-content">
-                                    <p class="box-text">Email:</p>
-                                    <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
-                                </div>
+                    <div class="info-card-wrap">
+                        <div class="info-card">
+                            <div class="box-content">
+                                <p class="box-text">Adresse:</p>
+                                <h4 class="box-title"><a href="https://maps.app.goo.gl/eRuYww4DayfLzmzC7">Bd Triomphal, Libreville, Gabon</a></h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-auto header-social-col">
-                        <div class="th-social">
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        <div class="info-card">
+                            <div class="box-content">
+                                <p class="box-text">Téléphone:</p>
+                                <h4 class="box-title"><a href="tel:16336547896">+241 77 05 66 49</a></h4>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="box-content">
+                                <p class="box-text">Email:</p>
+                                <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
     <div class="sticky-wrapper">
@@ -53,7 +45,7 @@
                         <nav class="main-menu d-none d-lg-block">
                             <ul>
                                 <li class="active">
-                                    <a href="../PRASMESTI/" style="color: #ff5528;">Accueil</a>
+                                    <a href="../" style="color: #ff5528;">Accueil</a>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="../presentation">Présentation</a>
@@ -98,7 +90,7 @@
                                 <li>
                                 <li><a href="#">Innovations </a></li>
                                 </li>
-                                <li><a href="/news">Actualités</a></li>
+                                <li><a href="../news">Actualités</a></li>
                             </ul>
                         </nav>
                     </div>

@@ -4,7 +4,7 @@
             <div class="subscribe-box">
                 <div class="row gy-40 align-items-center justify-content-center">
                     <div class="col-xl-6">
-                        <h4 class="subscribe-box_title">tenez-vous informé régulièrement</h4>
+                        <h4 class="subscribe-box_title">Tenez-vous informé régulièrement</h4>
                         <p class="subscribe-box_text">Suivre les initiatives et les projets qui transforment l’Afrique centrale.</p>
                     </div>
                     <div class="col-xl-6 col-lg-8">
@@ -26,7 +26,7 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="/"><img src="../assets/img/Logo2.png" alt="Donat"></a>
+                                <a href=""><img src="../assets/img/Logo2.png" alt="Donat"></a>
                             </div>
                             <p class="about-text" style="text-align:center"> Portail Régional d'Aide au Suivi en Matière d'Éducation,
                                 Sciences, Technologies et Innovation (PRASMESTI)
@@ -40,7 +40,7 @@
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 <li><a href="#"></a></li>
-                                <li><a href="../">Acceuil</a></li>
+                                <li><a href="../">Accueil</a></li>
                                 <li><a href="../presentation">Présentation</a></li>
                                 <li><a href="#">Textes Normatifs</a></li>
                                 <li><a href="#">Etat de mise en oeuvres</a></li>
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="box-content">
                                     <p class="box-text">Téléphone:</p>
-                                    <h4 class="box-title"><a href="tel:16336547896">+241 36 54 78 96</a></h4>
+                                    <h4 class="box-title"><a href="tel:16336547896">+241 77 05 66 49</a></h4>
                                 </div>
                             </div>
                             <div class="info-card">
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="box-content">
                                     <p class="box-text">Email:</p>
-                                    <h4 class="box-title"><a href="mailto:info@donat.com">contact@prasmesti.com</a></h4>
+                                    <h4 class="box-title"><a href="mailto:info@donat.com">prasmesti@ceeac-eccas.org</a></h4>
                                 </div>
                             </div>
                             <div class="th-social style2">
