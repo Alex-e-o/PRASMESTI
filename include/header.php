@@ -74,7 +74,7 @@
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Etat de mise en oeuvres</a>
+                                <a href="#">État de mise en oeuvres</a>
                                 <ul class="sub-menu">
                                     <li><a href="Gabon/">Angola </a></li>
                                     <li><a href="#">Burundi</a></li>
