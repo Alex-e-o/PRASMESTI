@@ -76,7 +76,7 @@
                             <li class="menu-item-has-children">
                                 <a href="#">État de mise en oeuvres</a>
                                 <ul class="sub-menu">
-                                    <li><a href="Gabon/">Angola </a></li>
+                                    <li><a href="">Angola </a></li>
                                     <li><a href="#">Burundi</a></li>
                                     <li><a href="#">Cameroun</a></li>
                                     <li><a href="#">Centrafrique</a></li>
