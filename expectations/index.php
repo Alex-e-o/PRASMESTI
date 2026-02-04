@@ -71,67 +71,6 @@
     Sidemenu
     ============================== -->
 
-    <div class="sidemenu-wrapper sidemenu-cart ">
-        <div class="sidemenu-content">
-            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget woocommerce widget_shopping_cart">
-                <h3 class="widget_title">Shopping cart</h3>
-                <div class="widget_shopping_cart_content">
-                    <ul class="woocommerce-mini-cart cart_list product_list_widget ">
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="../assets/img/product/product_thumb_1_1.png" alt="Cart Image">Books</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>940.00</span>
-                            </span>
-                        </li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="../assets/img/product/product_thumb_1_2.png" alt="Cart Image">Medicine</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>899.00</span>
-                            </span>
-                        </li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="../assets/img/product/product_thumb_1_3.png" alt="Cart Image">Dress</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>756.00</span>
-                            </span>
-                        </li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="../assets/img/product/product_thumb_1_4.png" alt="Cart Image">Chair</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>723.00</span>
-                            </span>
-                        </li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="../assets/img/product/product_thumb_1_5.png" alt="Cart Image">Cloths</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>1080.00</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <p class="woocommerce-mini-cart__total total">
-                        <strong>Subtotal:</strong>
-                        <span class="woocommerce-Price-amount amount">
-                            <span class="woocommerce-Price-currencySymbol">$</span>4398.00</span>
-                    </p>
-                    <p class="woocommerce-mini-cart__buttons buttons">
-                        <a href="cart.html" class="th-btn wc-forward">View cart</a>
-                        <a href="checkout.html" class="th-btn checkout wc-forward">Checkout</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!--==============================
@@ -238,30 +177,41 @@
                         <h2 class="blog-title">Le PRASMESTI : les attentes ?</h2>
                         <div class="checklist style2">
                             <ul>
-                                <li>Dynamiser la collaboration entre États membres de la CEEAC, les partenaires au développement, les opérateurs économiques et tous les autres interlocuteurs internes et externes.</li>
-                                <li>Permettre la transmission des connaissances et d’informations pour une organisation plus productive et performante.</li>
-                                <li>Accompagner de nouveaux chantiers régionaux du secteur de l’Éducation, Formation, Sciences, Technologie et Innovation :</li>
+                                <li>
+                                    Renforcer l’écosystème de collaboration : Intensifier les échanges entre les États membres de la CEEAC, les partenaires au développement et les opérateurs économiques pour bâtir un cadre de coopération intégré et pérenne.
+                                </li>
+                                <li>
+                                    Accroître l’attractivité du secteur EFSTI : Consolider l'offre régionale en Éducation, Formation, Sciences, Technologie et Innovation (EFSTI) par le déploiement de nouveaux services sectoriels à forte valeur ajoutée.
+                                </li>
+                                <li>Impulser des chantiers innovants : Piloter des projets régionaux structurants et avant-gardistes pour répondre aux défis technologiques et scientifiques actuels.</li>
+                        
+                                <li>Piloter par la donnée (Monitoring) : Mettre en place un suivi en temps réel des interventions (partenaires, consultants) via des indicateurs statistiques précis pour détecter les points de blocage et accélérer les interventions sur le terrain.</li>
+                                <li>Structurer le back-office institutionnel : Harmoniser et automatiser les processus administratifs, notamment l'archivage numérique et le suivi historique des programmes, pour garantir la transparence et la continuité des projets.</li>
+                                <li>Fluidifier la transmission des savoirs : Transformer le partage d’informations en un levier de performance collective, permettant une organisation plus agile et mieux informée.</li>
                             </ul>
-                            <blockquote class="bg-white">
-                                <li>Faciliter le partage d’informations au niveau régional et créer plus de synergies entre les différentes entités et métiers de l’Éducation, Formation, Sciences, Technologie et Innovation.</li>
-                                <li>Améliorer le suivi de la mise en oeuvre des partenaires au développement, les consultants techniques : suivre en temps réel les développements au sein de chaque États membres afin de disposer d’indicateurs et de statistiques pour détecter les problèmes récurrents et d’accélérer la prise en charge directement depuis le terrain</li>
-                                <li>Lancer un e-service régional pour l’Éducation, la Formation, les Sciences, la Technologie et l’Innovation : partage d’expérience, renforcement de capacités...</li>
-                            </blockquote>
                         </div>
 
                         <div class="checklist style2">
                             <ul>
-                                <li>Renforcer les capacités de l’offre régionale d’Éducation, Formation, Sciences, Technologie et Innovation, augmenter l’attractivité régionale avec de nouveaux services sectoriels.</li>
-                                <li>Harmoniser et optimiser certaines tâches back-office : accès aux données et à l’historique (archivage), avancement de programmes et projets, etc.</li>
+                                <li>Déployer un e-service régional dédié : Créer une plateforme numérique centrale pour l’EFSTI favorisant le partage d’expériences, le réseautage métier et le renforcement continu des capacités.</li>
+                                <li>Favoriser l'interopérabilité des métiers : Créer des passerelles numériques entre les différentes entités régionales pour simplifier les flux de travail et la capitalisation des connaissances.</li>
                             </ul>
                         </div>
 
                         <br /><br />
 
                         <h4>Le PRASMESTI : améliorer l’image de marque de l’Éducation, Formation, Sciences, Technologie et Innovation en Afrique centrale</h4>
-                        Le PRASMESTI est un portail collaboratif de l’Éducation, Formation, Sciences, Technologie et Innovation de la Communauté, en abrégé PRASMESTI, renvoie à la couleur verte qui fait allusion à la relation que ce portail doit s’efforcer entre l’Éducation, Sciences, Technologie et Innovation et le respect de l’environnement : les ODD. <br /><br />
-                        Son design, sa page d’Accueil, ses arborescences, ses fonctionnalités... doivent respecter une charte graphique de la CEEAC et en cohérence avec l’image de marque renvoyer par l’Agenda 2063 et l’Agenda 2030. <br /><br />
-                        Les usagers, entrant de plus en plus dans l’univers du PRASMESTI, assimileront plus facilement la plateforme collaborative régionale et les objectifs assignés par les deux grands Agendas qui encadrent et orientent le développement du capital humain régional.
+
+                        <ul>
+                            <li>Le PRASMESTI ne se limite pas à être un portail collaboratif ; il incarne l’ambition de l'Afrique Centrale pour le développement du capital humain.</li>
+                            <li>Une symbolique forte : Le choix du vert illustre l'engagement du portail en faveur de la durabilité et de la protection de l'environnement, alignant ainsi les secteurs de l'EFSTI sur les Objectifs de Développement Durable (ODD).</li>
+                            <li>Une symbolique forte : Le choix du vert illustre l'engagement du portail en faveur de la durabilité et de la protection de l'environnement, alignant ainsi les secteurs de l'EFSTI sur les Objectifs de Développement Durable (ODD).</li>
+                            <li>Une cohérence institutionnelle : Son design et son ergonomie respectent strictement la charte graphique de la CEEAC. Cette identité visuelle assure une parfaite harmonie avec les aspirations de l'Agenda 2063 de l'Union Africaine et de l'Agenda 2030 des Nations Unies. </li>
+                            <li>Une acculturation simplifiée : En s’immergeant dans cet univers visuel cohérent, les usagers s'approprient plus naturellement les objectifs régionaux de développement. </li>
+                            <li>Son design, sa page d’Accueil, ses arborescences, ses fonctionnalités... doivent respecter une charte graphique de la CEEAC et en cohérence avec l’image de marque renvoyer par l’Agenda 2063 et l’Agenda 2030. </li>
+                            <li>Les usagers, entrant de plus en plus dans l’univers du PRASMESTI, assimileront plus facilement la plateforme collaborative régionale et les objectifs assignés par les deux grands Agendas qui encadrent et orientent le développement du capital humain régional.</li>
+                        </ul>
+                        
                         <div class="row gx-30 mt-30">
                             <div class="col-md-6 mb-30">
                                 <div class="blog-radius-img">
@@ -279,15 +229,15 @@
                             <h4>Le PRASMESTI : les possibilités d’accès ?</h4>
                             La Commission choisit, selon chaque profil utilisateur de mettre à disposition telles ou telles informations et/ou applications de son système. Ci-dessous les principaux types d’accès :
                             <ul class="listeElement16L1">
-                                <li>Intranet : accessible par les collaborateurs uniquement depuis le siège de la Commission de la Communauté Économique des États de l'Afrique Centrale et quelques points focaux des États membres.</li>
+                                <li>Intranet : Pour les collaborateurs CEEAC & Points focaux, un accès sécurisé aux outils de gestion interne et de coordination régionale.</li>
                                 <li>Extranet : accessible par tous les établissements d’éducation, de formation, de sciences, de technologie et d’innovation dûment enregistrés au sein des différents États membres.</li>
-                                <li>Internet : qui est un accès à certaines données sans avoir besoin de s’identifier.</li>
+                                <li>Internet : Pour le grand public & partenaires, consultation de données publiques, statistiques et informations générales sans authentification.</li>
                             </ul>
-                            L’enjeu pour la Communauté est d’adresser une communication ciblée en proposant un contenu pertinent à l’utilisateur. Par exemple, mettre en avant toute sa palette et offres complémentaires permet d’informer les acteurs de l’éducation, des sciences, du développement technologique et de l’innovation et de déclencher de nouveaux services sectoriels :
+                            L’enjeu majeur est de proposer un contenu personnalisé qui génère de nouvelles opportunités sectorielles pour chaque acteur :
                             <ul class="listeElement16L2">
-                                <li>Pour un États membres, il s’agit de présenter éditeur de logiciel</li>
-                                <li>Pour un éditeur de logiciel, il s’agirait de mettre en avant ses offres d’audit, de formation ainsi que les nouveaux modules produits...</li>
-                                <li>Pour un bureau d’études, il s’agit de mettre en avant tous leurs panels de prestations : de l’étude à la formation en passant par la maitrise d’oeuvre.</li>
+                                <li>Pour les États membres : Valoriser les solutions numériques et les indicateurs de performance nationaux pour attirer des investissements stratégiques.</li>
+                                <li>Pour les Éditeurs de logiciels : Mettre en avant leurs expertises spécifiques (audit, formation, nouveaux modules) pour répondre aux besoins technologiques de la région.</li>
+                                <li>Pour les Bureaux d’études : Exposer l’intégralité de leur palette de services, de la phase de diagnostic à la maîtrise d’œuvre et au renforcement des capacités.</li>
                             </ul>
                         </div>
 

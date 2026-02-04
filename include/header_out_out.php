@@ -12,7 +12,7 @@
                             <div class="info-card">
                                 <div class="box-content">
                                     <p class="box-text">Adresse:</p>
-                                    <h4 class="box-title"><a href="https://www.google.com/maps">Bd Triomphal, Libreville, Gabon</a></h4>
+                                    <h4 class="box-title"><a href="https://maps.app.goo.gl/eRuYww4DayfLzmzC7">Bd Triomphal, Libreville, Gabon</a></h4>
                                 </div>
                             </div>
                             <div class="info-card">
@@ -24,7 +24,7 @@
                             <div class="info-card">
                                 <div class="box-content">
                                     <p class="box-text">Email:</p>
-                                    <h4 class="box-title"><a href="mailto:info@donat.com">contact@prasmesti.com</a></h4>
+                                    <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                         <li><a href="#">Cameroun</a></li>
                                         <li><a href="#">Centrafrique</a></li>
                                         <li><a href="#">République du Congo</a></li>
-                                        <li><a href="/Gabon">Gabon</a></li>
+                                        <li><a href="../Gabon">Gabon</a></li>
                                         <li><a href="#">Guinée Equatoriale</a></li>
                                         <li><a href="#">République Démocratique du Congo</a></li>
                                         <li><a href="#">Rwanda</a></li>
