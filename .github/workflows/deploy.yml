@@ -20,7 +20,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         # ⚠️ ATTENTION : C'est la partie la plus importante ci-dessous
-        server-dir: /home/dh_33tuig/aleoss2.dreamhosters.com
+        server-dir: /home/dh_33tuig/aleoss2.dreamhosters.com/
         exclude: |
           **/.git*
           **/.github*
