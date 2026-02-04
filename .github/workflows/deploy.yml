@@ -19,7 +19,10 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        # ⚠️ ATTENTION : C'est la partie la plus importante ci-dessous
+        # Ajout des deux lignes ci-dessous pour coller à ta capture d'écran
+        port: 22
+        protocol: sftp
+        # Le chemin reste le même
         server-dir: /home/dh_33tuig/aleoss2.dreamhosters.com/
         exclude: |
           **/.git*
