@@ -91,10 +91,10 @@
                                 </ul>
                             </li>
                             <li>
-                            <li><a href="#">Propriété intellectuelle</a></li>
+                                <li><a href="#">Propriété intellectuelle</a></li>
                             </li>
                             <li>
-                            <li><a href="#">Innovations </a></li>
+                                <li><a href="#">Innovations </a></li>
                             </li>
                             <li><a href="../news">Actualités</a></li>
                         </ul>
