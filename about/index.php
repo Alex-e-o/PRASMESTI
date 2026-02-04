@@ -84,63 +84,7 @@
     <!--********************************
    		Code Start From Here 
 	******************************** -->
-    <div class="th-menu-wrapper">
-        <div class="th-menu-area text-center">
-            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo">
-                <a href="/"><img src="../assets/img/Logo.png" alt="Logo.png"></a>
-            </div>
-            <div class="th-mobile-menu">
-                <ul>
-                    <li class="">
-                        <a href="/" style="color: #ff5528;">Accueil</a>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Présentation</a>
-                        <ul class="sub-menu">
-                            <li class="#">
-                                <a href="/presentation">Qu'est-ce que le PRASMESTI? </a>
-                            <li><a href="/expectations">Les attentes</a></li>
-                            <li><a href="#">En résumé, les objectifs</a></li>
-                            <li><a href="../teams">Les responsables du projet</a></li>
-
-                    </li>
-                </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Textes Normatifs</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">PSI </a></li>
-                        <li><a href="#">CESA 16-25</a></li>
-                        <li><a href="#">STISA 2024</a></li>
-                        <li><a href="#">ODD</a></li>
-                        <li><a href="#">Politiques dans les documents cadres</a></li>
-                        <li><a href="#">Stratégies dans les documents cadres</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Etat de mise en oeuvres</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Angola </a></li>
-                        <li><a href="#">Burundi</a></li>
-                        <li><a href="#">Cameroun</a></li>
-                        <li><a href="#">Centrafrique</a></li>
-                        <li><a href="#">République du Congo</a></li>
-                        <li><a href="/Gabon">Gabon</a></li>
-                        <li><a href="#">Guinée Equatoriale</a></li>
-                        <li><a href="#">République Démocratique du Congo</a></li>
-                        <li><a href="#">Rwanda</a></li>
-                        <li><a href="#">Sao Tomé et Principe</a></li>
-                        <li><a href="#">Tchad</a></li>
-                    </ul>
-                </li>
-                <li>
-                <li><a href="../news">Actualités</a></li>
-                </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    
 
     <?php include_once('../include/header_out.php'); ?>
 
@@ -180,8 +124,8 @@
                 <div class="col-xl-5">
                     <div class="about-wrap1">
                         <div class="title-area mb-30">
-                            <span class="sub-title">Mot du président de la CEEAC</span>
-                            <h2 class="sec-title">Message du Président de la CEEAC</h2>
+                            <span class="sub-title">Mot du champion régional éducation formation</span>
+                            <h2 class="sec-title">Message du Champion Régional Education Formation</h2>
                             <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique
                                 Centrale) est engagée dans la promotion du bien-être de la population à travers diverses
                                 initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir
