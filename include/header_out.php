@@ -27,6 +27,12 @@
                                 <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
                             </div>
                         </div>
+                        <div class="info-card">
+                            <div class="box-content">
+                                <p class="box-text">Portail experts :</p>
+                                <h4 class="box-title"><a href="../educational_expert/">Connection</a></h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -55,7 +61,7 @@
                                     <li><a href="../objectives">En résumé, les objectifs</a></li>
                                     <li><a href="../teams">Les responsables du portail</a></li>
                                     <li><a href="../about">Mot du president et du commissaires</a></li>
-                                    
+
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">

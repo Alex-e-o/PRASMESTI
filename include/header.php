@@ -27,6 +27,12 @@
                                 <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
                             </div>
                         </div>
+                        <div class="info-card">
+                            <div class="box-content">
+                                <p class="box-text">Accès experts :</p>
+                                <h4 class="box-title"><a href="educational_expert/">Connection</a></h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
