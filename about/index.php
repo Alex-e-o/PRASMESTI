@@ -180,8 +180,8 @@
                 <div class="col-xl-5">
                     <div class="about-wrap1">
                         <div class="title-area mb-30">
-                            <span class="sub-title">Mot du président de la CEEAC</span>
-                            <h2 class="sec-title">Message du Président de la CEEAC</h2>
+                            <span class="sub-title">Mot du champion régional éducation formation</span>
+                            <h2 class="sec-title">Message du Champion Régional Education Formation</h2>
                             <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique
                                 Centrale) est engagée dans la promotion du bien-être de la population à travers diverses
                                 initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir
