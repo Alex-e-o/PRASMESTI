@@ -1,10 +1,10 @@
 <header class="th-header header-default onepage-nav"> 
         <div class="menu-top">
-            <div class="container">
+            <div class="container"> 
                 <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-logo">
-                            <a href="../../"><img src="../assets/img/Logo.png" alt="Logo 2*out"></a>
+                            <a href="../../"><img src="../../assets/img/Logo.png" alt="Logo 2*out"></a>
                         </div>
                     </div>
                     <div class="col-auto d-none d-md-block">
@@ -27,14 +27,6 @@
                                     <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-auto header-social-col">
-                        <div class="th-social">
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>

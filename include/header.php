@@ -4,7 +4,7 @@
                 <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-logo">
-                            <a href="/"><img src="assets/img/Logo.png" alt="logo-ceeac"></a>
+                            <a href=""><img src="assets/img/Logo.png" alt="logo-ceeac"></a>
                         </div>
                     </div>
                     <div class="col-auto d-none d-md-block">
@@ -29,14 +29,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-auto header-social-col">
-                        <div class="th-social">
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -53,10 +45,10 @@
                         <nav class="main-menu d-none d-lg-block">
                             <ul>
                                 <li class="active">
-                                    <a href="../" style="color: #ff5528;">Accueil</a>
+                                    <a href="" style="color: #ff5528;">Accueil</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="../presentation">Présentation</a>
+                                    <a href="presentation/">Présentation</a>
                                     <ul class="sub-menu">
                                         <li><a href="presentation/">Qu'est-ce que le PRASMESTI? </a></li>
                                         <li><a href="expectations/">Les attentes</a></li>
@@ -84,7 +76,7 @@
                                         <li><a href="#">Cameroun</a></li>
                                         <li><a href="#">Centrafrique</a></li>
                                         <li><a href="#">République du Congo</a></li>
-                                        <li><a href="../Gabon">Gabon</a></li>
+                                        <li><a href="Gabon/">Gabon</a></li>
                                         <li><a href="#">Guinée Equatoriale</a></li>
                                         <li><a href="#">République Démocratique du Congo</a></li>
                                         <li><a href="#">Rwanda</a></li>
@@ -98,7 +90,7 @@
                                 <li>
                                 <li><a href="#">Innovations </a></li>
                                 </li>
-                                <li><a href="/news">Actualités</a></li>
+                                <li><a href="news">Actualités</a></li>
                             </ul>
                         </nav>
                     </div>
