@@ -1,38 +1,38 @@
 <!doctype html>
 <html lang="en">
 
+<head>
+    <meta charset="utf-8" />
+    <title>PRASMESTI - Statistiques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="PRASMESTI, une initiative de la CEEAC pour renforcer l'intégration régionale en Afrique centrale à travers l'éducation, les sciences, la technologie et l'innovation." name="description" />
+    <meta content="PRASMESTI" name="IT CORP" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.png">
 
-<meta charset="utf-8" />
-<title>PRASMESTI - Statistiques</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta content="PRASMESTI, une initiative de la CEEAC pour renforcer l'intégration régionale en Afrique centrale à travers l'éducation, les sciences, la technologie et l'innovation." name="description" />
-<meta content="PRASMESTI" name="IT CORP" />
-<!-- App favicon -->
-<link rel="shortcut icon" href="../../assets/images/favicon.png">
+    <!-- color picker css -->
+    <link rel="stylesheet" href="../../assets/libs/@simonwep/pickr/themes/classic.min.css" /> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="../../assets/libs/@simonwep/pickr/themes/monolith.min.css" /> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="../../assets/libs/@simonwep/pickr/themes/nano.min.css" /> <!-- 'nano' theme -->
 
-<!-- color picker css -->
-<link rel="stylesheet" href="../../assets/libs/@simonwep/pickr/themes/classic.min.css" /> <!-- 'classic' theme -->
-<link rel="stylesheet" href="../../assets/libs/@simonwep/pickr/themes/monolith.min.css" /> <!-- 'monolith' theme -->
-<link rel="stylesheet" href="../../assets/libs/@simonwep/pickr/themes/nano.min.css" /> <!-- 'nano' theme -->
-
-<!-- datepicker css -->
-<link rel="stylesheet" href="../../assets/libs/flatpickr/flatpickr.min.css">
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="../../assets/libs/flatpickr/flatpickr.min.css">
 
 
-<!-- Bootstrap Css -->
-<link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-<!-- Icons Css -->
-<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-<!-- App Css-->
-<link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-<style>
-    .btn-primary {
-        color: #fff;
-        background-color: #003e73;
-        border-color: transparent;
-    }
-</style>
+    <style>
+        .btn-primary {
+            color: #fff;
+            background-color: #003e73;
+            border-color: transparent;
+        }
+    </style>
 </head>
 
 
