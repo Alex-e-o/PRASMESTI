@@ -56,11 +56,11 @@
                             <li class="menu-item-has-children">
                                 <a href="../presentation">Présentation</a>
                                 <ul class="sub-menu">
-                                    <li><a href="../presentation">Qu'est-ce que le PRASMESTI? </a></li>
-                                    <li><a href="../expectations">Les attentes</a></li>
-                                    <li><a href="../objectives">En résumé, les objectifs</a></li>
-                                    <li><a href="../teams">Les responsables du projet</a></li>
-                                    <li><a href="../about">Mot du president et du commissaires</a></li>
+                                    <li><a href="../../presentation">Qu'est-ce que le PRASMESTI? </a></li>
+                                    <li><a href="../../expectations">Les attentes</a></li>
+                                    <li><a href="../../objectives">En résumé, les objectifs</a></li>
+                                    <li><a href="../../teams">Les responsables du projet</a></li>
+                                    <li><a href="../../about">Mot du president et du commissaires</a></li>
 
                                 </ul>
                             </li>
@@ -75,14 +75,14 @@
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Etat de mise en oeuvres</a>
+                                <a href="#">État de mise en oeuvres</a>
                                 <ul class="sub-menu">
                                     <li><a href="#">Angola </a></li>
                                     <li><a href="#">Burundi</a></li>
                                     <li><a href="#">Cameroun</a></li>
                                     <li><a href="#">Centrafrique</a></li>
                                     <li><a href="#">République du Congo</a></li>
-                                    <li><a href="../Gabon">Gabon</a></li>
+                                    <li><a href="../../Gabon">Gabon</a></li>
                                     <li><a href="#">Guinée Equatoriale</a></li>
                                     <li><a href="#">République Démocratique du Congo</a></li>
                                     <li><a href="#">Rwanda</a></li>
