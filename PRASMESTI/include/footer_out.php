@@ -43,7 +43,7 @@
                                 <li><a href="../">Accueil</a></li>
                                 <li><a href="../presentation">Présentation</a></li>
                                 <li><a href="#">Textes Normatifs</a></li>
-                                <li><a href="#">Etat de mise en oeuvres</a></li>
+                                <li><a href="#">État de mise en œuvre</a></li>
                                 <li><a href="#">Propriété intellectuelle</a></li>
                                 <li><a href="#">Innovations</a></li>
                                 <li><a href="../gallery">Galeries</a></li>
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="box-content">
                                     <p class="box-text">Email:</p>
-                                    <h4 class="box-title"><a href="mailto:info@donat.com">prasmesti@ceeac-eccas.org</a></h4>
+                                    <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
                                 </div>
                             </div>
                             <div class="th-social style2">

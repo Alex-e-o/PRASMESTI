@@ -17,7 +17,7 @@
                       <a href="#">Présentation</a>
                       <ul class="sub-menu">
                           <li class="#">
-                              <a href="/presentation">Qu'est-ce que le PRASMESTI? </a>
+                              <a href="/presentation">Qu'est-ce que le PRASMESTI ? </a>
                           <li><a href="/expectations">Les attentes</a></li>
                           <li><a href="#">En résumé, les objectifs</a></li>
                   </li>
@@ -34,7 +34,7 @@
                   </ul>
               </li>
               <li class="menu-item-has-children">
-                  <a href="#">Etat de mise en oeuvres</a>
+                  <a href="#">État de mise en œuvre</a>
                   <ul class="sub-menu">
                       <li><a href="#">Angola </a></li>
                       <li><a href="#">Burundi</a></li>
@@ -42,7 +42,7 @@
                       <li><a href="#">Centrafrique</a></li>
                       <li><a href="#">République du Congo</a></li>
                       <li><a href="#">Gabon</a></li>
-                      <li><a href="#">Guinée Equatoriale</a></li>
+                      <li><a href="#">Guinée Équatoriale</a></li>
                       <li><a href="#">République Démocratique du Congo</a></li>
                       <li><a href="#">Rwanda</a></li>
                       <li><a href="#">Sao Tomé et Principe</a></li>
@@ -96,7 +96,7 @@
                           <div class="info-card">
                               <div class="box-content">
                                   <p class="box-text">Email:</p>
-                                  <h4 class="box-title"><a href="mailto:info@donat.com">contact@prasmesti.com</a></h4>
+                                  <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">contact@prasmesti.com</a></h4>
                               </div>
                           </div>
                       </div>
@@ -130,7 +130,7 @@
                               <li class="menu-item-has-children">
                                   <a href="#" style="color: #FFC107;">Présentation</a>
                                   <ul class="sub-menu">
-                                      <li><a href="/presentation">Qu'est-ce que le PRASMESTI? </a></li>
+                                      <li><a href="/presentation">Qu'est-ce que le PRASMESTI ?</a></li>
                                       <li><a href="/expectations">Les attentes</a></li>
                                       <li><a href="#">En résumé, les objectifs</a></li>
                                   </ul>
@@ -146,7 +146,7 @@
                                   </ul>
                               </li>
                               <li class="menu-item-has-children">
-                                  <a href="#">Etat de mise en oeuvres</a>
+                                  <a href="#">État de mise en œuvre</a>
                                   <ul class="sub-menu">
                                       <li><a href="#">Angola </a></li>
                                       <li><a href="#">Burundi</a></li>
@@ -154,7 +154,7 @@
                                       <li><a href="#">Centrafrique</a></li>
                                       <li><a href="#">République du Congo</a></li>
                                       <li><a href="/Gabon">Gabon</a></li>
-                                      <li><a href="#">Guinée Equatoriale</a></li>
+                                      <li><a href="#">Guinée Équatoriale</a></li>
                                       <li><a href="#">République Démocratique du Congo</a></li>
                                       <li><a href="#">Rwanda</a></li>
                                       <li><a href="#">Sao Tomé et Principe</a></li>

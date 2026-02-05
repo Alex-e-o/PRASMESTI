@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>PRASMESTI - Portail Régional d'Aide au Suivi en Matière d'Education, Sciences, Technologies et Innovation
+    <title>PRASMESTI - Portail Régional d'Aide au Suivi en Matière d'Éducation, Sciences, Technologies et Innovation
     </title>
     <meta name="author" content="PRASMESTI">
     <meta name="description" content="PRASMESTI, une initiative de la CEEAC pour renforcer l'intégration régionale en Afrique centrale à travers l'éducation, les sciences, la technologie et l'innovation.">

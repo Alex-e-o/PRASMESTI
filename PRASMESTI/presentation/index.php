@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>PRASMESTI - Portail Régional d'Aide au Suivi en Matière d'Education, Sciences, Technologies et Innovation
+    <title>PRASMESTI - Portail Régional d'Aide au Suivi en Matière d'Éducation, Sciences, Technologies et Innovation
     </title>
     <meta name="author" content="PRASMESTI">
     <meta name="description" content="PRASMESTI, une initiative de la CEEAC pour renforcer l'intégration régionale en Afrique centrale à travers l'éducation, les sciences, la technologie et l'innovation.">
@@ -183,7 +183,7 @@
                         <a href="#">Présentation</a>
                         <ul class="sub-menu">
                             <li class="#">
-                                <a href="/presentation">Qu'est-ce que le PRASMESTI? </a>
+                                <a href="/presentation">Qu'est-ce que le PRASMESTI ? </a>
                             <li><a href="/expectations">Les attentes</a></li>
                             <li><a href="/objectives">En résumé, les objectifs</a></li>
                             <li><a href="../teams">Les responsables du projet</a></li>
@@ -201,7 +201,7 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Etat de mise en oeuvres</a>
+                    <a href="#">État de mise en œuvre</a>
                     <ul class="sub-menu">
                         <li><a href="#">Angola </a></li>
                         <li><a href="#">Burundi</a></li>
@@ -209,7 +209,7 @@
                         <li><a href="#">Centrafrique</a></li>
                         <li><a href="#">République du Congo</a></li>
                         <li><a href="/Gabon">Gabon</a></li>
-                        <li><a href="#">Guinée Equatoriale</a></li>
+                        <li><a href="#">Guinée Équatoriale</a></li>
                         <li><a href="#">République Démocratique du Congo</a></li>
                         <li><a href="#">Rwanda</a></li>
                         <li><a href="#">Sao Tomé et Principe</a></li>
@@ -246,10 +246,10 @@
     <div class="breadcumb-wrapper " data-bg-src="../assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Le PRASMESTI, qu'est ce que c'est?</h1>
+                <h1 class="breadcumb-title">Le PRASMESTI, qu'est ce que c'est ?</h1>
                 <ul class="breadcumb-menu">
                     <li>Présentation</li>
-                    <li>Le PRASMESTI, qu'est ce que c'est?</li>
+                    <li>Le PRASMESTI, qu'est ce que c'est ?</li>
                 </ul>
             </div>
         </div>
@@ -282,7 +282,7 @@
                         </div>
                         <br />
 
-                        <p class="mb-45">Mise en place d'aide au suivi de la mise en oeuvre des textes normatifs en éducation est une démarche dont la réussite dépend de la façon dont il sera inséré dans la vie de la Communauté ainsi que des informations partagées : contenu, les interactions et, pourquoi pas, une ligne éditoriale, etc.</p>
+                        <p class="mb-45">Mise en place d'aide au suivi de la mise en œuvre des textes normatifs en éducation est une démarche dont la réussite dépend de la façon dont il sera inséré dans la vie de la Communauté ainsi que des informations partagées : contenu, les interactions et, pourquoi pas, une ligne éditoriale, etc.</p>
                         <h3 class="mb-15">Description :</h3>
                         <p class="mb-45">Ainsi le PRASMESTI, qui se destine à être le trait d’union intra-communautaire en Afrique Centrale, répond à un double objectif : (1) accélérer l’intégration régionale par l’éducation, la formation, les sciences, la technologie et l’innovation en optimisant l’accès à l’information et aux données fiables ; et (2) s’adapter aux habitudes de lecture et aux usages de communication modernes par une assistance numérique apportée à chaque État membre de la Communauté et de la Commission de la CEEAC à faire le point des avancées régionales en matière d’intégration académique, de sciences, de technologie et d’innovation.</p>
                         <h3 class="mb-15">Le PRASMESTI : Pourquoi ?</h3>
@@ -291,7 +291,7 @@
                                 <li>capitaliser les informations et les savoir-faire en éducation, formation, sciences, technologie et innovation dans l’espace CEEAC ;</li>
                                 <li>simplifier la recherche d’informations sectorielles dans la région Afrique centrale ;</li>
                                 <li>centraliser l’ensemble des données en éducation, sciences, technologie et innovation en un seul accès ;</li>
-                                <li>se fédérer autour de la mise en oeuvre des textes normatifs et l’exécution des programmes régionaux.</li>
+                                <li>se fédérer autour de la mise en œuvre des textes normatifs et l’exécution des programmes régionaux.</li>
                             </ul>
                         </div>
                         <br>
@@ -331,7 +331,7 @@
                                 <li>Accompagner de nouveaux chantiers régionaux du secteur de l’Éducation, Formation, Sciences, Technologie et Innovation :
                                     <ul class="listeElement12L3"> <!--listeElement12L2 = deuxième des listes dans l'éléments 12-->
                                         <li>Faciliter le partage d’informations au niveau régional et créer plus de synergies entre les différentes entités et métiers de l’Éducation, Formation, Sciences, Technologie et Innovation.</li>
-                                        <li>Améliorer le suivi de la mise en oeuvre des partenaires au développement, les consultants techniques : suivre en temps réel les développements au sein de chaque États membres afin de disposer d’indicateurs et de statistiques pour détecter les problèmes récurrents et d’accélérer leur prise en charge directement depuis le terrain</li>
+                                        <li>Améliorer le suivi de la mise en œuvre des partenaires au développement, les consultants techniques : suivre en temps réel les développements au sein de chaque États membres afin de disposer d’indicateurs et de statistiques pour détecter les problèmes récurrents et d’accélérer leur prise en charge directement depuis le terrain</li>
                                         <li>Lancer un e-service régional pour l’Éducation, la Formation, les Sciences, la Technologie et l’Innovation : partage d’expérience, renforcement de capacités...</li>
                                     </ul>
                                 </li>
@@ -360,7 +360,7 @@
                             <ul class="listeElement16L2">
                                 <li>Pour un État membre, il s’agit de présenter éditeur de logiciel</li>
                                 <li>Pour un éditeur de logiciel, il s’agirait de mettre en avant ses offres d’audit, de formation ainsi que les nouveaux modules produits...</li>
-                                <li>Pour un bureau d’études, il s’agit de mettre en avant tous leurs panels de prestations : de l’étude à la formation en passant par la maitrise d’oeuvre.</li>
+                                <li>Pour un bureau d’études, il s’agit de mettre en avant tous leurs panels de prestations : de l’étude à la formation en passant par la maitrise d’œuvre.</li>
                             </ul>
                         </div>
 
