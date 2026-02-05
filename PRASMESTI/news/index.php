@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>PRASMESTI - Portail Régional d'Aide au Suivi en Matière d'Education, Sciences, Technologies et Innovation
+    <title>PRASMESTI - Portail Régional d'Aide au Suivi en Matière d'Éducation, Sciences, Technologies et Innovation
     </title>
     <meta name="author" content="PRASMESTI">
     <meta name="description"
@@ -99,7 +99,7 @@
                         <a href="#">Présentation</a>
                         <ul class="sub-menu">
                             <li class="#">
-                                <a href="/presentation">Qu'est-ce que le PRASMESTI? </a>
+                                <a href="/presentation">Qu'est-ce que le PRASMESTI ? </a>
                             <li><a href="/expectations">Les attentes</a></li>
                             <li><a href="#">En résumé, les objectifs</a></li>
                             <li><a href="../teams">Les responsables du projet</a></li>
@@ -118,7 +118,7 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Etat de mise en oeuvres</a>
+                    <a href="#">État de mise en œuvre</a>
                     <ul class="sub-menu">
                         <li><a href="#">Angola </a></li>
                         <li><a href="#">Burundi</a></li>
@@ -126,7 +126,7 @@
                         <li><a href="#">Centrafrique</a></li>
                         <li><a href="#">République du Congo</a></li>
                         <li><a href="/Gabon">Gabon</a></li>
-                        <li><a href="#">Guinée Equatoriale</a></li>
+                        <li><a href="#">Guinée Équatoriale</a></li>
                         <li><a href="#">République Démocratique du Congo</a></li>
                         <li><a href="#">Rwanda</a></li>
                         <li><a href="#">Sao Tomé et Principe</a></li>
@@ -181,7 +181,7 @@ Header Area
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <a href="blog.html"><i class="fas fa-calendar-days"></i>18 Decembre, 2024</a>
-                                <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
+                                <a href="blog.html"><i class="fas fa-tags"></i>Éducation</a>
                             </div>
                             <h2 class="blog-title"><a href="details/">Adoption des Règlements pour les Organes
                                     de la CEEAC</a>
@@ -216,7 +216,7 @@ Header Area
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <a href="blog.html"><i class="fas fa-calendar-days"></i>9 Décembre , 2024</a>
-                                <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
+                                <a href="blog.html"><i class="fas fa-tags"></i>Éducation</a>
                             </div>
                             <h2 class="blog-title"><a href="details/">Réforme Budgétaires et
                                     Financières de la CEEAC</a>
@@ -240,7 +240,7 @@ Header Area
                             <div class="blog-meta">
                                 <a href="blog.html"><i class="fas fa-calendar-days"></i>21 Décembre, 2024
                                 </a>
-                                <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
+                                <a href="blog.html"><i class="fas fa-tags"></i>Éducation</a>
                             </div>
                             <h2 class="blog-title"><a href="details/">Nouvelles Stratégies Développées</a>
                             </h2>
@@ -262,7 +262,7 @@ Header Area
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <a href="blog.html"><i class="fas fa-calendar-days"></i>15 janvier 2024</a>
-                                <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
+                                <a href="blog.html"><i class="fas fa-tags"></i>Éducation</a>
                             </div>
                             <h2 class="blog-title"><a href="details/">Conférence régionale sur l'innovation en
                                     éducation</a></h2>
@@ -324,7 +324,7 @@ Header Area
                                     <span><i class="fas fa-arrow-right"></i></span>
                                 </li>
                                 <li>
-                                    <a href="blog.html">Educations</a>
+                                    <a href="blog.html">Éducations</a>
                                     <span><i class="fas fa-arrow-right"></i></span>
                                 </li>
                                 <li>

@@ -102,7 +102,7 @@
                         <a href="#">Présentation</a>
                         <ul class="sub-menu">
                             <li class="#">
-                                <a href="/presentation">Qu'est-ce que le PRASMESTI? </a>
+                                <a href="/presentation">Qu'est-ce que le PRASMESTI ? </a>
                             <li><a href="/expectations">Les attentes</a></li>
                             <li><a href="#">En résumé, les objectifs</a></li>
                             <li><a href="../teams">Les responsables du portail</a></li>
@@ -122,7 +122,7 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Etat de mise en oeuvres</a>
+                    <a href="#">État de mise en œuvre</a>
                     <ul class="sub-menu">
                         <li><a href="#">Angola </a></li>
                         <li><a href="#">Burundi</a></li>
@@ -130,7 +130,7 @@
                         <li><a href="#">Centrafrique</a></li>
                         <li><a href="#">République du Congo</a></li>
                         <li><a href="/Gabon">Gabon</a></li>
-                        <li><a href="#">Guinée Equatoriale</a></li>
+                        <li><a href="#">Guinée Équatoriale</a></li>
                         <li><a href="#">République Démocratique du Congo</a></li>
                         <li><a href="#">Rwanda</a></li>
                         <li><a href="#">Sao Tomé et Principe</a></li>

@@ -1136,11 +1136,11 @@
                                                                                 Développement de la petite enfance
                                                                             </option>
                                                                             <option
-                                                                                value="Education de la petite enfance">
-                                                                                Education de la petite enfance</option>
+                                                                                value="Éducation de la petite enfance">
+                                                                                Éducation de la petite enfance</option>
                                                                             <option
-                                                                                value="Education primaire et secondaire">
-                                                                                Education primaire et secondaire
+                                                                                value="Éducation primaire et secondaire">
+                                                                                Éducation primaire et secondaire
                                                                             </option>
                                                                             <option
                                                                                 value="Enseignement Technique et Formation Professionnelle">

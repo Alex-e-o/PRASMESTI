@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>PRASMESTI - Portail Régional d'Aide au Suivi en Matière d'Education, Sciences, Technologies et Innovation</title>
+    <title>PRASMESTI - Portail Régional d'Aide au Suivi en Matière d'Éducation, Sciences, Technologies et Innovation</title>
     <meta name="author" content="PRASMESTI">
     <meta name="description" content="PRASMESTI, une initiative de la CEEAC pour renforcer l'intégration régionale en Afrique centrale à travers l'éducation, les sciences, la technologie et l'innovation.">
     <meta name="keywords" content="Intégration régionale, Afrique centrale, CEEAC, Éducation ">
@@ -200,7 +200,7 @@ About Area
                             <h4 class="sec-title" style="text-transform: none;">Qu'est-ce que le PRASMESTI ?</h4>
                             <p style="text-align: justify;">Construit autour d’objectifs normatifs communs, le PRASMESTI est le portail mis en place pour parvenir à une intégration régionale réussie. <br />
                                 Il repose d’abord naturellement sur le développement d’échanges intracommunautaires et veille à ce que la diversité de tous et de chacun en matière d’éducation, formation, sciences, technologie et innovation s’exprime en florilège dans un dialogue formalisé et dans un langage clair.<br />
-                                Il ne s’agit jamais d’uniformiser les structures, les pratiques et les projets. Il s’agit d’harmoniser la diversité des pratiques, d’exploiter au niveau régional les résultats des programmes nationaux pour établir des conditions de dialogues clairs et cohérents ! En termes de pratiques, le PRASMESTI a pour mission de :
+                                Il ne s’agit jamais d’uniformiser les structures, les pratiques et les projets. Il s’agit d’harmoniser la diversité des pratiques, d’exploiter au niveau régional les résultats des programmes nationaux pour établir des conditions de dialogues claires et cohérents ! En termes de pratiques, le PRASMESTI a pour mission de :
                             </p>
                         </div>
                         <div class="checklist style2">
@@ -244,7 +244,7 @@ Cta Area
                         <div class="shape-mockup cta-card-bg-shape" data-bottom="0" data-left="0" data-mask-src="assets/img/shape/cta_shape1_1.png">
                             <img src="assets/img/shape/cta_shape1_1.png" alt="img">
                         </div>
-                        <h3 class="box-title">Etat de mise en oeuvres</h3>
+                        <h3 class="box-title">État de mise en œuvre</h3>
                         <p class="box-text">Le PRASMESTI s’appuie sur une stratégie progressive pour garantir une adoption effective de ses objectifs par les États
                             membres de la CEEAC.</p>
                         <a href="#" class="th-btn style5">Voir plus</i></a>
@@ -280,7 +280,7 @@ Cta Area
                                     <img src="assets/img/donation/donation1-1.jpg" alt="image">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="#">Pour un État membre, il s’agit de présenter éditeur de logiciel...</a></h3>
+                                    <h3 class="box-title"><a href="#">Pour un État membre, il s’agit de présenter un éditeur de logiciel...</a></h3>
                                     <div class="donation-card_progress-wrap">
                                     </div>
                                     <a href="#" class="th-btn style6">Voir plus</a>
@@ -351,7 +351,7 @@ Cta Area
                                     </div>
                                     <div class="blog-meta">
                                         <a href="#"><i class="fas fa-calendar"></i>16 Novembre 2024</a>
-                                        <a href="#"><i class="fas fa-tags"></i>Education</a>
+                                        <a href="#"><i class="fas fa-tags"></i>Éducation</a>
                                     </div>
                                     <h3 class="box-title"><a href="#">Lancement de la Plateforme Numérique du PRASMESTI</a></h3>
                                     <a href="#" class="th-btn">Lire plus </a>
@@ -373,9 +373,9 @@ Cta Area
                                     </div>
                                     <div class="blog-meta">
                                         <a href="#"><i class="fas fa-calendar"></i>18 novembre 2024</a>
-                                        <a href="#"><i class="fas fa-tags"></i>Education</a>
+                                        <a href="#"><i class="fas fa-tags"></i>Éducation</a>
                                     </div>
-                                    <h3 class="box-title"><a href="#">Programme de Valorisation des Talents Lançé</a></h3>
+                                    <h3 class="box-title"><a href="#">Programme de Valorisation des Talents Lancé</a></h3>
                                     <a href="#" class="th-btn">Lire plus </a>
                                 </div>
                             </div>
@@ -394,7 +394,7 @@ Cta Area
                                     </div>
                                     <div class="blog-meta">
                                         <a href="#"><i class="fas fa-calendar"></i>18 novembre 2024</a>
-                                        <a href="#"><i class="fas fa-tags"></i>Education</a>
+                                        <a href="#"><i class="fas fa-tags"></i>Éducation</a>
                                     </div>
                                     <h3 class="box-title"><a href="#">Forum Régional sur l’Intégration scientifique</a></h3>
                                     <a href="#" class="th-btn">Lire plus</a>
