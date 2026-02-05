@@ -47,7 +47,7 @@
 
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
-                        <a href="" class="logo logo-dark">
+                        <a href="../" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="assets/images/Logo.png" alt="" height="26">
                             </span>
