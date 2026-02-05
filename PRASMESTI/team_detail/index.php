@@ -223,52 +223,52 @@ Brand Area
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Gabon.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Gabon.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Angola.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Angola.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Burundi.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Burundi.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Cameroun.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Cameroun.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Centrafrique.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Centrafrique.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Congo.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Congo.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Guinée-Équatoriale.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Guinée-Équatoriale.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/RDC.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/RDC.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Rwanda.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Rwanda.png" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="brand-box">
-                                <img src="../../assets/img/brand/Sao_Tomé.png" alt="Brand Logo">
+                                <img src="../assets/img/brand/Sao_Tomé.png" alt="Brand Logo">
                             </a>
                         </div>
                     </div>
