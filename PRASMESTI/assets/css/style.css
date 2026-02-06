@@ -13369,7 +13369,6 @@ span.select2-selection.select2-selection--single:focus {
   position: relative;
   z-index: 2;
   display: inline-block;
-  filter: blur(10px); /* Pour flouter l'image, à retirer quand l'image sera changée*/
   /* Small devices */
   /* Extra small devices */
 }
@@ -22899,3 +22898,15 @@ img:not([src*="logo" i]):not([src*="team" i]):not([src*="brand" i]),
 }
 
 */
+
+img[alt=image] { /* Permet de flouter les deux images */
+  filter: blur(10px);
+}
+
+#blogSlider1 img[src*="blog_1_2.jpg"], #blogSlider1 img[src*="blog_1_3.jpg"] { /* Floute les deux images dans le carrousel */
+  filter: blur(10px);
+}
+
+.img1 img[src*="about_2_1.jpg"] {
+  filter: blur(50px);
+}
