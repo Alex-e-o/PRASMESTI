@@ -72,7 +72,7 @@ Hero Area
         <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
+                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_3.jpg" data-overlay="black4" data-opacity="5">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-xl-12">
@@ -92,7 +92,6 @@ Hero Area
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="swiper-slide">
                     <div class="hero-inner" data-bg-src="assets/img/banner/Image_2.jpg" data-overlay="black4" data-opacity="5">
@@ -115,7 +114,6 @@ Hero Area
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -189,14 +187,14 @@ About Area
                 <div class="col-xl-7">
                     <div class="img-box1">
                         <div class="img1">
-                            <img src="assets/img/normal/about_1_1.png" alt="About">
-                        </div>
+                            <img src="assets/img/normal/about_1_1.png" alt="About"><!--Style à la ligne 13368 de style css, retirer le flou quand l'image sera changée-->
+                        </div> 
                     </div>
                 </div>
                 <div class="col-xl-5">
                     <div class="about-wrap1">
                         <div class="title-area mb-30">
-                            <span class="sub-title before-none"> PRASMESTI</span>
+                            <span class="sub-title before-none">PRASMESTI</span>
                             <h4 class="sec-title" style="text-transform: none;">Qu'est-ce que le PRASMESTI ?</h4>
                             <p style="text-align: justify;">Construit autour d’objectifs normatifs communs, le PRASMESTI est le portail mis en place pour parvenir à une intégration régionale réussie. <br />
                                 Il repose d’abord naturellement sur le développement d’échanges intracommunautaires et veille à ce que la diversité de tous et de chacun en matière d’éducation, formation, sciences, technologie et innovation s’exprime en florilège dans un dialogue formalisé et dans un langage clair.<br />
@@ -224,7 +222,7 @@ About Area
     </div>
     <!--==============================
 Cta Area  
-==============================-->
+==============================--> <!-- Les images sont masquées à la ligne 18491 de style css. Remettre une fois que les images auront été changées-->
     <div class="cta-area-1">
         <div class="container z-index-common " data-pos-for="#donation-sec" data-sec-pos="bottom-half">
             <div class="row gy-4">

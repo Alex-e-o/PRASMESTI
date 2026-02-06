@@ -13369,6 +13369,7 @@ span.select2-selection.select2-selection--single:focus {
   position: relative;
   z-index: 2;
   display: inline-block;
+  filter: blur(10px); /* Pour flouter l'image, à retirer quand l'image sera changée*/
   /* Small devices */
   /* Extra small devices */
 }
@@ -18487,7 +18488,7 @@ span.select2-selection.select2-selection--single:focus {
   position: absolute;
   inset: 0;
   background: var(--title-color);
-  opacity: 0.8;
+  opacity: 1; /*Remettre à 0.8 une fois l'image changée*/
 }
 
 .cta-card .box-title {
@@ -22890,9 +22891,11 @@ span.select2-selection.select2-selection--single:focus {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
 
+/*
 img:not([src*="logo" i]):not([src*="team" i]):not([src*="brand" i]),
 .background-image {
   filter: blur(10px);
 }
+
+*/
