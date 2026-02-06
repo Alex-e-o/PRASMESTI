@@ -22908,5 +22908,5 @@ img[alt=image] { /* Permet de flouter les deux images */
 }
 
 .img1 img[src*="about_2_1.jpg"] {
-  filter: blur(50px);
+  filter: blur(10px);
 }
