@@ -72,7 +72,7 @@ Hero Area
         <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_3.jpg" data-overlay="black4" data-opacity="5">
+                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-xl-12">
@@ -187,7 +187,7 @@ About Area
                 <div class="col-xl-7">
                     <div class="img-box1">
                         <div class="img1">
-                            <img src="assets/img/normal/about_1_1.png" alt="About"><!--Style à la ligne 13368 de style css, retirer le flou quand l'image sera changée-->
+                            <img src="assets/img/normal/about_1_1.png" alt="About">
                         </div> 
                     </div>
                 </div>
@@ -275,7 +275,7 @@ Cta Area
                             <div class="donation-card" data-theme-color="">
                                 <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-bg-shape1-1.png"></div>
                                 <div class="box-thumb">
-                                    <img src="assets/img/donation/donation1-1.jpg" alt="image">
+                                    <img src="assets/img/donation/donation1-1.jpg" alt="carte">
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="#">Pour un État membre, il s’agit de présenter un éditeur de logiciel...</a></h3>
@@ -290,7 +290,7 @@ Cta Area
                             <div class="donation-card" data-theme-color="var(--theme-color2)">
                                 <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-bg-shape1-1.png"></div>
                                 <div class="box-thumb">
-                                    <img src="assets/img/donation/donation1-2.jpg" alt="image">
+                                    <img src="assets/img/donation/donation1-2.jpg" alt="image"> <!-- Image floutée à la ligne 22903 du css. Retirer le flou quand l'image aura été changée-->
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="#">Pour un éditeur de logiciel, il s’agirait de mettre en avant ses offres d’audit.</a></h3>
@@ -305,7 +305,7 @@ Cta Area
                             <div class="donation-card" data-theme-color="#FF5528">
                                 <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-bg-shape1-1.png"></div>
                                 <div class="box-thumb">
-                                    <img src="assets/img/donation/donation1-3.jpg" alt="image">
+                                    <img src="assets/img/donation/donation1-3.jpg" alt="image"> <!-- Image floutée à la ligne 22903 du css. Retirer le flou quand l'image aura été changée-->
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="#">Pour un bureau d’études, il s’agit de mettre en avant tous leurs panels de prestations</a></h3>
@@ -420,7 +420,6 @@ Cta Area
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <button data-slider-prev="#blogSlider1" class="slider-arrow slider-prev"><i
@@ -443,7 +442,7 @@ Cta Area
                 <div class="col-xl-6 col-lg-10">
                     <div class="img-box2">
                         <div class="img1">
-                            <img src="assets/img/normal/about_2_1.jpg" alt="About">
+                            <img src="assets/img/normal/about_2_1.jpg" alt="About"> <!-- Flouter à la ligne 22910 -->
                         </div>
                         <div class="img2 jump">
                             <img src="assets/img/normal/Image_1.jpg" alt="About">
