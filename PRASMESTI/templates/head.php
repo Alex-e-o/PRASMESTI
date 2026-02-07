@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="icon" type="image/png" href="../assets/img/favicons/favicon.png">
-    <link rel="manifest" href="../assets/img/favicons/manifest.json">
+    <link rel="icon" type="image/png" href="../public/Assets/img/favicons/favicon.png">
+    <link rel="manifest" href="../public/Assets/img/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -29,17 +29,17 @@
 	    All CSS File
 	============================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/Assets/css/bootstrap.min.css">
     <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../public/Assets/css/fontawesome.min.css">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="../assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="../public/Assets/css/magnific-popup.min.css">
     <!-- datetimepicker -->
-    <link rel="stylesheet" href="../assets/css/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="../public/Assets/css/jquery.datetimepicker.min.css">
     <!-- Swiper Js -->
-    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../public/Assets/css/swiper-bundle.min.css">
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../public/Assets/css/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
