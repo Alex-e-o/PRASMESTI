@@ -99,7 +99,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div class="mt-5 text-center">
-                    <p>© <script>document.write(new Date().getFullYear())</script> PRASMESTI.</p>
+                    <p>
+                        <a href="../public/index.php" class="fw-medium text-primary">
+                            <i class="mdi mdi-arrow-left me-1"></i> Retour à l'accueil
+                        </a>
+                    </p>
+                    <p>© <script>document.write(new Date().getFullYear())</script> PRASMESTI</p>
                 </div>
             </div>
         </div>
