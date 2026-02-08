@@ -40,8 +40,7 @@ function is_active($prefix, $current) {
                         <div class="info-card">
                             <div class="box-content">
                                 <p class="box-text">Accès experts :</p>
-                                <h4 class="box-title"><a href="../private/">Connexion</a></h4>
-                            </div>
+                                <h4 class="box-title"><a href="../private/">Connexion</a></h4>                            </div>
                         </div>
                     </div>
                 </div>
