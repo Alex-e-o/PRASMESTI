@@ -11,6 +11,24 @@
         padding-top: 0;
         padding-bottom: 0;
     }
+
+    /* --- CORRECTIF DU GROS ESPACE VIDE --- */
+    /* Force le conteneur du slider à ne pas s'étirer */
+    #brandSlider1 .swiper-wrapper {
+        height: auto !important;
+        align-items: center !important; /* Centre verticalement */
+    }
+    #brandSlider1 .swiper-slide {
+        height: auto !important; /* Empêche la slide de faire 1000px de haut */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Réduit la marge interne de la section */
+    .brand-area-1 {
+        padding-top: 40px !important;
+        padding-bottom: 20px !important; /* Un petit espace pour respirer, mais pas 100px */
+    }
 </style>
 
 <div class="th-hero-wrapper hero-1" id="hero">
@@ -358,7 +376,7 @@
     </div>
 </section>
 
-<div class="overflow-hidden space" id="about-sec">
+<div class="overflow-hidden space" id="story-sec">
     <div class="shape-mockup about-bg-shape2-1 jump-reverse" data-top="10%" data-right="5%">
         <img src="assets/img/shape/heart-shape1.png" alt="shape">
     </div>
@@ -399,7 +417,7 @@
     </div>
 </div>
 
-<div class="space-bottom overflow-hidden brand-area-1">
+<div class="overflow-hidden brand-area-1">
     <div class="container">
         <div class="brand-wrap1 p-0 m-0 text-center">
             <h3 class="brand-wrap-title">Nos participants et Pays membres</h3>

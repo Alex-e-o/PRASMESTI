@@ -26,7 +26,7 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="/"><img src="assets/img/Logo2.png" alt="Donat"></a>
+                                <a href="index.php?p=accueil"><img src="assets/img/Logo2.png" alt="PRASMESTI"></a>
                             </div>
                             <p class="about-text" style="text-align:center"> Portail Régional d'Aide au Suivi en Matière d'Éducation,
                                 Sciences, Technologies et Innovation (PRASMESTI)
@@ -39,14 +39,13 @@
                         <h3 class="widget_title">Liens rapides</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="#"></a></li>
-                                <li><a href="">Accueil</a></li>
-                                <li><a href="presentation">Présentation</a></li>
+                                <li><a href="index.php?p=accueil">Accueil</a></li>
+                                <li><a href="index.php?p=presentation/presentation">Présentation</a></li>
                                 <li><a href="#">Textes Normatifs</a></li>
                                 <li><a href="#">État de mise en œuvre</a></li>
                                 <li><a href="#">Propriété intellectuelle</a></li>
                                 <li><a href="#">Innovations</a></li>
-                                <li><a href="gallery">Galeries</a></
+                                <li><a href="index.php?p=gallerie">Galeries</a></li>
                             </ul>
                         </div>
                     </div>
@@ -56,13 +55,13 @@
                         <h3 class="widget_title">En savoir plus</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="news">Actualités</a></li>
+                                <li><a href="index.php?p=actualites">Actualités</a></li>
                                 <li><a href="#">FAQ</a></li>
                                 <li><a href="#">Projets</a></li>
-                                <li><a href="#">FACESTI</a></li>
+                                <li><a href="index.php?p=facesti">FACESTI</a></li>
                                 <li><a href="#">ARESTI</a></li>
                                 <li><a href="#">PRASME</a></li>
-                                <li><a href="contact">Contactez-nous</a></li>
+                                <li><a href="index.php?p=contact">Contactez-nous</a></li>
                             </ul>
                         </div>
                     </div>
@@ -74,19 +73,19 @@
                             <div class="info-card">
                                 <div class="box-icon">
                                     <i class="fal fa-phone"></i>
-                                    <div class="bg-shape1" data-mask-src="../assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
-                                    <div class="bg-shape2" data-mask-src="../assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
+                                    <div class="bg-shape1" data-mask-src="assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
+                                    <div class="bg-shape2" data-mask-src="assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
                                 </div>
                                 <div class="box-content">
                                     <p class="box-text">Téléphone:</p>
-                                    <h4 class="box-title"><a href="tel:16336547896">+241 77 05 66 49</a></h4>
+                                    <h4 class="box-title"><a href="tel:+24177056649">+241 77 05 66 49</a></h4>
                                 </div>
                             </div>
                             <div class="info-card">
                                 <div class="box-icon">
                                     <i class="fal fa-envelope-open"></i>
-                                    <div class="bg-shape1" data-mask-src="../assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
-                                    <div class="bg-shape2" data-mask-src="../assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
+                                    <div class="bg-shape1" data-mask-src="assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
+                                    <div class="bg-shape2" data-mask-src="assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
                                 </div>
                                 <div class="box-content">
                                     <p class="box-text">Email:</p>
@@ -117,3 +116,22 @@
         </div>
     </div>
 </footer>
+
+<div class="scroll-top">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+    </svg>
+</div>
+
+<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
