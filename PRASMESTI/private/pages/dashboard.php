@@ -1,36 +1,7 @@
 <!doctype html>
 <html lang="fr">
 
-<head>
-    <meta charset="utf-8" />
-    <title>Tableau de bord | PRASMESTI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="PRASMESTI Dashboard" name="description" />
-    <meta content="IT CORP" name="author" />
-
-    <link rel="shortcut icon" href="assets/images/favicon.png">
-
-    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
-
-    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
-    <style>
-        .btn-primary {
-            color: #fff;
-            background-color: #003e73;
-            border-color: transparent;
-        }
-        .navbar-brand-box {
-            background-color: #fff;
-        }
-        /* CORRECTION CRUCIALE POUR L'ESPACEMENT DU CONTENU */
-        .page-content {
-            padding-top: 80px !important; /* Ajustez cette valeur si nécessaire */
-        }
-    </style>
-</head>
+<?php include 'includes/head.php'; ?>
 
 <body>
 
@@ -163,17 +134,13 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/libs/metismenujs/metismenujs.min.js"></script>
 <script src="assets/libs/simplebar/simplebar.min.js"></script>
 <script src="assets/libs/eva-icons/eva.min.js"></script>
-
 <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-
 <script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
 <script src="assets/libs/jsvectormap/maps/world-merc.js"></script>
-
 <script src="assets/js/pages/dashboard.init.js"></script>
 <script src="assets/js/app.js"></script>
 
