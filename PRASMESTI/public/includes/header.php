@@ -33,8 +33,8 @@ function is_active($prefix, $current) {
                         </div>
                         <div class="info-card">
                             <div class="box-content">
-                                <p class="box-text">Email:</p>
-                                <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
+                                <p class="box-text">Ancien Site:</p>
+                                <h4 class="box-title"><a href="../../Ancien_Site/presentation.php">Présentation</a></h4>
                             </div>
                         </div>
                         <div class="info-card">
