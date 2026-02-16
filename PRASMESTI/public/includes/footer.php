@@ -109,7 +109,7 @@
             <div class="row justify-content-center gy-3 align-items-center">
                 <div class="col-lg-12">
                     <p class="copyright-text text-center">
-                        <i class="fal fa-copyright"></i> Copyright @ PRASMESTI 2024 Développé par <a href="https://www.it-corp.co/" target="_blank">IT CORP</a>. Tous droits réservés.
+                        <i class="fal fa-copyright"></i> Copyright @ PRASMESTI 2026. Tous droits réservés.
                     </p>
                 </div>
             </div>
