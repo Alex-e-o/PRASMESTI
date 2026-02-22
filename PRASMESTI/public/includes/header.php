@@ -63,7 +63,7 @@ function is_active($prefix, $current) {
                             </li>
 
                             <li class="menu-item-has-children <?= is_active('presentation', $current_page) ?>">
-                                <a href="#">Présentation</a>
+                                <a href="index.php?p=presentation">Présentation</a>
                                 <ul class="sub-menu">
                                     <li><a href="index.php?p=presentation/presentation">Qu'est-ce que le PRASMESTI ?</a></li>
                                     <li><a href="index.php?p=presentation/attentes">Les attentes</a></li>
