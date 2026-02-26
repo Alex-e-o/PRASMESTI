@@ -1,4 +1,41 @@
 <style>
+    /* --- RENDRE LA BANNIÈRE PLEIN ÉCRAN --- */
+    #hero,
+    #hero .swiper,
+    #hero .swiper-wrapper,
+    #hero .swiper-slide,
+    #hero .hero-inner {
+        height: 100vh !important; /* Force la hauteur à 100% de l'écran */
+    }
+
+    /* Optionnel : si l'image de fond ne se centre pas bien, ajoutez ceci */
+    #hero .hero-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* --- RENDRE LE TEXTE FIXE SUR LE SLIDER --- */
+    #hero {
+        position: relative;
+    }
+
+    .hero-static-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10; /* Place le texte au-dessus des images qui défilent */
+        width: 100%;
+        pointer-events: none; /* Empêche le conteneur de bloquer la souris... */
+    }
+
+    .hero-static-overlay .btn-wrap {
+        pointer-events: auto; /* ...mais on réactive la souris pour pouvoir cliquer sur les boutons ! */
+    }
+
     .th-btn.style3 {
         background: #f44336;
         color: var(--white-color);
@@ -12,7 +49,6 @@
         padding-bottom: 0;
     }
 
-    /* --- CORRECTIF DU GROS ESPACE VIDE --- */
     /* Force le conteneur du slider à ne pas s'étirer */
     #brandSlider1 .swiper-wrapper {
         height: auto !important;
@@ -49,49 +85,94 @@
 </style>
 
 <div class="th-hero-wrapper hero-1" id="hero">
-    <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="hero-inner" data-bg-src="assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-12">
-                                <div class="hero-style1 text-center">
-                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Éducation et Formation : Les piliers de l’intégration régionale.</span>
-                                    <h1 class="hero-title text-white">
-                                        <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Accélérons l’intégration régionale par l'éducation et la formation.
-                                        </span>
-                                    </h1>
-                                    <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                        <a href="index.php?p=presentation/presentation" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                        <a href="index.php?p=contact" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
-                                    </div>
-                                </div>
-                            </div>
+
+    <div class="hero-static-overlay">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12">
+                    <div class="hero-style1 text-center">
+                        <h1 class="hero-title text-white">
+                            <span class="title1">
+                                Éducation et Formation : Les piliers de l’intégration régionale.
+                            </span>
+                        </h1>
+                        <div class="btn-wrap justify-content-center">
+                            <a href="index.php?p=presentation/presentation" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
+                            <a href="index.php?p=contact" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="hero-inner" data-bg-src="assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
+                    <div class="container" style="visibility: hidden;">
+                        <div class="hero-style1 text-center">
+                            <h1 class="hero-title"><span class="title1">Éducation et Formation : Les piliers de l’intégration régionale.</span></h1>
+                            <div class="btn-wrap"><a class="th-btn">Bouton</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="swiper-slide">
                 <div class="hero-inner" data-bg-src="assets/img/banner/Image_2.jpg" data-overlay="black4" data-opacity="5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-12">
-                                <div class="hero-style1 text-center">
-                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Sciences et Technologies : Innover pour un futur durable.</span>
-                                    <h1 class="hero-title text-white">
-                                        <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Unissons nos talents pour bâtir l'avenir de l'Afrique centrale.
-                                        </span>
-                                    </h1>
-                                    <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                        <a href="index.php?p=actualites" class="th-btn style4">Nos actualités <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                        <a href="index.php?p=presentation/objectifs" class="th-btn style3 d-lg-block d-none">Découvrir nos objectifs</a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="container" style="visibility: hidden;">
+                        <div class="hero-style1 text-center">
+                            <h1 class="hero-title"><span class="title1">Éducation et Formation : Les piliers de l’intégration régionale.</span></h1>
+                            <div class="btn-wrap"><a class="th-btn">Bouton</a></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="overflow-hidden space" id="about-sec">
+    <div class="shape-mockup about-bg-shape1-1 jump-reverse" data-top="10%" data-right="5%">
+        <img src="assets/img/shape/heart-shape1.png" alt="shape">
+    </div>
+    <div class="container">
+        <div class="row gy-4 align-items-center">
+            <div class="col-xl-7">
+                <div class="img-box1">
+                    <div class="img1" data-mask-src="assets/img/normal/about_1_1-mask.png">
+                        <img src="assets/img/normal/about_1_1.jpg" alt="About">
+                    </div>
+                    <div class="about-shape1-1 jump">
+                        <img src="assets/img/shape/about_shape1_1.png" alt="img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5">
+                <div class="about-wrap1">
+                    <div class="title-area mb-30">
+                        <span class="sub-title">Mot du champion régional éducation formation</span>
+                        <h2 class="sec-title">Message du Champion Régional Éducation Formation</h2>
+                        <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique
+                            Centrale) est engagée dans la promotion du bien-être de la population à travers diverses
+                            initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir
+                            des projets de développement durable. Nous croyons que l'union fait la force et
+                            ensemble, nous pouvons créer un avenir meilleur pour les populations de notre région.
+                        </p>
+                    </div>
+                    <div class="checklist style2 list-two-column">
+                        <ul>
+                            <li>Solidarité pour l'éducation</li>
+                            <li data-theme-color="var(--theme-color2)">Aide humanitaire pour l'eau</li>
+                            <li data-theme-color="#FF5528">Aide médicale d'urgence</li>
+                            <li data-theme-color="#122F2A">Projets de développement durable</li>
+                        </ul>
+                    </div>
+                    <div class="btn-wrap mt-40">
+                        <a href="index.php?p=presentation/presentation" class="th-btn">En savoir plus<i class="fas fa-arrow-up-right ms-2"></i></a>
                     </div>
                 </div>
             </div>

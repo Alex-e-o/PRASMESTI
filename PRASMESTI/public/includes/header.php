@@ -12,11 +12,23 @@ function is_active($prefix, $current) {
     <div class="menu-top">
         <div class="container">
             <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
+
                 <div class="col-auto d-none d-lg-block">
-                    <div class="header-logo">
-                        <a href="index.php?p=accueil"><img src="assets/img/Logo.png" alt="logo-ceeac"></a>
+                    <div class="header-logo" style="display: flex; align-items: center; gap: 5px;">
+                        <a href="index.php?p=accueil" style="line-height: 0; margin: 0; padding: 0;">
+                            <img src="assets/img/Logo.png" alt="logo-ceeac" style="max-height: 70px; margin: 0 !important; padding: 0 !important;">
+                        </a>
+
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <span style="font-weight: 800; color: #000; font-size: 24px; line-height: 1.1; letter-spacing: 1px; margin-bottom: 2px;">PRASMESTI</span>
+
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span class="sub-title" style="color: #000 !important; margin-bottom: 0; font-size: 15px; line-height: 1.2;">Orienter pour informer</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-auto d-none d-md-block">
                     <div class="info-card-wrap">
                         <div class="info-card">
@@ -40,22 +52,38 @@ function is_active($prefix, $current) {
                         <div class="info-card">
                             <div class="box-content">
                                 <p class="box-text">Accès experts :</p>
-                                <h4 class="box-title"><a href="../private/">Connexion</a></h4>                            </div>
+                                <h4 class="box-title"><a href="../private/">Connexion</a></h4>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="sticky-wrapper">
         <div class="container">
             <div class="menu-area">
                 <div class="menu-area-wrap">
+
                     <div class="col-auto d-inline-block d-lg-none">
-                        <div class="header-logo">
-                            <a href="index.php?p=accueil"><img src="assets/img/Logo.png" alt="Logo.png"></a>
+                        <div class="header-logo" style="display: flex; align-items: center; gap: 5px;">
+                            <a href="index.php?p=accueil" style="line-height: 0; margin: 0; padding: 0;">
+                                <img src="assets/img/Logo.png" alt="Logo.png" style="max-height: 50px; margin: 0 !important; padding: 0 !important;">
+                            </a>
+
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <span style="font-weight: 800; color: #000; font-size: 18px; line-height: 1.1; letter-spacing: 0.5px; margin-bottom: 2px;">PRASMESTI</span>
+
+                                <div class="d-none d-sm-flex" style="align-items: center; gap: 5px;">
+                                    <span style="display: inline-block; width: 20px; height: 2px; background-color: #f44336;"></span>
+                                    <span class="sub-title" style="color: #000 !important; margin-bottom: 0; font-size: 12px; line-height: 1.2;">Orienter pour informer</span>
+                                    <span style="display: inline-block; width: 20px; height: 2px; background-color: #f44336;"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                     <nav class="main-menu d-none d-lg-block">
                         <ul>
                             <li class="<?= $current_page == 'accueil' ? 'active' : '' ?>">
