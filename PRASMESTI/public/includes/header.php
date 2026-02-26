@@ -95,9 +95,8 @@ function is_active($prefix, $current) {
                                 <ul class="sub-menu">
                                     <li><a href="index.php?p=presentation/presentation">Qu'est-ce que le PRASMESTI ?</a></li>
                                     <li><a href="index.php?p=presentation/attentes">Les attentes</a></li>
-                                    <li><a href="index.php?p=presentation/objectifs">En résumé, les objectifs</a></li>
+                                    <li><a href="index.php?p=presentation/objectifs">Les objectifs</a></li>
                                     <li><a href="index.php?p=responsables/responsables">Les responsables du projet</a></li>
-                                    <li><a href="index.php?p=presentation/motdupresident">Mot du Président et des Commissaires</a></li>
                                 </ul>
                             </li>
 
