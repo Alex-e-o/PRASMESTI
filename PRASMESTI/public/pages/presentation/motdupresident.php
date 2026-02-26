@@ -27,50 +27,7 @@
     </div>
 </div>
 
-<div class="overflow-hidden space" id="about-sec">
-    <div class="shape-mockup about-bg-shape1-1 jump-reverse" data-top="10%" data-right="5%">
-        <img src="assets/img/shape/heart-shape1.png" alt="shape">
-    </div>
-    <div class="container">
-        <div class="row gy-4 align-items-center">
-            <div class="col-xl-7">
-                <div class="img-box1">
-                    <div class="img1" data-mask-src="assets/img/normal/about_1_1-mask.png">
-                        <img src="assets/img/normal/about_1_1.jpg" alt="About">
-                    </div>
-                    <div class="about-shape1-1 jump">
-                        <img src="assets/img/shape/about_shape1_1.png" alt="img">
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-5">
-                <div class="about-wrap1">
-                    <div class="title-area mb-30">
-                        <span class="sub-title">Mot du champion régional éducation formation</span>
-                        <h2 class="sec-title">Message du Champion Régional Éducation Formation</h2>
-                        <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique
-                            Centrale) est engagée dans la promotion du bien-être de la population à travers diverses
-                            initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir
-                            des projets de développement durable. Nous croyons que l'union fait la force et
-                            ensemble, nous pouvons créer un avenir meilleur pour les populations de notre région.
-                        </p>
-                    </div>
-                    <div class="checklist style2 list-two-column">
-                        <ul>
-                            <li>Solidarité pour l'éducation</li>
-                            <li data-theme-color="var(--theme-color2)">Aide humanitaire pour l'eau</li>
-                            <li data-theme-color="#FF5528">Aide médicale d'urgence</li>
-                            <li data-theme-color="#122F2A">Projets de développement durable</li>
-                        </ul>
-                    </div>
-                    <div class="btn-wrap mt-40">
-                        <a href="index.php?p=presentation/presentation" class="th-btn">En savoir plus<i class="fas fa-arrow-up-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="space-bottom overflow-hidden brand-area-1">
     <div class="container">
