@@ -41,46 +41,9 @@
         color: var(--white-color);
         box-shadow: inset 0 0 0 0 var(--theme-color);
     }
-    .brand-box img {
-        -webkit-filter: none;
-    }
     .header-logo {
         padding-top: 0;
         padding-bottom: 0;
-    }
-
-    /* Force le conteneur du slider à ne pas s'étirer */
-    #brandSlider1 .swiper-wrapper {
-        height: auto !important;
-        align-items: center !important; /* Centre verticalement */
-    }
-    #brandSlider1 .swiper-slide {
-        height: auto !important; /* Empêche la slide de faire 1000px de haut */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    /* Réduit la marge interne de la section */
-    .brand-area-1 {
-        padding-top: 40px !important;
-        padding-bottom: 20px !important; /* Un petit espace pour respirer, mais pas 100px */
-    }
-
-    .brand-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-    }
-    .brand-box img {
-        display: block;
-    }
-    .country-name {
-        color: #1a1a1a;
-        font-weight: 600;
-        font-size: 14px;
-        text-transform: uppercase;
     }
 </style>
 
@@ -154,8 +117,8 @@
             <div class="col-xl-5">
                 <div class="about-wrap1">
                     <div class="title-area mb-30">
-                        <span class="sub-title">Mot du champion régional éducation formation</span>
-                        <h2 class="sec-title">Message du Champion Régional Éducation Formation</h2>
+                        <span class="sub-title">Mot du président champion</span>
+                        <h2 class="sec-title">Mot du président champion</h2>
                         <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique
                             Centrale) est engagée dans la promotion du bien-être de la population à travers diverses
                             initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir
@@ -271,75 +234,3 @@
         </div>
     </div>
 </section>
-
-<div class="space-bottom overflow-hidden brand-area-1">
-    <div class="container">
-        <div class="brand-wrap1 p-0 m-0 text-center">
-            <h3 class="brand-wrap-title">Nos participants et Pays membres</h3>
-            <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"5", "spaceBetween": "90"}}}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/gabon" class="brand-box">
-                            <img src="assets/img/brand/Gabon.png" alt="Gabon">
-                            <span class="country-name">Gabon</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/angola" class="brand-box">
-                            <img src="assets/img/brand/Angola.png" alt="Angola">
-                            <span class="country-name">Angola</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/burundi" class="brand-box">
-                            <img src="assets/img/brand/Burundi.png" alt="Burundi">
-                            <span class="country-name">Burundi</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/cameroun" class="brand-box">
-                            <img src="assets/img/brand/Cameroun.png" alt="Cameroun">
-                            <span class="country-name">Cameroun</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/centrafrique" class="brand-box">
-                            <img src="assets/img/brand/Centrafrique.png" alt="Centrafrique">
-                            <span class="country-name">Centrafrique</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/congo" class="brand-box">
-                            <img src="assets/img/brand/Congo.png" alt="Congo">
-                            <span class="country-name">Congo</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/guinee_equatoriale" class="brand-box">
-                            <img src="assets/img/brand/Guinée-Équatoriale.png" alt="Guinée-Équatoriale">
-                            <span class="country-name">Guinée-Équatoriale</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/rdc" class="brand-box">
-                            <img src="assets/img/brand/RDC.png" alt="RDC">
-                            <span class="country-name">RDC</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/rwanda" class="brand-box">
-                            <img src="assets/img/brand/Rwanda.png" alt="Rwanda">
-                            <span class="country-name">Rwanda</span>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="index.php?p=etat_mise_oeuvre/sao_tome" class="brand-box">
-                            <img src="assets/img/brand/Sao_Tomé.png" alt="Sao Tomé">
-                            <span class="country-name">Sao Tomé et Principe</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

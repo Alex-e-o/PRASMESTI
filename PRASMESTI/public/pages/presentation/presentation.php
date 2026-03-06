@@ -69,7 +69,7 @@
                             <li>rendre disponibles les normes et standards de qualité de l’éducation, de la formation, des sciences, de la technologie et de l’innovation au sein de notre Communauté Économique Régionale ;</li>
                             <li>donner du sens aux innovations en le rendant accessibles et orienter de manière stratégique les efforts et les missions de tous et de chacun en matière d’éducation, de formation, de sciences, de technologie et d’innovation ;</li>
                             <li>valoriser la culture d’éducation-formation, sciences, technologie et innovation en Afrique centrale par le renforcement, selon les orientations de l’Agenda 2063, de notre sentiment d’appartenance à une seule et même entité riche de sa pluralité culturelle et éducative ;</li>
-                            <li>valoriser et développer les potentiels et talents de nos systèmes éducatifs ;</li>
+                            <li>valoriser et développer les potentiels et talents de nos systèmes d'éducation, de formation, des sciences, de la technologie et de l'innovation ;</li>
                             <li>permettre à chaque État membre de partager ses réussites, ou tout simplement ses challenges en matière d’éducation et de formation : formation initiale, développement de la petite enfance, formatien en alternance, formation continue, formation tout au long de la vie, innovation, sciences, technologie, innovation, etc.</li>
                         </ul>
                     </div>
@@ -145,7 +145,7 @@
                         </ul>
                         L’enjeu pour la Communauté est d’adresser une communication ciblée en proposant un contenu pertinent à l’utilisateur. Par exemple, mettre en avant toute sa palette et offres complémentaires permet d’informer les acteurs de l’éducation, des sciences, du développement technologique et de l’innovation et de déclencher de nouveaux services sectoriels :
                         <ul class="listeElement16L2">
-                            <li>Pour un État membre, il s’agit de présenter éditeur de logiciel</li>
+                            <li>Pour un État membre, il s’agit de présenter les progrès effectués dans la mise en oeuvre des textes régionaux, continentaux, et internationaux</li>
                             <li>Pour un éditeur de logiciel, il s’agirait de mettre en avant ses offres d’audit, de formation ainsi que les nouveaux modules produits...</li>
                             <li>Pour un bureau d’études, il s’agit de mettre en avant tous leurs panels de prestations : de l’étude à la formation en passant par la maitrise d’œuvre.</li>
                         </ul>
