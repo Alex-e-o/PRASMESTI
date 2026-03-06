@@ -1,4 +1,116 @@
+<style>
+    /* --- STYLES DES DRAPEAUX DANS LE FOOTER --- */
+    .brand-area-footer {
+        padding-top: 40px !important;
+        padding-bottom: 20px !important;
+        background-color: #ffffff !important; /* Force le fond blanc */
+        border-top: 1px solid #f0f0f0; /* Optionnel : petite ligne pour séparer du contenu du haut */
+    }
+    .brand-area-footer .brand-wrap-title {
+        color: #1a1a1a; /* S'assure que le titre reste foncé sur le fond blanc */
+    }
+    #brandSlider1 .swiper-wrapper {
+        height: auto !important;
+        align-items: center !important;
+    }
+    #brandSlider1 .swiper-slide {
+        height: auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .brand-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .brand-box img {
+        display: block;
+        -webkit-filter: none;
+    }
+    .country-name {
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+</style>
+
 <footer class="footer-wrapper footer-default">
+
+    <div class="overflow-hidden brand-area-footer">
+        <div class="container">
+            <div class="brand-wrap1 p-0 m-0 text-center">
+                <h3 class="brand-wrap-title mb-4">Nos participants et Pays membres</h3>
+                <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"5", "spaceBetween": "90"}}}'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/gabon" class="brand-box">
+                                <img src="assets/img/brand/Gabon.png" alt="Gabon">
+                                <span class="country-name">Gabon</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/angola" class="brand-box">
+                                <img src="assets/img/brand/Angola.png" alt="Angola">
+                                <span class="country-name">Angola</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/burundi" class="brand-box">
+                                <img src="assets/img/brand/Burundi.png" alt="Burundi">
+                                <span class="country-name">Burundi</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/cameroun" class="brand-box">
+                                <img src="assets/img/brand/Cameroun.png" alt="Cameroun">
+                                <span class="country-name">Cameroun</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/centrafrique" class="brand-box">
+                                <img src="assets/img/brand/Centrafrique.png" alt="Centrafrique">
+                                <span class="country-name">Centrafrique</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/congo" class="brand-box">
+                                <img src="assets/img/brand/Congo.png" alt="Congo">
+                                <span class="country-name">Congo</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/guinee_equatoriale" class="brand-box">
+                                <img src="assets/img/brand/Guinée-Équatoriale.png" alt="Guinée-Équatoriale">
+                                <span class="country-name">Guinée-Équatoriale</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/rdc" class="brand-box">
+                                <img src="assets/img/brand/RDC.png" alt="RDC">
+                                <span class="country-name">RDC</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/rwanda" class="brand-box">
+                                <img src="assets/img/brand/Rwanda.png" alt="Rwanda">
+                                <span class="country-name">Rwanda</span>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.php?p=etat_mise_oeuvre/sao_tome" class="brand-box">
+                                <img src="assets/img/brand/Sao_Tomé.png" alt="Sao Tomé">
+                                <span class="country-name">Sao Tomé et Principe</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="footer-top">
         <div class="container">
             <div class="subscribe-box">

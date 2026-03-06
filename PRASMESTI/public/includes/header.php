@@ -23,7 +23,7 @@ function is_active($prefix, $current) {
                             <span style="font-weight: 800; color: #000; font-size: 24px; line-height: 1.1; letter-spacing: 1px; margin-bottom: 2px;">PRASMESTI</span>
 
                             <div style="display: flex; align-items: center; gap: 8px;">
-                                <span class="sub-title" style="color: #000 !important; margin-bottom: 0; font-size: 15px; line-height: 1.2;">Orienter pour informer</span>
+                                <span class="sub-title" style="color: #000 !important; margin-bottom: 0; font-size: 15px; line-height: 1.2;">Informer pour orienter</span>
                             </div>
                         </div>
                     </div>
