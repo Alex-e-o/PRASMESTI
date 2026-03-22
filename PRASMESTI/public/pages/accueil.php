@@ -49,19 +49,50 @@
 
 <div class="th-hero-wrapper hero-1" id="hero">
 
-    <div class="hero-static-overlay">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-12">
-                    <div class="hero-style1 text-center">
-                        <h1 class="hero-title text-white">
-                            <span class="title1">
-                                Éducation et Formation : Les piliers de l’intégration régionale.
-                            </span>
-                        </h1>
-                        <div class="btn-wrap justify-content-center">
-                            <a href="index.php?p=presentation/presentation" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
-                            <a href="index.php?p=contact" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
+    <div class="th-hero-wrapper hero-1" id="hero">
+        <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-12">
+                                    <div class="hero-style1 text-center">
+                                        <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Éducation et Formation : Les piliers de l’intégration régionale.</span>
+                                        <h1 class="hero-title text-white">
+                                            <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
+                                                Accélérons l’intégration régionale par l'éducation et la formation.
+                                            </span>
+                                        </h1>
+                                        <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
+                                            <a href="#" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                            <a href="/contact" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_2.jpg" data-overlay="black4" data-opacity="5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-12">
+                                    <div class="hero-style1 text-center">
+                                        <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Sciences et Technologies : Innover pour un futur durable.</span>
+                                        <h1 class="hero-title text-white">
+                                            <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
+                                                Unissons nos talents pour bâtir l'avenir de l'Afrique centrale.
+                                            </span>
+                                        </h1>
+                                        <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
+                                            <a href="news" class="th-btn style4">Nos actualités <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                            <a href="contact" class="th-btn style3 d-lg-block d-none">Découvrir nos objectifs</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
