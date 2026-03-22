@@ -31,30 +31,28 @@ function is_active($prefix, $current) {
 
                 <div class="col-auto d-none d-md-block">
                     <div class="info-card-wrap">
+
                         <div class="info-card">
                             <div class="box-content">
                                 <p class="box-text">Adresse:</p>
                                 <h4 class="box-title"><a href="https://maps.app.goo.gl/eRuYww4DayfLzmzC7">Bd Triomphal, Libreville, Gabon</a></h4>
                             </div>
                         </div>
+
                         <div class="info-card">
                             <div class="box-content">
-                                <p class="box-text">Téléphone:</p>
-                                <h4 class="box-title"><a href="tel:+24177056649">+241 77 05 66 49</a></h4>
+                                <p class="box-text">David Blaise OSSENE :</p>
+                                <h4 class="box-title" style="max-width: 280px; white-space: normal; line-height: 1.4; font-size: 13px; font-weight: 600;">Directeur Education, Culture et Développement Technologique, Commission de la CEEAC</h4>
                             </div>
                         </div>
-                        <div class="info-card">
-                            <div class="box-content">
-                                <p class="box-text">Email:</p>
-                                <h4 class="box-title"><a href="mailto:prasmesti@ceeac-eccas.org">prasmesti@ceeac-eccas.org</a></h4>
-                            </div>
-                        </div>
+
                         <div class="info-card">
                             <div class="box-content">
                                 <p class="box-text">Accès experts :</p>
                                 <h4 class="box-title"><a href="../private/">Connexion</a></h4>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
