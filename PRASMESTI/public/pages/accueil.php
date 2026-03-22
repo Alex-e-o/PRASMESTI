@@ -50,6 +50,28 @@
     #hero .sub-title {
         font-size: 50px; /* Ajustez cette valeur (ex: 20px, 28px, 1.5rem) selon vos besoins */
     }
+
+    /* --- ENCADREMENT : LA CEEAC EN BREF --- */
+    .ceeac-bref-box {
+        background-color: #ffffff;
+        border: 1px solid #e5e5e5;
+        border-top: 4px solid #f44336; /* Liseré aux couleurs de votre thème */
+        border-radius: 10px;
+        padding: 50px;
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.06); /* Belle ombre douce */
+        margin-top: 20px;
+    }
+
+    .ceeac-bref-box .sec-title {
+        text-transform: none;
+    }
+
+    /* Ajustement de l'encadrement pour les téléphones */
+    @media (max-width: 768px) {
+        .ceeac-bref-box {
+            padding: 30px 20px;
+        }
+    }
 </style>
 
 <div class="th-hero-wrapper hero-1" id="hero">
@@ -188,6 +210,30 @@
         </div>
     </div>
 </div>
+
+<section class="space" id="ceeac-bref-sec">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="ceeac-bref-box">
+                    <div class="title-area text-center mb-40">
+                        <span class="sub-title">À propos</span>
+                        <h2 class="sec-title">La CEEAC en bref</h2>
+                    </div>
+                    <div class="ceeac-content">
+                        <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8;">
+                            ---------------------------------------------------------------------------
+                        </p>
+
+                        <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8; margin-top: 15px;">
+                            ------------------------------------------------------------------------------
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="testi-area-1 space" id="testi-sec">
     <div class="container">
