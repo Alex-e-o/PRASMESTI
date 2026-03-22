@@ -152,16 +152,26 @@
             </div>
             <div class="col-xl-5">
                 <div class="about-wrap1">
-                    <div class="title-area mb-30">
-                        <span class="sub-title">Mot du président champion</span>
-                        <h2 class="sec-title">Mot du président champion</h2>
-                        <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique
-                            Centrale) est engagée dans la promotion du bien-être de la population à travers diverses
-                            initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir
-                            des projets de développement durable. Nous croyons que l'union fait la force et
-                            ensemble, nous pouvons créer un avenir meilleur pour les populations de notre région.
-                        </p>
+                    <div class="about-wrap1">
+                        <div class="title-area mb-30">
+                            <span class="sub-title">Mot du président champion régional - Chef d'état de la RDC</span>
+                            <h2 class="sec-title" style="text-transform: none;">Mot du président champion régional - Chef d'état de la RDC</h2>
+
+                            <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique
+                                Centrale) est engagée dans la promotion du bien-être de la population à travers diverses
+                                initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir
+                                des projets de développement durable. Nous croyons que l'union fait la force et
+                                ensemble, nous pouvons créer un avenir meilleur pour les populations de notre région.
+                            </p>
+
+                            <p class="signature-president" style="margin-top: 20px; color: var(--title-color, #1a1a1a);">
+                                <strong>Félix Antoine TSHISEKEDI TSHILOMBO</strong><br>
+                                <span style="font-style: italic; font-size: 0.95em;">Président champion régional éducation, santé et culture</span>
+                            </p>
+
+                        </div>
                     </div>
+                </div>
                     <div class="checklist style2 list-two-column">
                         <ul>
                             <li>Solidarité pour l'éducation</li>
