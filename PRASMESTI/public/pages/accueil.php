@@ -45,6 +45,11 @@
         padding-top: 0;
         padding-bottom: 0;
     }
+
+    /* --- AGRANDIR LE TEXTE ORANGE DU CAROUSEL --- */
+    #hero .sub-title {
+        font-size: 50px; /* Ajustez cette valeur (ex: 20px, 28px, 1.5rem) selon vos besoins */
+    }
 </style>
 
 <div class="th-hero-wrapper hero-1" id="hero">
