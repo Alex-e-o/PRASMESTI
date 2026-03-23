@@ -38,7 +38,7 @@
     }
 </style>
 
-<footer class="footer-wrapper footer-default">
+<footer id="footer-section" class="footer-wrapper footer-default">
 
     <div class="overflow-hidden brand-area-footer">
         <div class="container">
