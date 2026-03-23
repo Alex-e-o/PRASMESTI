@@ -92,8 +92,8 @@
                                             </span>
                                         </h1>
                                         <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                            <a href="#" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                            <a href="/contact" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
+                                            <a href="presentation" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                            <a href="#footer-section" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
                                         </div>
                                     </div>
                                 </div>
