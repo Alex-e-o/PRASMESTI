@@ -40,15 +40,14 @@ function is_active($prefix, $current) {
                         </div>
 
                         <div class="info-card" style="display: flex; align-items: center;">
+                            <div class="box-content" style="text-align: center;">
+                                <p class="box-text">David Blaise OSSENE</p>
+                                <h4 class="box-title" style="max-width: 280px; white-space: normal; line-height: 1.4; font-size: 13px; font-weight: 600; margin: 0 auto;">Directeur Education, Culture et Développement Technologique, Commission de la CEEAC</h4>
+                            </div>
                             <img class="rounded-circle header-profile-user"
                                  src="../private/assets/images/users/Blaise_OSSENE.jpg"
                                  alt="David Blaise OSSENE"
-                                 style="width: 50px; height: 50px; object-fit: cover; margin-right: 15px; border: 2px solid #e5e5e5;">
-
-                            <div class="box-content">
-                                <p class="box-text">David Blaise OSSENE :</p>
-                                <h4 class="box-title" style="max-width: 280px; white-space: normal; line-height: 1.4; font-size: 13px; font-weight: 600;">Directeur Education, Culture et Développement Technologique, Commission de la CEEAC</h4>
-                            </div>
+                                 style="width: 65px; height: 65px; object-fit: cover;margin-left: 30px; margin-right: 5px; border: 2px solid #e5e5e5;">
                         </div>
 
                         <div class="info-card">
