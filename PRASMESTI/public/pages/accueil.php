@@ -41,6 +41,7 @@
         color: var(--white-color);
         box-shadow: inset 0 0 0 0 var(--theme-color);
     }
+
     .header-logo {
         padding-top: 0;
         padding-bottom: 0;
@@ -48,7 +49,7 @@
 
     /* --- AGRANDIR LE TEXTE ORANGE DU CAROUSEL --- */
     #hero .sub-title {
-        font-size: 50px; /* Ajustez cette valeur (ex: 20px, 28px, 1.5rem) selon vos besoins */
+        font-size: 50px; /* Ajustez cette valeur selon vos besoins */
     }
 
     /* --- ENCADREMENT : LA CEEAC EN BREF --- */
@@ -72,70 +73,36 @@
             padding: 30px 20px;
         }
     }
+
+    /* --- CORRECTION SUPERPOSITION TÉMOIGNAGES --- */
+    .testi-box-img {
+        background-color: #ffffff; /* Cache visuellement les images empilées en dessous */
+        position: relative;
+        z-index: 2;
+    }
 </style>
 
 <div class="th-hero-wrapper hero-1" id="hero">
-
-    <div class="th-hero-wrapper hero-1" id="hero">
-        <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-xl-12">
-                                    <div class="hero-style1 text-center">
-                                        <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Éducation et Formation : Les piliers de l’intégration régionale.</span>
-                                        <h1 class="hero-title text-white">
-                                            <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                                Accélérons l’intégration régionale par l'éducation et la formation.
-                                            </span>
-                                        </h1>
-                                        <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                            <a href="presentation" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                            <a href="#footer-section" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-inner" data-bg-src="assets/img/banner/Image_2.jpg" data-overlay="black4" data-opacity="5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-xl-12">
-                                    <div class="hero-style1 text-center">
-                                        <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Sciences et Technologies : Innover pour un futur durable.</span>
-                                        <h1 class="hero-title text-white">
-                                            <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                                Unissons nos talents pour bâtir l'avenir de l'Afrique centrale.
-                                            </span>
-                                        </h1>
-                                        <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                            <a href="news" class="th-btn style4">Nos actualités <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                            <a href="contact" class="th-btn style3 d-lg-block d-none">Découvrir nos objectifs</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
         <div class="swiper-wrapper">
-
             <div class="swiper-slide">
                 <div class="hero-inner" data-bg-src="assets/img/banner/Image_1.jpg" data-overlay="black4" data-opacity="5">
-                    <div class="container" style="visibility: hidden;">
-                        <div class="hero-style1 text-center">
-                            <h1 class="hero-title"><span class="title1">Éducation et Formation : Les piliers de l’intégration régionale.</span></h1>
-                            <div class="btn-wrap"><a class="th-btn">Bouton</a></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-12">
+                                <div class="hero-style1 text-center">
+                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Éducation et Formation : Les piliers de l’intégration régionale.</span>
+                                    <h1 class="hero-title text-white">
+                                        <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
+                                            Accélérons l’intégration régionale par l'éducation et la formation.
+                                        </span>
+                                    </h1>
+                                    <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
+                                        <a href="presentation" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                        <a href="#footer-section" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -143,15 +110,26 @@
 
             <div class="swiper-slide">
                 <div class="hero-inner" data-bg-src="assets/img/banner/Image_2.jpg" data-overlay="black4" data-opacity="5">
-                    <div class="container" style="visibility: hidden;">
-                        <div class="hero-style1 text-center">
-                            <h1 class="hero-title"><span class="title1">Éducation et Formation : Les piliers de l’intégration régionale.</span></h1>
-                            <div class="btn-wrap"><a class="th-btn">Bouton</a></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-12">
+                                <div class="hero-style1 text-center">
+                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Sciences et Technologies : Innover pour un futur durable.</span>
+                                    <h1 class="hero-title text-white">
+                                        <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
+                                            Unissons nos talents pour bâtir l'avenir de l'Afrique centrale.
+                                        </span>
+                                    </h1>
+                                    <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
+                                        <a href="news" class="th-btn style4">Nos actualités <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                        <a href="contact" class="th-btn style3 d-lg-block d-none">Découvrir nos objectifs</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -174,26 +152,17 @@
             </div>
             <div class="col-xl-5">
                 <div class="about-wrap1">
-                    <div class="about-wrap1">
-                        <div class="title-area mb-30">
-                            <span class="sub-title">Mot du président champion régional - Chef d'état de la RDC</span>
-                            <h2 class="sec-title" style="text-transform: none;">Mot du président champion régional - Chef d'état de la RDC</h2>
+                    <div class="title-area mb-30">
+                        <span class="sub-title">Mot du président champion régional - Chef d'état de la RDC</span>
+                        <h2 class="sec-title" style="text-transform: none;">Mot du président champion régional - Chef d'état de la RDC</h2>
 
-                            <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique
-                                Centrale) est engagée dans la promotion du bien-être de la population à travers diverses
-                                initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir
-                                des projets de développement durable. Nous croyons que l'union fait la force et
-                                ensemble, nous pouvons créer un avenir meilleur pour les populations de notre région.
-                            </p>
+                        <p class="professional-text">La CEEAC (Communauté Économique des États de l'Afrique Centrale) est engagée dans la promotion du bien-être de la population à travers diverses initiatives. Notre mission consiste à promouvoir l'intégration régionale et à soutenir des projets de développement durable. Nous croyons que l'union fait la force et ensemble, nous pouvons créer un avenir meilleur pour les populations de notre région.</p>
 
-                            <p class="signature-president" style="margin-top: 20px; color: var(--title-color, #1a1a1a);">
-                                <strong>Félix Antoine TSHISEKEDI TSHILOMBO</strong><br>
-                                <span style="font-style: italic; font-size: 0.95em;">Président champion régional éducation, santé et culture</span>
-                            </p>
-
-                        </div>
+                        <p class="signature-president" style="margin-top: 20px; color: var(--title-color, #1a1a1a);">
+                            <strong>Félix Antoine TSHISEKEDI TSHILOMBO</strong><br>
+                            <span style="font-style: italic; font-size: 0.95em;">Président champion régional éducation, santé et culture</span>
+                        </p>
                     </div>
-                </div>
                     <div class="checklist style2 list-two-column">
                         <ul>
                             <li>Solidarité pour l'éducation</li>
@@ -217,16 +186,15 @@
             <div class="col-lg-10">
                 <div class="ceeac-bref-box">
                     <div class="title-area text-center mb-40">
-                        <span class="sub-title">À propos</span>
-                        <h2 class="sec-title">La CEEAC en bref</h2>
+                        <span class="sub-title">À propos de</span>
+                        <h2 class="sec-title">La CEEAC</h2>
                     </div>
                     <div class="ceeac-content">
                         <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8;">
-                            ---------------------------------------------------------------------------
+                            Au cœur du continent, l’Afrique centrale s’affirme comme un espace stratégique mondial, riche en ressources naturelles, énergétiques et agricoles, et jouant un rôle clé dans le climat, la biodiversité, la sécurité alimentaire et les échanges internationaux. Toutefois, cette position s’accompagne de fortes pressions, notamment le changement climatique, la dépendance économique, les mutations technologiques et les tensions géopolitiques. Face à ces défis, la région doit capitaliser sur ses atouts et renforcer son intégration.
                         </p>
-
                         <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8; margin-top: 15px;">
-                            ------------------------------------------------------------------------------
+                            Dans cette dynamique, la Communauté Économique des États de l’Afrique Centrale (CEEAC) — composée de l’Angola, du Burundi, du Cameroun, de la République centrafricaine, de la République du Congo, de la République démocratique du Congo, du Gabon, de la Guinée équatoriale, du Rwanda, de Sao Tomé-et-Principe et du Tchad — s’affirme comme le moteur d’une transformation durable, inclusive et résiliente, capable de structurer un développement régional fondé sur la coopération, l’innovation et la valorisation de ses ressources.
                         </p>
                     </div>
                 </div>
@@ -241,71 +209,84 @@
             <div class="col-lg-6">
                 <div class="title-area text-center">
                     <span class="sub-title">Témoignages</span>
-                    <h2 class="sec-title">Ce que disent les commissaires de notre engagement</h2>
+                    <h2 class="sec-title" style="text-transform: none;">Ce que disent les Commissaires de notre engagement</h2>
                 </div>
             </div>
         </div>
         <div class="row gx-0 justify-content-end">
             <div class="col-lg-5">
-                <div class="swiper th-slider testi-thumb-slider1" data-slider-options='{"effect":"fade","loop":false}'>
+                <div class="swiper th-slider testi-thumb-slider1" data-slider-options='{"loop":false}'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="testi-box-img">
-                                <img class="testi-img" src="assets/img/testimonial/testi_1_1.jpg" alt="img">
+                                <img class="testi-img" src="assets/img/nelly(1).jpg" alt="img">
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testi-box-img">
-                                <img class="testi-img" src="assets/img/testimonial/testi_1_2.jpg" alt="img">
+                                <img class="testi-img" src="assets/img/testimonial/Yves-Marcel-Mapangou-Moussadji-.jpg" alt="img">
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testi-box-img">
-                                <img class="testi-img" src="assets/img/testimonial/testi_2_1.jpg" alt="img">
+                                <img class="testi-img" src="assets/img/testimonial/KMC_0019-scaled-e1712526081427.webp" alt="img">
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testi-box-img">
-                                <img class="testi-img" src="assets/img/testimonial/testi_2_2.jpg" alt="img">
+                                <img class="testi-img" src="assets/img/testimonial/aaamax1(1).jpg" alt="img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testi-box-img">
+                                <img class="testi-img" src="assets/img/G-2tvbdXAAAJ-_e(1).jpg" alt="img">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-7">
                 <div class="testi-slider1">
-                    <div class="swiper th-slider testimonial-slider1" id="testiSlide1"
-                         data-slider-options='{"loop":false,"paginationType":"progressbar","effect":"fade", "autoHeight": "true", "thumbs":{"swiper":".testi-thumb-slider1"}}'>
+                    <div class="swiper th-slider testimonial-slider1" id="testiSlide1" data-slider-options='{"loop":false,"paginationType":"progressbar","effect":"fade", "autoHeight": true, "thumbs":{"swiper":".testi-thumb-slider1"}}'>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text">“La CEEAC PRASMESTI s'engage à promouvoir l'éducation et la santé dans la région. Nous appelons toutes les parties prenantes à soutenir ces initiatives pour un avenir meilleur.”</p>
-                                    <h3 class="box-title">Commissaire à la Santé</h3>
-                                    <p class="box-desig">CEEAC PRASMESTI</p>
+                                    <p class="box-text">“Le PRASMESTI, vitrine des systèmes éducatifs afrocentraux et baromètre des sciences, de la technologie et de l’innovation en Afrique centrale, s’impose comme une réponse concrète à l’urgence éducative de notre région. Il valorise les savoirs, stimule la recherche, encourage l’innovation et place le développement du capital humain au cœur de notre transformation. En occupant une place centrale dans la construction, la transmission et le partage des connaissances, il renforce les capacités de nos communautés et favorise l’émergence d’une intelligence collective régionale. Le PRASMESTI met en lumière les progrès accomplis tout en révélant les défis à relever, invitant chaque acteur à s’engager pour bâtir un avenir inclusif, durable et pleinement intégré.”</p>
+                                    <h3 class="box-title">SE Mme Nelly BANAKEN ELEL</h3>
+                                    <p class="box-desig">Commissaire du département en charge de la Promotion du genre, Développement humain et social</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text">“L'accès à l'eau potable et à l'assainissement est fondamental. Notre engagement est de travailler avec les partenaires pour garantir des solutions durables.”</p>
-                                    <h3 class="box-title">Commissaire aux Ressources en Eau</h3>
-                                    <p class="box-desig">CEEAC PRASMESTI</p>
+                                    <p class="box-text">“Le Portail Régional d’Aide au Suivi en matière d’Éducation, Sciences, Technologie et Innovation (PRASMESTI) constitue un outil stratégique au service de la paix et de la sécurité en Afrique centrale. En renforçant la disponibilité et l’analyse des données fiables, il permet d’éclairer les décisions publiques, d’anticiper les vulnérabilités et de promouvoir des politiques éducatives inclusives et résilientes. En effet, une gouvernance fondée sur des données probantes dans les secteurs de l’éducation et de l’innovation contribue directement à la prévention des conflits, à la consolidation de la paix et à la stabilité durable de notre région. Le PRASMESTI s’inscrit ainsi pleinement dans la vision de la CEEAC de bâtir un espace régional pacifique, sécurisé et prospère”</p>
+                                    <h3 class="box-title">SEM Général Yves Marcel MAPANGOU MOUSSADJI</h3>
+                                    <p class="box-desig">Commissaire du département en charge des Affaires politiques, Paix et Sécurité</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text">“Face aux défis humanitaires, nous devons unir nos forces pour apporter des solutions concrètes aux populations déplacées et vulnérables.”</p>
-                                    <h3 class="box-title">Commissaire aux Affaires Humanitaires</h3>
-                                    <p class="box-desig">CEEAC PRASMESTI</p>
+                                    <p class="box-text">“Le PRASMESTI constitue un outil stratégique pour renforcer la planification et le développement des infrastructures en Afrique centrale. En mettant à disposition des données fiables et harmonisées sur l’éducation, la science et l’innovation, il permet d’orienter plus efficacement les investissements et l’aménagement du territoire en fonction des besoins réels des populations. En favorisant une meilleure articulation entre développement des infrastructures et capital humain, le PRASMESTI contribue à une croissance équilibrée, à la connectivité régionale et à une intégration territoriale durable.”</p>
+                                    <h3 class="box-title">SEM Maurice NIATY-MOUAMBA</h3>
+                                    <p class="box-desig">Commissaire du département en charge de l’Aménagement du territoire et aux Infrastructures</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text">“Le développement économique régional repose sur des échanges renforcés et des investissements stratégiques. Nous devons œuvrer ensemble pour y parvenir.”</p>
-                                    <h3 class="box-title">Commissaire au Commerce et Développement</h3>
-                                    <p class="box-desig">CEEAC PRASMESTI</p>
+                                    <p class="box-text">“Avec le PRASMESTI, nous faisons plus que gérer nos ressources: nous les transformons en opportunités. Ce programme renforce le savoir-faire de nos communautés, stimule l’innovation et ouvre la voie à un avenir prospère, durable et plein de possibilités pour tous.”</p>
+                                    <h3 class="box-title">SEM Maxime NZITA NGANGA DI MAVAMBU</h3>
+                                    <p class="box-desig">Commissaire du département en charge de l’Environnement, Ressources naturelles, Agriculture et Développement rural</p>
+                                    <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testi-card">
+                                    <p class="box-text">“En mettant en lumière l’évolution de l’éducation, des sciences, de la technologie et de l’innovation au sein de notre Communauté, le PRASMESTI s’impose comme un levier structurant pour consolider notre marché commun et renforcer notre intégration monétaire et financière. Il permet d’identifier les besoins en formation d’un capital humain qualifié, capable de soutenir la compétitivité de nos économies. Car un marché commun performant repose sur des compétences solides, des systèmes d’innovation dynamiques et une circulation efficace du savoir. Ainsi, le PRASMESTI rend compte des conditions d’une croissance inclusive, stimule les échanges économiques et contribue à la stabilité financière de notre espace régional. Il incarne pleinement le lien essentiel entre le savoir, la création de valeur et une intégration économique durable.”</p>
+                                    <h3 class="box-title">SEM Olouimo Diai TAVIRA DA SILVA</h3>
+                                    <p class="box-desig">Commissaire du département en charge du Marché Commun, Affaires monétaires et financières</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
@@ -314,12 +295,8 @@
                         <div class="slider-pagination2"></div>
                     </div>
                     <div class="icon-box">
-                        <button data-slider-prev="#testiSlide1"
-                                class="slider-arrow default style-border slider-prev"><i
-                                    class="far fa-arrow-left"></i></button>
-                        <button data-slider-next="#testiSlide1"
-                                class="slider-arrow default style-border slider-next"><i
-                                    class="far fa-arrow-right"></i></button>
+                        <button data-slider-prev="#testiSlide1" class="slider-arrow default style-border slider-prev"><i class="far fa-arrow-left"></i></button>
+                        <button data-slider-next="#testiSlide1" class="slider-arrow default style-border slider-next"><i class="far fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>

@@ -101,11 +101,11 @@ function is_active($prefix, $current) {
                             <li class="menu-item-has-children">
                                 <a href="#">Textes Normatifs</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Textes normatifs continentaux et internationaux</a></li>
-                                    <li><a href="#">Politique sectorielle en Afrique Centrale</a></li>
-                                    <li><a href="#">Stratégie sectorielle en Afrique Centrale</a></li>
-                                    <li><a href="#">Projets sectoriels en Afrique Centrale</a></li>
-                                    <li><a href="#">Stratégies dans les documents cadres</a></li>
+                                    <li><a href="#" style="text-transform: none;">Textes normatifs continentaux et internationaux</a></li>
+                                    <li><a href="#" style="text-transform: none;">Politique sectorielle en Afrique Centrale</a></li>
+                                    <li><a href="#" style="text-transform: none;">Stratégie sectorielle en Afrique Centrale</a></li>
+                                    <li><a href="#" style="text-transform: none;">Projets sectoriels en Afrique Centrale</a></li>
+                                    <li><a href="#" style="text-transform: none;">Stratégies dans les documents cadres</a></li>
                                 </ul>
                             </li>
 
