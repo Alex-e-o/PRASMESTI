@@ -38,16 +38,37 @@
     .listeElement12L1 li, .listeElement16L1 li, .listeElement16L2 li, .listeElement17 li {
         margin-bottom: 10px;
     }
+
+    /* --- FORCER LE TEXTE EN NOIR --- */
+    .blog-content,
+    .blog-content p,
+    .blog-content li,
+    .blog-content h2,
+    .blog-content h3,
+    .blog-content h4,
+    .corps7,
+    .corps8 {
+        color: #000000 !important;
+    }
+
+    /* --- AGRANDIR LE TEXTE DE LECTURE --- */
+    .blog-content p,
+    .blog-content li,
+    .corps7,
+    .corps8 {
+        font-size: 17px !important; /* Vous pouvez tester 16px, 17px ou 18px selon votre préférence */
+        line-height: 1.7 !important; /* Ajoute un peu d'espace entre les lignes pour que le grand texte reste aéré et lisible */
+    }
 </style>
 
 <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
     <div class="container">
         <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Le PRASMESTI, qu'est ce que c'est ?</h1>
+                <h1 class="breadcumb-title">Qu'est ce que le PRASMESTI ?</h1>
             <ul class="breadcumb-menu">
                 <li><a href="index.php?p=accueil">Accueil</a></li>
                 <li>Présentation</li>
-                <li>Le PRASMESTI, qu'est ce que c'est ?</li>
+                <li>Qu'est ce que le PRASMESTI ?</li>
             </ul>
         </div>
     </div>

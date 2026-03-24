@@ -80,6 +80,27 @@
         position: relative;
         z-index: 2;
     }
+
+    .checklist.style2.list-two-column ul {
+        display: grid;
+        /* On donne plus d'espace à gauche (ex: 1.5) et moins à droite (1.1) */
+        grid-template-columns: 1.5fr 1.1fr;
+        gap: 20px 22px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .checklist.style2.list-two-column ul li {
+        display: flex;
+        align-items: flex-start; /* Aligne l'icône avec le début de la première ligne de texte */
+        margin: 0; /* Annule les marges par défaut si nécessaire */
+    }
+    .about-wrap1 .btn-wrap.mt-40 {
+        display: flex;
+        justify-content: center; /* Centre le bouton horizontalement */
+        width: 100%; /* S'assure qu'il se centre par rapport à toute la largeur de la section */
+    }
 </style>
 
 <div class="th-hero-wrapper hero-1" id="hero">
@@ -165,10 +186,10 @@
                     </div>
                     <div class="checklist style2 list-two-column">
                         <ul>
-                            <li>Solidarité pour l'éducation</li>
-                            <li data-theme-color="var(--theme-color2)">Aide humanitaire pour l'eau</li>
-                            <li data-theme-color="#FF5528">Aide médicale d'urgence</li>
-                            <li data-theme-color="#122F2A">Projets de développement durable</li>
+                            <li>Solidarité pour <br> l'éducation</li>
+                            <li data-theme-color="var(--theme-color2)">Promotion de l'innovation</li>
+                            <li data-theme-color="#FF5528">Accélération du développement technologique</li>
+                            <li data-theme-color="#122F2A">Soutien à la recherche scientifique</li>
                         </ul>
                     </div>
                     <div class="btn-wrap mt-40">
@@ -215,7 +236,7 @@
         </div>
         <div class="row gx-0 justify-content-end">
             <div class="col-lg-5">
-                <div class="swiper th-slider testi-thumb-slider1" data-slider-options='{"loop":false}'>
+                <div class="swiper th-slider testi-thumb-slider1" data-slider-options='{"loop":true, "speed": 3500}'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="testi-box-img">
@@ -248,7 +269,7 @@
 
             <div class="col-lg-7">
                 <div class="testi-slider1">
-                    <div class="swiper th-slider testimonial-slider1" id="testiSlide1" data-slider-options='{"loop":false,"paginationType":"progressbar","effect":"fade", "autoHeight": true, "thumbs":{"swiper":".testi-thumb-slider1"}}'>
+                    <div class="swiper th-slider testimonial-slider1" id="testiSlide1" data-slider-options='{"loop":true,"paginationType":"progressbar","effect":"fade", "autoHeight": true, "speed": 1500, "autoplay": {"delay": 8000, "disableOnInteraction": false}, "thumbs":{"swiper":".testi-thumb-slider1"}}'>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="testi-card">
