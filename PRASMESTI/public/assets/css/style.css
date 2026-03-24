@@ -22896,15 +22896,16 @@ img:not([src*="logo" i]):not([src*="team" i]):not([src*="brand" i]),
 }
 
 */
-
-img[alt=image] { /* Permet de flouter les deux images */
+/*
+img[alt=image] {
   filter: blur(10px);
 }
 
-#blogSlider1 img[src*="blog_1_2.jpg"], #blogSlider1 img[src*="blog_1_3.jpg"] { /* Floute les deux images dans le carrousel */
+#blogSlider1 img[src*="blog_1_2.jpg"], #blogSlider1 img[src*="blog_1_3.jpg"] {
   filter: blur(10px);
 }
 
 .img1 img[src*="about_2_1.jpg"] {
   filter: blur(10px);
 }
+*/

@@ -46,16 +46,12 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-12">
                                 <div class="hero-style1 text-center">
-                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Éducation et Formation : Les piliers de l’intégration régionale.</span>
+                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Informer pour innover et transformer</span>
                                     <h1 class="hero-title text-white">
                                         <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Accélérons l’intégration régionale par l'éducation et la formation.
+                                            Portail Régional d’Aide au Suivi en Matière d’Éducation, Sciences, Technologie et Innovation
                                         </span>
                                     </h1>
-                                    <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                        <a href="index.php?p=presentation/presentation" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                        <a href="index.php?p=contact" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -68,16 +64,12 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-12">
                                 <div class="hero-style1 text-center">
-                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Sciences et Technologies : Innover pour un futur durable.</span>
+                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Piloter pour améliorer</span>
                                     <h1 class="hero-title text-white">
                                         <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Unissons nos talents pour bâtir l'avenir de l'Afrique centrale.
+                                            PRASMESTI est la plateforme numérique opérationnelle de l’OERESTI
                                         </span>
                                     </h1>
-                                    <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                        <a href="index.php?p=actualites" class="th-btn style4">Nos actualités <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                        <a href="index.php?p=presentation/objectifs" class="th-btn style3 d-lg-block d-none">Découvrir nos objectifs</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +105,7 @@
                         <h3 class="box-title"><a href="#">Centralisation des données</a></h3>
                         <p class="box-text">Rassembler toutes les informations pertinentes sur l'éducation, la formation, les sciences, la technologie et
                             l'innovation en un seul endroit, accessible à tous les acteurs de la région.</p>
-                        <a href="#" class="th-btn">Voir plus</i></a>
+                        <a href="pages/comingsoon.php" class="th-btn">Voir plus</i></a>
                     </div>
                 </div>
             </div>
@@ -123,7 +115,7 @@
                         <h3 class="box-title"><a href="#">Collaboration régionale</a></h3>
                         <p class="box-text">Encourager les échanges entre institutions, chercheurs, enseignants et décideurs pour créer des synergies dans les
                             projets éducatifs, scientifiques et technologiques grâce à la mise en valeur de la pluralité culturelle.</p>
-                        <a href="#" class="th-btn">Voir plus</i></a>
+                        <a href="pages/comingsoon.php" class="th-btn">Voir plus</i></a>
                     </div>
                 </div>
             </div>
@@ -133,7 +125,7 @@
                         <h3 class="box-title"><a href="#">Valorisation des talents et innovations</a></h3>
                         <p class="box-text">Mettre en lumière les réussites, les compétences des individus et des institutions pour stimuler l’innovation et
                             renforcer le sentiment d’appartenance régionale.</p>
-                        <a href="#" class="th-btn">Voir plus</i></a>
+                        <a href="pages/comingsoon.php" class="th-btn">Voir plus</i></a>
                     </div>
                 </div>
             </div>
@@ -195,7 +187,7 @@
                     <h3 class="box-title">Projets & Initiatives</h3>
                     <p class="box-text">Le PRASMESTI développe activement l’amélioration de l’éducation, des sciences et de l’innovation dans notre
                         région.</p>
-                    <a href="#" class="th-btn style5">Voir plus</i></a>
+                    <a href="pages/comingsoon.php" class="th-btn style5">Voir plus</i></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -206,7 +198,7 @@
                     <h3 class="box-title">État de mise en œuvre</h3>
                     <p class="box-text">Le PRASMESTI s’appuie sur une stratégie progressive pour garantir une adoption effective de ses objectifs par les États
                         membres de la CEEAC.</p>
-                    <a href="#" class="th-btn style5">Voir plus</i></a>
+                    <a href="pages/comingsoon.php" class="th-btn style5">Voir plus</i></a>
                 </div>
             </div>
         </div>
@@ -237,7 +229,7 @@
                                 <h3 class="box-title"><a href="#">Pour un État membre, il s’agit de présenter un éditeur de logiciel...</a></h3>
                                 <div class="donation-card_progress-wrap">
                                 </div>
-                                <a href="#" class="th-btn style6">Voir plus</a>
+                                <a href="pages/comingsoon.php" class="th-btn style6">Voir plus</a>
                             </div>
                         </div>
                     </div>
@@ -252,7 +244,7 @@
                                 <h3 class="box-title"><a href="#">Pour un éditeur de logiciel, il s’agirait de mettre en avant ses offres d’audit.</a></h3>
                                 <div class="donation-card_progress-wrap">
                                 </div>
-                                <a href="#" class="th-btn style6">Voir plus</a>
+                                <a href="pages/comingsoon.php" class="th-btn style6">Voir plus</a>
                             </div>
                         </div>
                     </div>
@@ -267,7 +259,7 @@
                                 <h3 class="box-title"><a href="#">Pour un bureau d’études, il s’agit de mettre en avant tous leurs panels de prestations</a></h3>
                                 <div class="donation-card_progress-wrap">
                                 </div>
-                                <a href="#" class="th-btn style6">Voir plus</a>
+                                <a href="pages/comingsoon.php" class="th-btn style6">Voir plus</a>
                             </div>
                         </div>
                     </div>
@@ -304,7 +296,7 @@
                                     <a href="#"><i class="fas fa-tags"></i>Éducation</a>
                                 </div>
                                 <h3 class="box-title"><a href="#">Lancement de la Plateforme Numérique du PRASMESTI</a></h3>
-                                <a href="#" class="th-btn">Lire plus </a>
+                                <a href="pages/comingsoon.php" class="th-btn">Lire plus </a>
 
                             </div>
                         </div>
@@ -326,7 +318,7 @@
                                     <a href="#"><i class="fas fa-tags"></i>Éducation</a>
                                 </div>
                                 <h3 class="box-title"><a href="#">Programme de Valorisation des Talents Lancé</a></h3>
-                                <a href="#" class="th-btn">Lire plus </a>
+                                <a href="pages/comingsoon.php" class="th-btn">Lire plus </a>
                             </div>
                         </div>
                     </div>
@@ -347,7 +339,7 @@
                                     <a href="#"><i class="fas fa-tags"></i>Éducation</a>
                                 </div>
                                 <h3 class="box-title"><a href="#">Forum Régional sur l’Intégration scientifique</a></h3>
-                                <a href="#" class="th-btn">Lire plus</a>
+                                <a href="pages/comingsoon.php" class="th-btn">Lire plus</a>
                             </div>
                         </div>
                     </div>
@@ -368,7 +360,7 @@
                                     <a href="#"><i class="fas fa-tags"></i>Economie</a>
                                 </div>
                                 <h3 class="box-title"><a href="#">Partenariat avec le secteur privé pour soutenir l’innovation</a></h3>
-                                <a href="#" class="th-btn">Lire plus</a>
+                                <a href="pages/comingsoon.php" class="th-btn">Lire plus</a>
                             </div>
                         </div>
                     </div>
