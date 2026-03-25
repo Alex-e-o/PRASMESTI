@@ -230,7 +230,7 @@
             <div class="col-lg-6">
                 <div class="title-area text-center">
                     <span class="sub-title">Témoignages</span>
-                    <h2 class="sec-title" style="text-transform: none;">Ce que disent les Commissaires de notre engagement</h2>
+                    <h2 class="sec-title" style="text-transform: none;">Ce qu'en disent les Commissaires</h2>
                 </div>
             </div>
         </div>
