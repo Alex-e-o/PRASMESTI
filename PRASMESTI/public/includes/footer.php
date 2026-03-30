@@ -43,7 +43,7 @@
     <div class="overflow-hidden brand-area-footer">
         <div class="container">
             <div class="brand-wrap1 p-0 m-0 text-center">
-                <h3 class="brand-wrap-title mb-4">Nos participants et Pays membres</h3>
+                <h3 class="brand-wrap-title mb-4">États membres de la CEEAC</h3>
                 <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"5", "spaceBetween": "90"}}}'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
