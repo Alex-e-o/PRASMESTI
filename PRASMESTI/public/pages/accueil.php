@@ -8,7 +8,6 @@
         height: 100vh !important; /* Force la hauteur à 100% de l'écran */
     }
 
-    /* Optionnel : si l'image de fond ne se centre pas bien, ajoutez ceci */
     #hero .hero-inner {
         display: flex;
         align-items: center;
@@ -27,13 +26,13 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 10; /* Place le texte au-dessus des images qui défilent */
+        z-index: 10;
         width: 100%;
-        pointer-events: none; /* Empêche le conteneur de bloquer la souris... */
+        pointer-events: none;
     }
 
     .hero-static-overlay .btn-wrap {
-        pointer-events: auto; /* ...mais on réactive la souris pour pouvoir cliquer sur les boutons ! */
+        pointer-events: auto;
     }
 
     .th-btn.style3 {
@@ -49,17 +48,17 @@
 
     /* --- AGRANDIR LE TEXTE ORANGE DU CAROUSEL --- */
     #hero .sub-title {
-        font-size: 50px; /* Ajustez cette valeur selon vos besoins */
+        font-size: 50px;
     }
 
     /* --- ENCADREMENT : LA CEEAC EN BREF --- */
     .ceeac-bref-box {
         background-color: #ffffff;
         border: 1px solid #e5e5e5;
-        border-top: 4px solid #f44336; /* Liseré aux couleurs de votre thème */
+        border-top: 4px solid #f44336;
         border-radius: 10px;
         padding: 50px;
-        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.06); /* Belle ombre douce */
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.06);
         margin-top: 20px;
     }
 
@@ -67,7 +66,6 @@
         text-transform: none;
     }
 
-    /* Ajustement de l'encadrement pour les téléphones */
     @media (max-width: 768px) {
         .ceeac-bref-box {
             padding: 30px 20px;
@@ -76,14 +74,13 @@
 
     /* --- CORRECTION SUPERPOSITION TÉMOIGNAGES --- */
     .testi-box-img {
-        background-color: #ffffff; /* Cache visuellement les images empilées en dessous */
+        background-color: #ffffff;
         position: relative;
         z-index: 2;
     }
 
     .checklist.style2.list-two-column ul {
         display: grid;
-        /* On donne plus d'espace à gauche (ex: 1.5) et moins à droite (1.1) */
         grid-template-columns: 1.5fr 1.1fr;
         gap: 20px 22px;
         padding: 0;
@@ -93,20 +90,21 @@
 
     .checklist.style2.list-two-column ul li {
         display: flex;
-        align-items: flex-start; /* Aligne l'icône avec le début de la première ligne de texte */
-        margin: 0; /* Annule les marges par défaut si nécessaire */
-    }
-    .about-wrap1 .btn-wrap.mt-40 {
-        display: flex;
-        justify-content: center; /* Centre le bouton horizontalement */
-        width: 100%; /* S'assure qu'il se centre par rapport à toute la largeur de la section */
+        align-items: flex-start;
+        margin: 0;
     }
 
-    /* --- AJUSTEMENTS MOT DU PRÉSIDENT (Ligne orange et centrage) --- */
+    .about-wrap1 .btn-wrap.mt-40 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* --- AJUSTEMENTS MOT DU PRÉSIDENT --- */
     .president-title-area {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centre tout le contenu de la zone */
+        align-items: center;
     }
 
     .president-title-area .sub-title {
@@ -118,17 +116,83 @@
         margin-bottom: 25px;
     }
 
-    /* Force la ligne orange du thème à se centrer et s'allonger */
     .president-title-area .sub-title::before,
     .president-title-area .sub-title::after {
         position: relative !important;
         left: auto !important;
         right: auto !important;
         transform: none !important;
-        margin: 0 auto 15px auto !important; /* Marge en bas pour espacer du texte */
-        width: 100% !important; /* La ligne s'étire sur la largeur disponible */
-        max-width: 450px !important; /* Limite la largeur maximale pour l'esthétique */
+        margin: 0 auto 15px auto !important;
+        width: 100% !important;
+        max-width: 450px !important;
         display: block !important;
+    }
+
+    /* --- SECTION MOT DU DIRECTEUR (VERSION AJUSTÉE) --- */
+    .director-sec {
+        background-color: #fbfbfb;
+        padding-top: 80px;
+        padding-bottom: 220px;
+    }
+
+    .director-card-wrapper,
+    .director-text-box {
+        background-color: #ffffff;
+        border: 4px solid #f44336;
+        border-radius: 20px;
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    /* BLOC IMAGE */
+    .director-card-wrapper {
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        transform: translateY(95px);   /* descend l'image */
+        margin-right: -40px;           /* pousse l'image un peu vers le texte */
+    }
+
+    .director-card-wrapper img {
+        width: 128%;                   /* agrandit encore l’image */
+        max-width: none;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+    }
+
+    /* BLOC TEXTE */
+    .director-text-box {
+        padding: 50px;
+        position: relative;
+        z-index: 2;
+        margin-left: -210px;           /* le texte vient davantage sur l’image */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 991px) {
+        .director-text-box {
+            margin-left: 0;
+            margin-top: -50px;
+            padding: 40px 30px;
+        }
+
+        .director-card-wrapper {
+            transform: translateY(0);
+            margin-right: 0;
+        }
+
+        .director-card-wrapper img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .director-sec {
+            padding-bottom: 100px;
+        }
     }
 </style>
 
@@ -214,7 +278,7 @@
                             d’intégration. Là où les frontières se rencontrent et où les peuples se répondent, une évidence
                             s’élève, claire et lumineuse : le savoir constitue le socle de toute intégration véritable.
                             Ainsi se dessine un espace vivant, où les idées dialoguent, où les expériences se fécondent, où les
-                            savoirs circulent et se transforment. De cet espace naît un souffle, discret mais puissant, porteur
+                            savoirs circulent et se transformes. De cet espace naît un souffle, discret mais puissant, porteur
                             d’avenir et de promesses.
                             En Afrique centrale, ce souffle prend désormais corps. Il a un nom : PRASMESTI !</p>
 
@@ -360,6 +424,43 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="director-sec" id="director-sec">
+    <div class="container">
+        <div class="row align-items-center gy-4">
+
+            <div class="col-lg-6">
+                <div class="director-card-wrapper">
+                    <img src="assets/img/david_en_pleine_nature.jpg" alt="Photo du Directeur de Programme">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="director-text-box">
+                    <div class="title-area mb-30 text-center">
+                        <span class="sub-title" style="color: #f44336;">Mot du Directeur de Programme</span>
+                        <h2 class="sec-title" style="font-size: 32px; text-transform: none;">Bâtir l'avenir par l'action collective</h2>
+                    </div>
+
+                    <div class="director-content">
+                        <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8;">
+                            Le programme PRASMESTI incarne notre détermination commune à faire de l'éducation, des sciences et des technologies les véritables leviers de l'intégration régionale en Afrique centrale. Nous avons conçu ce projet avec la ferme conviction qu'investir dans le capital humain est le moyen le plus sûr de garantir un avenir prospère, inclusif et pacifique pour nos populations.
+                        </p>
+                        <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8; margin-top: 15px;">
+                            Notre mission au quotidien est de traduire la vision de nos chefs d'État en actions concrètes. En bâtissant des ponts durables entre nos institutions éducatives, nos centres de recherche et les acteurs de l'innovation, nous dotons notre région des outils nécessaires pour relever les défis de demain.
+                        </p>
+                    </div>
+
+                    <div class="director-signature mt-40 text-center">
+                        <h4 style="margin-bottom: 5px; color: var(--title-color, #1a1a1a);">David Blaise Ossene</h4>
+                        <span style="font-style: italic; font-size: 0.95em; color: #555;">Directeur du programme PRASMESTI</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
