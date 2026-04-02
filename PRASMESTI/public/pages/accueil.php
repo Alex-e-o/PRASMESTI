@@ -327,6 +327,44 @@
     </div>
 </section>
 
+<section class="director-sec" id="director-sec">
+    <div class="container">
+        <div class="row align-items-center gy-4">
+
+            <div class="col-lg-6">
+                <div class="director-card-wrapper">
+                    <img src="assets/img/david_en_pleine_nature.jpg" alt="Photo du Directeur de Programme">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="director-text-box">
+                    <div class="title-area mb-30 text-center">
+                        <span class="sub-title" style="color: #f44336;">Le regard du Directeur</span>
+                        <h2 class="sec-title" style="font-size: 32px; text-transform: none;">Bâtir l'avenir par l'action collective</h2>
+                    </div>
+
+                    <div class="director-content">
+                        <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8;">
+                            Le Portail Régional d’Aide au Suivi en matière d’Éducation, Sciences, Technologie et Innovation (PRASMESTI) a vocation à devenir un outil privilégié de communication sectorielle. Chaque État membre est ainsi appelé à s’en approprier l’usage, en fonction de ses priorités, de ses objectifs et de ses réalisations.
+                            Son ambition est double : informer et former, à travers une dynamique d’interaction entre les États membres, la Commission, les organes de la Communauté, ainsi que les partenaires nationaux,
+                            régionaux et internationaux. Il s’agit, à terme, de mettre à disposition une information fiable et structurée, au service d’un développement holistique fondé sur l’éducation, la formation, les sciences, la technologie et l’innovation dans l’espace communautaire.
+                            Véritable fenêtre ouverte sur les dynamiques en cours, cette plateforme permet à la fois de partager les perspectives d’avenir et de mieux appréhender les évolutions internes et externes à la région. Elle témoigne, sans équivoque, d’une réalité en construction : l’Afrique centrale du savoir est en marche !
+                            À la fois repère et boussole, le PRASMESTI accompagne l’action collective, en rappelant les objectifs, qu’ils soient permanents ou conjoncturels, et en orientant les efforts vers une transformation durable.
+                        </p>
+                    </div>
+
+                    <div class="director-signature mt-40 text-center">
+                        <h4 style="margin-bottom: 5px; color: var(--title-color, #1a1a1a);">David Blaise Ossene</h4>
+                        <span style="font-style: italic; font-size: 0.95em; color: #555;">Directeur du programme PRASMESTI</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 <section class="testi-area-1 space" id="testi-sec">
     <div class="container">
         <div class="row justify-content-center">
@@ -424,43 +462,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="director-sec" id="director-sec">
-    <div class="container">
-        <div class="row align-items-center gy-4">
-
-            <div class="col-lg-6">
-                <div class="director-card-wrapper">
-                    <img src="assets/img/david_en_pleine_nature.jpg" alt="Photo du Directeur de Programme">
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="director-text-box">
-                    <div class="title-area mb-30 text-center">
-                        <span class="sub-title" style="color: #f44336;">Mot du Directeur de Programme</span>
-                        <h2 class="sec-title" style="font-size: 32px; text-transform: none;">Bâtir l'avenir par l'action collective</h2>
-                    </div>
-
-                    <div class="director-content">
-                        <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8;">
-                            Le programme PRASMESTI incarne notre détermination commune à faire de l'éducation, des sciences et des technologies les véritables leviers de l'intégration régionale en Afrique centrale. Nous avons conçu ce projet avec la ferme conviction qu'investir dans le capital humain est le moyen le plus sûr de garantir un avenir prospère, inclusif et pacifique pour nos populations.
-                        </p>
-                        <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8; margin-top: 15px;">
-                            Notre mission au quotidien est de traduire la vision de nos chefs d'État en actions concrètes. En bâtissant des ponts durables entre nos institutions éducatives, nos centres de recherche et les acteurs de l'innovation, nous dotons notre région des outils nécessaires pour relever les défis de demain.
-                        </p>
-                    </div>
-
-                    <div class="director-signature mt-40 text-center">
-                        <h4 style="margin-bottom: 5px; color: var(--title-color, #1a1a1a);">David Blaise Ossene</h4>
-                        <span style="font-style: italic; font-size: 0.95em; color: #555;">Directeur du programme PRASMESTI</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
