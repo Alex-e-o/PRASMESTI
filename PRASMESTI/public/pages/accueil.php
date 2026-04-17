@@ -128,11 +128,16 @@
         display: block !important;
     }
 
-    /* --- SECTION MOT DU DIRECTEUR (VERSION AJUSTÉE) --- */
+    /* --- SECTION MOT DU DIRECTEUR (ADAPTÉE) --- */
     .director-sec {
         background-color: #fbfbfb;
         padding-top: 80px;
         padding-bottom: 220px;
+    }
+
+    /* Même hauteur pour les 2 colonnes */
+    #director-sec .row {
+        align-items: stretch !important;
     }
 
     .director-card-wrapper,
@@ -141,6 +146,7 @@
         border: 4px solid #f44336;
         border-radius: 20px;
         box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
+        height: 100%;
     }
 
     /* BLOC IMAGE */
@@ -149,14 +155,14 @@
         position: relative;
         z-index: 1;
         display: flex;
-        transform: translateY(95px);   /* descend l'image */
-        margin-right: -40px;           /* pousse l'image un peu vers le texte */
+        transform: translateY(95px);   /* overlap conservé */
+        margin-right: -40px;           /* overlap conservé */
     }
 
     .director-card-wrapper img {
-        width: 128%;                   /* agrandit encore l’image */
-        max-width: none;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         display: block;
         border-radius: 10px;
     }
@@ -166,33 +172,72 @@
         padding: 50px;
         position: relative;
         z-index: 2;
-        margin-left: -210px;           /* le texte vient davantage sur l’image */
+        margin-left: -210px;           /* overlap conservé */
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
+    /* --- MASQUER LES CHIFFRES, GARDER LA BARRE --- */
+    .slider-pagination,
+    .slider-pagination2 {
+        font-size: 0 !important;
+        color: transparent !important;
+    }
+
+    .slider-pagination > *,
+    .slider-pagination2 > * {
+        font-size: 0 !important;
+        color: transparent !important;
+        text-shadow: none !important;
+    }
+
+    .slider-pagination .swiper-pagination-progressbar,
+    .slider-pagination2 .swiper-pagination-progressbar,
+    .slider-pagination .slider-progressbar,
+    .slider-pagination2 .slider-progressbar {
+        font-size: initial !important;
+        color: initial !important;
+    }
+
+    .slider-pagination .swiper-pagination-progressbar-fill,
+    .slider-pagination2 .swiper-pagination-progressbar-fill {
+        font-size: initial !important;
+        color: initial !important;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 991px) {
+        #director-sec .row {
+            align-items: center !important;
+        }
+
         .director-text-box {
             margin-left: 0;
             margin-top: -50px;
             padding: 40px 30px;
+            height: auto;
         }
 
         .director-card-wrapper {
             transform: translateY(0);
             margin-right: 0;
+            height: auto;
         }
 
         .director-card-wrapper img {
             width: 100%;
             max-width: 100%;
+            height: auto;
         }
 
         .director-sec {
             padding-bottom: 100px;
         }
+    }
+
+    .director-card-wrapper img {
+        object-position: 20% center;
     }
 </style>
 
@@ -221,6 +266,7 @@
                     </div>
                 </div>
             </div>
+
 
             <div class="swiper-slide">
                 <div class="hero-inner" data-bg-src="assets/img/banner/Image_2.jpg" data-overlay="black4" data-opacity="5">
@@ -270,17 +316,17 @@
                         <span class="sub-title">Mot du président champion régional <br>Chef d'état de la RDC</span>
 
                         <p class="professional-text" style="text-align: justify; font-size: 1.15em; line-height: 1.8; color: black; margin-bottom: 0;">La Communauté Économique des États de l’Afrique Centrale poursuit sa marche, portée par
-                            une ambition à la fois simple et immense : élever durablement le bien-être des populations, en
+                            une ambition à la fois simple et immense : élever durablement le bien-être des populations, en
                             tissant entre ses peuples les liens solides d’une solidarité active, d’un développement partagé et
                             d’une espérance vivante.
-                            Au cœur de cette dynamique, une conviction profonde s’impose comme une boussole : sans
-                            savoir, il n’est point de développement ; sans partage du savoir, il n’est point
+                            Au cœur de cette dynamique, une conviction profonde s’impose comme une boussole : sans
+                            savoir, il n’est point de développement ; sans partage du savoir, il n’est point
                             d’intégration. Là où les frontières se rencontrent et où les peuples se répondent, une évidence
-                            s’élève, claire et lumineuse : le savoir constitue le socle de toute intégration véritable.
+                            s’élève, claire et lumineuse : le savoir constitue le socle de toute intégration véritable.
                             Ainsi se dessine un espace vivant, où les idées dialoguent, où les expériences se fécondent, où les
                             savoirs circulent et se transformes. De cet espace naît un souffle, discret mais puissant, porteur
                             d’avenir et de promesses.
-                            En Afrique centrale, ce souffle prend désormais corps. Il a un nom : PRASMESTI !</p>
+                            En Afrique centrale, ce souffle prend désormais corps. Il a un nom : <strong>PRASMESTI</strong> !</p>
 
                         <p class="signature-president" style="margin-top: 5px; margin-left: 30px; color: var(--title-color, #1a1a1a); text-align: left; width: 100%;">
                             <strong>Félix Antoine TSHISEKEDI TSHILOMBO</strong><br>
@@ -329,7 +375,7 @@
 
 <section class="director-sec" id="director-sec">
     <div class="container">
-        <div class="row align-items-center gy-4">
+        <div class="row gy-4">
 
             <div class="col-lg-6">
                 <div class="director-card-wrapper">
@@ -415,7 +461,7 @@
                             <div class="swiper-slide">
                                 <div class="testi-card">
                                     <p class="box-text" style="text-align: justify;">“Le PRASMESTI, vitrine des systèmes éducatifs afrocentraux et baromètre des sciences, de la technologie et de l’innovation en Afrique centrale, s’impose comme une réponse concrète à l’urgence éducative de notre région. Il valorise les savoirs, stimule la recherche, encourage l’innovation et place le développement du capital humain au cœur de notre transformation. En occupant une place centrale dans la construction, la transmission et le partage des connaissances, il renforce les capacités de nos communautés et favorise l’émergence d’une intelligence collective régionale. Le PRASMESTI met en lumière les progrès accomplis tout en révélant les défis à relever, invitant chaque acteur à s’engager pour bâtir un avenir inclusif, durable et pleinement intégré.”</p>
-                                    <h3 class="box-title">SE Mme Nelly BANAKEN ELEL</h3>
+                                    <h3 class="box-title">SE Mme Nelly <br><strong>BANAKEN ELEL</strong></h3>
                                     <p class="box-desig">Commissaire du département en charge de la Promotion du genre, Développement humain et social</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
@@ -423,7 +469,7 @@
                             <div class="swiper-slide">
                                 <div class="testi-card">
                                     <p class="box-text" style="text-align: justify;">“Le Portail Régional d’Aide au Suivi en matière d’Éducation, Sciences, Technologie et Innovation (PRASMESTI) constitue un outil stratégique au service de la paix et de la sécurité en Afrique centrale. En renforçant la disponibilité et l’analyse des données fiables, il permet d’éclairer les décisions publiques, d’anticiper les vulnérabilités et de promouvoir des politiques éducatives inclusives et résilientes. En effet, une gouvernance fondée sur des données probantes dans les secteurs de l’éducation et de l’innovation contribue directement à la prévention des conflits, à la consolidation de la paix et à la stabilité durable de notre région. Le PRASMESTI s’inscrit ainsi pleinement dans la vision de la CEEAC de bâtir un espace régional pacifique, sécurisé et prospère”</p>
-                                    <h3 class="box-title">SEM Général Yves Marcel MAPANGOU MOUSSADJI</h3>
+                                    <h3 class="box-title">SEM Général Yves Marcel <br><strong>MAPANGOU MOUSSADJI</strong></h3>
                                     <p class="box-desig">Commissaire du département en charge des Affaires politiques, Paix et Sécurité</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
@@ -431,7 +477,7 @@
                             <div class="swiper-slide">
                                 <div class="testi-card">
                                     <p class="box-text" style="text-align: justify;">“En mettant en lumière l’évolution de l’éducation, des sciences, de la technologie et de l’innovation au sein de notre Communauté, le PRASMESTI s’impose comme un levier structurant pour consolider notre marché commun et renforcer notre intégration monétaire et financière. Il permet d’identifier les besoins en formation d’un capital humain qualifié, capable de soutenir la compétitivité de nos économies. Car un marché commun performant repose sur des compétences solides, des systèmes d’innovation dynamiques et une circulation efficace du savoir. Ainsi, le PRASMESTI rend compte des conditions d’une croissance inclusive, stimule les échanges économiques et contribue à la stabilité financière de notre espace régional. Il incarne pleinement le lien essentiel entre le savoir, la création de valeur et une intégration économique durable.”</p>
-                                    <h3 class="box-title">SEM Olouimo Diai TAVIRA DA SILVA</h3>
+                                    <h3 class="box-title">SEM Olouimo Diai <br><strong>TAVIRA DA SILVA</strong></h3>
                                     <p class="box-desig">Commissaire du département en charge du Marché Commun, Affaires monétaires et financières</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
@@ -439,7 +485,7 @@
                             <div class="swiper-slide">
                                 <div class="testi-card">
                                     <p class="box-text" style="text-align: justify;">“Le PRASMESTI constitue un outil stratégique pour renforcer la planification et le développement des infrastructures en Afrique centrale. En mettant à disposition des données fiables et harmonisées sur l’éducation, la science et l’innovation, il permet d’orienter plus efficacement les investissements et l’aménagement du territoire en fonction des besoins réels des populations. En favorisant une meilleure articulation entre développement des infrastructures et capital humain, le PRASMESTI contribue à une croissance équilibrée, à la connectivité régionale et à une intégration territoriale durable.”</p>
-                                    <h3 class="box-title">SEM Maurice NIATY-MOUAMBA</h3>
+                                    <h3 class="box-title">SEM Maurice <br><strong>NIATY-MOUAMBA</strong></h3>
                                     <p class="box-desig">Commissaire du département en charge de l’Aménagement du territoire et aux Infrastructures</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
@@ -447,7 +493,7 @@
                             <div class="swiper-slide">
                                 <div class="testi-card">
                                     <p class="box-text" style="text-align: justify;">“Avec le PRASMESTI, nous faisons plus que gérer nos ressources: nous les transformons en opportunités. Ce programme renforce le savoir-faire de nos communautés, stimule l’innovation et ouvre la voie à un avenir prospère, durable et plein de possibilités pour tous.”</p>
-                                    <h3 class="box-title">SEM Maxime NZITA NGANGA DI MAVAMBU</h3>
+                                    <h3 class="box-title">SEM Maxime <br><strong>NZITA NGANGA DI MAVAMBU</strong></h3>
                                     <p class="box-desig">Commissaire du département en charge de l’Environnement, Ressources naturelles, Agriculture et Développement rural</p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
