@@ -6,6 +6,33 @@
         box-shadow: inset 0 0 0 0 var(--theme-color);
     }
 
+    /* AJOUT UNIQUEMENT TYPOGRAPHIE */
+    .presentation-page p,
+    .presentation-page li {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #111111;
+        text-align: justify;
+    }
+
+    .presentation-page .lead-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #000000;
+    }
+
+    .presentation-page .section-title {
+        font-size: 30px;
+        font-weight: 800;
+        color: #0d6efd;
+    }
+
+    .presentation-page .sub-block-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #111111;
+    }
+
     /* Conteneur global */
     .presentation-page .container {
         max-width: 1200px;
