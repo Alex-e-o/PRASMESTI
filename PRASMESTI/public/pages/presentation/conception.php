@@ -1,7 +1,7 @@
 <style>
     /* --- STYLE DE L'EN-TÊTE DE PAGE --- */
     .conception-header {
-        background-color: #002d5b; /* Bleu foncé du thème */
+        background-color: #002d5b;
         padding: 80px 20px 60px;
         text-align: center;
         color: #ffffff;
@@ -9,17 +9,18 @@
     }
 
     .conception-header .sub-title {
-        color: #f44336; /* Orange/Rouge du thème */
+        color: #f44336;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 2px;
         display: block;
         margin-bottom: 15px;
+        font-size: 14px;
     }
 
     .conception-header h1 {
         color: #ffffff;
-        font-size: 2.5rem;
+        font-size: 2.7rem; /* légèrement agrandi */
         margin-bottom: 20px;
         font-weight: 700;
     }
@@ -31,8 +32,8 @@
         margin: 0 auto;
         padding: 20px 30px;
         border-radius: 5px;
-        font-size: 1.15rem;
-        line-height: 1.6;
+        font-size: 18px; /* agrandi */
+        line-height: 1.7;
     }
 
     /* --- STYLE DES CARTES (ÉTAPES) --- */
@@ -63,7 +64,7 @@
     .step-number {
         font-size: 5rem;
         font-weight: 900;
-        color: rgba(244, 67, 54, 0.05); /* Numéro géant en filigrane rouge */
+        color: rgba(244, 67, 54, 0.05);
         position: absolute;
         top: -10px;
         right: 15px;
@@ -74,10 +75,10 @@
 
     .step-title {
         color: #002d5b;
-        font-size: 1.3rem;
+        font-size: 22px; /* agrandi */
         font-weight: 700;
         margin-bottom: 20px;
-        line-height: 1.4;
+        line-height: 1.5;
         padding-right: 20px;
     }
 
@@ -91,20 +92,20 @@
         position: relative;
         padding-left: 25px;
         margin-bottom: 12px;
-        color: #555555;
-        font-size: 0.95rem;
-        line-height: 1.6;
+        color: #111111; /* harmonisé avec autres pages */
+        font-size: 17px; /* agrandi */
+        line-height: 1.7;
     }
 
     .step-list li::before {
-        content: '\f058'; /* Check-circle de FontAwesome */
+        content: '\f058';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         position: absolute;
         left: 0;
         top: 3px;
         color: #f44336;
-        font-size: 1rem;
+        font-size: 16px;
     }
 
     /* Bouton de retour */

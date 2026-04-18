@@ -49,7 +49,9 @@
     .presentation-page .lead-text,
     .presentation-page p {
         text-align: justify;
-        color: #333333;
+        color: #000000;
+        font-size: 17px; /* ou 18px si tu veux un peu plus */
+        line-height: 1.6; /* améliore la lisibilité */
     }
 
     .presentation-page .section-title {
@@ -76,7 +78,7 @@
 
     .presentation-page li {
         margin-bottom: 10px;
-        color: #222222;
+        color: #000000;
     }
 
     .presentation-page .check-list {
@@ -196,6 +198,11 @@
             min-height: 200px;
         }
     }
+
+    .presentation-page li {
+        text-align: justify;
+    }
+
 </style>
 
 <section class="presentation-page">
