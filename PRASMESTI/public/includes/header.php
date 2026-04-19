@@ -96,8 +96,10 @@ function is_active($prefix, $current) {
                                 <a href="index.php?p=presentation">Présentation</a>
                                 <ul class="sub-menu">
                                     <li><a href="index.php?p=presentation/presentation">Qu'est-ce que le PRASMESTI ?</a></li>
+                                    <li><a href="index.php?p=presentation/pourquoi_le_PRASMESTI">Pourquoi le PRASMESTI?</a></li>
                                     <li><a href="index.php?p=presentation/objectifs">Les objectifs</a></li>
                                     <li><a href="index.php?p=presentation/attentes">Les attentes</a></li>
+                                    <li><a href="index.php?p=presentation/enjeux">Les enjeux</a></li>
                                     <li><a href="index.php?p=presentation/conception">Conception et opérationnalisation</a></li>
                                     <li><a href="index.php?p=presentation/responsables">Les responsables du projet</a></li>
                                 </ul>
