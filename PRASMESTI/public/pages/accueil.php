@@ -130,7 +130,7 @@
 
     /* --- SECTION MOT DU DIRECTEUR (ADAPTÉE) --- */
     .director-sec {
-        background-color: #fbfbfb;
+        background-color: #ffffff;
         padding-top: 80px;
         padding-bottom: 220px;
     }
@@ -508,6 +508,102 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="space" id="blog-sec">
+    <div class="container">
+        <div class="title-area text-center">
+            <span class="sub-title">Actualités</span>
+            <h2 class="sec-title">Aux dernières nouvelles</h2>
+        </div>
+
+        <div class="slider-area">
+            <div class="swiper th-slider has-shadow" id="blogSlider1"
+                 data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}},"autoHeight":"true"}'>
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-img">
+                                <a href="index.php?p=actualites/article1">
+                                    <div class="blog-img-shape1"></div>
+                                    <img src="assets/img/blog/blog_1_1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i>16 Novembre 2024</span>
+                                    <span><i class="fas fa-tags"></i>Education</span>
+                                </div>
+                                <h3 class="box-title">
+                                    <a href="index.php?p=actualites/article1">
+                                        Lancement de la Plateforme Numérique du PRASMESTI
+                                    </a>
+                                </h3>
+                                <a href="index.php?p=actualites/article1" class="th-btn">Lire plus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-img">
+                                <a href="index.php?p=actualites/article2">
+                                    <div class="blog-img-shape1"></div>
+                                    <img src="assets/img/blog/blog_1_2.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i>18 Novembre 2024</span>
+                                    <span><i class="fas fa-tags"></i>Education</span>
+                                </div>
+                                <h3 class="box-title">
+                                    <a href="index.php?p=actualites/article2">
+                                        Programme de Valorisation des Talents Lancé
+                                    </a>
+                                </h3>
+                                <a href="index.php?p=actualites/article2" class="th-btn">Lire plus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-img">
+                                <a href="index.php?p=actualites/article3">
+                                    <div class="blog-img-shape1"></div>
+                                    <img src="assets/img/blog/blog_1_4.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i>18 Novembre 2024</span>
+                                    <span><i class="fas fa-tags"></i>Education</span>
+                                </div>
+                                <h3 class="box-title">
+                                    <a href="index.php?p=actualites/article3">
+                                        Forum Régional sur l’Intégration scientifique
+                                    </a>
+                                </h3>
+                                <a href="index.php?p=actualites/article3" class="th-btn">Lire plus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button data-slider-prev="#blogSlider1" class="slider-arrow slider-prev">
+                <i class="far fa-arrow-left"></i>
+            </button>
+            <button data-slider-next="#blogSlider1" class="slider-arrow slider-next">
+                <i class="far fa-arrow-right"></i>
+            </button>
+
         </div>
     </div>
 </section>
