@@ -8,7 +8,6 @@
 <div id="layout-wrapper">
 
     <?php include 'includes/topbar.php'; ?>
-
     <?php include 'includes/sidebar.php'; ?>
 
     <div class="main-content">
@@ -18,121 +17,117 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="row">
+
+                            <!-- CARD 1 -->
                             <div class="col-xl-3">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar">
-                                                    <div class="avatar-title rounded bg-primary-subtle ">
-                                                        <i class="bx bxs-school font-size-24 mb-0 text-primary"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-0 font-size-15">Etablissements</h6>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar">
+                                                <div class="avatar-title rounded bg-primary-subtle">
+                                                    <i class="bx bxs-school font-size-24 text-primary"></i>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <h4 class="mt-4 pt-1 mb-0 font-size-22">34 123 <span class="text-success fw-medium font-size-13 align-middle"> <i class="mdi mdi-arrow-up"></i> 8.34% </span> </h4>
-                                                <div class="d-flex mt-1 align-items-end overflow-hidden">
-                                                    <div class="flex-grow-1">
-                                                        <p class="text-muted mb-0 text-truncate">Liste des établissements</p>
-                                                    </div>
-                                                </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Etablissements</h6>
                                             </div>
                                         </div>
+
+                                        <h4 class="mt-4">34 123
+                                            <span class="text-success font-size-13">
+                                                <i class="mdi mdi-arrow-up"></i> 8.34%
+                                            </span>
+                                        </h4>
+
+                                        <p class="text-muted mb-0">Liste des établissements</p>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- CARD 2 -->
                             <div class="col-xl-3">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar">
-                                                    <div class="avatar-title rounded bg-primary-subtle ">
-                                                        <i class="bx bx-folder-open font-size-24 mb-0 text-primary"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-0 font-size-15">Projets en cours</h6>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar">
+                                                <div class="avatar-title rounded bg-primary-subtle">
+                                                    <i class="bx bx-folder-open font-size-24 text-primary"></i>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <h4 class="mt-4 pt-1 mb-0 font-size-22">63 </h4>
-                                                <div class="d-flex mt-1 align-items-end overflow-hidden">
-                                                    <div class="flex-grow-1">
-                                                        <p class="text-muted mb-0 text-truncate">Projets financés</p>
-                                                    </div>
-                                                </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Projets en cours</h6>
                                             </div>
                                         </div>
+
+                                        <h4 class="mt-4">63</h4>
+                                        <p class="text-muted mb-0">Projets financés</p>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- CARD 3 -->
                             <div class="col-xl-3">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar">
-                                                    <div class="avatar-title rounded bg-primary-subtle ">
-                                                        <i class="bx bx-pen font-size-24 mb-0 text-primary"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-0 font-size-15">Alphabétisation</h6>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar">
+                                                <div class="avatar-title rounded bg-primary-subtle">
+                                                    <i class="bx bx-pen font-size-24 text-primary"></i>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <h4 class="mt-4 pt-1 mb-0 font-size-22">78%<span class="text-danger fw-medium font-size-13 align-middle"> <i class="mdi mdi-arrow-down"></i> 2.64% </span> </h4>
-                                                <div class="d-flex mt-1 align-items-end overflow-hidden">
-                                                    <div class="flex-grow-1">
-                                                        <p class="text-muted mb-0 text-truncate">Taux d’alphabétisation</p>
-                                                    </div>
-                                                </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Alphabétisation</h6>
                                             </div>
                                         </div>
+
+                                        <h4 class="mt-4">78%
+                                            <span class="text-danger font-size-13">
+                                                <i class="mdi mdi-arrow-down"></i> 2.64%
+                                            </span>
+                                        </h4>
+
+                                        <p class="text-muted mb-0">Taux d’alphabétisation</p>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- CARD 4 -->
                             <div class="col-xl-3">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar">
-                                                    <div class="avatar-title rounded bg-primary-subtle ">
-                                                        <i class="bx bx-user font-size-24 mb-0 text-primary"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-0 font-size-15">Formation </h6>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar">
+                                                <div class="avatar-title rounded bg-primary-subtle">
+                                                    <i class="bx bx-user font-size-24 text-primary"></i>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <h4 class="mt-4 pt-1 mb-0 font-size-22">6482 <span class="text-success fw-medium font-size-13 align-middle"> <i class="mdi mdi-arrow-down"></i> 5.79% </span> </h4>
-                                                <div class="d-flex mt-1 align-items-end overflow-hidden">
-                                                    <div class="flex-grow-1">
-                                                        <p class="text-muted mb-0 text-truncate">Enseignants formés</p>
-                                                    </div>
-                                                </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Formation</h6>
                                             </div>
                                         </div>
+
+                                        <h4 class="mt-4">6482
+                                            <span class="text-success font-size-13">
+                                                <i class="mdi mdi-arrow-down"></i> 5.79%
+                                            </span>
+                                        </h4>
+
+                                        <p class="text-muted mb-0">Enseignants formés</p>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
 </div>
 
+<!-- ✅ JS (correct placement) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/libs/metismenujs/metismenujs.min.js"></script>

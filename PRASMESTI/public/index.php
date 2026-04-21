@@ -2,6 +2,9 @@
 // 1. Démarrage de la session (toujours utile pour les messages flash ou la connexion future)
 session_start();
 
+// Inclusion de l'i18n helper
+require_once 'includes/i18n.php';
+
 // 2. Inclusion de la configuration globale (si tu as créé le fichier core/config.php, sinon commente cette ligne pour l'instant)
 // require_once '../core/config.php';
 

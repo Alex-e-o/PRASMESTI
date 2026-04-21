@@ -250,15 +250,15 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-12">
                                 <div class="hero-style1 text-center">
-                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Éducation et Formation : Les piliers de l’intégration régionale.</span>
+                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s"><?= __('hero_subtitle1') ?></span>
                                     <h1 class="hero-title text-white">
                                         <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Accélérons l’intégration régionale par l'éducation et la formation.
+                                            <?= __('hero_title1') ?>
                                         </span>
                                     </h1>
                                     <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                        <a href="presentation" class="th-btn style4">Présentation <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                        <a href="#footer-section" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i>Contactez-nous</a>
+                                        <a href="presentation" class="th-btn style4"><?= __('presentation') ?> <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                        <a href="#footer-section" class="th-btn style3 d-lg-block d-none"><i class="fas fa-phone me-2"></i><?= __('contact_us') ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -274,15 +274,15 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-12">
                                 <div class="hero-style1 text-center">
-                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s">Sciences et Technologies : Innover pour un futur durable.</span>
+                                    <span class="sub-title justify-content-center" data-ani="slideinup" data-ani-delay="0.2s"><?= __('hero_subtitle2') ?></span>
                                     <h1 class="hero-title text-white">
                                         <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Unissons nos talents pour bâtir l'avenir de l'Afrique centrale.
+                                            <?= __('hero_title2') ?>
                                         </span>
                                     </h1>
                                     <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
-                                        <a href="news" class="th-btn style4">Nos actualités <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                        <a href="contact" class="th-btn style3 d-lg-block d-none">Découvrir nos objectifs</a>
+                                        <a href="news" class="th-btn style4"><?= __('our_news') ?> <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                        <a href="contact" class="th-btn style3 d-lg-block d-none"><?= __('discover_objectives') ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -313,36 +313,25 @@
             <div class="col-xl-5">
                 <div class="about-wrap1">
                     <div class="title-area mb-30 president-title-area">
-                        <span class="sub-title">Mot du président champion régional <br>Chef d'état de la RDC</span>
+                        <span class="sub-title"><?= __('president_word_title') ?></span>
 
-                        <p class="professional-text" style="text-align: justify; font-size: 1.15em; line-height: 1.8; color: black; margin-bottom: 0;">La Communauté Économique des États de l’Afrique Centrale poursuit sa marche, portée par
-                            une ambition à la fois simple et immense : élever durablement le bien-être des populations, en
-                            tissant entre ses peuples les liens solides d’une solidarité active, d’un développement partagé et
-                            d’une espérance vivante.
-                            Au cœur de cette dynamique, une conviction profonde s’impose comme une boussole : sans
-                            savoir, il n’est point de développement ; sans partage du savoir, il n’est point
-                            d’intégration. Là où les frontières se rencontrent et où les peuples se répondent, une évidence
-                            s’élève, claire et lumineuse : le savoir constitue le socle de toute intégration véritable.
-                            Ainsi se dessine un espace vivant, où les idées dialoguent, où les expériences se fécondent, où les
-                            savoirs circulent et se transformes. De cet espace naît un souffle, discret mais puissant, porteur
-                            d’avenir et de promesses.
-                            En Afrique centrale, ce souffle prend désormais corps. Il a un nom : <strong>PRASMESTI</strong> !</p>
+                        <p class="professional-text" style="text-align: justify; font-size: 1.15em; line-height: 1.8; color: black; margin-bottom: 0;"><?= __('president_word_content') ?></p>
 
                         <p class="signature-president" style="margin-top: 5px; margin-left: 30px; color: var(--title-color, #1a1a1a); text-align: left; width: 100%;">
-                            <strong>Félix Antoine TSHISEKEDI TSHILOMBO</strong><br>
-                            <span style="font-style: italic; font-size: 0.95em;">Président champion régional éducation, santé et culture</span>
+                            <strong><?= __('president_name') ?></strong><br>
+                            <span style="font-style: italic; font-size: 0.95em;"><?= __('president_title') ?></span>
                         </p>
                     </div>
                     <div class="checklist style2 list-two-column">
                         <ul>
-                            <li>Solidarité pour <br> l'éducation</li>
-                            <li data-theme-color="var(--theme-color2)">Promotion de l'innovation</li>
-                            <li data-theme-color="#FF5528">Accélération du développement technologique</li>
-                            <li data-theme-color="#122F2A">Soutien à la recherche scientifique</li>
+                            <li><?= __('solidarity_edu') ?></li>
+                            <li data-theme-color="var(--theme-color2)"><?= __('promo_innovation') ?></li>
+                            <li data-theme-color="#FF5528"><?= __('tech_dev_accel') ?></li>
+                            <li data-theme-color="#122F2A"><?= __('scientific_research_support') ?></li>
                         </ul>
                     </div>
                     <div class="btn-wrap mt-40">
-                        <a href="index.php?p=presentation/presentation" class="th-btn">En savoir plus<i class="fas fa-arrow-up-right ms-2"></i></a>
+                        <a href="index.php?p=presentation/presentation" class="th-btn"><?= __('learn_more') ?><i class="fas fa-arrow-up-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -356,15 +345,15 @@
             <div class="col-lg-10">
                 <div class="ceeac-bref-box">
                     <div class="title-area text-center mb-40">
-                        <span class="sub-title">À propos de</span>
-                        <h2 class="sec-title">La CEEAC</h2>
+                        <span class="sub-title"><?= __('about_ceeac') ?></span>
+                        <h2 class="sec-title"><?= __('ceeac_title') ?></h2>
                     </div>
                     <div class="ceeac-content">
                         <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8;">
-                            Au cœur du continent, l’Afrique centrale s’affirme comme un espace stratégique mondial, riche en ressources naturelles, énergétiques et agricoles, et jouant un rôle clé dans le climat, la biodiversité, la sécurité alimentaire et les échanges internationaux. Toutefois, cette position s’accompagne de fortes pressions, notamment le changement climatique, la dépendance économique, les mutations technologiques et les tensions géopolitiques. Face à ces défis, la région doit capitaliser sur ses atouts et renforcer son intégration.
+                            <?= __('ceeac_content1') ?>
                         </p>
                         <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8; margin-top: 15px;">
-                            Dans cette dynamique, la Communauté Économique des États de l’Afrique Centrale (CEEAC) — composée de l’Angola, du Burundi, du Cameroun, de la République centrafricaine, de la République du Congo, de la République démocratique du Congo, du Gabon, de la Guinée équatoriale, du Rwanda, de Sao Tomé-et-Principe et du Tchad — s’affirme comme le moteur d’une transformation durable, inclusive et résiliente, capable de structurer un développement régional fondé sur la coopération, l’innovation et la valorisation de ses ressources.
+                            <?= __('ceeac_content2') ?>
                         </p>
                     </div>
                 </div>
@@ -386,23 +375,19 @@
             <div class="col-lg-6">
                 <div class="director-text-box">
                     <div class="title-area mb-30 text-center">
-                        <span class="sub-title" style="color: #f44336;">Le regard du Directeur</span>
-                        <h2 class="sec-title" style="font-size: 32px; text-transform: none;">Bâtir l'avenir par l'action collective</h2>
+                        <span class="sub-title" style="color: #f44336;"><?= __('director_regard') ?></span>
+                        <h2 class="sec-title" style="font-size: 32px; text-transform: none;"><?= __('director_title') ?></h2>
                     </div>
 
                     <div class="director-content">
                         <p class="professional-text" style="text-align: justify; font-size: 1.1em; line-height: 1.8;">
-                            Le Portail Régional d’Aide au Suivi en matière d’Éducation, Sciences, Technologie et Innovation (PRASMESTI) a vocation à devenir un outil privilégié de communication sectorielle. Chaque État membre est ainsi appelé à s’en approprier l’usage, en fonction de ses priorités, de ses objectifs et de ses réalisations.
-                            Son ambition est double : informer et former, à travers une dynamique d’interaction entre les États membres, la Commission, les organes de la Communauté, ainsi que les partenaires nationaux,
-                            régionaux et internationaux. Il s’agit, à terme, de mettre à disposition une information fiable et structurée, au service d’un développement holistique fondé sur l’éducation, la formation, les sciences, la technologie et l’innovation dans l’espace communautaire.
-                            Véritable fenêtre ouverte sur les dynamiques en cours, cette plateforme permet à la fois de partager les perspectives d’avenir et de mieux appréhender les évolutions internes et externes à la région. Elle témoigne, sans équivoque, d’une réalité en construction : l’Afrique centrale du savoir est en marche !
-                            À la fois repère et boussole, le PRASMESTI accompagne l’action collective, en rappelant les objectifs, qu’ils soient permanents ou conjoncturels, et en orientant les efforts vers une transformation durable.
+                            <?= __('director_content') ?>
                         </p>
                     </div>
 
                     <div class="director-signature mt-40 text-center">
-                        <h4 style="margin-bottom: 5px; color: var(--title-color, #1a1a1a);">David Blaise Ossene</h4>
-                        <span style="font-style: italic; font-size: 0.95em; color: #555;">Directeur du programme PRASMESTI</span>
+                        <h4 style="margin-bottom: 5px; color: var(--title-color, #1a1a1a);"><?= __('director_name') ?></h4>
+                        <span style="font-style: italic; font-size: 0.95em; color: #555;"><?= __('director_role') ?></span>
                     </div>
                 </div>
             </div>
@@ -416,8 +401,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="title-area text-center">
-                    <span class="sub-title">Témoignages</span>
-                    <h2 class="sec-title" style="text-transform: none;">Ce qu'en disent les Commissaires</h2>
+                    <span class="sub-title"><?= __('testimonials') ?></span>
+                    <h2 class="sec-title" style="text-transform: none;"><?= __('commissioners_say') ?></h2>
                 </div>
             </div>
         </div>
@@ -460,41 +445,41 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text" style="text-align: justify;">“Le PRASMESTI, vitrine des systèmes éducatifs afrocentraux et baromètre des sciences, de la technologie et de l’innovation en Afrique centrale, s’impose comme une réponse concrète à l’urgence éducative de notre région. Il valorise les savoirs, stimule la recherche, encourage l’innovation et place le développement du capital humain au cœur de notre transformation. En occupant une place centrale dans la construction, la transmission et le partage des connaissances, il renforce les capacités de nos communautés et favorise l’émergence d’une intelligence collective régionale. Le PRASMESTI met en lumière les progrès accomplis tout en révélant les défis à relever, invitant chaque acteur à s’engager pour bâtir un avenir inclusif, durable et pleinement intégré.”</p>
+                                    <p class="box-text" style="text-align: justify;"><?= __('testi_nelly') ?></p>
                                     <h3 class="box-title">SE Mme Nelly <br><strong>BANAKEN ELEL</strong></h3>
-                                    <p class="box-desig">Commissaire du département en charge de la Promotion du genre, Développement humain et social</p>
+                                    <p class="box-desig"><?= __('role_nelly') ?></p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text" style="text-align: justify;">“Le Portail Régional d’Aide au Suivi en matière d’Éducation, Sciences, Technologie et Innovation (PRASMESTI) constitue un outil stratégique au service de la paix et de la sécurité en Afrique centrale. En renforçant la disponibilité et l’analyse des données fiables, il permet d’éclairer les décisions publiques, d’anticiper les vulnérabilités et de promouvoir des politiques éducatives inclusives et résilientes. En effet, une gouvernance fondée sur des données probantes dans les secteurs de l’éducation et de l’innovation contribue directement à la prévention des conflits, à la consolidation de la paix et à la stabilité durable de notre région. Le PRASMESTI s’inscrit ainsi pleinement dans la vision de la CEEAC de bâtir un espace régional pacifique, sécurisé et prospère”</p>
+                                    <p class="box-text" style="text-align: justify;"><?= __('testi_yves') ?></p>
                                     <h3 class="box-title">SEM Général Yves Marcel <br><strong>MAPANGOU MOUSSADJI</strong></h3>
-                                    <p class="box-desig">Commissaire du département en charge des Affaires politiques, Paix et Sécurité</p>
+                                    <p class="box-desig"><?= __('role_yves') ?></p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text" style="text-align: justify;">“En mettant en lumière l’évolution de l’éducation, des sciences, de la technologie et de l’innovation au sein de notre Communauté, le PRASMESTI s’impose comme un levier structurant pour consolider notre marché commun et renforcer notre intégration monétaire et financière. Il permet d’identifier les besoins en formation d’un capital humain qualifié, capable de soutenir la compétitivité de nos économies. Car un marché commun performant repose sur des compétences solides, des systèmes d’innovation dynamiques et une circulation efficace du savoir. Ainsi, le PRASMESTI rend compte des conditions d’une croissance inclusive, stimule les échanges économiques et contribue à la stabilité financière de notre espace régional. Il incarne pleinement le lien essentiel entre le savoir, la création de valeur et une intégration économique durable.”</p>
+                                    <p class="box-text" style="text-align: justify;"><?= __('testi_olouimo') ?></p>
                                     <h3 class="box-title">SEM Olouimo Diai <br><strong>TAVIRA DA SILVA</strong></h3>
-                                    <p class="box-desig">Commissaire du département en charge du Marché Commun, Affaires monétaires et financières</p>
+                                    <p class="box-desig"><?= __('role_olouimo') ?></p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text" style="text-align: justify;">“Le PRASMESTI constitue un outil stratégique pour renforcer la planification et le développement des infrastructures en Afrique centrale. En mettant à disposition des données fiables et harmonisées sur l’éducation, la science et l’innovation, il permet d’orienter plus efficacement les investissements et l’aménagement du territoire en fonction des besoins réels des populations. En favorisant une meilleure articulation entre développement des infrastructures et capital humain, le PRASMESTI contribue à une croissance équilibrée, à la connectivité régionale et à une intégration territoriale durable.”</p>
+                                    <p class="box-text" style="text-align: justify;"><?= __('testi_maurice') ?></p>
                                     <h3 class="box-title">SEM Maurice <br><strong>NIATY-MOUAMBA</strong></h3>
-                                    <p class="box-desig">Commissaire du département en charge de l’Aménagement du territoire et aux Infrastructures</p>
+                                    <p class="box-desig"><?= __('role_maurice') ?></p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-card">
-                                    <p class="box-text" style="text-align: justify;">“Avec le PRASMESTI, nous faisons plus que gérer nos ressources: nous les transformons en opportunités. Ce programme renforce le savoir-faire de nos communautés, stimule l’innovation et ouvre la voie à un avenir prospère, durable et plein de possibilités pour tous.”</p>
+                                    <p class="box-text" style="text-align: justify;"><?= __('testi_maxime') ?></p>
                                     <h3 class="box-title">SEM Maxime <br><strong>NZITA NGANGA DI MAVAMBU</strong></h3>
-                                    <p class="box-desig">Commissaire du département en charge de l’Environnement, Ressources naturelles, Agriculture et Développement rural</p>
+                                    <p class="box-desig"><?= __('role_maxime') ?></p>
                                     <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
                                 </div>
                             </div>
@@ -515,8 +500,8 @@
 <section class="space" id="blog-sec">
     <div class="container">
         <div class="title-area text-center">
-            <span class="sub-title">Actualités</span>
-            <h2 class="sec-title">Aux dernières nouvelles</h2>
+            <span class="sub-title"><?= __('news') ?></span>
+            <h2 class="sec-title"><?= __('latest_news') ?></h2>
         </div>
 
         <div class="slider-area">
@@ -540,10 +525,10 @@
                                 </div>
                                 <h3 class="box-title">
                                     <a href="index.php?p=actualites/article1">
-                                        Lancement de la Plateforme Numérique du PRASMESTI
+                                        <?= __('news_title1') ?>
                                     </a>
                                 </h3>
-                                <a href="index.php?p=actualites/article1" class="th-btn">Lire plus</a>
+                                <a href="index.php?p=actualites/article1" class="th-btn"><?= __('read_more') ?></a>
                             </div>
                         </div>
                     </div>
@@ -563,10 +548,10 @@
                                 </div>
                                 <h3 class="box-title">
                                     <a href="index.php?p=actualites/article2">
-                                        Programme de Valorisation des Talents Lancé
+                                        <?= __('news_title2') ?>
                                     </a>
                                 </h3>
-                                <a href="index.php?p=actualites/article2" class="th-btn">Lire plus</a>
+                                <a href="index.php?p=actualites/article2" class="th-btn"><?= __('read_more') ?></a>
                             </div>
                         </div>
                     </div>
@@ -586,10 +571,10 @@
                                 </div>
                                 <h3 class="box-title">
                                     <a href="index.php?p=actualites/article3">
-                                        Forum Régional sur l’Intégration scientifique
+                                        <?= __('news_title3') ?>
                                     </a>
                                 </h3>
-                                <a href="index.php?p=actualites/article3" class="th-btn">Lire plus</a>
+                                <a href="index.php?p=actualites/article3" class="th-btn"><?= __('read_more') ?></a>
                             </div>
                         </div>
                     </div>

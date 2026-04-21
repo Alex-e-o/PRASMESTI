@@ -117,11 +117,11 @@
 
 <section class="conception-header">
     <div class="container">
-        <span class="sub-title">Présentation du Projet</span>
-        <h1>Conception et opérationnalisation du PRASMETI</h1>
+        <span class="sub-title"><?= __('project_presentation') ?></span>
+        <h1><?= __('conception_title_h1') ?></h1>
 
         <div class="objective-box">
-            <strong>Objectif principal :</strong> Mettre en place un système régional d'information, de suivi et d'aide à la décision ESTI (Éducation, Sciences, Technologie et Innovation).
+            <strong><?= __('main_objective') ?></strong> <?= __('conception_main_obj') ?>
         </div>
     </div>
 </section>
@@ -134,12 +134,12 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">01</div>
-                    <h3 class="step-title">Diagnostic des systèmes existants</h3>
+                    <h3 class="step-title"><?= __('step_1_title') ?></h3>
                     <ul class="step-list">
-                        <li>Réaliser un audit des systèmes nationaux d'information (EMIS, systèmes de recherche, innovation).</li>
-                        <li>Identifier les forces, faiblesses et niveaux de maturité numérique.</li>
-                        <li>Cartographier les acteurs, outils et flux de données existants.</li>
-                        <li>Analyser les lacunes en matière de données (qualité, disponibilité, comparabilité).</li>
+                        <li><?= __('step_1_li1') ?></li>
+                        <li><?= __('step_1_li2') ?></li>
+                        <li><?= __('step_1_li3') ?></li>
+                        <li><?= __('step_1_li4') ?></li>
                     </ul>
                 </div>
             </div>
@@ -147,11 +147,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">02</div>
-                    <h3 class="step-title">Définition du cadre conceptuel</h3>
+                    <h3 class="step-title"><?= __('step_2_title') ?></h3>
                     <ul class="step-list">
-                        <li>Définir un cadre régional harmonisé de suivi ESTI.</li>
-                        <li>Élaborer un référentiel d'indicateurs communs : éducation, recherche et innovation.</li>
-                        <li>Aligner les indicateurs sur les standards internationaux (ODD, UNESCO) et les priorités régionales.</li>
+                        <li><?= __('step_2_li1') ?></li>
+                        <li><?= __('step_2_li2') ?></li>
+                        <li><?= __('step_2_li3') ?></li>
                     </ul>
                 </div>
             </div>
@@ -159,11 +159,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">03</div>
-                    <h3 class="step-title">Conception de l'architecture</h3>
+                    <h3 class="step-title"><?= __('step_3_title') ?></h3>
                     <ul class="step-list">
-                        <li>Définir l'architecture technique du système régional (plateforme centralisée ou interopérable).</li>
-                        <li>Concevoir une base de données régionale et des modules sectoriels.</li>
-                        <li>Assurer l'interopérabilité avec les systèmes nationaux et définir les protocoles d'échange.</li>
+                        <li><?= __('step_3_li1') ?></li>
+                        <li><?= __('step_3_li2') ?></li>
+                        <li><?= __('step_3_li3') ?></li>
                     </ul>
                 </div>
             </div>
@@ -171,11 +171,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">04</div>
-                    <h3 class="step-title">Développement de la plateforme</h3>
+                    <h3 class="step-title"><?= __('step_4_title') ?></h3>
                     <ul class="step-list">
-                        <li>Développer une plateforme numérique régionale ESTI.</li>
-                        <li>Intégrer la collecte, les tableaux de bord dynamiques et la visualisation des données.</li>
-                        <li>Mettre en place des outils d'aide à la décision (reporting, alertes, projections).</li>
+                        <li><?= __('step_4_li1') ?></li>
+                        <li><?= __('step_4_li2') ?></li>
+                        <li><?= __('step_4_li3') ?></li>
                     </ul>
                 </div>
             </div>
@@ -183,11 +183,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">05</div>
-                    <h3 class="step-title">Gouvernance des données</h3>
+                    <h3 class="step-title"><?= __('step_5_title') ?></h3>
                     <ul class="step-list">
-                        <li>Définir les rôles et responsabilités (CEEAC, États, institutions).</li>
-                        <li>Élaborer un cadre de gouvernance : qualité, sécurité, confidentialité.</li>
-                        <li>Mettre en place un réseau de points focaux nationaux ESTI.</li>
+                        <li><?= __('step_5_li1') ?></li>
+                        <li><?= __('step_5_li2') ?></li>
+                        <li><?= __('step_5_li3') ?></li>
                     </ul>
                 </div>
             </div>
@@ -195,10 +195,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">06</div>
-                    <h3 class="step-title">Renforcement des capacités</h3>
+                    <h3 class="step-title"><?= __('step_6_title') ?></h3>
                     <ul class="step-list">
-                        <li>Former les acteurs nationaux en collecte, outils numériques, analyse statistique et prospective.</li>
-                        <li>Développer des guides et manuels d'utilisation.</li>
+                        <li><?= __('step_6_li1') ?></li>
+                        <li><?= __('step_6_li2') ?></li>
                     </ul>
                 </div>
             </div>
@@ -206,11 +206,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">07</div>
-                    <h3 class="step-title">Collecte et reporting</h3>
+                    <h3 class="step-title"><?= __('step_7_title') ?></h3>
                     <ul class="step-list">
-                        <li>Standardiser les outils de collecte de données.</li>
-                        <li>Mettre en place un calendrier régional de reporting.</li>
-                        <li>Définir des formats harmonisés de rapports national et régionaux.</li>
+                        <li><?= __('step_7_li1') ?></li>
+                        <li><?= __('step_7_li2') ?></li>
+                        <li><?= __('step_7_li3') ?></li>
                     </ul>
                 </div>
             </div>
@@ -218,11 +218,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">08</div>
-                    <h3 class="step-title">Suivi, évaluation et pilotage</h3>
+                    <h3 class="step-title"><?= __('step_8_title') ?></h3>
                     <ul class="step-list">
-                        <li>Élaborer un cadre régional de suivi-évaluation.</li>
-                        <li>Produire des rapports régionaux périodiques et notes d'analyse stratégique.</li>
-                        <li>Mettre en place des revues sectorielles régionales.</li>
+                        <li><?= __('step_8_li1') ?></li>
+                        <li><?= __('step_8_li2') ?></li>
+                        <li><?= __('step_8_li3') ?></li>
                     </ul>
                 </div>
             </div>
@@ -230,10 +230,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">09</div>
-                    <h3 class="step-title">Dimensions transversales</h3>
+                    <h3 class="step-title"><?= __('step_9_title') ?></h3>
                     <ul class="step-list">
-                        <li>Intégrer des données sur le genre, la jeunesse, les zones vulnérables et les situations de crise.</li>
-                        <li>Prendre en compte les enjeux de transformation numérique.</li>
+                        <li><?= __('step_9_li1') ?></li>
+                        <li><?= __('step_9_li2') ?></li>
                     </ul>
                 </div>
             </div>
@@ -241,10 +241,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">10</div>
-                    <h3 class="step-title">Partenariats et interconnexion</h3>
+                    <h3 class="step-title"><?= __('step_10_title') ?></h3>
                     <ul class="step-list">
-                        <li>Collaborer avec universités, centres de recherche et partenaires (UNESCO, UNICEF, etc.).</li>
-                        <li>Assurer l'interopérabilité avec les systèmes internationaux.</li>
+                        <li><?= __('step_10_li1') ?></li>
+                        <li><?= __('step_10_li2') ?></li>
                     </ul>
                 </div>
             </div>
@@ -252,11 +252,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">11</div>
-                    <h3 class="step-title">Mobilisation des ressources</h3>
+                    <h3 class="step-title"><?= __('step_11_title') ?></h3>
                     <ul class="step-list">
-                        <li>Élaborer un budget de développement et de maintenance du système.</li>
-                        <li>Mobiliser les financements (bailleurs, partenaires, États).</li>
-                        <li>Prévoir la durabilité financière et technique.</li>
+                        <li><?= __('step_11_li1') ?></li>
+                        <li><?= __('step_11_li2') ?></li>
+                        <li><?= __('step_11_li3') ?></li>
                     </ul>
                 </div>
             </div>
@@ -264,11 +264,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">12</div>
-                    <h3 class="step-title">Phase pilote et déploiement</h3>
+                    <h3 class="step-title"><?= __('step_12_title') ?></h3>
                     <ul class="step-list">
-                        <li>Lancer une phase pilote dans certains États membres.</li>
-                        <li>Tester et ajuster les outils.</li>
-                        <li>Déployer progressivement à l'échelle régionale.</li>
+                        <li><?= __('step_12_li1') ?></li>
+                        <li><?= __('step_12_li2') ?></li>
+                        <li><?= __('step_12_li3') ?></li>
                     </ul>
                 </div>
             </div>
@@ -276,10 +276,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="step-card">
                     <div class="step-number">13</div>
-                    <h3 class="step-title">Communication et valorisation</h3>
+                    <h3 class="step-title"><?= __('step_13_title') ?></h3>
                     <ul class="step-list">
-                        <li>Développer une stratégie de diffusion des données et des portails publics.</li>
-                        <li>Valoriser les données pour le plaidoyer, la prise de décision et la transparence.</li>
+                        <li><?= __('step_13_li1') ?></li>
+                        <li><?= __('step_13_li2') ?></li>
                     </ul>
                 </div>
             </div>
@@ -288,7 +288,7 @@
 
         <div class="btn-wrap-bottom">
             <a href="javascript:history.back()" class="th-btn" style="display: inline-block; background-color: #002d5b; color: #fff; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s;">
-                <i class="fas fa-arrow-left me-2"></i> Retour à la page précédente
+                <i class="fas fa-arrow-left me-2"></i> <?= __('back_to_previous') ?>
             </a>
         </div>
 

@@ -211,129 +211,127 @@
         <!-- Introduction -->
         <section class="presentation-card section-intro">
             <div class="card-content">
-                <span class="eyebrow">Page « Présentation »</span>
+                <span class="eyebrow"><?= __('presentation_eyebrow') ?></span>
                 <div class="pyramid-title">
-                    <span class="line-1">Qu’est-ce que</span>
+                    <span class="line-1"><?= __('what_is') ?></span>
                     <span class="line-2">le</span>
                     <span class="line-3">PRASMESTI&nbsp;?</span>
                 </div>
                 <p class="lead-text">
-                    <span class="highlight">Le Portail Régional d’Aide au Suivi en matière d’Éducation, Sciences, Technologie et Innovation (PRASMESTI)</span>
-                    est une plateforme stratégique mise en place pour soutenir l’intégration régionale en Afrique centrale par la circulation des savoirs.
+                    <?= __('prasmesti_platform_desc') ?>
                 </p>
-                <p><strong>Pourquoi le PRASMESTI&nbsp;?</strong></p>
+                <p><strong><?= __('why_prasmesti_q') ?></strong></p>
                 <ul class="check-list">
-                    <li><strong>faciliter les échanges intra-communautaires</strong> ;</li>
-                    <li><strong>valoriser la diversité des systèmes éducatifs et scientifiques</strong> ;</li>
-                    <li><strong>instaurer un dialogue structuré, lisible et cohérent entre les acteurs</strong>.</li>
+                    <li><strong><?= __('why_list_item1') ?></strong> ;</li>
+                    <li><strong><?= __('why_list_item2') ?></strong> ;</li>
+                    <li><strong><?= __('why_list_item3') ?></strong>.</li>
                 </ul>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- 1. Missions principales -->
         <section class="presentation-card section-missions">
             <div class="card-content">
-                <h2 class="section-title">1. Ses missions principales</h2>
-                <p>Le PRASMESTI a pour vocation de :</p>
+                <h2 class="section-title"><?= __('missions_title_main') ?></h2>
+                <p><?= __('missions_intro_main') ?></p>
                 <ul>
-                    <li><strong>Partager l’information</strong> sur les dynamiques en éducation, formation, sciences...</li>
-                    <li><strong>Mettre à disposition les normes et standards régionaux</strong>...</li>
-                    <li><strong>Valoriser les innovations</strong>...</li>
-                    <li><strong>Renforcer le sentiment d’appartenance régionale</strong>...</li>
+                    <li><strong><?= __('missions_item1_main') ?></strong></li>
+                    <li><strong><?= __('missions_item2_main') ?></strong></li>
+                    <li><strong><?= __('missions_item3_main') ?></strong></li>
+                    <li><strong><?= __('missions_item4_main') ?></strong></li>
                 </ul>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- 2. Fonctions clés -->
         <section class="presentation-card section-fonctions">
             <div class="card-content">
-                <h2 class="section-title">2. Ses fonctions clés</h2>
-                <p>Le portail offre plusieurs fonctionnalités structurantes :</p>
+                <h2 class="section-title"><?= __('functions_title_main') ?></h2>
+                <p><?= __('functions_intro_main') ?></p>
                 <div class="fonction-block">
-                    <h3 class="sub-block-title">1. Communication & 2. Coordination</h3>
+                    <h3 class="sub-block-title"><?= __('functions_sub1_main') ?></h3>
                     <ul>
-                        <li>Actualités, fil d’information, flux RSS</li>
-                        <li>Suivi des activités et des projets</li>
+                        <li><?= __('functions_item1_main') ?></li>
+                        <li><?= __('functions_item2_main') ?></li>
                     </ul>
                 </div>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- 3. Objectifs stratégiques -->
         <section class="presentation-card section-objectifs">
             <div class="card-content">
-                <h2 class="section-title">3. Ses objectifs stratégiques</h2>
-                <p>Le PRASMESTI poursuit un double objectif :</p>
+                <h2 class="section-title"><?= __('strat_objectives_title_main') ?></h2>
+                <p><?= __('strat_objectives_intro_main') ?></p>
                 <ol>
-                    <li><strong>Accélérer l’intégration régionale</strong> par une meilleure circulation de l’information ;</li>
-                    <li><strong>Moderniser les pratiques de communication et de suivi</strong>.</li>
+                    <li><strong><?= __('strat_objectives_item1_main') ?></strong></li>
+                    <li><strong><?= __('strat_objectives_item2_main') ?></strong></li>
                 </ol>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- 4. Résultats attendus -->
         <section class="presentation-card section-resultats">
             <div class="card-content">
-                <h2 class="section-title">4. Les résultats attendus</h2>
+                <h2 class="section-title"><?= __('expected_results_title_main') ?></h2>
                 <ul>
-                    <li><strong>Renforcement de la collaboration</strong> entre États, institutions et partenaires ;</li>
-                    <li><strong>Amélioration du suivi des politiques publiques</strong> et des programmes ;</li>
+                    <li><strong><?= __('expected_results_item1_main') ?></strong></li>
+                    <li><strong><?= __('expected_results_item2_main') ?></strong></li>
                 </ul>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- 5. Modalités d'accès -->
         <section class="presentation-card section-acces">
             <div class="card-content">
-                <h2 class="section-title">5. Modalités d’accès</h2>
-                <p>Le PRASMESTI propose plusieurs niveaux d’accès :</p>
+                <h2 class="section-title"><?= __('access_modalities_title_main') ?></h2>
+                <p><?= __('access_modalities_intro_main') ?></p>
                 <ul>
-                    <li><strong>Intranet</strong> : réservé aux institutions de la CEEAC ;</li>
-                    <li><strong>Extranet</strong> : accessible aux établissements et acteurs agréés ;</li>
-                    <li><strong>Internet</strong> : accès public.</li>
+                    <li><strong><?= __('access_intranet_main') ?></strong></li>
+                    <li><strong><?= __('access_extranet_main') ?></strong></li>
+                    <li><strong><?= __('access_internet_main') ?></strong></li>
                 </ul>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- 6. Conclusion / Vision -->
         <section class="presentation-card section-vision">
             <div class="card-content">
-                <h2 class="section-title">6. Une plateforme au service de l’image et de l’avenir</h2>
+                <h2 class="section-title"><?= __('vision_title_main') ?></h2>
                 <p>
-                    Véritable vitrine régionale, le PRASMESTI contribue à
-                    <strong>valoriser l’image de l’éducation, des sciences et de l’innovation en Afrique centrale</strong>.
+                    <?= __('vision_text1_main') ?>
                 </p>
                 <p>
-                    <strong>Le savoir partagé est le moteur d’une intégration réussie et d’un développement durable.</strong>
+                    <strong><?= __('vision_text2_main') ?></strong>
                 </p>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 

@@ -23,7 +23,7 @@ function is_active($prefix, $current) {
                             <span style="font-weight: 800; color: #000; font-size: 24px; line-height: 1.1; letter-spacing: 1px; margin-bottom: 2px;">PRASMESTI</span>
 
                             <div style="display: flex; align-items: center; gap: 8px;">
-                                <span class="sub-title" style="color: #000 !important; margin-bottom: 0; font-size: 15px; line-height: 1.2;">Informer pour orienter</span>
+                                <span class="sub-title" style="color: #000 !important; margin-bottom: 0; font-size: 15px; line-height: 1.2;"><?= __('inform_to_orient') ?></span>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ function is_active($prefix, $current) {
 
                         <div class="info-card">
                             <div class="box-content">
-                                <p class="box-text">Adresse:</p>
+                                <p class="box-text"><?= __('address') ?>:</p>
                                 <h4 class="box-title"><a href="https://maps.app.goo.gl/eRuYww4DayfLzmzC7">Bd Triomphal, Libreville, Gabon</a></h4>
                             </div>
                         </div>
@@ -52,8 +52,24 @@ function is_active($prefix, $current) {
 
                         <div class="info-card">
                             <div class="box-content">
-                                <p class="box-text">Accès experts :</p>
-                                <h4 class="box-title"><a href="../private/">Connexion</a></h4>
+                                <p class="box-text"><?= __('experts_access') ?> :</p>
+                                <h4 class="box-title"><a href="../private/"><?= __('connection') ?></a></h4>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="box-content">
+                                <p class="box-text">Language:</p>
+                                <h4 class="box-title">
+                                    <?php
+                                    $fr_params = $_GET;
+                                    $fr_params['lang'] = 'fr';
+                                    $en_params = $_GET;
+                                    $en_params['lang'] = 'en';
+                                    ?>
+                                    <a href="?<?= http_build_query($fr_params) ?>" style="<?= $lang == 'fr' ? 'font-weight: bold; color: #f44336;' : '' ?>">FR</a> | 
+                                    <a href="?<?= http_build_query($en_params) ?>" style="<?= $lang == 'en' ? 'font-weight: bold; color: #f44336;' : '' ?>">EN</a>
+                                </h4>
                             </div>
                         </div>
 
@@ -79,7 +95,7 @@ function is_active($prefix, $current) {
 
                                 <div class="d-none d-sm-flex" style="align-items: center; gap: 5px;">
                                     <span style="display: inline-block; width: 20px; height: 2px; background-color: #f44336;"></span>
-                                    <span class="sub-title" style="color: #000 !important; margin-bottom: 0; font-size: 12px; line-height: 1.2;">Orienter pour informer</span>
+                                    <span class="sub-title" style="color: #000 !important; margin-bottom: 0; font-size: 12px; line-height: 1.2;"><?= __('orient_to_inform') ?></span>
                                     <span style="display: inline-block; width: 20px; height: 2px; background-color: #f44336;"></span>
                                 </div>
                             </div>
@@ -89,35 +105,35 @@ function is_active($prefix, $current) {
                     <nav class="main-menu d-none d-lg-block">
                         <ul>
                             <li class="<?= $current_page == 'accueil' ? 'active' : '' ?>">
-                                <a href="index.php?p=accueil">Accueil</a>
+                                <a href="index.php?p=accueil"><?= __('accueil') ?></a>
                             </li>
 
                             <li class="menu-item-has-children <?= is_active('presentation', $current_page) ?>">
-                                <a href="index.php?p=presentation">Présentation</a>
+                                <a href="index.php?p=presentation"><?= __('presentation') ?></a>
                                 <ul class="sub-menu">
-                                    <li><a href="index.php?p=presentation/presentation">Qu'est-ce que le PRASMESTI ?</a></li>
-                                    <li><a href="index.php?p=presentation/pourquoi_le_PRASMESTI">Pourquoi le PRASMESTI?</a></li>
-                                    <li><a href="index.php?p=presentation/objectifs">Les objectifs</a></li>
-                                    <li><a href="index.php?p=presentation/attentes">Les attentes</a></li>
-                                    <li><a href="index.php?p=presentation/enjeux">Les enjeux</a></li>
-                                    <li><a href="index.php?p=presentation/conception">Conception et opérationnalisation</a></li>
-                                    <li><a href="index.php?p=presentation/responsables">Les responsables du projet</a></li>
+                                    <li><a href="index.php?p=presentation/presentation"><?= __('what_is_prasmesti') ?></a></li>
+                                    <li><a href="index.php?p=presentation/pourquoi_le_PRASMESTI"><?= __('why_prasmesti') ?></a></li>
+                                    <li><a href="index.php?p=presentation/objectifs"><?= __('objectives') ?></a></li>
+                                    <li><a href="index.php?p=presentation/attentes"><?= __('expectations') ?></a></li>
+                                    <li><a href="index.php?p=presentation/enjeux"><?= __('issues') ?></a></li>
+                                    <li><a href="index.php?p=presentation/conception"><?= __('design_ops') ?></a></li>
+                                    <li><a href="index.php?p=presentation/responsables"><?= __('project_leads') ?></a></li>
                                 </ul>
                             </li>
 
                             <li class="menu-item-has-children">
-                                <a href="#">Textes Normatifs</a>
+                                <a href="#"><?= __('normative_texts') ?></a>
                                 <ul class="sub-menu">
-                                    <li><a href="#" style="text-transform: none;">Textes normatifs continentaux et internationaux</a></li>
-                                    <li><a href="#" style="text-transform: none;">Politique sectorielle en Afrique Centrale</a></li>
-                                    <li><a href="#" style="text-transform: none;">Stratégie sectorielle en Afrique Centrale</a></li>
-                                    <li><a href="#" style="text-transform: none;">Projets sectoriels en Afrique Centrale</a></li>
-                                    <li><a href="#" style="text-transform: none;">Stratégies dans les documents cadres</a></li>
+                                    <li><a href="#" style="text-transform: none;"><?= __('continental_texts') ?></a></li>
+                                    <li><a href="#" style="text-transform: none;"><?= __('sectoral_policy') ?></a></li>
+                                    <li><a href="#" style="text-transform: none;"><?= __('sectoral_strategy') ?></a></li>
+                                    <li><a href="#" style="text-transform: none;"><?= __('sectoral_projects') ?></a></li>
+                                    <li><a href="#" style="text-transform: none;"><?= __('framework_strategies') ?></a></li>
                                 </ul>
                             </li>
 
                             <li class="menu-item-has-children <?= is_active('etat_mise_oeuvre', $current_page) ?>">
-                                <a href="#">État de mise en œuvre</a>
+                                <a href="#"><?= __('implementation_status') ?></a>
                                 <ul class="sub-menu">
                                     <li><a href="#">Angola </a></li>
                                     <li><a href="#">Burundi</a></li>
@@ -133,12 +149,12 @@ function is_active($prefix, $current) {
                                 </ul>
                             </li>
 
-                            <li><a href="#">Propriété intellectuelle</a></li>
+                            <li><a href="#"><?= __('intellectual_property') ?></a></li>
 
-                            <li><a href="#">Innovations </a></li>
+                            <li><a href="#"><?= __('innovations') ?></a></li>
 
                             <li class="<?= $current_page == 'actualites' ? 'active' : '' ?>">
-                                <a href="index.php?p=actualites">Actualités</a>
+                                <a href="index.php?p=actualites"><?= __('news') ?></a>
                             </li>
                         </ul>
                     </nav>
