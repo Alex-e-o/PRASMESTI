@@ -96,11 +96,11 @@
 <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
     <div class="container">
         <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Objectifs</h1>
+            <h1 class="breadcumb-title"><?= __('objectives') ?></h1>
             <ul class="breadcumb-menu">
-                <li><a href="index.php?p=accueil">Accueil</a></li>
-                <li>Présentation</li>
-                <li>Objectifs</li>
+                <li><a href="index.php?p=accueil"><?= __('accueil') ?></a></li>
+                <li><?= __('presentation') ?></li>
+                <li><?= __('objectives') ?></li>
             </ul>
         </div>
     </div>
@@ -111,90 +111,93 @@
 
         <section class="presentation-card section-intro">
             <div class="card-content">
-                <span class="eyebrow">Page « objectifs »</span>
+                <span class="eyebrow"><?= __('objectifs_eyebrow') ?></span>
 
                 <h1 style="font-size: 2rem; color: #f97316; margin-bottom: 1rem; font-weight: 800;">
-                    PRASMESTI : levier stratégique pour accélérer l’intégration régionale
+                    <?= __('objectifs_strat_lever_title') ?>
                 </h1>
 
                 <p class="lead-text">
-                    Le PRASMESTI s’inscrit comme un outil structurant au service de l’intégration scolaire, académique, scientifique et technologique en Afrique centrale. À travers ses fonctions d’information, de formation et de mise en réseau, il répond à un impératif majeur : <strong>mieux connecter les systèmes, les acteurs et les savoirs pour transformer le potentiel régional en résultats concrets.</strong>
+                    <?= __('objectifs_lead_text') ?>
                 </p>
 
                 <p>
-                    Dans un contexte marqué par la fragmentation des informations, la faible circulation des connaissances et l’insuffisante coordination des initiatives, le PRASMESTI offre une réponse adaptée, moderne et fédératrice.
+                    <?= __('objectifs_context_text') ?>
                 </p>
             </div>
 
             <div class="card-image">
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <section class="presentation-card section-interne">
             <div class="card-content">
-                <h2 class="section-title">1. Informer sur l’interne : renforcer la cohérence et la visibilité régionale</h2>
+                <h2 class="section-title"><?= __('obj_h_1_title') ?></h2>
 
-                <p>Le PRASMESTI permet de :</p>
+                <p><?= __('obj_h_1_intro') ?></p>
 
                 <ul>
-                    <li><strong>Valoriser les initiatives des États membres</strong>, en rendant visibles les projets, réformes et innovations en cours ;</li>
-                    <li><strong>Assurer un suivi continu des politiques et programmes régionaux</strong>, facilitant ainsi leur évaluation et leur appropriation ;</li>
-                    <li><strong>Créer une mémoire institutionnelle vivante</strong>, à travers la capitalisation des expériences, des bonnes pratiques et des dynamiques sectorielles ;</li>
-                    <li><strong>Renforcer le sentiment d’appartenance communautaire</strong>, en donnant à voir une Afrique centrale en mouvement, solidaire et engagée.</li>
+                    <li><?= __('obj_h_1_li1') ?></li>
+                    <li><?= __('obj_h_1_li2') ?></li>
+                    <li><?= __('obj_h_1_li3') ?></li>
+                    <li><?= __('obj_h_1_li4') ?></li>
                 </ul>
 
                 <p style="margin-top: 15px; padding: 12px; background-color: #fff7ed; border-left: 4px solid #f97316; border-radius: 4px; font-size: 17px;">
-                    👉 <strong>Opportunité pour les États membres :</strong> mieux se positionner, partager leurs avancées, apprendre les uns des autres et éviter la duplication des efforts.
+                    <?= __('obj_h_1_highlight') ?>
                 </p>
             </div>
 
             <div class="card-image">
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <section class="presentation-card section-externe">
             <div class="card-content">
-                <h2 class="section-title">2. Informer sur l’externe : ouvrir la région et stimuler l’innovation</h2>
+                <h2 class="section-title"><?= __('obj_h_2_title') ?></h2>
 
-                <p>Le PRASMESTI constitue une fenêtre stratégique sur le monde, en permettant de :</p>
+                <p><?= __('obj_h_2_intro') ?></p>
 
                 <ul>
-                    <li><strong>Suivre les tendances internationales</strong> en matière d’éducation, de recherche, de technologie et d’innovation ;</li>
-                    <li><strong>Accéder aux cadres normatifs</strong>, aux opportunités et aux bonnes pratiques d’autres régions ;</li>
-                    <li><strong>Identifier des partenariats techniques et financiers</strong> avec des acteurs internationaux ;</li>
-                    <li><strong>Aligner les politiques nationales</strong> sur les standards régionaux et internationaux.</li>
+                    <li><?= __('obj_h_2_li1') ?></li>
+                    <li><?= __('obj_h_2_li2') ?></li>
+                    <li><?= __('obj_h_2_li3') ?></li>
+                    <li><?= __('obj_h_2_li4') ?></li>
                 </ul>
 
                 <p style="margin-top: 15px; padding: 12px; background-color: #fff7ed; border-left: 4px solid #f97316; border-radius: 4px;">
-                    👉 <strong>Opportunité pour les États membres :</strong> s’inspirer des meilleures expériences mondiales.
+                    <?= __('obj_h_2_highlight') ?>
                 </p>
             </div>
 
             <div class="card-image">
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <section class="presentation-card section-former">
             <div class="card-content">
-                <h2 class="section-title">3. Former : construire un capital humain adapté aux défis contemporains</h2>
+                <h2 class="section-title"><?= __('obj_h_3_title') ?></h2>
 
-                <p>Le PRASMESTI joue un rôle essentiel dans le renforcement des capacités.</p>
+                <p><?= __('obj_h_3_intro') ?></p>
 
                 <ul>
-                    <li><strong>Mettre à disposition des données fiables</strong></li>
-                    <li><strong>Identifier les besoins en compétences</strong></li>
-                    <li><strong>Diffuser des contenus pédagogiques</strong></li>
-                    <li><strong>Soutenir l’adéquation formation-emploi</strong></li>
+                    <li><?= __('obj_h_3_li1') ?></li>
+                    <li><?= __('obj_h_3_li2') ?></li>
+                    <li><?= __('obj_h_3_li3') ?></li>
+                    <li><?= __('obj_h_3_li4') ?></li>
                 </ul>
             </div>
 
             <div class="card-image">
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
+
+    </div>
+</section>
 
     </div>
 </section>

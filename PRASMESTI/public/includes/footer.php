@@ -43,7 +43,7 @@
     <div class="overflow-hidden brand-area-footer">
         <div class="container">
             <div class="brand-wrap1 p-0 m-0 text-center">
-                <h3 class="brand-wrap-title mb-4">États membres de la CEEAC</h3>
+                <h3 class="brand-wrap-title mb-4"><?= __('eccas_members') ?></h3>
                 <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"5", "spaceBetween": "90"}}}'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -116,13 +116,13 @@
             <div class="subscribe-box">
                 <div class="row gy-40 align-items-center justify-content-center">
                     <div class="col-xl-6">
-                        <h4 class="subscribe-box_title">Tenez-vous informé régulièrement</h4>
-                        <p class="subscribe-box_text">Suivre les initiatives et les projets qui transforment l’Afrique centrale.</p>
+                        <h4 class="subscribe-box_title"><?= __('stay_informed') ?></h4>
+                        <p class="subscribe-box_text"><?= __('follow_initiatives') ?></p>
                     </div>
                     <div class="col-xl-6 col-lg-8">
                         <form class="newsletter-form">
                             <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Entrez votre adresse email" required="">
+                                <input class="form-control" type="email" placeholder="<?= __('enter_email') ?>" required="">
                             </div>
                             <button type="submit" class="th-btn style3"><i class="fas fa-paper-plane"></i></button>
                         </form>
@@ -140,40 +140,39 @@
                             <div class="about-logo">
                                 <a href="index.php?p=accueil"><img src="assets/img/Logo2.png" alt="PRASMESTI"></a>
                             </div>
-                            <p class="about-text" style="text-align:center"> Portail Régional d'Aide au Suivi en Matière d'Éducation,
-                                Sciences, Technologies et Innovation (PRASMESTI)
-                                Des États membres de la CEEAC.</p>
+                            <p class="about-text" style="text-align:center"> <?= __('inform_to_orient') ?> (PRASMESTI)
+                                <?= __('eccas_members') ?>.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-auto">
                     <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">Liens rapides</h3>
+                        <h3 class="widget_title"><?= __('quick_links') ?></h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="index.php?p=accueil">Accueil</a></li>
-                                <li><a href="index.php?p=presentation/presentation">Présentation</a></li>
-                                <li><a href="#">Textes Normatifs</a></li>
-                                <li><a href="#">État de mise en œuvre</a></li>
-                                <li><a href="#">Propriété intellectuelle</a></li>
-                                <li><a href="#">Innovations</a></li>
-                                <li><a href="index.php?p=gallerie">Galeries</a></li>
+                                <li><a href="index.php?p=accueil"><?= __('accueil') ?></a></li>
+                                <li><a href="index.php?p=presentation/presentation"><?= __('presentation') ?></a></li>
+                                <li><a href="#"><?= __('normative_texts') ?></a></li>
+                                <li><a href="#"><?= __('implementation_status') ?></a></li>
+                                <li><a href="#"><?= __('intellectual_property') ?></a></li>
+                                <li><a href="#"><?= __('innovations') ?></a></li>
+                                <li><a href="index.php?p=gallerie"><?= __('galleries') ?></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-auto">
                     <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">En savoir plus</h3>
+                        <h3 class="widget_title"><?= __('learn_more_footer') ?></h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="index.php?p=actualites">Actualités</a></li>
+                                <li><a href="index.php?p=actualites"><?= __('news') ?></a></li>
                                 <li><a href="#">FAQ</a></li>
                                 <li><a href="#">Projets</a></li>
                                 <li><a href="index.php?p=facesti">FACESTI</a></li>
                                 <li><a href="#">ARESTI</a></li>
                                 <li><a href="#">PRASME</a></li>
-                                <li><a href="index.php?p=contact">Contactez-nous</a></li>
+                                <li><a href="index.php?p=contact"><?= __('contact_us') ?></a></li>
                             </ul>
                         </div>
                     </div>
@@ -181,7 +180,7 @@
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget footer-widget">
                         <div class="th-widget-contact">
-                            <h3 class="widget_title">Contactez-nous</h3>
+                            <h3 class="widget_title"><?= __('contact_us') ?></h3>
                             <div class="info-card">
                                 <div class="box-icon">
                                     <i class="fal fa-phone"></i>
@@ -221,7 +220,7 @@
             <div class="row justify-content-center gy-3 align-items-center">
                 <div class="col-lg-12">
                     <p class="copyright-text text-center">
-                        <i class="fal fa-copyright"></i> Copyright @ PRASMESTI 2026. Tous droits réservés.
+                        <i class="fal fa-copyright"></i> Copyright @ PRASMESTI 2026. <?= __('all_rights_reserved') ?>
                     </p>
                 </div>
             </div>

@@ -3,9 +3,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="title-area text-center">
-                    <span class="sub-title">Le PRASMESTI : les enjeux ?</span>
+                    <span class="sub-title"><?= __('issues_q') ?></span>
                     <h4 class="sec-title" style="text-transform: none;">
-                        L’enjeu pour la Communauté est d’adresser une communication ciblée en proposant un contenu pertinent à l’utilisateur.
+                        <?= __('issues_intro_h4') ?>
                     </h4>
                 </div>
             </div>
@@ -25,10 +25,10 @@
                             <div class="box-content">
                                 <h3 class="box-title">
                                     <a href="index.php?p=presentation/etat_membre">
-                                        Pour la communauté
+                                        <?= __('for_community') ?>
                                     </a>
                                 </h3>
-                                <a href="index.php?p=presentation/etat_membre" class="th-btn style6">Voir plus</a>
+                                <a href="index.php?p=presentation/etat_membre" class="th-btn style6"><?= __('see_more') ?></a>
                             </div>
                         </div>
                     </div>
@@ -42,10 +42,10 @@
                             <div class="box-content">
                                 <h3 class="box-title">
                                     <a href="index.php?p=presentation/editeur_logiciel">
-                                        Pour un état membre
+                                        <?= __('for_member_state') ?>
                                     </a>
                                 </h3>
-                                <a href="index.php?p=presentation/editeur_logiciel" class="th-btn style6">Voir plus</a>
+                                <a href="index.php?p=presentation/editeur_logiciel" class="th-btn style6"><?= __('see_more') ?></a>
                             </div>
                         </div>
                     </div>
@@ -59,10 +59,10 @@
                             <div class="box-content">
                                 <h3 class="box-title">
                                     <a href="index.php?p=presentation/bureau_etudes">
-                                        Pour un opérateur économique ou un partenaire technique
+                                        <?= __('for_operator_partner') ?>
                                     </a>
                                 </h3>
-                                <a href="index.php?p=presentation/bureau_etudes" class="th-btn style6">Voir plus</a>
+                                <a href="index.php?p=presentation/bureau_etudes" class="th-btn style6"><?= __('see_more') ?></a>
                             </div>
                         </div>
                     </div>

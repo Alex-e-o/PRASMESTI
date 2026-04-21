@@ -18,17 +18,7 @@
         .navbar-brand-box { background-color: #fff; }
         .page-content { padding-top: 80px !important; }
 
-        /* --- LOGIQUE HOVER (SURVOL) --- */
-        /* Force l'affichage du sous-menu quand on survole le parent LI */
-        #side-menu li:hover > .sub-menu {
-            display: block !important;
-            height: auto !important;
-            visibility: visible !important;
-        }
-        /* Style optionnel pour montrer que c'est interactif */
-        .has-arrow:after { transition: transform 0.2s; }
-        #side-menu li:hover > .has-arrow:after {
-            transform: rotate(-180deg);
-        }
+        /* ❌ REMOVE hover-forced menu behavior */
+        /* Let MetisMenu / template JS handle open/close properly */
     </style>
 </head>

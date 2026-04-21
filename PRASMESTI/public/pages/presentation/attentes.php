@@ -108,11 +108,11 @@
 <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
     <div class="container">
         <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Les attentes</h1>
+            <h1 class="breadcumb-title"><?= __('expectations') ?></h1>
             <ul class="breadcumb-menu">
-                <li><a href="index.php?p=accueil">Accueil</a></li>
-                <li>Présentation</li>
-                <li>Les attentes</li>
+                <li><a href="index.php?p=accueil"><?= __('accueil') ?></a></li>
+                <li><?= __('presentation') ?></li>
+                <li><?= __('expectations') ?></li>
             </ul>
         </div>
     </div>
@@ -124,161 +124,164 @@
         <!-- Introduction -->
         <section class="presentation-card section-intro">
             <div class="card-content">
-                <span class="eyebrow">Page « les attentes »</span>
+                <span class="eyebrow"><?= __('expectations_eyebrow') ?></span>
                 <h1 class="pyramid-title" style="font-size: 1.8rem; color: #f97316; margin-bottom: 1rem;">
-                    Le PRASMESTI : quelles attentes ?
+                    <?= __('expectations_q') ?>
                 </h1>
 
                 <p class="lead-text">
-                    Les attentes du PRASMESTI traduisent une ambition forte : faire du portail un véritable <strong>moteur d’intégration, de performance collective et de transformation structurelle</strong> des systèmes d’Éducation, Formation, Sciences, Technologie et Innovation (EFSTI) en Afrique centrale.
+                    <?= __('expectations_lead') ?>
                 </p>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- Attentes 1 à 3 -->
         <section class="presentation-card section-attentes-1">
             <div class="card-content">
-                <h2 class="section-title">Dynamiser, valoriser et impulser</h2>
+                <h2 class="section-title"><?= __('dyn_val_impulse_title') ?></h2>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">1. Renforcer un écosystème de collaboration dynamique</h3>
-                <p>Le PRASMESTI vise à intensifier les échanges et les synergies entre les États membres de la CEEAC, les partenaires au développement et les opérateurs économiques, afin de bâtir un cadre de coopération intégré, fluide et durable.</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('exp_h_1_title') ?></h3>
+                <p><?= __('exp_h_1_text') ?></p>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">2. Accroître l’attractivité du secteur EFSTI</h3>
-                <p>En structurant et en valorisant l’offre régionale, le portail contribue à renforcer la visibilité et la compétitivité du secteur, notamment à travers le développement de services innovants à forte valeur ajoutée.</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('exp_h_2_title') ?></h3>
+                <p><?= __('exp_h_2_text') ?></p>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">3. Impulser des chantiers structurants et innovants</h3>
-                <p>Le PRASMESTI est attendu comme un outil d’impulsion stratégique, capable de soutenir la conception et le pilotage de projets régionaux ambitieux, en phase avec les défis scientifiques, technologiques et économiques contemporains.</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('exp_h_3_title') ?></h3>
+                <p><?= __('exp_h_3_text') ?></p>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- Attentes 4 à 6 -->
         <section class="presentation-card section-attentes-2">
             <div class="card-content">
-                <h2 class="section-title">Gouvernance, modernisation et transmission</h2>
+                <h2 class="section-title"><?= __('gov_mod_trans_title') ?></h2>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">4. Piloter les politiques publiques par la donnée (monitoring)</h3>
-                <p>L’un des enjeux majeurs est de mettre en place un suivi en temps réel des actions et des programmes, grâce à des indicateurs fiables, permettant :</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('exp_h_4_title') ?></h3>
+                <p><?= __('exp_h_4_text') ?></p>
                 <ul>
-                    <li>d’identifier rapidement les blocages,</li>
-                    <li>d’optimiser la prise de décision,</li>
-                    <li>et d’accélérer les interventions sur le terrain.</li>
+                    <li><?= __('exp_h_4_li1') ?></li>
+                    <li><?= __('exp_h_4_li2') ?></li>
+                    <li><?= __('exp_h_4_li3') ?></li>
                 </ul>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">5. Structurer et moderniser le back-office institutionnel</h3>
-                <p>Le portail doit permettre l’harmonisation et la digitalisation des pratiques administratives, notamment : l’archivage numérique, le suivi des programmes et projets, la traçabilité des actions, garantissant ainsi transparence, continuité et efficacité.</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('exp_h_5_title') ?></h3>
+                <p><?= __('exp_h_5_text') ?></p>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">6. Fluidifier la transmission des savoirs</h3>
-                <p>Le PRASMESTI ambitionne de transformer le partage d’informations en levier de performance collective, en favorisant une circulation rapide, fiable et accessible des connaissances.</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('exp_h_6_title') ?></h3>
+                <p><?= __('exp_h_6_text') ?></p>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- Attentes 7 et 8 -->
         <section class="presentation-card section-attentes-3">
             <div class="card-content">
-                <h2 class="section-title">Services numériques et interopérabilité</h2>
+                <h2 class="section-title"><?= __('e_services_interop_title') ?></h2>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">7. Déployer un e-service régional intégré</h3>
-                <p>Il s’agit de mettre en place une plateforme numérique centrale, dédiée à l’EFSTI, facilitant :</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('exp_h_7_title') ?></h3>
+                <p><?= __('exp_h_7_text') ?></p>
                 <ul>
-                    <li>le partage d’expériences ;</li>
-                    <li>le réseautage professionnel ;</li>
-                    <li>et le renforcement continu des capacités.</li>
+                    <li><?= __('exp_h_7_li1') ?></li>
+                    <li><?= __('exp_h_7_li2') ?></li>
+                    <li><?= __('exp_h_7_li3') ?></li>
                 </ul>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">8. Favoriser l’interopérabilité des systèmes et des métiers</h3>
-                <p>Le portail doit créer des passerelles numériques entre les différentes institutions et métiers, afin de :</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('exp_h_8_title') ?></h3>
+                <p><?= __('exp_h_8_text') ?></p>
                 <ul>
-                    <li>simplifier les flux de travail,</li>
-                    <li>améliorer la coordination,</li>
-                    <li>renforcer la capitalisation des connaissances.</li>
+                    <li><?= __('exp_h_8_li1') ?></li>
+                    <li><?= __('exp_h_8_li2') ?></li>
+                    <li><?= __('exp_h_8_li3') ?></li>
                 </ul>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- Levier d'image -->
         <section class="presentation-card section-image-transformation">
             <div class="card-content">
-                <h2 class="section-title">Le PRASMESTI : un levier d’image et de transformation</h2>
-                <p>Au-delà de ses fonctions techniques, le PRASMESTI incarne une ambition politique et symbolique forte :</p>
+                <h2 class="section-title"><?= __('image_trans_levier_title') ?></h2>
+                <p><?= __('image_trans_levier_intro') ?></p>
 
                 <p style="margin-top: 15px; padding: 10px; background-color: #fff7ed; border-left: 4px solid #f97316; border-radius: 4px;">
-                    👉 positionner l’Afrique centrale comme un espace de savoir, d’innovation et de développement du capital humain.
+                    <?= __('image_trans_levier_highlight') ?>
                 </p>
 
                 <ul style="margin-top: 15px;">
-                    <li><strong>Une identité porteuse de sens :</strong> le choix du vert reflète un engagement en faveur de la durabilité et de l’alignement avec les Objectifs de Développement Durable (ODD).</li>
-                    <li><strong>Une cohérence institutionnelle affirmée :</strong> son design et son ergonomie respectent la charte graphique de la CEEAC, en harmonie avec les orientations de l’Agenda 2063 et de l’Agenda 2030.</li>
-                    <li><strong>Une appropriation facilitée :</strong> grâce à un univers visuel cohérent et intuitif, les usagers s’approprient plus facilement les objectifs régionaux et les outils proposés.</li>
+                    <li><?= __('image_trans_levier_li1') ?></li>
+                    <li><?= __('image_trans_levier_li2') ?></li>
+                    <li><?= __('image_trans_levier_li3') ?></li>
                 </ul>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- Modalités et Acteurs -->
         <section class="presentation-card section-acteurs">
             <div class="card-content">
-                <h2 class="section-title">Modalités d'accès & Un outil au service de tous</h2>
+                <h2 class="section-title"><?= __('access_and_actors_title') ?></h2>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">Quelles modalités d’accès ?</h3>
-                <p>Le portail propose un accès différencié, adapté aux profils des utilisateurs :</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('access_q') ?></h3>
+                <p><?= __('access_text') ?></p>
                 <ul>
-                    <li><strong>Intranet :</strong> accès sécurisé pour les collaborateurs de la CEEAC et les points focaux, dédié à la gestion interne et à la coordination ;</li>
-                    <li><strong>Extranet :</strong> accès réservé aux institutions et établissements EFSTI des États membres dûment enregistrés ;</li>
-                    <li><strong>Internet :</strong> accès public à certaines données, informations générales et statistiques.</li>
+                    <li><?= __('access_intranet') ?></li>
+                    <li><?= __('access_extranet') ?></li>
+                    <li><?= __('access_internet') ?></li>
                 </ul>
 
-                <h3 class="sub-block-title" style="margin-top: 15px;">Un outil au service de tous les acteurs</h3>
-                <p>Le PRASMESTI offre des opportunités concrètes à chaque catégorie d’acteurs :</p>
+                <h3 class="sub-block-title" style="margin-top: 15px;"><?= __('tool_for_all_title') ?></h3>
+                <p><?= __('tool_for_all_text') ?></p>
                 <ul>
-                    <li><strong>États membres :</strong> valoriser leurs performances, attirer des partenariats et renforcer le pilotage des politiques publiques ;</li>
-                    <li><strong>Éditeurs de solutions numériques :</strong> promouvoir leurs expertises (audit, formation, solutions innovantes) ;</li>
-                    <li><strong>Bureaux d’études et partenaires techniques :</strong> présenter leurs offres de services, de l’analyse stratégique à la mise en œuvre opérationnelle.</li>
+                    <li><?= __('tool_for_all_li1') ?></li>
+                    <li><?= __('tool_for_all_li2') ?></li>
+                    <li><?= __('tool_for_all_li3') ?></li>
                 </ul>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
 
         <!-- Conclusion -->
         <section class="presentation-card section-conclusion">
             <div class="card-content">
-                <h2 class="section-title">En synthèse</h2>
-                <p>Les attentes du PRASMESTI convergent vers une finalité claire :</p>
+                <h2 class="section-title"><?= __('in_synthesis_title') ?></h2>
+                <p><?= __('in_synthesis_intro') ?></p>
 
                 <p style="font-size: 1.1rem; font-weight: bold; color: #f97316; text-align: center; padding: 15px; background-color: #fff7ed; border-radius: 8px; margin: 15px 0;">
-                    👉 faire du numérique un levier d’intégration, de gouvernance et de transformation durable.
+                    <?= __('in_synthesis_highlight') ?>
                 </p>
 
                 <p>
-                    Le PRASMESTI devient ainsi un outil fédérateur, au service d’une Afrique centrale plus connectée, plus performante et résolument tournée vers l’avenir.
+                    <?= __('in_synthesis_conclusion') ?>
                 </p>
             </div>
             <div class="card-image">
                 <!-- Insérez votre balise <img> ici -->
-                <span>Espace Image</span>
+                <span><?= __('image_space') ?></span>
             </div>
         </section>
+
+    </div>
+</section>
 
     </div>
 </section>
