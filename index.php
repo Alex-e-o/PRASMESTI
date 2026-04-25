@@ -11,10 +11,10 @@ $myEmail = "alexisossene@gmail.com";
 $sites = [
     [
         "title" => "PRASMESTI",
-        "url" => "PRASMESTI/public", // Lien vers votre projet actuel
+        "url" => "PRASMESTI/",
         "desc" => "Portail Régional d'Aide au Suivi en Matière d'Éducation, Sciences, Technologies et Innovations (CEEAC).",
         "icon" => "fas fa-globe-africa",
-        "color" => "#ff5528" // Couleur spécifique (orange du logo)
+        "color" => "#ff5528"
     ],
     [
         "title" => "Mon Portfolio",
