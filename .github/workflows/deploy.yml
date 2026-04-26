@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -22,3 +25,4 @@ jobs:
         port: 22
         remote_path: /home/dh_33tuig/aleoss2.dreamhosters.com/
         sftp_only: true
+        local_path: './PRASMESTI/*'
