@@ -25,4 +25,3 @@ jobs:
         port: 22
         remote_path: /home/dh_33tuig/aleoss2.dreamhosters.com/
         sftp_only: true
-        local_path: './PRASMESTI/*'
