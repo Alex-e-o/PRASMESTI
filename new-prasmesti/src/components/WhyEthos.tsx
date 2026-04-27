@@ -3,47 +3,46 @@ import { motion } from 'framer-motion';
 import { Lightbulb, Rocket, Handshake } from 'lucide-react';
 import { useLanguage } from '../languageContext';
 
-// Why Ethos Overflow specific translations
 const translations = {
-  whyEthosOverflow: {
-    en: "Why Ethos Overflow?",
-    fr: "Pourquoi Ethos Overflow ?",
+  whyPrasmesti: {
+    en: "Why PRASMESTI?",
+    fr: "Pourquoi PRASMESTI ?",
   },
   introParagraph: {
-    en: "At Ethos Overflow, we bridge the gap between ambitious businesses and influential creators. Our mission is to empower growth and foster genuine connections in the digital landscape, ensuring value for every partner.",
-    fr: "Chez Ethos Overflow, nous faisons le pont entre les entreprises ambitieuses et les créateurs influents. Notre mission est de stimuler la croissance et de favoriser des connexions authentiques dans le paysage numérique, en assurant de la valeur pour chaque partenaire.",
+    en: "PRASMESTI bridges the gap between the region's ambitions and its scientific and technological realities. Our mission is to support growth and foster genuine cooperation in education, science, and innovation across Central Africa.",
+    fr: "PRASMESTI fait le pont entre les ambitions de la région et ses réalités scientifiques et technologiques. Notre mission est de soutenir la croissance et de favoriser une coopération authentique en matière d'éducation, de sciences et d'innovation en Afrique centrale.",
   },
   valueOneTitle: {
     en: "Strategic Insight",
     fr: "Vision Stratégique",
   },
   valueOneDescription: {
-    en: "We go beyond superficial solutions, delivering data-driven strategies for sustained success. Our deep market understanding ensures optimal outcomes for both businesses and creators.",
-    fr: "Nous allons au-delà des solutions superficielles, en élaborant des stratégies basées sur les données pour un succès durable. Notre compréhension approfondie du marché assure des résultats optimaux pour les entreprises et les créateurs.",
+    en: "We go beyond superficial solutions, delivering data-driven strategies for sustained success. Our deep regional understanding ensures optimal outcomes for all member states.",
+    fr: "Nous allons au-delà des solutions superficielles, en élaborant des stratégies basées sur les données pour un succès durable. Notre compréhension approfondie de la région assure des résultats optimaux pour tous les États membres.",
   },
   valueTwoTitle: {
     en: "Performance-Driven",
     fr: "Axé sur la Performance",
   },
   valueTwoDescription: {
-    en: "Every project is executed with a relentless focus on measurable results. For businesses, it's about conversions and efficiency; for creators, it's about impactful monetization.",
-    fr: "Chaque projet est exécuté avec une concentration implacable sur des résultats mesurables. Pour les entreprises, il s'agit de conversions et d'efficacité ; pour les créateurs, il s'agit d'une monétisation impactante.",
+    en: "Every initiative is executed with a relentless focus on measurable results — improving education indicators, fostering innovation, and accelerating scientific development.",
+    fr: "Chaque initiative est exécutée avec une concentration implacable sur des résultats mesurables — améliorer les indicateurs éducatifs, favoriser l'innovation et accélérer le développement scientifique.",
   },
   valueThreeTitle: {
     en: "Authentic Partnerships",
     fr: "Partenariats Authentiques",
   },
   valueThreeDescription: {
-    en: "We believe in building relationships based on trust and mutual benefit. We connect creators with brands that genuinely align with their audience and values, fostering long-term success.",
-    fr: "Nous croyons en la construction de relations basées sur la confiance et le bénéfice mutuel. Nous mettons en relation les créateurs avec des marques qui correspondent réellement à leur public et à leurs valeurs, favorisant ainsi un succès à long terme.",
+    en: "We believe in building relationships based on trust and mutual benefit, connecting institutions and governments with shared goals for the future of the region.",
+    fr: "Nous croyons en la construction de relations basées sur la confiance et le bénéfice mutuel, en mettant en relation des institutions et des gouvernements partageant des objectifs communs pour l'avenir de la région.",
   },
   ctaTitle: {
-    en: "Ready to Transform Your Digital Presence or Monetize Your Influence?",
-    fr: "Prêt à Transformer Votre Présence Numérique ou à Monétiser Votre Influence ?",
+    en: "Ready to Strengthen Education and Innovation in Central Africa?",
+    fr: "Prêt à Renforcer l'Éducation et l'Innovation en Afrique Centrale ?",
   },
   ctaDescription: {
-    en: "Connect with Ethos Overflow today and discover how we can help you achieve your ambitious goals.",
-    fr: "Contactez Ethos Overflow dès aujourd'hui et découvrez comment nous pouvons vous aider à atteindre vos objectifs ambitieux.",
+    en: "Contact PRASMESTI today and discover how we can help achieve our shared regional goals.",
+    fr: "Contactez PRASMESTI dès aujourd'hui et découvrez comment nous pouvons contribuer à atteindre nos objectifs régionaux communs.",
   },
   contactUs: {
     en: "Contact Us",
@@ -86,7 +85,7 @@ const WhyEthos: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold font-display text-center mb-8 md:mb-12"
         >
-          {t('whyEthosOverflow')}
+          {t('whyPrasmesti')}
         </motion.h2>
 
         <motion.p
