@@ -29,11 +29,11 @@ jobs:
       working-directory: new-prasmesti
       run: npm run build
 
-    - name: 📁 Prepare deploy directory
+    - name: 📁 Replace source with built files
       run: |
-        mkdir -p _deploy
-        rsync -a --exclude=new-prasmesti --exclude=_deploy --exclude=.git --exclude=.github . _deploy/
-        cp -r new-prasmesti/dist _deploy/new-prasmesti
+        cp -r new-prasmesti/dist/. new-prasmesti-built/
+        rm -rf new-prasmesti
+        mv new-prasmesti-built new-prasmesti
 
     - name: 🚀 SFTP Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -42,6 +42,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 22
-        local_path: ./_deploy/
         remote_path: /home/dh_33tuig/aleoss2.dreamhosters.com/
         sftp_only: true
