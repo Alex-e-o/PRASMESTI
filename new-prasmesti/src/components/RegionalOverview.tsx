@@ -31,7 +31,7 @@ function RegionalOverview() {
 
           <div className="community-logo-wrap">
             <img
-              src="/assets/prasmesti/shared/ceeac-logo.png"
+              src={`${import.meta.env.BASE_URL}assets/prasmesti/shared/ceeac-logo.png`}
               alt="CEEAC logo"
               className="community-ceeac-logo"
             />

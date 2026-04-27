@@ -47,7 +47,7 @@ function PrivateLoginPage() {
 
         <form className="private-login-form" onSubmit={handleSubmit}>
           <div className="private-login-brand">
-            <img src="/assets/prasmesti/shared/logo.png" alt="PRASMESTI" className="private-login-brand-mark" />
+            <img src={`${import.meta.env.BASE_URL}assets/prasmesti/shared/logo.png`} alt="PRASMESTI" className="private-login-brand-mark" />
             <div>
               <p className="private-login-brand-title">PRASMESTI</p>
               <p className="private-login-brand-subtitle">Espace de pilotage et de reporting</p>
