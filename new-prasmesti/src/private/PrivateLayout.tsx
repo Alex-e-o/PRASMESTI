@@ -41,7 +41,7 @@ function PrivateLayout() {
       >
         <div className="private-sidebar-head">
           <Link to="/private/dashboard" className="private-brand">
-            <img src="/assets/prasmesti/shared/logo.png" alt="PRASMESTI" className="private-brand-mark" />
+            <img src={`${import.meta.env.BASE_URL}assets/prasmesti/shared/logo.png`} alt="PRASMESTI" className="private-brand-mark" />
             <div className="private-sidebar-copy">
               <p className="private-brand-kicker">Espace prive</p>
               <p className="private-brand-name">PRASMESTI</p>
@@ -114,7 +114,7 @@ function PrivateLayout() {
 
             <div className="private-user-card">
               <img
-                src="/assets/prasmesti/private/blaise-ossene.jpg"
+                src={`${import.meta.env.BASE_URL}assets/prasmesti/private/blaise-ossene.jpg`}
                 alt={user.name}
                 className="private-user-avatar"
               />

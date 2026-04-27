@@ -105,7 +105,7 @@ function Navbar() {
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="site-header-shell">
         <button type="button" onClick={goHome} className="site-brand">
-          <img src="/assets/prasmesti/shared/logo.png" alt="PRASMESTI" className="site-brand-mark" />
+          <img src={`${import.meta.env.BASE_URL}assets/prasmesti/shared/logo.png`} alt="PRASMESTI" className="site-brand-mark" />
           <div className="site-brand-copy">
             <p className="site-brand-kicker">CEEAC</p>
             <p className="site-brand-name">PRASMESTI</p>

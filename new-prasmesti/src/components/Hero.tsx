@@ -37,12 +37,12 @@ function Hero() {
     {
       eyebrow: translate('heroEyebrow') as string,
       title: translate('heroTitle') as string,
-      image: '/assets/prasmesti/home/hero/hero-1.jpg',
+      image: `${import.meta.env.BASE_URL}assets/prasmesti/home/hero/hero-1.jpg`,
     },
     {
       eyebrow: translate('heroSubtitle2') as string,
       title: translate('heroBody') as string,
-      image: '/assets/prasmesti/home/hero/hero-2.jpg',
+      image: `${import.meta.env.BASE_URL}assets/prasmesti/home/hero/hero-2.jpg`,
     },
   ];
 

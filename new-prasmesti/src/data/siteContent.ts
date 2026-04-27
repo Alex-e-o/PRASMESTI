@@ -9,7 +9,7 @@ export const commissionerVoices = [
       'PRASMESTI, a showcase for Afrocentric education systems and a barometer for science, technology and innovation in Central Africa, is a concrete response to the educational emergency in our region. It values knowledge, stimulates research, encourages innovation and places human capital development at the heart of our transformation. By occupying a central place in the construction, transmission and sharing of knowledge, it strengthens the capacities of our communities and promotes the emergence of regional collective intelligence.',
     quoteFr:
       "Le PRASMESTI, vitrine des systèmes éducatifs afrocentraux et baromètre des sciences, de la technologie et de l'innovation en Afrique centrale, s'impose comme une réponse concrète à l'urgence éducative de notre région. Il valorise les savoirs, stimule la recherche, encourage l'innovation et place le développement du capital humain au cœur de notre transformation. En occupant une place centrale dans la construction, la transmission et le partage des connaissances, il renforce les capacités de nos communautés et favorise l'émergence d'une intelligence collective régionale.",
-    image: '/assets/prasmesti/home/commissioners/commissioner-nelly.png',
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/commissioners/commissioner-nelly.png`,
   },
   {
     name: 'SEM Général Yves Marcel MAPANGOU MOUSSADJI',
@@ -21,7 +21,7 @@ export const commissionerVoices = [
       'The Regional Portal for Monitoring Assistance in Education, Sciences, Technology and Innovation (PRASMESTI) constitutes a strategic tool at the service of peace and security in Central Africa. By strengthening the availability and analysis of reliable data, it helps to inform public decisions, anticipate vulnerabilities and promote inclusive and resilient educational policies. Evidence-based governance in the education and innovation sectors contributes directly to conflict prevention, peacebuilding and sustainable stability in our region.',
     quoteFr:
       "Le Portail Régional d'Aide au Suivi en matière d'Éducation, Sciences, Technologie et Innovation (PRASMESTI) constitue un outil stratégique au service de la paix et de la sécurité en Afrique centrale. En renforçant la disponibilité et l'analyse des données fiables, il permet d'éclairer les décisions publiques, d'anticiper les vulnérabilités et de promouvoir des politiques éducatives inclusives et résilientes. En effet, une gouvernance fondée sur des données probantes dans les secteurs de l'éducation et de l'innovation contribue directement à la prévention des conflits, à la consolidation de la paix et à la stabilité durable de notre région.",
-    image: '/assets/prasmesti/home/commissioners/commissioner-yves.jpg',
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/commissioners/commissioner-yves.jpg`,
   },
   {
     name: 'SEM Olouimo Diai TAVIRA DA SILVA',
@@ -33,7 +33,7 @@ export const commissionerVoices = [
       'By highlighting the evolution of education, science, technology and innovation within our Community, PRASMESTI asserts itself as a structuring lever to consolidate our common market and strengthen our monetary and financial integration. It allows identifying the training needs of a qualified human capital, capable of supporting the competitiveness of our economies. For a high-performance common market relies on solid skills, dynamic innovation systems and an efficient circulation of knowledge.',
     quoteFr:
       "En mettant en lumière l'évolution de l'éducation, des sciences, de la technologie et de l'innovation au sein de notre Communauté, le PRASMESTI s'impose comme un levier structurant pour consolider notre marché commun et renforcer notre intégration monétaire et financière. Il permet d'identifier les besoins en formation d'un capital humain qualifié, capable de soutenir la compétitivité de nos économies. Car un marché commun performant repose sur des compétences solides, des systèmes d'innovation dynamiques et une circulation efficace du savoir.",
-    image: '/assets/prasmesti/home/commissioners/commissioner-olouimo.jpg',
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/commissioners/commissioner-olouimo.jpg`,
   },
   {
     name: 'SEM Maurice NIATY-MOUAMBA',
@@ -45,7 +45,7 @@ export const commissionerVoices = [
       'PRASMESTI constitutes a strategic tool to strengthen infrastructure planning and development in Central Africa. By providing reliable and harmonized data on education, science and innovation, it allows for more efficient direction of investments and territorial planning according to the real needs of the populations. By promoting better articulation between infrastructure development and human capital, PRASMESTI contributes to balanced growth, regional connectivity and sustainable territorial integration.',
     quoteFr:
       "Le PRASMESTI constitue un outil stratégique pour renforcer la planification et le développement des infrastructures en Afrique centrale. En mettant à disposition des données fiables et harmonisées sur l'éducation, la science et l'innovation, il permet d'orienter plus efficacement les investissements et l'aménagement du territoire en fonction des besoins réels des populations. En favorisant une meilleure articulation entre développement des infrastructures et capital humain, le PRASMESTI contribue à une croissance équilibrée, à la connectivité régionale et à une intégration territoriale durable.",
-    image: '/assets/prasmesti/home/commissioners/commissioner-maurice.webp',
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/commissioners/commissioner-maurice.webp`,
   },
   {
     name: 'SEM Maxime NZITA NGANGA DI MAVAMBU',
@@ -57,7 +57,7 @@ export const commissionerVoices = [
       'With PRASMESTI, we do more than manage our resources: we transform them into opportunities. This programme strengthens the know-how of our communities, stimulates innovation and paves the way for a prosperous, sustainable future full of possibilities for all.',
     quoteFr:
       "Avec le PRASMESTI, nous faisons plus que gérer nos ressources : nous les transformons en opportunités. Ce programme renforce le savoir-faire de nos communautés, stimule l'innovation et ouvre la voie à un avenir prospère, durable et plein de possibilités pour tous.",
-    image: '/assets/prasmesti/home/commissioners/commissioner-maxime.jpg',
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/commissioners/commissioner-maxime.jpg`,
   },
 ];
 
@@ -68,7 +68,7 @@ export const newsItems = [
     titleFr: 'Lancement de la Plateforme Numérique du PRASMESTI',
     bodyEn: 'A major step forward for regional monitoring of education, sciences, technology and innovation across ECCAS member states.',
     bodyFr: "Une étape majeure pour le suivi régional de l'éducation, des sciences, de la technologie et de l'innovation dans les États membres de la CEEAC.",
-    image: '/assets/prasmesti/home/news/news-1.jpg',
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-1.jpg`,
   },
   {
     date: '18 Novembre 2024',
@@ -76,7 +76,7 @@ export const newsItems = [
     titleFr: 'Programme de Valorisation des Talents Lancé',
     bodyEn: 'A new initiative to identify, develop and promote outstanding human capital across the Central African region.',
     bodyFr: "Une nouvelle initiative pour identifier, développer et promouvoir le capital humain d'excellence dans la région d'Afrique centrale.",
-    image: '/assets/prasmesti/home/news/news-2.jpg',
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-2.jpg`,
   },
   {
     date: '18 Novembre 2024',
@@ -84,7 +84,7 @@ export const newsItems = [
     titleFr: "Forum Régional sur l'Intégration scientifique",
     bodyEn: 'Member states and partners gathered to align scientific priorities and strengthen cross-border research collaboration.',
     bodyFr: "Les États membres et partenaires se sont réunis pour aligner les priorités scientifiques et renforcer la collaboration transfrontalière en matière de recherche.",
-    image: '/assets/prasmesti/home/news/news-3.jpg',
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-3.jpg`,
   },
 ];
 

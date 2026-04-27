@@ -17,7 +17,7 @@ function PresidentialMessage() {
           className="section-media-card"
         >
           <img
-            src="/assets/prasmesti/home/president/president.jpg"
+            src={`${import.meta.env.BASE_URL}assets/prasmesti/home/president/president.jpg`}
             alt="PRASMESTI presidential portrait"
             className="section-media-image"
           />
