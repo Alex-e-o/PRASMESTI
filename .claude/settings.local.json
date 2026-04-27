@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -n '6820,6840p' PRASMESTI/public/assets/css/style.css)",
+      "Bash(sed -n '7522,7615p' PRASMESTI/public/assets/css/style.css)"
+    ]
+  }
+}
