@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(sed -n '6820,6840p' PRASMESTI/public/assets/css/style.css)",
-      "Bash(sed -n '7522,7615p' PRASMESTI/public/assets/css/style.css)"
+      "Bash(sed -n '7522,7615p' PRASMESTI/public/assets/css/style.css)",
+      "PowerShell(robocopy \"C:\\\\Users\\\\agues\\\\WebstormProjects\\\\SiteGenerator\\\\sites\\\\new-prasmesti\" \"C:\\\\Users\\\\agues\\\\PhpstormProjects\\\\PRASMESTI\\\\new-prasmesti\" /E /XD node_modules dist .claude .git /NFL /NDL /NJH /NJS; echo \"Done\")"
     ]
   }
 }

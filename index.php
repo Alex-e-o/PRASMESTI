@@ -10,11 +10,18 @@ $myEmail = "alexisossene@gmail.com";
 // Tableau contenant les sites (Titre, URL, Description, Icone FontAwesome)
 $sites = [
     [
-        "title" => "PRASMESTI",
+        "title" => "PRASMESTI V2",
         "url" => "PRASMESTI/",
         "desc" => "Portail Régional d'Aide au Suivi en Matière d'Éducation, Sciences, Technologies et Innovations (CEEAC).",
         "icon" => "fas fa-globe-africa",
         "color" => "#ff5528"
+    ],
+    [
+        "title" => "PRASMESTI V3",
+        "url" => "new-prasmesti/",
+        "desc" => "Nouvelle version du portail PRASMESTI, développée en React.",
+        "icon" => "fas fa-rocket",
+        "color" => "#e67e22"
     ],
     [
         "title" => "Mon Portfolio",
