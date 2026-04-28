@@ -5,7 +5,6 @@ import Hero from '../components/Hero';
 import SmoothCursor from '../components/SmoothCursor';
 import PresidentialMessage from '../components/PresidentialMessage';
 import RegionalOverview from '../components/RegionalOverview';
-import DirectorSection from '../components/DirectorSection';
 import CommissionerVoices from '../components/CommissionerVoices';
 import NewsSection from '../components/NewsSection';
 import Footer from '../components/Footer';
@@ -48,9 +47,8 @@ function HomePage() {
       <Navbar />
       <main className="site-main">
         <Hero />
-        <PresidentialMessage />
         <RegionalOverview />
-        <DirectorSection />
+        <PresidentialMessage />
         <CommissionerVoices />
         <NewsSection />
         <HomeFlagStrip />

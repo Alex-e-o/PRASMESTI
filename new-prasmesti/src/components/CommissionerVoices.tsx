@@ -1,20 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
-import {
-  motion,
-  useAnimationFrame,
-  useMotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-  useVelocity,
-} from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { commissionerVoices } from '../data/siteContent';
 import { useLanguage } from '../languageContext';
 
-function wrap(min: number, max: number, v: number) {
-  const rangeSize = max - min;
-  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
-}
+const SLIDE_DURATION = 7000;
 
 interface VoiceEntry {
   nameFirst: string;
@@ -24,6 +14,20 @@ interface VoiceEntry {
   quoteEn: string;
   quoteFr: string;
   image: string;
+}
+
+function formatRole(role: string) {
+  const marker = 'en charge de';
+  const index = role.toLowerCase().indexOf(marker);
+  if (index === -1) return role;
+  const splitIndex = index + marker.length;
+  return (
+    <>
+      {role.slice(0, splitIndex)}
+      <br />
+      {role.slice(splitIndex).trimStart()}
+    </>
+  );
 }
 
 function VoiceCard({ voice, language }: { voice: VoiceEntry; language: 'en' | 'fr' }) {
@@ -38,7 +42,7 @@ function VoiceCard({ voice, language }: { voice: VoiceEntry; language: 'en' | 'f
           <p className="voice-marquee-name-first">{voice.nameFirst}</p>
           <p className="voice-marquee-name-last">{voice.nameLast}</p>
           <p className="voice-marquee-role">
-            {language === 'fr' ? voice.roleFr : voice.roleEn}
+            {formatRole(language === 'fr' ? voice.roleFr : voice.roleEn)}
           </p>
         </div>
       </div>
@@ -46,100 +50,35 @@ function VoiceCard({ voice, language }: { voice: VoiceEntry; language: 'en' | 'f
   );
 }
 
-function VelocityRow({
-  voices,
-  baseVelocity,
-  language,
-}: {
-  voices: VoiceEntry[];
-  baseVelocity: number;
-  language: 'en' | 'fr';
-}) {
-  const setRef = useRef<HTMLDivElement | null>(null);
-  const baseX = useMotionValue(0);
-  const [loopWidth, setLoopWidth] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], { clamp: false });
-  const directionFactor = useRef<number>(1);
-
-  useEffect(() => {
-    if (!setRef.current) return;
-
-    const updateLoopWidth = () => {
-      setLoopWidth(setRef.current?.offsetWidth ?? 0);
-    };
-
-    updateLoopWidth();
-
-    const observer = new ResizeObserver(updateLoopWidth);
-    observer.observe(setRef.current);
-    window.addEventListener('resize', updateLoopWidth);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('resize', updateLoopWidth);
-    };
-  }, []);
-
-  useAnimationFrame((_, delta) => {
-    if (!loopWidth || isPaused) return;
-
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-    if (velocityFactor.get() < 0) directionFactor.current = -1;
-    else if (velocityFactor.get() > 0) directionFactor.current = 1;
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
-    baseX.set(baseX.get() + moveBy);
-  });
-
-  const x = useTransform(baseX, (v) => {
-    if (!loopWidth) return '0px';
-    return `${wrap(-loopWidth, 0, v)}px`;
-  });
-
-  const cards = voices.map((voice, i) => (
-    <VoiceCard key={i} voice={voice} language={language} />
-  ));
-
-  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-    if (!loopWidth) return;
-
-    const horizontalDelta = Math.abs(event.deltaX) > Math.abs(event.deltaY)
-      ? event.deltaX
-      : event.deltaY;
-
-    if (horizontalDelta === 0) return;
-
-    event.preventDefault();
-    baseX.set(baseX.get() - horizontalDelta);
-  };
-
-  return (
-    <div
-      className="voices-marquee-row"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onWheel={handleWheel}
-    >
-      <motion.div className="voices-marquee-track" style={{ x }}>
-        <div ref={setRef} className="voices-marquee-set">
-          {cards}
-        </div>
-        <div className="voices-marquee-set" aria-hidden="true">
-          {cards}
-        </div>
-      </motion.div>
-    </div>
-  );
-}
-
 function CommissionerVoices() {
   const { language, translate } = useLanguage();
+  const [index, setIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const total = commissionerVoices.length;
+
+  useEffect(() => {
+    if (isPaused) return;
+    timerRef.current = setInterval(() => {
+      setIndex((i) => (i + 1) % total);
+    }, SLIDE_DURATION);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isPaused, total]);
+
+  const goTo = (i: number) => setIndex(((i % total) + total) % total);
+  const next = () => goTo(index + 1);
+  const prev = () => goTo(index - 1);
+
+  const current = commissionerVoices[index];
 
   return (
-    <section id="voices" className="site-glow-section section-shell section-with-divider voices-marquee-section">
+    <section
+      id="voices"
+      className="site-glow-section section-shell section-with-divider voices-marquee-section"
+    >
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -152,14 +91,58 @@ function CommissionerVoices() {
           <h2 className="section-title">{translate('voicesTitle')}</h2>
           <p className="section-body">{translate('voicesIntro')}</p>
         </motion.div>
-      </div>
 
-      <div className="voices-marquee-wrap">
-        <VelocityRow voices={commissionerVoices} baseVelocity={72} language={language} />
-      </div>
+        <div
+          className="voices-single-wrap"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <button
+            type="button"
+            aria-label="Previous testimonial"
+            className="voices-single-arrow voices-single-arrow-prev"
+            onClick={prev}
+          >
+            <ChevronLeft size={22} />
+          </button>
 
-      <div className="voices-marquee-fade voices-marquee-fade-left" />
-      <div className="voices-marquee-fade voices-marquee-fade-right" />
+          <div className="voices-single-stage">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`${index}-${language}`}
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -40 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="voices-single-slide"
+              >
+                <VoiceCard voice={current} language={language} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <button
+            type="button"
+            aria-label="Next testimonial"
+            className="voices-single-arrow voices-single-arrow-next"
+            onClick={next}
+          >
+            <ChevronRight size={22} />
+          </button>
+        </div>
+
+        <div className="voices-single-dots">
+          {commissionerVoices.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Testimonial ${i + 1}`}
+              className={`voices-single-dot${i === index ? ' voices-single-dot-active' : ''}`}
+              onClick={() => goTo(i)}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

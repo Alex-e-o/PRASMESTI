@@ -91,7 +91,15 @@ function Navbar() {
     { label: t('navFrameworkStrategies') },
   ];
 
-  const countryItems: DropdownItem[] = COUNTRIES.map((name) => ({ label: name }));
+  const countryItems: DropdownItem[] = COUNTRIES.map((name) => {
+    const normalized = name.toLowerCase();
+    if (normalized === 'gabon') {
+      return { label: name, onClick: () => navigate('/presentation/implementation/gabon') };
+    }
+    return { label: name, onClick: () => navigate('/presentation/implementation') };
+  });
+
+  const goToImplementation = () => navigate('/presentation/implementation');
 
   const goHome = () => {
     if (location.pathname === '/') {
@@ -119,7 +127,7 @@ function Navbar() {
 
           <NavDropdown label={t('navPresentation')} items={presentationItems} onLabelClick={() => navigate('/presentation')} />
           <NavDropdown label={t('navNormativeTexts')} items={normativeItems} />
-          <NavDropdown label={t('navImplementation')} items={countryItems} />
+          <NavDropdown label={t('navImplementation')} items={countryItems} onLabelClick={goToImplementation} />
 
           <button type="button" className="site-nav-link">{t('navIntellectualProperty')}</button>
           <button type="button" className="site-nav-link">{t('navInnovations')}</button>

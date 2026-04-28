@@ -57,11 +57,35 @@ function Hero() {
 
   const current = slides[slide];
   const slideKey = `${slide}-${language}`;
+  const decadeLabel = language === 'fr' ? 'ans pour renaitre et batir' : 'years to be reborn and build';
+  const helperPillars = language === 'fr'
+    ? ['Eclairer', 'Orienter', 'Informer', 'Transformer']
+    : ['Illuminate', 'Orient', 'Inform', 'Transform'];
 
   return (
     <section id="hero" className="site-glow-section hero-section">
+      {/* Rotating background image */}
+      <div className="hero-bg-wrap">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={slideKey + '-bg'}
+            src={current.image}
+            alt=""
+            aria-hidden="true"
+            className="hero-bg-image"
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: 'easeInOut' }}
+          />
+        </AnimatePresence>
+      </div>
+
+      {/* Dark scrim over the image */}
       <div className="hero-backdrop" />
-      <div className="site-container hero-grid">
+
+      {/* Content */}
+      <div className="site-container hero-content">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -115,8 +139,19 @@ function Hero() {
               <p className="hero-stat-label">{translate('heroStatTwoLabel')}</p>
             </div>
             <div className="hero-stat-card">
-              <p className="hero-stat-value">{translate('heroStatThreeValue')}</p>
-              <p className="hero-stat-label">{translate('heroStatThreeLabel')}</p>
+              <p className="hero-stat-value">10</p>
+              <p className="hero-stat-label">{decadeLabel}</p>
+            </div>
+          </div>
+
+          <div className="hero-pillars-helper">
+            <p className="hero-pillars-helper-title">
+              {language === 'fr' ? 'Les 4 piliers helpers du PRASMESTI' : 'The 4 PRASMESTI helper pillars'}
+            </p>
+            <div className="hero-pillars-helper-chips">
+              {helperPillars.map((pillar) => (
+                <span key={pillar} className="hero-pillars-helper-chip">{pillar}</span>
+              ))}
             </div>
           </div>
 
@@ -137,33 +172,6 @@ function Hero() {
               />
             ))}
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.12 }}
-          className="hero-visual-shell"
-        >
-          <motion.div
-            animate={{ y: [0, -10, 0], rotate: [0, 1.5, 0, -1.5, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-            className="hero-visual"
-          >
-            <div className="hero-visual-glow" />
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={slideKey + '-img'}
-                src={current.image}
-                alt="PRASMESTI hero"
-                className="hero-primary-image"
-                initial={{ opacity: 0, scale: 1.04 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.55, ease: 'easeInOut' }}
-              />
-            </AnimatePresence>
-          </motion.div>
         </motion.div>
       </div>
     </section>
