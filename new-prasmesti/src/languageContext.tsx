@@ -56,10 +56,10 @@ const translations: Dictionary = {
   heroStatOneLabel: { en: 'Member States', fr: 'États membres' },
   heroStatTwoLabel: { en: 'Strategic pillars', fr: 'Piliers stratégiques' },
   heroStatThreeLabel: {
-    en: 'years to change the face of education',
-    fr: 'ans pour changer la face de l\'éducation',
+    en: 'years to be reborn and build',
+    fr: 'ans pour renaître et bâtir',
   },
-  heroStatThreeValue: { en: '05', fr: '05' },
+  heroStatThreeValue: { en: '10', fr: '10' },
   presidentEyebrow: {
     en: 'Word from the regional champion president — Head of State of the DRC',
     fr: "Mot du président champion régional — Chef d'État de la RDC",
