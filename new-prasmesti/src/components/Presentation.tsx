@@ -1,6 +1,7 @@
 import { motion, type MotionProps } from 'framer-motion';
 import { BookOpen, Target, Zap, TrendingUp, Lock, Eye } from 'lucide-react';
 import { useLanguage } from '../languageContext';
+import DirectorSection from './DirectorSection';
 
 const fadeUp: MotionProps = {
   initial: { opacity: 0, y: 32 },
@@ -19,40 +20,31 @@ function ImagePlaceholder({ icon: Icon, label }: { icon: React.ElementType; labe
 }
 
 function Presentation() {
-  const { translate } = useLanguage();
+  const { language, translate } = useLanguage();
   const t = (key: string) => translate(key) as string;
-
-  const titleLine2 = t('presPageTitleLine2');
+  const presentationTitle = language === 'fr' ? 'Le PRASMESTI en quelques mots' : 'PRASMESTI in a few words';
 
   return (
     <section id="presentation" className="pres-page">
-
-      {/* ── Page header ── */}
       <div className="pres-page-header site-glow-section">
         <div className="hero-backdrop" />
         <div className="site-container pres-header-inner">
-          <motion.span className="pres-page-eyebrow" {...fadeUp}>
-            {t('presEyebrow')}
-          </motion.span>
-          <motion.div
-            className="pres-pyramid-title"
+          <motion.h1
+            className="pres-sub-page-title"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="pres-pyramid-line-1">{t('presPageTitleLine1')}</span>
-            {titleLine2 && <span className="pres-pyramid-line-2">{titleLine2}</span>}
-            <span className="pres-pyramid-line-3">PRASMESTI ?</span>
-          </motion.div>
+            {presentationTitle}
+          </motion.h1>
         </div>
       </div>
 
-      {/* ── Cards ── */}
+      <DirectorSection />
+
       <div className="pres-cards-wrap">
         <div className="site-container pres-cards-inner">
-
-          {/* 0 — Introduction */}
           <motion.section id="pres-intro" className="pres-card" {...fadeUp}>
             <div className="pres-card-content">
               <p className="pres-lead-text">
@@ -73,7 +65,6 @@ function Presentation() {
             </div>
           </motion.section>
 
-          {/* 1 — Missions */}
           <motion.section id="pres-missions" className="pres-card" {...fadeUp}>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('presMissionsTitle')}</h2>
@@ -90,7 +81,6 @@ function Presentation() {
             </div>
           </motion.section>
 
-          {/* 2 — Functions */}
           <motion.section id="pres-functions" className="pres-card" {...fadeUp}>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('presFunctionsTitle')}</h2>
@@ -106,7 +96,6 @@ function Presentation() {
             </div>
           </motion.section>
 
-          {/* 3 — Objectives */}
           <motion.section id="pres-objectives" className="pres-card" {...fadeUp}>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('presObjectivesTitle')}</h2>
@@ -121,7 +110,6 @@ function Presentation() {
             </div>
           </motion.section>
 
-          {/* 4 — Results */}
           <motion.section id="pres-results" className="pres-card" {...fadeUp}>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('presResultsTitle')}</h2>
@@ -131,11 +119,10 @@ function Presentation() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={TrendingUp} label="Résultats" />
+              <ImagePlaceholder icon={TrendingUp} label="Resultats" />
             </div>
           </motion.section>
 
-          {/* 5 — Access */}
           <motion.section id="pres-access" className="pres-card" {...fadeUp}>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('presAccessTitle')}</h2>
@@ -147,11 +134,10 @@ function Presentation() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={Lock} label="Accès" />
+              <ImagePlaceholder icon={Lock} label="Acces" />
             </div>
           </motion.section>
 
-          {/* 6 — Vision */}
           <motion.section id="pres-vision" className="pres-card pres-card-vision" {...fadeUp}>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('presVisionTitle')}</h2>
@@ -167,7 +153,6 @@ function Presentation() {
               <ImagePlaceholder icon={Eye} label="Vision" />
             </div>
           </motion.section>
-
         </div>
       </div>
     </section>

@@ -8,6 +8,8 @@ import AttentesPage from './pages/presentation/AttentesPage';
 import EnjeuxPage from './pages/presentation/EnjeuxPage';
 import ConceptionPage from './pages/presentation/ConceptionPage';
 import ResponsablesPage from './pages/presentation/ResponsablesPage';
+import ImplementationStatusPage from './pages/presentation/ImplementationStatusPage';
+import ImplementationGabonPage from './pages/presentation/ImplementationGabonPage';
 import RequirePrivateAuth from './private/RequirePrivateAuth';
 import PrivateLayout from './private/PrivateLayout';
 import PrivateLoginPage from './pages/private/PrivateLoginPage';
@@ -29,6 +31,8 @@ function App() {
         <Route path="/presentation/issues" element={<EnjeuxPage />} />
         <Route path="/presentation/design" element={<ConceptionPage />} />
         <Route path="/presentation/leads" element={<ResponsablesPage />} />
+        <Route path="/presentation/implementation" element={<ImplementationStatusPage />} />
+        <Route path="/presentation/implementation/gabon" element={<ImplementationGabonPage />} />
         <Route path="/private/login" element={<PrivateLoginPage />} />
         <Route element={<RequirePrivateAuth />}>
           <Route path="/private" element={<PrivateLayout />}>

@@ -16,8 +16,11 @@ function HtmlLi({ html }: { html: string }) {
 }
 
 function Attentes() {
-  const { translate } = useLanguage();
+  const { language, translate } = useLanguage();
   const t = (key: string) => translate(key) as string;
+  const attentesLeadPost = language === 'fr'
+    ? "des systemes de l'Education, de la Formation, des Sciences, de la Technologie et de l'Innovation (EFSTI) en Afrique centrale."
+    : 'of the Education, Training, Sciences, Technology and Innovation (ETSTI) systems in Central Africa.';
 
   return (
     <section id="attentes" className="pres-page">
@@ -32,7 +35,7 @@ function Attentes() {
               <p className="pres-lead-text">
                 {t('attLeadPre')}{' '}
                 <strong className="pres-highlight">{t('attLeadBold')}</strong>{' '}
-                {t('attLeadPost')}
+                {attentesLeadPost}
               </p>
             </div>
             <div className="pres-card-media">

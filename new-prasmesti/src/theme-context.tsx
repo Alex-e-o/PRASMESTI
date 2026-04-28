@@ -10,7 +10,7 @@ interface ThemeContextValue {
 const ThemeContext = React.createContext<ThemeContextValue | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = React.useState<Theme>('light');
+  const [theme, setTheme] = React.useState<Theme>('dark');
 
   React.useEffect(() => {
     const saved = window.localStorage.getItem('new-prasmesti-theme');
