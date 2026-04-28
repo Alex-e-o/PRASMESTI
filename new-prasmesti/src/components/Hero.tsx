@@ -31,7 +31,6 @@ function TextAnimate({ text, slideKey }: { text: string; slideKey: string }) {
 function Hero() {
   const { language, translate } = useLanguage();
   const [slide, setSlide] = useState(0);
-  const [showPillars, setShowPillars] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const slides = [
@@ -58,6 +57,7 @@ function Hero() {
 
   const current = slides[slide];
   const slideKey = `${slide}-${language}`;
+  const decadeLabel = language === 'fr' ? 'ans pour renaitre et batir' : 'years to be reborn and build';
   const helperPillars = language === 'fr'
     ? ['Eclairer', 'Orienter', 'Informer', 'Transformer']
     : ['Illuminate', 'Orient', 'Inform', 'Transform'];
@@ -134,40 +134,26 @@ function Hero() {
               <p className="hero-stat-value">11</p>
               <p className="hero-stat-label">{translate('heroStatOneLabel')}</p>
             </div>
-            <button
-              type="button"
-              onClick={() => setShowPillars(!showPillars)}
-              className={`hero-stat-card hero-stat-card-interactive ${showPillars ? 'active' : ''}`}
-            >
+            <div className="hero-stat-card">
               <p className="hero-stat-value">04</p>
               <p className="hero-stat-label">{translate('heroStatTwoLabel')}</p>
-            </button>
+            </div>
             <div className="hero-stat-card">
-              <p className="hero-stat-value">{translate('heroStatThreeValue')}</p>
-              <p className="hero-stat-label">{translate('heroStatThreeLabel')}</p>
+              <p className="hero-stat-value">10</p>
+              <p className="hero-stat-label">{decadeLabel}</p>
             </div>
           </div>
 
-          <AnimatePresence>
-            {showPillars && (
-              <motion.div
-                initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                animate={{ opacity: 1, height: 'auto', marginTop: 22 }}
-                exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                className="hero-pillars-helper"
-                style={{ overflow: 'hidden' }}
-              >
-                <p className="hero-pillars-helper-title">
-                  {language === 'fr' ? 'Les 4 piliers du PRASMESTI' : 'The 4 PRASMESTI pillars'}
-                </p>
-                <div className="hero-pillars-helper-chips">
-                  {helperPillars.map((pillar) => (
-                    <span key={pillar} className="hero-pillars-helper-chip">{pillar}</span>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="hero-pillars-helper">
+            <p className="hero-pillars-helper-title">
+              {language === 'fr' ? 'Les 4 piliers helpers du PRASMESTI' : 'The 4 PRASMESTI helper pillars'}
+            </p>
+            <div className="hero-pillars-helper-chips">
+              {helperPillars.map((pillar) => (
+                <span key={pillar} className="hero-pillars-helper-chip">{pillar}</span>
+              ))}
+            </div>
+          </div>
 
           <div className="hero-slide-dots">
             {slides.map((_, i) => (
