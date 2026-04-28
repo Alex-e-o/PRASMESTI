@@ -39,10 +39,8 @@ function VoiceCard({ voice, language }: { voice: VoiceEntry; language: 'en' | 'f
           {language === 'fr' ? voice.quoteFr : voice.quoteEn}
         </p>
         <div className="voice-marquee-footer">
-          <p className="voice-marquee-full-name">
-            <span className="voice-marquee-name-first">{voice.nameFirst}</span>{' '}
-            <span className="voice-marquee-name-last">{voice.nameLast}</span>
-          </p>
+          <p className="voice-marquee-name-first">{voice.nameFirst}</p>
+          <p className="voice-marquee-name-last">{voice.nameLast}</p>
           <p className="voice-marquee-role">
             {formatRole(language === 'fr' ? voice.roleFr : voice.roleEn)}
           </p>
