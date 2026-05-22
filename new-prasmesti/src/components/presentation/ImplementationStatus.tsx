@@ -4,8 +4,23 @@ import { FlagCloud } from '../FlagCloud';
 import { eccasFlags } from '../../data/eccasFlags';
 import { useLanguage } from '../../languageContext';
 
+const countrySlugByNameEn: Record<string, string> = {
+  Gabon: 'gabon',
+  Angola: 'angola',
+  Burundi: 'burundi',
+  Cameroon: 'cameroon',
+  'Central African Republic': 'central-african-republic',
+  'Republic of the Congo': 'congo',
+  'Equatorial Guinea': 'equatorial-guinea',
+  'DR Congo': 'drc',
+  Rwanda: 'rwanda',
+  'Sao Tome and Principe': 'sao-tome',
+};
+
 function ImplementationStatus() {
   const { language, translate } = useLanguage();
+  const isFr = language === 'fr';
+  const linkHint = isFr ? 'Voir la maquette des statistiques' : 'View stats mockup';
 
   return (
     <>
@@ -51,37 +66,41 @@ function ImplementationStatus() {
 
           <div className="impl-countries-grid">
             {eccasFlags.map((flag, i) => {
-              const isGabon = flag.nameEn.toLowerCase() === 'gabon';
+              const slug = countrySlugByNameEn[flag.nameEn];
               const card = (
                 <motion.div
-                key={flag.nameEn}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="impl-country-card"
-              >
-                <img
-                  src={flag.image}
-                  alt={language === 'fr' ? flag.nameFr : flag.nameEn}
-                  className="impl-country-flag"
-                />
-                <div className="impl-country-info">
-                  <p className="impl-country-name">
-                    {language === 'fr' ? flag.nameFr : flag.nameEn}
-                  </p>
-                  <span className="impl-status-badge impl-status-active">
-                    {translate('implStatusActive') as string}
-                  </span>
-                  {isGabon && <span className="impl-country-link-hint">View stats mockup</span>}
-                </div>
-              </motion.div>
+                  key={flag.nameEn}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  className="impl-country-card"
+                >
+                  <img
+                    src={flag.image}
+                    alt={isFr ? flag.nameFr : flag.nameEn}
+                    className="impl-country-flag"
+                  />
+                  <div className="impl-country-info">
+                    <p className="impl-country-name">
+                      {isFr ? flag.nameFr : flag.nameEn}
+                    </p>
+                    <span className="impl-status-badge impl-status-active">
+                      {translate('implStatusActive') as string}
+                    </span>
+                    {slug && <span className="impl-country-link-hint">{linkHint}</span>}
+                  </div>
+                </motion.div>
               );
 
-              if (!isGabon) return card;
+              if (!slug) return card;
 
               return (
-                <Link key={flag.nameEn} to="/presentation/implementation/gabon" className="impl-country-link">
+                <Link
+                  key={flag.nameEn}
+                  to={`/presentation/implementation/${slug}`}
+                  className="impl-country-link"
+                >
                   {card}
                 </Link>
               );

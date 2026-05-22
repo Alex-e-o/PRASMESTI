@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import type { MotionProps } from 'framer-motion';
-import { BookOpen, HelpCircle, Zap, Image, Lock, Target } from 'lucide-react';
 import PresSubPageHeader from './PresSubPageHeader';
 import { useLanguage } from '../../languageContext';
 
@@ -10,6 +9,8 @@ const fadeUp: MotionProps = {
   viewport: { once: true, margin: '-50px' },
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
 };
+
+const IMG_BASE = `${import.meta.env.BASE_URL}assets/prasmesti/presentation/`;
 
 function PresentationDetail() {
   const { translate } = useLanguage();
@@ -38,21 +39,17 @@ function PresentationDetail() {
               <p className="pres-body-text" style={{ marginTop: '1.25rem' }}>{t('pdetSuccessCondition')}</p>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <BookOpen size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">PRASMESTI</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}pdet-mission.jpg`}
+                alt="Salle de classe dans un établissement scolaire en Afrique centrale"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
           {/* Description */}
           <motion.div className="pres-card" {...fadeUp}>
-            <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <HelpCircle size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Description</span>
-              </div>
-            </div>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('pdetDescriptionLabel')}</h2>
               <p className="pres-body-text">{t('pdetDescriptionText')}</p>
@@ -63,6 +60,14 @@ function PresentationDetail() {
                 <li>{t('pdetWhyItem3')}</li>
                 <li>{t('pdetWhyItem4')}</li>
               </ul>
+            </div>
+            <div className="pres-card-media">
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}pdet-description.jpg`}
+                alt="Vue aérienne d'une capitale de la zone CEEAC"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -78,21 +83,17 @@ function PresentationDetail() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Zap size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Fonctions</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}pdet-functions.jpg`}
+                alt="Infrastructure numérique et réseau de partage de l'information"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
           {/* Expectations */}
           <motion.div className="pres-card" {...fadeUp}>
-            <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Target size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Attentes</span>
-              </div>
-            </div>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('pdetExpTitle')}</h2>
               <ul className="pres-list">
@@ -110,6 +111,14 @@ function PresentationDetail() {
                 <li>{t('pdetExpItem5')}</li>
               </ul>
             </div>
+            <div className="pres-card-media">
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}pdet-expectations.jpg`}
+                alt="Élèves africains en train d'étudier"
+                loading="lazy"
+              />
+            </div>
           </motion.div>
 
           {/* Brand image */}
@@ -120,21 +129,17 @@ function PresentationDetail() {
               <p className="pres-body-text">{t('pdetBrandText2')}</p>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Image size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Image de marque</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}pdet-brand.jpg`}
+                alt="Équipement scientifique illustrant la recherche et l'innovation"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
           {/* Access modalities */}
           <motion.div className="pres-card" {...fadeUp}>
-            <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Lock size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Accès</span>
-              </div>
-            </div>
             <div className="pres-card-content">
               <h2 className="pres-section-title">{t('pdetAccessTitle')}</h2>
               <p className="pres-body-text">{t('pdetAccessIntro')}</p>
@@ -150,6 +155,14 @@ function PresentationDetail() {
                 <li>{t('pdetAccessStudyOffice')}</li>
               </ul>
             </div>
+            <div className="pres-card-media">
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}pdet-access.jpg`}
+                alt="Poste de travail connecté pour l'accès à la plateforme"
+                loading="lazy"
+              />
+            </div>
           </motion.div>
 
           {/* Summary objectives */}
@@ -163,10 +176,12 @@ function PresentationDetail() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Target size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Résumé</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}pdet-summary.jpg`}
+                alt="Campus universitaire africain"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 

@@ -27,11 +27,15 @@ type WikiSummary = {
   thumbnail?: { source?: string };
 };
 const gabonPoints = [
-  { name: 'Libreville', x: 102, y: 108, status: 'high' },
-  { name: 'Port-Gentil', x: 78, y: 132, status: 'medium' },
-  { name: 'Franceville', x: 258, y: 220, status: 'medium' },
-  { name: 'Oyem', x: 172, y: 54, status: 'high' },
-  { name: 'Mouila', x: 150, y: 186, status: 'low' },
+  { name: 'Libreville', province: 'Estuaire', x: 102, y: 108, status: 'high', labelAnchor: 'start' as const },
+  { name: 'Port-Gentil', province: 'Ogooué-Maritime', x: 78, y: 132, status: 'medium', labelAnchor: 'start' as const },
+  { name: 'Lambaréné', province: 'Moyen-Ogooué', x: 132, y: 145, status: 'medium', labelAnchor: 'start' as const },
+  { name: 'Oyem', province: 'Woleu-Ntem', x: 172, y: 54, status: 'high', labelAnchor: 'start' as const },
+  { name: 'Mouila', province: 'Ngounié', x: 150, y: 188, status: 'low', labelAnchor: 'start' as const },
+  { name: 'Tchibanga', province: 'Nyanga', x: 124, y: 232, status: 'low', labelAnchor: 'start' as const },
+  { name: 'Makokou', province: 'Ogooué-Ivindo', x: 226, y: 96, status: 'high', labelAnchor: 'end' as const },
+  { name: 'Koulamoutou', province: 'Ogooué-Lolo', x: 214, y: 162, status: 'medium', labelAnchor: 'end' as const },
+  { name: 'Franceville', province: 'Haut-Ogooué', x: 252, y: 218, status: 'medium', labelAnchor: 'end' as const },
 ];
 
 function ImplementationGabonStats() {
@@ -131,12 +135,18 @@ function ImplementationGabonStats() {
                 d="M112 28 L160 24 L204 38 L232 60 L252 94 L274 132 L266 168 L242 198 L252 234 L226 264 L190 278 L152 268 L132 246 L110 252 L88 236 L74 210 L62 172 L58 136 L64 112 L78 88 L92 66 Z"
                 fill="url(#gabonMapFill)"
               />
-              {gabonPoints.map((point) => (
-                <g key={point.name} transform={`translate(${point.x} ${point.y})`}>
-                  <circle className={`impl-gabon-point ${point.status}`} r="6" />
-                  <text x="10" y="4">{point.name}</text>
-                </g>
-              ))}
+              {gabonPoints.map((point) => {
+                const labelX = point.labelAnchor === 'end' ? -10 : 10;
+                return (
+                  <g key={point.name} transform={`translate(${point.x} ${point.y})`}>
+                    <circle className={`impl-gabon-point ${point.status}`} r="6">
+                      <title>{`${point.name} (${point.province})`}</title>
+                    </circle>
+                    <text x={labelX} y={-4} textAnchor={point.labelAnchor}>{point.name}</text>
+                    <text x={labelX} y={10} textAnchor={point.labelAnchor} className="impl-gabon-point-province">{point.province}</text>
+                  </g>
+                );
+              })}
             </svg>
           </button>
         </article>

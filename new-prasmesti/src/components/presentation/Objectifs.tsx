@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import type { MotionProps } from 'framer-motion';
-import { Eye, Globe2, GraduationCap } from 'lucide-react';
 import PresSubPageHeader from './PresSubPageHeader';
 import { useLanguage } from '../../languageContext';
 
@@ -10,6 +9,8 @@ const fadeUp: MotionProps = {
   viewport: { once: true, margin: '-50px' },
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
 };
+
+const IMG_BASE = `${import.meta.env.BASE_URL}assets/prasmesti/objectifs/`;
 
 function HtmlLi({ html }: { html: string }) {
   return <li dangerouslySetInnerHTML={{ __html: html }} />;
@@ -40,10 +41,12 @@ function Objectifs() {
               <p className="pres-body-text">{t('objsContextText')}</p>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Eye size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Objectifs</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}obj-intro.jpg`}
+                alt="Vue aérienne d'une capitale d'Afrique centrale"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -61,10 +64,12 @@ function Objectifs() {
               <HtmlDiv html={t('objsH1Highlight')} className="pres-highlight-box" />
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Eye size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Interne</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}obj-internal.jpg`}
+                alt="Salle de réunion équipée pour la coordination interne"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -82,10 +87,12 @@ function Objectifs() {
               <HtmlDiv html={t('objsH2Highlight')} className="pres-highlight-box" />
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Globe2 size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Externe</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}obj-external.jpg`}
+                alt="Globe terrestre centré sur le continent africain"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -102,10 +109,12 @@ function Objectifs() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <GraduationCap size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Former</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}obj-training.jpg`}
+                alt="Diplôme et ouvrage symbolisant la formation et la qualification"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 

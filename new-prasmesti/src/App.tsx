@@ -10,6 +10,7 @@ import ConceptionPage from './pages/presentation/ConceptionPage';
 import ResponsablesPage from './pages/presentation/ResponsablesPage';
 import ImplementationStatusPage from './pages/presentation/ImplementationStatusPage';
 import ImplementationGabonPage from './pages/presentation/ImplementationGabonPage';
+import ImplementationCountryPage from './pages/presentation/ImplementationCountryPage';
 import RequirePrivateAuth from './private/RequirePrivateAuth';
 import PrivateLayout from './private/PrivateLayout';
 import PrivateLoginPage from './pages/private/PrivateLoginPage';
@@ -33,6 +34,7 @@ function App() {
         <Route path="/presentation/leads" element={<ResponsablesPage />} />
         <Route path="/presentation/implementation" element={<ImplementationStatusPage />} />
         <Route path="/presentation/implementation/gabon" element={<ImplementationGabonPage />} />
+        <Route path="/presentation/implementation/:slug" element={<ImplementationCountryPage />} />
         <Route path="/private/login" element={<PrivateLoginPage />} />
         <Route element={<RequirePrivateAuth />}>
           <Route path="/private" element={<PrivateLayout />}>
