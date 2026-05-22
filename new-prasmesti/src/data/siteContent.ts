@@ -63,6 +63,22 @@ export const commissionerVoices = [
 
 export const newsItems = [
   {
+    date: '27 Juillet 2026',
+    titleEn: 'Opening of the 2026 Summer School',
+    titleFr: "Ouverture de l'École d'été 2026",
+    bodyEn: 'Launch of the regional summer school dedicated to capacity building in education, sciences, technology and innovation.',
+    bodyFr: "Lancement de l'école d'été régionale dédiée au renforcement des capacités en éducation, sciences, technologie et innovation.",
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-2.jpg`,
+  },
+  {
+    date: '15 Mai 2026',
+    titleEn: 'Scientific Dinner',
+    titleFr: 'Dîner scientifique',
+    bodyEn: 'An evening of exchanges bringing together researchers, decision-makers and partners around science, technology and innovation in Central Africa.',
+    bodyFr: "Une soirée d'échanges réunissant chercheurs, décideurs et partenaires autour des sciences, de la technologie et de l'innovation en Afrique centrale.",
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-3.jpg`,
+  },
+  {
     date: '16 Novembre 2024',
     titleEn: 'Launch of the PRASMESTI Digital Platform',
     titleFr: 'Lancement de la Plateforme Numérique du PRASMESTI',

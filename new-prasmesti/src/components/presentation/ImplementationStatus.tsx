@@ -15,12 +15,13 @@ const countrySlugByNameEn: Record<string, string> = {
   'DR Congo': 'drc',
   Rwanda: 'rwanda',
   'Sao Tome and Principe': 'sao-tome',
+  Chad: 'chad',
 };
 
 function ImplementationStatus() {
   const { language, translate } = useLanguage();
   const isFr = language === 'fr';
-  const linkHint = isFr ? 'Voir la maquette des statistiques' : 'View stats mockup';
+  const linkHint = isFr ? 'Voir les statistiques' : 'View statistics';
 
   return (
     <>

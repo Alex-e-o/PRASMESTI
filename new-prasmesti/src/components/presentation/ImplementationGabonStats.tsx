@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, CircleCheck, Clock3, TrendingUp, TriangleAlert } from 'lucide-react';
 import PresSubPageHeader from './PresSubPageHeader';
 import { useLanguage } from '../../languageContext';
+import { localizeDomainLabel, localizeBlockerLabel } from '../../data/implementationCountries';
 
 const monthlyCompletion = [38, 44, 49, 55, 61, 66, 70];
 const domainProgress = [
@@ -50,8 +51,8 @@ function ImplementationGabonStats() {
     .join(' ');
   const isFr = language === 'fr';
   const copy = {
-    title: isFr ? 'Gabon - Maquette des statistiques de mise en oeuvre' : 'Gabon - Implementation Statistics Mockup',
-    subtitle: isFr ? "Apercu base sur le questionnaire pour le suivi CESA 16-25 et ODD4." : 'Questionnaire-driven snapshot for CESA 16-25 and SDG4 follow-up.',
+    title: isFr ? 'Gabon - Statistiques de mise en oeuvre' : 'Gabon - Implementation Statistics',
+    subtitle: isFr ? "Apercu base sur le questionnaire pour le suivi CESA 26-35 et ODD4." : 'Questionnaire-driven snapshot for CESA 26-35 and SDG4 follow-up.',
     back: isFr ? 'Retour a tous les Etats membres' : 'Back to all member states',
     mapTitle: isFr ? 'Carte structurelle de mise en oeuvre du Gabon' : 'Gabon implementation structure map',
     mapSub: isFr ? 'Points focaux indicatifs issus de la couverture du questionnaire et des rapports terrain.' : 'Indicative focal points from questionnaire coverage and field reporting.',
@@ -198,7 +199,7 @@ function ImplementationGabonStats() {
               {domainProgress.map((item) => (
                 <div key={item.label} className="impl-gabon-bar-row">
                   <div className="impl-gabon-bar-copy">
-                    <span>{item.label}</span>
+                    <span>{localizeDomainLabel(item.label, isFr)}</span>
                     <strong>{item.value}%</strong>
                   </div>
                   <div className="impl-gabon-bar-track">
@@ -217,7 +218,7 @@ function ImplementationGabonStats() {
                 {blockers.map((item) => (
                   <span key={item.label}>
                     <i style={{ background: item.color }} />
-                    {item.label} ({item.value}%)
+                    {localizeBlockerLabel(item.label, isFr)} ({item.value}%)
                   </span>
                 ))}
               </div>

@@ -606,7 +606,91 @@ export const implementationCountries: CountryConfig[] = [
       },
     ],
   },
+  {
+    slug: 'chad',
+    nameEn: 'Chad',
+    nameFr: 'Tchad',
+    flagImage: flag('Tchad.png'),
+    wikiTitleEn: 'Chad',
+    wikiTitleFr: 'Tchad',
+    ministryAbbr: 'MENPC',
+    ministryEn: 'Ministry of National Education and Civic Promotion',
+    ministryFr: 'Ministere de l\'Education Nationale et de la Promotion Civique',
+    mapPath: 'M120 36 L196 28 L246 56 L264 100 L252 142 L236 184 L248 224 L214 256 L172 268 L138 250 L122 214 L110 176 L96 138 L86 100 L98 64 Z',
+    mapGradientFrom: '#002664',
+    mapGradientTo: '#cc1414',
+    cities: [
+      { name: 'N\'Djamena', x: 108, y: 168, status: 'high' },
+      { name: 'Moundou', x: 132, y: 232, status: 'medium' },
+      { name: 'Sarh', x: 172, y: 236, status: 'medium' },
+      { name: 'Abeche', x: 224, y: 132, status: 'low' },
+      { name: 'Doba', x: 148, y: 246, status: 'low' },
+    ],
+    kpis: { completion: 44, inProgress: 13, growth: 5, blockers: 7 },
+    monthlyCompletion: [19, 23, 28, 33, 37, 41, 44],
+    domainProgress: [
+      { label: 'Policy alignment', value: 58 },
+      { label: 'Data reporting', value: 50 },
+      { label: 'Teacher training', value: 42 },
+      { label: 'Digital tools', value: 31 },
+      { label: 'STI innovation', value: 24 },
+    ],
+    blockers: [
+      { label: 'Financial', value: 40, color: '#d4641a' },
+      { label: 'Administrative', value: 26, color: '#1e5299' },
+      { label: 'Policy', value: 18, color: '#5a8ec8' },
+      { label: 'Infrastructure', value: 16, color: '#9ad1ff' },
+    ],
+    actions: [
+      {
+        labelEn: 'Sahel rural school data collection drive',
+        labelFr: 'Campagne de collecte de donnees des ecoles rurales du Sahel',
+        ownerEn: 'MENPC',
+        ownerFr: 'MENPC',
+        status: 'progress',
+        due: 'Nov 2026',
+      },
+      {
+        labelEn: 'Bilingual (Arabic/French) STEM curriculum review',
+        labelFr: 'Revision du curriculum STEM bilingue (arabe/francais)',
+        ownerEn: 'Statistics Unit',
+        ownerFr: 'Unite statistique',
+        status: 'risk',
+        due: 'Jan 2027',
+      },
+      {
+        labelEn: 'N\'Djamena STI training hub',
+        labelFr: 'Centre de formation STI de N\'Djamena',
+        ownerEn: 'PRASMESTI focal point',
+        ownerFr: 'Point focal PRASMESTI',
+        status: 'planned',
+        due: 'Apr 2027',
+      },
+    ],
+  },
 ];
 
 export const getCountryBySlug = (slug: string): CountryConfig | undefined =>
   implementationCountries.find((c) => c.slug === slug);
+
+// Libellés des graphiques (data en anglais) traduits côté affichage.
+const domainProgressFr: Record<string, string> = {
+  'Policy alignment': 'Alignement des politiques',
+  'Data reporting': 'Remontée des données',
+  'Teacher training': 'Formation des enseignants',
+  'Digital tools': 'Outils numériques',
+  'STI innovation': 'Innovation STI',
+};
+
+const blockerFr: Record<string, string> = {
+  Financial: 'Financier',
+  Administrative: 'Administratif',
+  Policy: 'Politique',
+  Infrastructure: 'Infrastructure',
+};
+
+export const localizeDomainLabel = (label: string, isFr: boolean): string =>
+  isFr ? domainProgressFr[label] ?? label : label;
+
+export const localizeBlockerLabel = (label: string, isFr: boolean): string =>
+  isFr ? blockerFr[label] ?? label : label;

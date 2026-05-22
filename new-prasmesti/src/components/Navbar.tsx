@@ -102,6 +102,7 @@ function Navbar() {
     'République Démocratique du Congo': 'drc',
     Rwanda: 'rwanda',
     'Sao Tomé et Principe': 'sao-tome',
+    Tchad: 'chad',
   };
 
   const countryItems: DropdownItem[] = COUNTRIES.map((name) => {

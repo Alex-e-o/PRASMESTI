@@ -9,4 +9,5 @@ export const eccasFlags = [
   { nameEn: 'DR Congo', nameFr: 'RDC', image: `${import.meta.env.BASE_URL}assets/prasmesti/home/flags/RDC.png` },
   { nameEn: 'Rwanda', nameFr: 'Rwanda', image: `${import.meta.env.BASE_URL}assets/prasmesti/home/flags/Rwanda.png` },
   { nameEn: 'Sao Tome and Principe', nameFr: 'Sao Tome et Principe', image: `${import.meta.env.BASE_URL}assets/prasmesti/home/flags/Sao-Tome.png` },
+  { nameEn: 'Chad', nameFr: 'Tchad', image: `${import.meta.env.BASE_URL}assets/prasmesti/home/flags/Tchad.png` },
 ];

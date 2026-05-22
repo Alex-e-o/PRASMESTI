@@ -14,17 +14,18 @@ function PresidentialMessage() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.7 }}
-          className="section-media-card"
+          className="president-portrait"
         >
-          <img
-            src={`${import.meta.env.BASE_URL}assets/prasmesti/home/president/president.jpg`}
-            alt="PRASMESTI presidential portrait"
-            className="section-media-image"
-          />
-          <div className="section-media-overlay" />
-          <div className="section-media-caption">
-            <h3 className="section-media-title">{translate('presidentName')}</h3>
-            <p className="section-media-subtitle">{translate('presidentRole')}</p>
+          <div className="photo-frame photo-frame-portrait">
+            <img
+              src={`${import.meta.env.BASE_URL}assets/prasmesti/home/president/president.jpg`}
+              alt="PRASMESTI presidential portrait"
+              className="photo-frame-img"
+            />
+          </div>
+          <div className="president-portrait-caption">
+            <h3 className="president-portrait-name">{translate('presidentName')}</h3>
+            <p className="president-portrait-role">{translate('presidentRole')}</p>
           </div>
         </motion.div>
 

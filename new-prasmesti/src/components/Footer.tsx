@@ -5,7 +5,7 @@ import { useLanguage } from '../languageContext';
 function Footer() {
   const { language, translate } = useLanguage();
 
-  const footerKicker = language === 'fr' ? 'Informer pour orienter' : 'Inform to orient';
+  const footerKicker = language === 'fr' ? 'Éclairer pour Orienter' : 'Enlighten to Orient';
   const footerBody = language === 'fr'
     ? "Le PRASMESTI (Portail Regional d'Aide au Suivi en matiere d'Education, Sciences, Technologie et Innovation) est au service des Etats membres de la CEEAC."
     : 'PRASMESTI (Regional Portal for Monitoring Assistance in Education, Sciences, Technology and Innovation) serves the ECCAS Member States.';
