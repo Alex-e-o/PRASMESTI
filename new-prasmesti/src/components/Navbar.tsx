@@ -91,10 +91,23 @@ function Navbar() {
     { label: t('navFrameworkStrategies') },
   ];
 
+  const countrySlugByLabel: Record<string, string> = {
+    Angola: 'angola',
+    Burundi: 'burundi',
+    Cameroun: 'cameroon',
+    Centrafrique: 'central-african-republic',
+    'République du Congo': 'congo',
+    Gabon: 'gabon',
+    'Guinée Équatoriale': 'equatorial-guinea',
+    'République Démocratique du Congo': 'drc',
+    Rwanda: 'rwanda',
+    'Sao Tomé et Principe': 'sao-tome',
+  };
+
   const countryItems: DropdownItem[] = COUNTRIES.map((name) => {
-    const normalized = name.toLowerCase();
-    if (normalized === 'gabon') {
-      return { label: name, onClick: () => navigate('/presentation/implementation/gabon') };
+    const slug = countrySlugByLabel[name];
+    if (slug) {
+      return { label: name, onClick: () => navigate(`/presentation/implementation/${slug}`) };
     }
     return { label: name, onClick: () => navigate('/presentation/implementation') };
   });

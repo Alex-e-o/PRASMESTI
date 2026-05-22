@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import type { MotionProps } from 'framer-motion';
-import { Zap, Settings, Wifi, Image, Lock, Layers } from 'lucide-react';
 import PresSubPageHeader from './PresSubPageHeader';
 import { useLanguage } from '../../languageContext';
 
@@ -10,6 +9,8 @@ const fadeUp: MotionProps = {
   viewport: { once: true, margin: '-50px' },
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
 };
+
+const IMG_BASE = `${import.meta.env.BASE_URL}assets/prasmesti/attentes/`;
 
 function HtmlLi({ html }: { html: string }) {
   return <li dangerouslySetInnerHTML={{ __html: html }} />;
@@ -39,10 +40,12 @@ function Attentes() {
               </p>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Layers size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Attentes</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}att-intro.jpg`}
+                alt="Élève africain dans une salle de classe"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -58,10 +61,12 @@ function Attentes() {
               <p className="pres-body-text">{t('attH3Text')}</p>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Zap size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Dynamiser</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}att-dynamize.jpg`}
+                alt="Laboratoire scientifique illustrant la recherche et l'innovation"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -82,10 +87,12 @@ function Attentes() {
               <p className="pres-body-text">{t('attH6Text')}</p>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Settings size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Gouvernance</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}att-governance.jpg`}
+                alt="Salle de conférence pour la gouvernance du programme"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -109,10 +116,12 @@ function Attentes() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Wifi size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">e-Services</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}att-eservices.jpg`}
+                alt="Tablette et smartphone pour l'accès aux e-services"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -129,10 +138,12 @@ function Attentes() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Image size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Image</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}att-image.jpg`}
+                alt="Visuel numérique illustrant l'innovation technologique"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -156,10 +167,12 @@ function Attentes() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Lock size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Accès</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}att-access.jpg`}
+                alt="Infrastructure réseau pour l'accès à la plateforme"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -172,10 +185,12 @@ function Attentes() {
               <p className="pres-body-text" style={{ marginTop: '16px' }}>{t('attInSynthesisConclusion')}</p>
             </div>
             <div className="pres-card-media">
-              <div className="pres-image-placeholder">
-                <Layers size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-                <span className="pres-placeholder-label">Synthèse</span>
-              </div>
+              <img
+                className="pres-card-image"
+                src={`${IMG_BASE}att-synthesis.jpg`}
+                alt="Lever de soleil sur un paysage d'Afrique centrale"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 

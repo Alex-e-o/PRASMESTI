@@ -1,3 +1,27 @@
+import { useState } from 'react';
+
+type TriState = null | 'oui' | 'non';
+
+function TriStateCell({ name }: { name: string }) {
+  const [value, setValue] = useState<TriState>(null);
+  const cycle = () =>
+    setValue((current) => (current === null ? 'oui' : current === 'oui' ? 'non' : null));
+  const stateClass = value === null ? 'is-empty' : `is-${value}`;
+  return (
+    <>
+      <button
+        type="button"
+        onClick={cycle}
+        className={`private-questionnaire-tristate ${stateClass}`}
+        aria-label={name}
+      >
+        {value === 'oui' ? 'Oui' : value === 'non' ? 'Non' : ''}
+      </button>
+      <input type="hidden" name={name} value={value ?? ''} />
+    </>
+  );
+}
+
 const generalRows = [
   'Pré-primaire',
   'Primaire',
@@ -102,8 +126,6 @@ function MatrixSection({
           <thead>
             <tr>
               <th className="is-question">Question / axe</th>
-              <th className="is-yn">Oui</th>
-              <th className="is-yn">Non</th>
               {sectorColumns.map((column) => (
                 <th key={column}>{column}</th>
               ))}
@@ -114,11 +136,9 @@ function MatrixSection({
             {rows.map((row, index) => (
               <tr key={row}>
                 <td className="is-question">{row}</td>
-                <td><CheckboxCell name={`${title}-yes-${index}`} /></td>
-                <td><CheckboxCell name={`${title}-no-${index}`} /></td>
                 {sectorColumns.map((column, columnIndex) => (
-                  <td key={`${row}-${column}`}>
-                    <CheckboxCell name={`${title}-sector-${index}-${columnIndex}`} />
+                  <td key={`${row}-${column}`} className="is-tristate">
+                    <TriStateCell name={`${title}-sector-${index}-${columnIndex}`} />
                   </td>
                 ))}
                 <td className="is-notes">
@@ -170,10 +190,12 @@ function PrivateQuestionnairePage() {
             <table className="private-questionnaire-table">
               <thead>
                 <tr>
-                  <th rowSpan={2} className="is-question">Niveau de formation</th>
+                  <th rowSpan={3} className="is-question">Niveau de formation</th>
+                  <th colSpan={12}>Outils mis en place</th>
+                </tr>
+                <tr>
                   <th colSpan={3}>Etablissements publics d'enseignement general</th>
                   <th colSpan={9}>Etablissements publics d'enseignement technique et de formation professionnelle</th>
-                  <th colSpan={2}>Outils mis en place</th>
                 </tr>
                 <tr>
                   <th>Zone urbaine</th>
@@ -188,8 +210,6 @@ function PrivateQuestionnairePage() {
                   <th>SP rural</th>
                   <th>SS rural</th>
                   <th>ST rural</th>
-                  <th>Oui</th>
-                  <th>Non</th>
                 </tr>
               </thead>
               <tbody>
@@ -197,17 +217,10 @@ function PrivateQuestionnairePage() {
                   <tr key={row}>
                     <td className="is-question">{row}</td>
                     {Array.from({ length: 12 }).map((_, cellIndex) => (
-                      <td key={cellIndex}>
-                        <input
-                          type="number"
-                          min="0"
-                          name={`general-${index}-${cellIndex}`}
-                          className="private-questionnaire-number"
-                        />
+                      <td key={cellIndex} className="is-tristate">
+                        <TriStateCell name={`general-${index}-${cellIndex}`} />
                       </td>
                     ))}
-                    <td><CheckboxCell name={`general-tool-yes-${index}`} /></td>
-                    <td><CheckboxCell name={`general-tool-no-${index}`} /></td>
                   </tr>
                 ))}
               </tbody>
@@ -224,30 +237,33 @@ function PrivateQuestionnairePage() {
             <table className="private-questionnaire-table private-questionnaire-table-policy">
               <thead>
                 <tr>
-                  <th className="is-question">Secteur</th>
-                  <th>Oui</th>
-                  <th>Non</th>
+                  <th rowSpan={2} className="is-question">Secteur</th>
+                  <th rowSpan={2}>Dispositions prises</th>
+                  <th colSpan={2}>Obstacles politiques</th>
+                  <th colSpan={2}>Obstacles financiers</th>
+                  <th colSpan={2}>Obstacles administratifs</th>
+                  <th rowSpan={2} className="is-notes">Autres difficultes</th>
+                </tr>
+                <tr>
                   <th>Avant 2015</th>
                   <th>Apres 2015</th>
-                  <th>Dispositions prises</th>
-                  <th>Obstacles politiques</th>
-                  <th>Obstacles financiers</th>
-                  <th>Obstacles administratifs</th>
-                  <th className="is-notes">Autres difficultes</th>
+                  <th>Avant 2015</th>
+                  <th>Apres 2015</th>
+                  <th>Avant 2015</th>
+                  <th>Apres 2015</th>
                 </tr>
               </thead>
               <tbody>
                 {policyRows.map((row, index) => (
                   <tr key={row}>
                     <td className="is-question">{row}</td>
-                    <td><CheckboxCell name={`policy-yes-${index}`} /></td>
-                    <td><CheckboxCell name={`policy-no-${index}`} /></td>
-                    <td><CheckboxCell name={`policy-before-${index}`} /></td>
-                    <td><CheckboxCell name={`policy-after-${index}`} /></td>
                     <td className="is-notes"><textarea rows={2} name={`policy-dispositions-${index}`} /></td>
-                    <td><CheckboxCell name={`policy-pol-${index}`} /></td>
-                    <td><CheckboxCell name={`policy-fin-${index}`} /></td>
-                    <td><CheckboxCell name={`policy-admin-${index}`} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-pol-before-${index}`} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-pol-after-${index}`} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-fin-before-${index}`} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-fin-after-${index}`} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-admin-before-${index}`} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-admin-after-${index}`} /></td>
                     <td className="is-notes"><textarea rows={2} name={`policy-note-${index}`} /></td>
                   </tr>
                 ))}

@@ -36,6 +36,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 18px;
   }
 
   body {
@@ -325,12 +326,12 @@
 }
 
 .site-header-shell {
-  width: calc(100% - 48px);
-  margin-left: 24px;
+  width: calc(100% - 32px);
+  margin-left: 16px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
+  gap: 16px;
   height: 68px;
 }
 
@@ -345,8 +346,8 @@
 }
 
 .site-brand-mark {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   object-fit: contain;
   align-self: center;
@@ -375,8 +376,9 @@
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 18px;
   margin-left: auto;
+  white-space: nowrap;
 }
 
 .site-nav-link,
@@ -389,7 +391,7 @@
 .site-nav-link {
   padding: 0;
   color: #d2dcec;
-  font-size: 0.96rem;
+  font-size: 0.85rem;
   font-weight: 500;
   transition: color 180ms ease;
 }
@@ -408,13 +410,14 @@
   appearance: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 11px 16px;
+  gap: 6px;
+  padding: 9px 14px;
   border-radius: 999px;
   border: 1px solid rgba(212, 100, 26, 0.18);
   background: linear-gradient(135deg, #1e5299, #163d80);
   color: #f5f0e8;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
   font-weight: 700;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
   box-shadow: 0 14px 30px rgba(22, 57, 128, 0.2);
@@ -635,8 +638,8 @@
 .hero-title {
   margin: 28px 0 0;
   max-width: 900px;
-  font-size: clamp(3.8rem, 6vw, 6.6rem);
-  line-height: 0.98;
+  font-size: clamp(3rem, 5vw, 5.4rem);
+  line-height: 1;
   color: #fff;
   text-shadow: 0 12px 42px rgba(2, 9, 24, 0.55);
 }
@@ -1515,6 +1518,22 @@
   opacity: 0.7;
 }
 
+.pres-card-image {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 100, 26, 0.18);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.22);
+}
+
+[data-theme='light'] .pres-card-image {
+  border-color: rgba(22, 57, 128, 0.16);
+  box-shadow: 0 22px 48px rgba(22, 57, 128, 0.14);
+}
+
 /* Content typography */
 .pres-section-title {
   margin: 0 0 18px;
@@ -2086,6 +2105,11 @@
 
   .pres-image-placeholder {
     min-height: 200px;
+  }
+
+  .pres-card-image {
+    min-height: 220px;
+    max-height: 280px;
   }
 }
 
@@ -3021,6 +3045,47 @@
   box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.88);
 }
 
+.private-questionnaire-table .is-tristate {
+  padding: 4px;
+}
+
+.private-questionnaire-tristate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 56px;
+  height: 32px;
+  padding: 0 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(22, 57, 128, 0.18);
+  background: rgba(255, 255, 255, 0.86);
+  color: transparent;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  user-select: none;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease, box-shadow 140ms ease;
+}
+
+.private-questionnaire-tristate:hover {
+  border-color: rgba(22, 57, 128, 0.4);
+  box-shadow: 0 1px 0 rgba(22, 57, 128, 0.12);
+}
+
+.private-questionnaire-tristate.is-oui {
+  background: rgba(36, 138, 76, 0.12);
+  border-color: rgba(36, 138, 76, 0.55);
+  color: #1f7a44;
+}
+
+.private-questionnaire-tristate.is-non {
+  background: rgba(196, 48, 48, 0.1);
+  border-color: rgba(196, 48, 48, 0.55);
+  color: #b8302f;
+}
+
 .private-questionnaire-table-policy .is-question {
   width: 260px;
 }
@@ -3028,6 +3093,18 @@
 .private-questionnaire-table-policy .is-notes,
 .private-questionnaire-table-matrix .is-notes {
   width: 240px;
+}
+
+.private-questionnaire-table-matrix {
+  table-layout: auto;
+  min-width: 1400px;
+}
+
+.private-questionnaire-table-matrix thead th {
+  white-space: normal;
+  word-break: keep-all;
+  hyphens: auto;
+  min-width: 80px;
 }
 
 .private-mini-chart {
@@ -3749,9 +3826,19 @@
 
 .impl-gabon-map-svg text {
   fill: #e9f3ff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.02em;
+  paint-order: stroke;
+  stroke: rgba(6, 16, 32, 0.85);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}
+
+.impl-gabon-map-svg text.impl-gabon-point-province {
+  fill: rgba(233, 243, 255, 0.7);
+  font-size: 8px;
+  font-weight: 500;
 }
 
 .impl-gabon-point {
