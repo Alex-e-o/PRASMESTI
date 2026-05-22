@@ -81,8 +81,8 @@ const translations: Dictionary = {
     fr: 'Félix Antoine TSHISEKEDI TSHILOMBO',
   },
   presidentRole: {
-    en: 'Regional champion president for education, health and culture',
-    fr: 'Président champion régional éducation, santé et culture',
+    en: 'President, Regional champion for education, health, culture',
+    fr: 'Président, Champion régional éducation, santé, culture',
   },
   pillarOne: { en: 'Solidarity for education', fr: "Solidarité pour l'éducation" },
   pillarTwo: { en: 'Promotion of innovation', fr: "Promotion de l'innovation" },
@@ -355,8 +355,8 @@ const translations: Dictionary = {
   enjQ: { en: 'PRASMESTI: what issues?', fr: 'Le PRASMESTI : les enjeux ?' },
   enjIntroH4: { en: 'The challenge for the Community is to address targeted communication by offering relevant content to the user.', fr: "L'enjeu pour la Communauté est d'adresser une communication ciblée en proposant un contenu pertinent à l'utilisateur." },
   enjForCommunity: { en: 'For the community', fr: 'Pour la communauté' },
-  enjForMemberState: { en: 'For a member state', fr: 'Pour un état membre' },
-  enjForOperator: { en: 'For an economic operator or a technical partner', fr: 'Pour un opérateur économique ou un partenaire technique' },
+  enjForMemberState: { en: 'For each member state', fr: 'Pour chaque état membre' },
+  enjForOperator: { en: 'For a technical partner or an economic operator', fr: 'Pour un partenaire économique ou un opérateur technique' },
   enjCommunityText: {
     en: 'Present progress made in the implementation of regional, continental, and international normative texts in education, science, technology and innovation.',
     fr: "Présenter les progrès effectués dans la mise en œuvre des textes normatifs régionaux, continentaux et internationaux en matière d'éducation, sciences, technologie et innovation.",

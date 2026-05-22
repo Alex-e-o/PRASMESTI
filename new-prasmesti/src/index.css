@@ -18,6 +18,8 @@
   --accent-copper: #d4641a;
   --accent-copper-light: #e8782a;
   --accent-blue: #1e5299;
+  /* Masque "coup de pinceau" exact (asset repris du site PHP) */
+  --torn-mask: url("/new-prasmesti/assets/prasmesti/shared/photo-mask.png");
 }
 
 [data-theme='light'] {
@@ -246,6 +248,54 @@
   padding: 16px;
 }
 
+/* === Cadre photo "bord déchiré" réutilisable (filet bleu marine + accent orange) === */
+.photo-frame {
+  position: relative;
+}
+
+.photo-frame-img {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  -webkit-mask-image: var(--torn-mask);
+  mask-image: var(--torn-mask);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.photo-frame-portrait .photo-frame-img {
+  min-height: 460px;
+  max-height: 560px;
+  object-fit: cover;
+}
+
+/* Bloc portrait du président : photo "coup de pinceau" + légende dessous */
+.president-portrait {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.president-portrait-caption {
+  padding: 0 8px;
+}
+
+.president-portrait-name {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--headline);
+}
+
+.president-portrait-role {
+  margin: 8px 0 0;
+  max-width: 28rem;
+  color: var(--body-muted);
+  line-height: 1.6;
+}
+
 .section-media-image,
 .director-image {
   display: block;
@@ -299,15 +349,42 @@
 }
 
 .pillar-chip {
-  border-radius: 20px;
-  border: 1px solid rgba(148, 163, 184, 0.14);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 18px 20px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 18px;
+  border: 1px solid rgba(120, 160, 220, 0.18);
+  background: linear-gradient(150deg, rgba(30, 82, 153, 0.18), rgba(10, 20, 42, 0.32));
+  padding: 20px 22px 20px 28px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #d8e4f2;
+  color: #e7eef9;
+  overflow: hidden;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.pillar-chip::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #e8782a, #d4641a);
+}
+
+.pillar-chip:hover {
+  transform: translateY(-3px);
+  border-color: rgba(232, 120, 42, 0.45);
+  box-shadow: 0 16px 36px rgba(2, 9, 26, 0.35);
+}
+
+[data-theme='light'] .pillar-chip {
+  background: linear-gradient(150deg, rgba(30, 82, 153, 0.08), rgba(255, 255, 255, 0.55));
+  border-color: rgba(30, 82, 153, 0.18);
+  color: #15294a;
 }
 
 .site-header {
@@ -390,14 +467,14 @@
 
 .site-nav-link {
   padding: 0;
-  color: #d2dcec;
+  color: #e8782a;
   font-size: 0.85rem;
   font-weight: 500;
   transition: color 180ms ease;
 }
 
 .site-nav-link:hover {
-  color: #fff;
+  color: #ffa64d;
 }
 
 .site-header-actions {
@@ -435,7 +512,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: #d2dcec;
+  color: #e8782a;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -443,7 +520,7 @@
 }
 
 .site-language-toggle:hover {
-  color: #fff;
+  color: #ffa64d;
 }
 
 .site-nav-dropdown-wrap {
@@ -1494,7 +1571,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
+
+/* Photos de présentation : découpe "coup de pinceau" seule (sans cadre) */
 
 .pres-image-placeholder {
   width: 100%;
@@ -1521,17 +1601,17 @@
 .pres-card-image {
   width: 100%;
   height: 100%;
-  min-height: 300px;
-  max-height: 360px;
+  min-height: 320px;
+  max-height: 380px;
   object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid rgba(212, 100, 26, 0.18);
-  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.22);
-}
-
-[data-theme='light'] .pres-card-image {
-  border-color: rgba(22, 57, 128, 0.16);
-  box-shadow: 0 22px 48px rgba(22, 57, 128, 0.14);
+  position: relative;
+  z-index: 1;
+  -webkit-mask-image: var(--torn-mask);
+  mask-image: var(--torn-mask);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 /* Content typography */
@@ -2926,6 +3006,9 @@
 
 .private-questionnaire-header {
   max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .private-questionnaire-meta {

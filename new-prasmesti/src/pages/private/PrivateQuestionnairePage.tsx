@@ -273,17 +273,17 @@ function PrivateQuestionnairePage() {
         </section>
 
         <MatrixSection
-          title="III - Prise en compte des six principes directeurs de la CESA 16-25"
+          title="III - Prise en compte des six principes directeurs de la CESA 26-35"
           rows={sectionThreeRows}
         />
 
         <MatrixSection
-          title="IV - Prise en compte des sept piliers de la CESA 16-25"
+          title="IV - Prise en compte des sept piliers de la CESA 26-35"
           rows={sectionFourRows}
         />
 
         <MatrixSection
-          title="V - Tendance vers la realisation des douze objectifs strategiques de la CESA 16-25"
+          title="V - Tendance vers la realisation des douze objectifs strategiques de la CESA 26-35"
           rows={sectionFiveRows}
         />
 
