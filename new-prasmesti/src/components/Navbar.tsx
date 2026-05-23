@@ -2,7 +2,7 @@ import React from 'react';
 import { Globe, ChevronDown, LogIn } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import AnimatedThemeToggle from './AnimatedThemeToggle';
-import { useLanguage } from '../languageContext';
+import { useLanguage, LANGUAGES } from '../languageContext';
 
 const COUNTRIES = [
   'Angola', 'Burundi', 'Cameroun', 'Centrafrique',
@@ -51,7 +51,7 @@ function NavDropdown({ label, items, onLabelClick }: { label: string; items: Dro
 }
 
 function Navbar() {
-  const { language, toggleLanguage, translate } = useLanguage();
+  const { language, setLanguage, translate } = useLanguage();
   const [scrolled, setScrolled] = React.useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -169,18 +169,36 @@ function Navbar() {
             className="site-login-button"
           >
             <LogIn size={16} />
-            {language === 'fr' ? 'Connexion' : 'Login'}
+            {t('navLogin')}
           </button>
           <AnimatedThemeToggle />
-          <button
-            type="button"
-            onClick={toggleLanguage}
-            className="site-language-toggle"
-            aria-label="Toggle language"
-          >
-            <Globe size={16} />
-            {language.toUpperCase()}
-          </button>
+          <div className="site-lang-select-wrap">
+            <button
+              type="button"
+              className="site-language-toggle"
+              aria-haspopup="listbox"
+              aria-label="Choose language"
+            >
+              <Globe size={16} />
+              {language.toUpperCase()}
+              <ChevronDown size={12} className="site-nav-chevron" />
+            </button>
+            <div className="site-lang-menu" role="listbox">
+              {LANGUAGES.map((lang) => (
+                <button
+                  key={lang.code}
+                  type="button"
+                  role="option"
+                  aria-selected={lang.code === language}
+                  onClick={() => setLanguage(lang.code)}
+                  className={`site-lang-option${lang.code === language ? ' is-active' : ''}`}
+                >
+                  <span className="site-lang-code">{lang.label}</span>
+                  <span className="site-lang-name">{lang.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </header>

@@ -5,16 +5,30 @@ import { useLanguage } from '../languageContext';
 function Footer() {
   const { language, translate } = useLanguage();
 
-  const footerKicker = language === 'fr' ? 'Éclairer pour Orienter' : 'Enlighten to Orient';
-  const footerBody = language === 'fr'
-    ? "Le PRASMESTI (Portail Regional d'Aide au Suivi en matiere d'Education, Sciences, Technologie et Innovation) est au service des Etats membres de la CEEAC."
-    : 'PRASMESTI (Regional Portal for Monitoring Assistance in Education, Sciences, Technology and Innovation) serves the ECCAS Member States.';
-  const footerContactTitle = language === 'fr' ? 'Contactez-nous' : 'Contact us';
-  const footerMoreTitle = language === 'fr' ? 'En savoir plus' : 'Learn more';
+  const footerKicker = {
+    fr: 'Éclairer pour Orienter',
+    en: 'Enlighten to Orient',
+    es: 'Iluminar para Orientar',
+    pt: 'Iluminar para Orientar',
+  }[language];
+  const footerBody = {
+    fr: "Le PRASMESTI (Portail Régional d'Aide au Suivi en matière d'Éducation, Sciences, Technologie et Innovation) est au service des États membres de la CEEAC.",
+    en: 'PRASMESTI (Regional Portal for Monitoring Assistance in Education, Sciences, Technology and Innovation) serves the ECCAS Member States.',
+    es: 'El PRASMESTI (Portal Regional de Apoyo al Seguimiento en materia de Educación, Ciencias, Tecnología e Innovación) está al servicio de los Estados miembros de la CEEAC.',
+    pt: 'O PRASMESTI (Portal Regional de Apoio ao Acompanhamento em matéria de Educação, Ciências, Tecnologia e Inovação) está ao serviço dos Estados-membros da CEEAC.',
+  }[language];
+  const footerContactTitle = {
+    fr: 'Contactez-nous', en: 'Contact us', es: 'Contáctenos', pt: 'Contacte-nos',
+  }[language];
+  const footerMoreTitle = {
+    fr: 'En savoir plus', en: 'Learn more', es: 'Saber más', pt: 'Saber mais',
+  }[language];
+  const newsLabel = { fr: 'Actualités', en: 'News', es: 'Actualidad', pt: 'Notícias' }[language];
+  const projectsLabel = { fr: 'Projets', en: 'Projects', es: 'Proyectos', pt: 'Projetos' }[language];
   const moreLinks = [
-    { label: language === 'fr' ? 'Actualites' : 'News', to: '/' },
+    { label: newsLabel, to: '/' },
     { label: 'FAQ' },
-    { label: language === 'fr' ? 'Projets' : 'Projects' },
+    { label: projectsLabel },
     { label: 'ORESTI' },
     { label: 'PRASMESTI' },
     { label: 'FACESTI' },

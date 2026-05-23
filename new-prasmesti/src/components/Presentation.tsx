@@ -1,5 +1,4 @@
 import { motion, type MotionProps } from 'framer-motion';
-import { BookOpen, Target, Zap, TrendingUp, Lock, Eye } from 'lucide-react';
 import { useLanguage } from '../languageContext';
 import DirectorSection from './DirectorSection';
 
@@ -10,19 +9,23 @@ const fadeUp: MotionProps = {
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
 };
 
-function ImagePlaceholder({ icon: Icon, label }: { icon: React.ElementType; label: string }) {
+const IMG_BASE = `${import.meta.env.BASE_URL}assets/prasmesti/presentation/`;
+
+function PresImage({ file, alt }: { file: string; alt: string }) {
   return (
-    <div className="pres-image-placeholder">
-      <Icon size={52} strokeWidth={1.2} className="pres-placeholder-icon" />
-      <span className="pres-placeholder-label">{label}</span>
-    </div>
+    <img className="pres-card-image" src={`${IMG_BASE}${file}`} alt={alt} loading="lazy" />
   );
 }
 
 function Presentation() {
   const { language, translate } = useLanguage();
   const t = (key: string) => translate(key) as string;
-  const presentationTitle = language === 'fr' ? 'Le PRASMESTI en quelques mots' : 'PRASMESTI in a few words';
+  const presentationTitle = {
+    fr: 'Le PRASMESTI en quelques mots',
+    en: 'PRASMESTI in a few words',
+    es: 'El PRASMESTI en pocas palabras',
+    pt: 'O PRASMESTI em poucas palavras',
+  }[language];
 
   return (
     <section id="presentation" className="pres-page">
@@ -61,7 +64,7 @@ function Presentation() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={BookOpen} label="Introduction" />
+              <PresImage file="pres-intro.jpg" alt="Élèves collaborant en classe" />
             </div>
           </motion.section>
 
@@ -77,7 +80,7 @@ function Presentation() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={Target} label="Missions" />
+              <PresImage file="pres-missions.jpg" alt="Élèves en train de lire et d'étudier" />
             </div>
           </motion.section>
 
@@ -92,7 +95,7 @@ function Presentation() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={Zap} label="Fonctions" />
+              <PresImage file="pres-functions.jpg" alt="Tableaux de bord et analyse de données" />
             </div>
           </motion.section>
 
@@ -106,7 +109,7 @@ function Presentation() {
               </ol>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={TrendingUp} label="Objectifs" />
+              <PresImage file="pres-objectives.jpg" alt="Équipe unissant ses mains autour d'un projet" />
             </div>
           </motion.section>
 
@@ -119,7 +122,7 @@ function Presentation() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={TrendingUp} label="Resultats" />
+              <PresImage file="pres-results.jpg" alt="Présentation de résultats et de statistiques sur écran" />
             </div>
           </motion.section>
 
@@ -134,7 +137,7 @@ function Presentation() {
               </ul>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={Lock} label="Acces" />
+              <PresImage file="pres-access.jpg" alt="Travail sur ordinateur portable et données" />
             </div>
           </motion.section>
 
@@ -150,7 +153,7 @@ function Presentation() {
               </p>
             </div>
             <div className="pres-card-media">
-              <ImagePlaceholder icon={Eye} label="Vision" />
+              <PresImage file="pres-vision.jpg" alt="Étudiants en laboratoire de sciences" />
             </div>
           </motion.section>
         </div>

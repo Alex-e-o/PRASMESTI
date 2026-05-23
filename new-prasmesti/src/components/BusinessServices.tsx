@@ -49,7 +49,7 @@ const translations = {
 
 const BusinessServices: React.FC = () => {
   const { language } = useLanguage();
-  const t = (key: keyof typeof translations) => translations[key][language];
+  const t = (key: keyof typeof translations) => translations[key][language === 'fr' ? 'fr' : 'en'];
   const scrollToSection = (targetId: string) => {
     document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
