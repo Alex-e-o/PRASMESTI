@@ -17,11 +17,9 @@ function HtmlLi({ html }: { html: string }) {
 }
 
 function Attentes() {
-  const { language, translate } = useLanguage();
+  const { translate } = useLanguage();
   const t = (key: string) => translate(key) as string;
-  const attentesLeadPost = language === 'fr'
-    ? "des systemes de l'Education, de la Formation, des Sciences, de la Technologie et de l'Innovation (EFSTI) en Afrique centrale."
-    : 'of the Education, Training, Sciences, Technology and Innovation (ETSTI) systems in Central Africa.';
+  const attentesLeadPost = t('attLeadPost');
 
   return (
     <section id="attentes" className="pres-page">

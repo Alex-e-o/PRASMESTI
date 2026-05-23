@@ -2,7 +2,7 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 import DottedMap from 'dotted-map';
 import { eccasFlags } from '../data/eccasFlags';
-import { useLanguage } from '../languageContext';
+import { useLanguage, pick } from '../languageContext';
 
 const RADIUS = 240;
 const GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2;
@@ -94,12 +94,12 @@ export function FlagCloud() {
                 <div className="flag-sphere-card">
                   <img
                     src={flag.image}
-                    alt={language === 'fr' ? flag.nameFr : flag.nameEn}
+                    alt={pick(flag, 'name', language)}
                     className="flag-sphere-img"
                   />
                 </div>
                 <p className="flag-sphere-label">
-                  {language === 'fr' ? flag.nameFr : flag.nameEn}
+                  {pick(flag, 'name', language)}
                 </p>
               </div>
             ))}

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FlagCloud } from '../FlagCloud';
 import { eccasFlags } from '../../data/eccasFlags';
-import { useLanguage } from '../../languageContext';
+import { useLanguage, pick } from '../../languageContext';
 
 const countrySlugByNameEn: Record<string, string> = {
   Gabon: 'gabon',
@@ -20,8 +20,9 @@ const countrySlugByNameEn: Record<string, string> = {
 
 function ImplementationStatus() {
   const { language, translate } = useLanguage();
-  const isFr = language === 'fr';
-  const linkHint = isFr ? 'Voir les statistiques' : 'View statistics';
+  const linkHint = {
+    fr: 'Voir les statistiques', en: 'View statistics', es: 'Ver las estadísticas', pt: 'Ver as estatísticas',
+  }[language];
 
   return (
     <>
@@ -79,12 +80,12 @@ function ImplementationStatus() {
                 >
                   <img
                     src={flag.image}
-                    alt={isFr ? flag.nameFr : flag.nameEn}
+                    alt={pick(flag, 'name', language)}
                     className="impl-country-flag"
                   />
                   <div className="impl-country-info">
                     <p className="impl-country-name">
-                      {isFr ? flag.nameFr : flag.nameEn}
+                      {pick(flag, 'name', language)}
                     </p>
                     <span className="impl-status-badge impl-status-active">
                       {translate('implStatusActive') as string}

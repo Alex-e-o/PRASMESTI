@@ -28,6 +28,8 @@ export type CountryConfig = {
   slug: string;
   nameEn: string;
   nameFr: string;
+  nameEs: string;
+  namePt: string;
   flagImage: string;
   wikiTitleEn: string;
   wikiTitleFr: string;
@@ -52,6 +54,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'angola',
     nameEn: 'Angola',
     nameFr: 'Angola',
+    nameEs: 'Angola',
+    namePt: 'Angola',
     flagImage: flag('Angola.png'),
     wikiTitleEn: 'Angola',
     wikiTitleFr: 'Angola',
@@ -114,6 +118,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'burundi',
     nameEn: 'Burundi',
     nameFr: 'Burundi',
+    nameEs: 'Burundi',
+    namePt: 'Burundi',
     flagImage: flag('Burundi.png'),
     wikiTitleEn: 'Burundi',
     wikiTitleFr: 'Burundi',
@@ -176,6 +182,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'cameroon',
     nameEn: 'Cameroon',
     nameFr: 'Cameroun',
+    nameEs: 'Camerún',
+    namePt: 'Camarões',
     flagImage: flag('Cameroun.png'),
     wikiTitleEn: 'Cameroon',
     wikiTitleFr: 'Cameroun',
@@ -238,6 +246,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'central-african-republic',
     nameEn: 'Central African Republic',
     nameFr: 'Centrafrique',
+    nameEs: 'República Centroafricana',
+    namePt: 'República Centro-Africana',
     flagImage: flag('Centrafrique.png'),
     wikiTitleEn: 'Central African Republic',
     wikiTitleFr: 'Republique centrafricaine',
@@ -300,6 +310,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'congo',
     nameEn: 'Republic of the Congo',
     nameFr: 'Congo',
+    nameEs: 'República del Congo',
+    namePt: 'República do Congo',
     flagImage: flag('Congo.png'),
     wikiTitleEn: 'Republic of the Congo',
     wikiTitleFr: 'Republique du Congo',
@@ -362,6 +374,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'equatorial-guinea',
     nameEn: 'Equatorial Guinea',
     nameFr: 'Guinee equatoriale',
+    nameEs: 'Guinea Ecuatorial',
+    namePt: 'Guiné Equatorial',
     flagImage: flag('Guinee-Equatoriale.png'),
     wikiTitleEn: 'Equatorial Guinea',
     wikiTitleFr: 'Guinee equatoriale',
@@ -424,6 +438,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'drc',
     nameEn: 'DR Congo',
     nameFr: 'RDC',
+    nameEs: 'RDC',
+    namePt: 'RDC',
     flagImage: flag('RDC.png'),
     wikiTitleEn: 'Democratic Republic of the Congo',
     wikiTitleFr: 'Republique democratique du Congo',
@@ -486,6 +502,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'rwanda',
     nameEn: 'Rwanda',
     nameFr: 'Rwanda',
+    nameEs: 'Ruanda',
+    namePt: 'Ruanda',
     flagImage: flag('Rwanda.png'),
     wikiTitleEn: 'Rwanda',
     wikiTitleFr: 'Rwanda',
@@ -548,6 +566,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'sao-tome',
     nameEn: 'Sao Tome and Principe',
     nameFr: 'Sao Tome et Principe',
+    nameEs: 'Santo Tomé y Príncipe',
+    namePt: 'São Tomé e Príncipe',
     flagImage: flag('Sao-Tome.png'),
     wikiTitleEn: 'Sao Tome and Principe',
     wikiTitleFr: 'Sao Tome-et-Principe',
@@ -610,6 +630,8 @@ export const implementationCountries: CountryConfig[] = [
     slug: 'chad',
     nameEn: 'Chad',
     nameFr: 'Tchad',
+    nameEs: 'Chad',
+    namePt: 'Chade',
     flagImage: flag('Tchad.png'),
     wikiTitleEn: 'Chad',
     wikiTitleFr: 'Tchad',
@@ -674,23 +696,25 @@ export const getCountryBySlug = (slug: string): CountryConfig | undefined =>
   implementationCountries.find((c) => c.slug === slug);
 
 // Libellés des graphiques (data en anglais) traduits côté affichage.
-const domainProgressFr: Record<string, string> = {
-  'Policy alignment': 'Alignement des politiques',
-  'Data reporting': 'Remontée des données',
-  'Teacher training': 'Formation des enseignants',
-  'Digital tools': 'Outils numériques',
-  'STI innovation': 'Innovation STI',
+type Lang = 'en' | 'fr' | 'es' | 'pt';
+
+const domainProgressLabels: Record<string, Record<Lang, string>> = {
+  'Policy alignment': { en: 'Policy alignment', fr: 'Alignement des politiques', es: 'Alineación de políticas', pt: 'Alinhamento de políticas' },
+  'Data reporting': { en: 'Data reporting', fr: 'Remontée des données', es: 'Reporte de datos', pt: 'Comunicação de dados' },
+  'Teacher training': { en: 'Teacher training', fr: 'Formation des enseignants', es: 'Formación docente', pt: 'Formação de docentes' },
+  'Digital tools': { en: 'Digital tools', fr: 'Outils numériques', es: 'Herramientas digitales', pt: 'Ferramentas digitais' },
+  'STI innovation': { en: 'STI innovation', fr: 'Innovation STI', es: 'Innovación CTI', pt: 'Inovação CTI' },
 };
 
-const blockerFr: Record<string, string> = {
-  Financial: 'Financier',
-  Administrative: 'Administratif',
-  Policy: 'Politique',
-  Infrastructure: 'Infrastructure',
+const blockerLabels: Record<string, Record<Lang, string>> = {
+  Financial: { en: 'Financial', fr: 'Financier', es: 'Financiero', pt: 'Financeiro' },
+  Administrative: { en: 'Administrative', fr: 'Administratif', es: 'Administrativo', pt: 'Administrativo' },
+  Policy: { en: 'Policy', fr: 'Politique', es: 'Político', pt: 'Político' },
+  Infrastructure: { en: 'Infrastructure', fr: 'Infrastructure', es: 'Infraestructura', pt: 'Infraestrutura' },
 };
 
-export const localizeDomainLabel = (label: string, isFr: boolean): string =>
-  isFr ? domainProgressFr[label] ?? label : label;
+export const localizeDomainLabel = (label: string, language: Lang): string =>
+  domainProgressLabels[label]?.[language] ?? label;
 
-export const localizeBlockerLabel = (label: string, isFr: boolean): string =>
-  isFr ? blockerFr[label] ?? label : label;
+export const localizeBlockerLabel = (label: string, language: Lang): string =>
+  blockerLabels[label]?.[language] ?? label;

@@ -50,34 +50,35 @@ function ImplementationGabonStats() {
     .map((value, idx) => `${idx * 90},${280 - value * 2.1}`)
     .join(' ');
   const isFr = language === 'fr';
+  const L = (o: { fr: string; en: string; es: string; pt: string }) => o[language];
   const copy = {
-    title: isFr ? 'Gabon - Statistiques de mise en oeuvre' : 'Gabon - Implementation Statistics',
-    subtitle: isFr ? "Apercu base sur le questionnaire pour le suivi CESA 26-35 et ODD4." : 'Questionnaire-driven snapshot for CESA 26-35 and SDG4 follow-up.',
-    back: isFr ? 'Retour a tous les Etats membres' : 'Back to all member states',
-    mapTitle: isFr ? 'Carte structurelle de mise en oeuvre du Gabon' : 'Gabon implementation structure map',
-    mapSub: isFr ? 'Points focaux indicatifs issus de la couverture du questionnaire et des rapports terrain.' : 'Indicative focal points from questionnaire coverage and field reporting.',
-    kpiCompletion: isFr ? 'Taux global de mise en oeuvre' : 'Overall completion',
-    kpiProgress: isFr ? 'Actions en cours' : 'Actions in progress',
-    kpiGrowth: isFr ? 'Progression trimestrielle' : 'Quarterly growth',
-    kpiBlockers: isFr ? 'Blocages critiques' : 'Critical blockers',
-    trend: isFr ? 'Tendance de mise en oeuvre (2026)' : 'Implementation trend (2026)',
-    domains: isFr ? 'Progres par domaine' : 'Progress by domain',
-    blockers: isFr ? 'Repartition des blocages' : 'Blocker distribution',
-    actions: isFr ? 'Actions prioritaires issues du questionnaire' : 'Priority actions from questionnaire',
-    owner: isFr ? 'Responsable' : 'Owner',
-    status: isFr ? 'Statut' : 'Status',
-    due: isFr ? 'Echeance' : 'Due',
-    openWiki: isFr ? 'Ouvrir la page Wikipedia complete' : 'Open full Wikipedia page',
-    modalTitle: isFr ? 'Wikipedia : Gabon' : 'Wikipedia: Gabon',
-    close: isFr ? 'Fermer' : 'Close',
-    loading: isFr ? 'Chargement de l\'apercu...' : 'Loading preview...',
-    loadError: isFr ? 'Impossible de charger l\'apercu Wikipedia pour le moment.' : 'Unable to load Wikipedia preview right now.',
-    statusInProgress: isFr ? 'En cours' : 'In progress',
-    statusAtRisk: isFr ? 'A risque' : 'At risk',
-    statusPlanned: isFr ? 'Planifie' : 'Planned',
-    action1: isFr ? 'Deploiement de la formation continue des enseignants en zones rurales' : 'Teacher CPD rollout in rural zones',
-    action2: isFr ? 'Harmonisation nationale des indicateurs ODD4' : 'National SDG4 indicator harmonization',
-    action3: isFr ? 'Boite a outils de reporting numerique des ecoles' : 'School digital reporting toolkit',
+    title: L({ fr: 'Gabon - Statistiques de mise en oeuvre', en: 'Gabon - Implementation Statistics', es: 'Gabón - Estadísticas de implementación', pt: 'Gabão - Estatísticas de implementação' }),
+    subtitle: L({ fr: 'Apercu base sur le questionnaire pour le suivi CESA 26-35 et ODD4.', en: 'Questionnaire-driven snapshot for CESA 26-35 and SDG4 follow-up.', es: 'Resumen basado en el cuestionario para el seguimiento CESA 26-35 y ODS4.', pt: 'Resumo baseado no questionário para o acompanhamento CESA 26-35 e ODS4.' }),
+    back: L({ fr: 'Retour a tous les Etats membres', en: 'Back to all member states', es: 'Volver a todos los Estados miembros', pt: 'Voltar a todos os Estados-membros' }),
+    mapTitle: L({ fr: 'Carte structurelle de mise en oeuvre du Gabon', en: 'Gabon implementation structure map', es: 'Mapa estructural de implementación de Gabón', pt: 'Mapa estrutural de implementação do Gabão' }),
+    mapSub: L({ fr: 'Points focaux indicatifs issus de la couverture du questionnaire et des rapports terrain.', en: 'Indicative focal points from questionnaire coverage and field reporting.', es: 'Puntos focales indicativos derivados de la cobertura del cuestionario y de los informes de terreno.', pt: 'Pontos focais indicativos resultantes da cobertura do questionário e dos relatórios de terreno.' }),
+    kpiCompletion: L({ fr: 'Taux global de mise en oeuvre', en: 'Overall completion', es: 'Tasa global de implementación', pt: 'Taxa global de implementação' }),
+    kpiProgress: L({ fr: 'Actions en cours', en: 'Actions in progress', es: 'Acciones en curso', pt: 'Ações em curso' }),
+    kpiGrowth: L({ fr: 'Progression trimestrielle', en: 'Quarterly growth', es: 'Progresión trimestral', pt: 'Progressão trimestral' }),
+    kpiBlockers: L({ fr: 'Blocages critiques', en: 'Critical blockers', es: 'Bloqueos críticos', pt: 'Bloqueios críticos' }),
+    trend: L({ fr: 'Tendance de mise en oeuvre (2026)', en: 'Implementation trend (2026)', es: 'Tendencia de implementación (2026)', pt: 'Tendência de implementação (2026)' }),
+    domains: L({ fr: 'Progres par domaine', en: 'Progress by domain', es: 'Progreso por ámbito', pt: 'Progresso por domínio' }),
+    blockers: L({ fr: 'Repartition des blocages', en: 'Blocker distribution', es: 'Distribución de los bloqueos', pt: 'Distribuição dos bloqueios' }),
+    actions: L({ fr: 'Actions prioritaires issues du questionnaire', en: 'Priority actions from questionnaire', es: 'Acciones prioritarias del cuestionario', pt: 'Ações prioritárias do questionário' }),
+    owner: L({ fr: 'Responsable', en: 'Owner', es: 'Responsable', pt: 'Responsável' }),
+    status: L({ fr: 'Statut', en: 'Status', es: 'Estado', pt: 'Estado' }),
+    due: L({ fr: 'Echeance', en: 'Due', es: 'Plazo', pt: 'Prazo' }),
+    openWiki: L({ fr: 'Ouvrir la page Wikipedia complete', en: 'Open full Wikipedia page', es: 'Abrir la página completa de Wikipedia', pt: 'Abrir a página completa da Wikipédia' }),
+    modalTitle: L({ fr: 'Wikipedia : Gabon', en: 'Wikipedia: Gabon', es: 'Wikipedia: Gabón', pt: 'Wikipédia: Gabão' }),
+    close: L({ fr: 'Fermer', en: 'Close', es: 'Cerrar', pt: 'Fechar' }),
+    loading: L({ fr: "Chargement de l'apercu...", en: 'Loading preview...', es: 'Cargando la vista previa...', pt: 'A carregar a pré-visualização...' }),
+    loadError: L({ fr: "Impossible de charger l'apercu Wikipedia pour le moment.", en: 'Unable to load Wikipedia preview right now.', es: 'No se puede cargar la vista previa de Wikipedia en este momento.', pt: 'Não é possível carregar a pré-visualização da Wikipédia neste momento.' }),
+    statusInProgress: L({ fr: 'En cours', en: 'In progress', es: 'En curso', pt: 'Em curso' }),
+    statusAtRisk: L({ fr: 'A risque', en: 'At risk', es: 'En riesgo', pt: 'Em risco' }),
+    statusPlanned: L({ fr: 'Planifie', en: 'Planned', es: 'Planificado', pt: 'Planeado' }),
+    action1: L({ fr: 'Deploiement de la formation continue des enseignants en zones rurales', en: 'Teacher CPD rollout in rural zones', es: 'Despliegue de la formación continua de docentes en zonas rurales', pt: 'Implantação da formação contínua de docentes em zonas rurais' }),
+    action2: L({ fr: 'Harmonisation nationale des indicateurs ODD4', en: 'National SDG4 indicator harmonization', es: 'Armonización nacional de los indicadores ODS4', pt: 'Harmonização nacional dos indicadores ODS4' }),
+    action3: L({ fr: 'Boite a outils de reporting numerique des ecoles', en: 'School digital reporting toolkit', es: 'Kit de herramientas de reporte digital escolar', pt: 'Conjunto de ferramentas de comunicação digital das escolas' }),
   };
   const wikiDomain = isFr ? 'fr.wikipedia.org' : 'en.wikipedia.org';
   const wikiUrl = wikiSummary?.content_urls?.desktop?.page ?? `https://${wikiDomain}/wiki/Gabon`;
@@ -199,7 +200,7 @@ function ImplementationGabonStats() {
               {domainProgress.map((item) => (
                 <div key={item.label} className="impl-gabon-bar-row">
                   <div className="impl-gabon-bar-copy">
-                    <span>{localizeDomainLabel(item.label, isFr)}</span>
+                    <span>{localizeDomainLabel(item.label, language)}</span>
                     <strong>{item.value}%</strong>
                   </div>
                   <div className="impl-gabon-bar-track">
@@ -218,7 +219,7 @@ function ImplementationGabonStats() {
                 {blockers.map((item) => (
                   <span key={item.label}>
                     <i style={{ background: item.color }} />
-                    {localizeBlockerLabel(item.label, isFr)} ({item.value}%)
+                    {localizeBlockerLabel(item.label, language)} ({item.value}%)
                   </span>
                 ))}
               </div>

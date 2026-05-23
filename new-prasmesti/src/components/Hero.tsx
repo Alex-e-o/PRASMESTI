@@ -57,10 +57,18 @@ function Hero() {
 
   const current = slides[slide];
   const slideKey = `${slide}-${language}`;
-  const decadeLabel = language === 'fr' ? 'ans pour renaitre et batir' : 'years to be reborn and build';
-  const helperPillars = language === 'fr'
-    ? ['Eclairer', 'Orienter', 'Informer', 'Transformer']
-    : ['Illuminate', 'Orient', 'Inform', 'Transform'];
+  const decadeLabel = {
+    fr: 'ans pour renaitre et batir',
+    en: 'years to be reborn and build',
+    es: 'años para renacer y construir',
+    pt: 'anos para renascer e construir',
+  }[language];
+  const helperPillars = {
+    fr: ['Eclairer', 'Orienter', 'Informer', 'Transformer'],
+    en: ['Illuminate', 'Orient', 'Inform', 'Transform'],
+    es: ['Iluminar', 'Orientar', 'Informar', 'Transformar'],
+    pt: ['Iluminar', 'Orientar', 'Informar', 'Transformar'],
+  }[language];
 
   return (
     <section id="hero" className="site-glow-section hero-section">
@@ -146,7 +154,12 @@ function Hero() {
 
           <div className="hero-pillars-helper">
             <p className="hero-pillars-helper-title">
-              {language === 'fr' ? 'Les 4 piliers helpers du PRASMESTI' : 'The 4 PRASMESTI helper pillars'}
+              {{
+                fr: 'Les 4 piliers helpers du PRASMESTI',
+                en: 'The 4 PRASMESTI helper pillars',
+                es: 'Los 4 pilares auxiliares del PRASMESTI',
+                pt: 'Os 4 pilares auxiliares do PRASMESTI',
+              }[language]}
             </p>
             <div className="hero-pillars-helper-chips">
               {helperPillars.map((pillar) => (

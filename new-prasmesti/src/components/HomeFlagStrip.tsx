@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimationFrame, useMotionValue, useTransform } from 'framer-motion';
 import { eccasFlags } from '../data/eccasFlags';
-import { useLanguage } from '../languageContext';
+import { useLanguage, pick } from '../languageContext';
 
 function wrap(min: number, max: number, v: number) {
   const rangeSize = max - min;
@@ -58,10 +58,10 @@ function HomeFlagStrip() {
     <article key={flag.image} className="home-flag-card">
       <img
         src={flag.image}
-        alt={language === 'fr' ? flag.nameFr : flag.nameEn}
+        alt={pick(flag, 'name', language)}
         className="home-flag-image"
       />
-      <p className="home-flag-name">{language === 'fr' ? flag.nameFr : flag.nameEn}</p>
+      <p className="home-flag-name">{pick(flag, 'name', language)}</p>
     </article>
   ));
 
@@ -70,7 +70,7 @@ function HomeFlagStrip() {
       <div className="site-container">
         <div className="home-flag-strip-shell">
           <h2 className="home-flag-strip-title">
-            {language === 'fr' ? 'Etats membres de la CEEAC' : 'ECCAS Member States'}
+            {translate('implCountriesTitle') as string}
           </h2>
 
           <div
