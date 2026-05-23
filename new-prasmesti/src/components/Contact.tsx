@@ -133,7 +133,7 @@ const SiteJourneyForm: React.FC<{ onSubmit: (data: FormData) => void; translate:
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
-  const t = (key: keyof typeof translations) => translations[key][language];
+  const t = (key: keyof typeof translations) => translations[key][language === 'fr' ? 'fr' : 'en'];
 
   const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
 

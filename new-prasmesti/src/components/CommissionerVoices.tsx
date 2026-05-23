@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { commissionerVoices } from '../data/siteContent';
-import { useLanguage } from '../languageContext';
+import { useLanguage, pick, type Language } from '../languageContext';
 
 const SLIDE_DURATION = 7000;
 
@@ -16,33 +16,40 @@ interface VoiceEntry {
   image: string;
 }
 
+// Marqueurs par langue pour isoler l'intitulé du poste sur une 2e ligne.
+const ROLE_MARKERS = ['en charge de', 'in charge of', 'encargado d', 'encarregado d'];
+
 function formatRole(role: string) {
-  const marker = 'en charge de';
-  const index = role.toLowerCase().indexOf(marker);
+  const lower = role.toLowerCase();
+  let index = -1;
+  for (const marker of ROLE_MARKERS) {
+    const found = lower.indexOf(marker);
+    if (found !== -1 && (index === -1 || found < index)) index = found;
+  }
   if (index === -1) return role;
-  const splitIndex = index + marker.length;
   return (
     <>
-      {role.slice(0, splitIndex)}
+      {role.slice(0, index).trimEnd()}
       <br />
-      {role.slice(splitIndex).trimStart()}
+      {role.slice(index)}
     </>
   );
 }
 
-function VoiceCard({ voice, language }: { voice: VoiceEntry; language: 'en' | 'fr' }) {
+function VoiceCard({ voice, language }: { voice: VoiceEntry; language: Language }) {
+  const record = voice as unknown as Record<string, unknown>;
   return (
     <div className="voice-marquee-card">
       <img src={voice.image} alt={voice.nameFirst} className="voice-marquee-photo" />
       <div className="voice-marquee-body">
         <p className="voice-marquee-quote">
-          {language === 'fr' ? voice.quoteFr : voice.quoteEn}
+          {pick(record, 'quote', language)}
         </p>
         <div className="voice-marquee-footer">
           <p className="voice-marquee-name-first">{voice.nameFirst}</p>
           <p className="voice-marquee-name-last">{voice.nameLast}</p>
           <p className="voice-marquee-role">
-            {formatRole(language === 'fr' ? voice.roleFr : voice.roleEn)}
+            {formatRole(pick(record, 'role', language))}
           </p>
         </div>
       </div>
