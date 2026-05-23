@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { newsItems } from '../data/siteContent';
-import { useLanguage } from '../languageContext';
+import { useLanguage, pick } from '../languageContext';
 
 function NewsSection() {
   const { language, translate } = useLanguage();
@@ -31,9 +31,9 @@ function NewsSection() {
             >
               <img src={item.image} alt="" className="news-card-image" />
               <div className="news-card-copy">
-                <p className="news-card-date">{item.date}</p>
-                <h3 className="news-card-title">{language === 'fr' ? item.titleFr : item.titleEn}</h3>
-                <p className="news-card-body">{language === 'fr' ? item.bodyFr : item.bodyEn}</p>
+                <p className="news-card-date">{pick(item, 'date', language)}</p>
+                <h3 className="news-card-title">{pick(item, 'title', language)}</h3>
+                <p className="news-card-body">{pick(item, 'body', language)}</p>
               </div>
             </motion.article>
           ))}

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import type { MotionProps } from 'framer-motion';
 import PresSubPageHeader from './PresSubPageHeader';
-import { useLanguage } from '../../languageContext';
+import { useLanguage, pick } from '../../languageContext';
 import { prasmestiTeam } from '../../data/siteContent';
 
 const fadeUp: MotionProps = {
@@ -14,7 +14,6 @@ const fadeUp: MotionProps = {
 function Responsables() {
   const { language, translate } = useLanguage();
   const t = (key: string) => translate(key) as string;
-  const isFr = language === 'fr';
 
   return (
     <section id="responsables" className="pres-page">
@@ -39,7 +38,7 @@ function Responsables() {
                 </div>
                 <h3 className="pres-team-name">{member.name}</h3>
                 <p className="pres-team-role">
-                  {isFr ? member.roleFr : member.roleEn}
+                  {pick(member, 'role', language)}
                 </p>
               </motion.div>
             ))}

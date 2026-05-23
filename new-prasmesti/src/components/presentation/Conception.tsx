@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import type { MotionProps } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import PresSubPageHeader from './PresSubPageHeader';
-import { useLanguage } from '../../languageContext';
+import { useLanguage, pick, pickArray } from '../../languageContext';
 import { conceptionSteps } from '../../data/siteContent';
 
 const fadeUp: MotionProps = {
@@ -15,7 +15,6 @@ const fadeUp: MotionProps = {
 function Conception() {
   const { language, translate } = useLanguage();
   const t = (key: string) => translate(key) as string;
-  const isFr = language === 'fr';
 
   return (
     <section id="conception" className="pres-page">
@@ -41,10 +40,10 @@ function Conception() {
               >
                 <div className="pres-step-number">{String(step.step).padStart(2, '0')}</div>
                 <h3 className="pres-step-title">
-                  {isFr ? step.titleFr : step.titleEn}
+                  {pick(step, 'title', language)}
                 </h3>
                 <ul className="pres-step-list">
-                  {(isFr ? step.itemsFr : step.itemsEn).map((item, j) => (
+                  {pickArray(step, 'items', language).map((item, j) => (
                     <li key={j}>
                       <CheckCircle2 size={14} className="pres-step-check" />
                       {item}
