@@ -1,3 +1,5 @@
 new-prasmesti/node_modules/
 new-prasmesti/dist/
+new-prasmesti/.env
+new-prasmesti/.env.local
 _deploy/

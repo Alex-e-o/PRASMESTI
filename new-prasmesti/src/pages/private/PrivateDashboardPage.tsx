@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import { Activity, BookOpen, FolderKanban, GraduationCap } from 'lucide-react';
 
 const stats = [
-  { label: 'Etablissements', value: '34 123', delta: '+8.34%', tone: 'positive', icon: BookOpen, detail: 'Liste des etablissements' },
-  { label: 'Projets en cours', value: '63', delta: '+12', tone: 'positive', icon: FolderKanban, detail: 'Projets finances' },
-  { label: 'Alphabetisation', value: '78%', delta: '-2.64%', tone: 'negative', icon: Activity, detail: "Taux d'alphabetisation" },
-  { label: 'Formation', value: '6 482', delta: '+5.79%', tone: 'positive', icon: GraduationCap, detail: 'Enseignants formes' },
+  { slug: 'etablissements', label: 'Etablissements', value: '34 123', delta: '+8.34%', tone: 'positive', icon: BookOpen, detail: 'Liste des etablissements' },
+  { slug: 'projets', label: 'Projets en cours', value: '63', delta: '+12', tone: 'positive', icon: FolderKanban, detail: 'Projets finances' },
+  { slug: 'alphabetisation', label: 'Alphabetisation', value: '78%', delta: '-2.64%', tone: 'negative', icon: Activity, detail: "Taux d'alphabetisation" },
+  { slug: 'formation', label: 'Formation', value: '6 482', delta: '+5.79%', tone: 'positive', icon: GraduationCap, detail: 'Enseignants formes' },
 ];
 
 function PrivateDashboardPage() {
@@ -22,8 +23,8 @@ function PrivateDashboardPage() {
       </section>
 
       <section className="private-stats-grid">
-        {stats.map(({ label, value, delta, tone, icon: Icon, detail }) => (
-          <article key={label} className="private-stat-card">
+        {stats.map(({ slug, label, value, delta, tone, icon: Icon, detail }) => (
+          <Link key={label} to={`/private/indicateur/${slug}`} className="private-stat-card private-stat-card-link">
             <div className="private-stat-head">
               <div className="private-stat-icon">
                 <Icon size={18} />
@@ -33,7 +34,7 @@ function PrivateDashboardPage() {
             <p className="private-stat-label">{label}</p>
             <h3 className="private-stat-value">{value}</h3>
             <p className="private-stat-detail">{detail}</p>
-          </article>
+          </Link>
         ))}
       </section>
 

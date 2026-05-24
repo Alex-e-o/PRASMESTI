@@ -427,7 +427,7 @@ const translations: Dictionary = {
   attLeadBold: { en: 'engine of integration, collective performance and structural transformation', fr: "moteur d'intégration, de performance collective et de transformation structurelle", es: 'motor de integración, de rendimiento colectivo y de transformación estructural', pt: 'motor de integração, de desempenho coletivo e de transformação estrutural' },
   attLeadPost: {
     en: 'of Education, Training, Sciences, Technology and Innovation (ETSTI) systems in Central Africa.',
-    fr: "des systèmes d'Éducation, Formation, Sciences, Technologie et Innovation (EFSTI) en Afrique centrale.",
+    fr: "des systèmes de l'Éducation, de la Formation, des Sciences, de la Technologie et de l'Innovation (EFSTI) en Afrique centrale.",
     es: 'de los sistemas de Educación, Formación, Ciencias, Tecnología e Innovación (EFCTI) en África Central.',
     pt: 'dos sistemas de Educação, Formação, Ciências, Tecnologia e Inovação (EFCTI) na África Central.',
   },
