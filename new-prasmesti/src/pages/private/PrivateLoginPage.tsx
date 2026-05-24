@@ -5,8 +5,9 @@ import { isPrivateAuthenticated, loginPrivate } from '../../private/auth';
 
 function PrivateLoginPage() {
   const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('admin');
+  const [password, setPassword] = useState('Prasmesti@2026');
   const [error, setError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -16,9 +17,12 @@ function PrivateLoginPage() {
     }
   }, [navigate]);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const result = loginPrivate(username, password);
+    setSubmitting(true);
+    setError('');
+    const result = await loginPrivate(username, password);
+    setSubmitting(false);
 
     if (!result.ok) {
       setError(result.error);
@@ -40,8 +44,11 @@ function PrivateLoginPage() {
           </p>
 
           <div className="private-login-note">
-            <p className="private-login-note-title">Compte de demonstration</p>
-            <p className="private-login-note-body">Identifiant: `admin` | Mot de passe: `admin`</p>
+            <p className="private-login-note-title">Comptes de demonstration</p>
+            <p className="private-login-note-body">
+              Admin : <strong>admin</strong> — Pays : <strong>gabon</strong>, <strong>cameroun</strong>, <strong>rdc</strong>, <strong>tchad</strong>… (un par État membre)
+            </p>
+            <p className="private-login-note-body">Mot de passe commun : <strong>Prasmesti@2026</strong></p>
           </div>
         </div>
 
@@ -72,8 +79,8 @@ function PrivateLoginPage() {
             </span>
           </label>
 
-          <button type="submit" className="private-login-submit">
-            Se connecter
+          <button type="submit" className="private-login-submit" disabled={submitting}>
+            {submitting ? 'Connexion…' : 'Se connecter'}
           </button>
 
           <Link to="/" className="private-login-back">

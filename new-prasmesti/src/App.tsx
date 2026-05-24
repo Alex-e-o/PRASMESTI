@@ -15,6 +15,7 @@ import RequirePrivateAuth from './private/RequirePrivateAuth';
 import PrivateLayout from './private/PrivateLayout';
 import PrivateLoginPage from './pages/private/PrivateLoginPage';
 import PrivateDashboardPage from './pages/private/PrivateDashboardPage';
+import PrivateIndicatorPage from './pages/private/PrivateIndicatorPage';
 import PrivateQuestionnairePage from './pages/private/PrivateQuestionnairePage';
 import PrivateStatisticsPage from './pages/private/PrivateStatisticsPage';
 import PrivateHistoryPage from './pages/private/PrivateHistoryPage';
@@ -40,6 +41,7 @@ function App() {
           <Route path="/private" element={<PrivateLayout />}>
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<PrivateDashboardPage />} />
+            <Route path="indicateur/:slug" element={<PrivateIndicatorPage />} />
             <Route path="questionnaire" element={<PrivateQuestionnairePage />} />
             <Route path="statistiques" element={<PrivateStatisticsPage />} />
             <Route path="historique" element={<PrivateHistoryPage />} />
