@@ -23,15 +23,19 @@ export type QuestionnaireAnswers = Record<string, string>;
 //    le reste étant rangé en « infrastructure ».
 //  - Progrès par domaine = moyenne (en %) des réponses regroupées par préfixe de section.
 
-const POSITIVE = new Set(['yes', 'oui', 'true', '1', 'done', 'ok']);
+const POSITIVE = new Set(['yes', 'oui', 'true', '1', 'done', 'ok', 'on']);
 const PARTIAL = new Set(['partial', 'partiel', 'half', 'en-cours']);
+const NEGATIVE = new Set(['no', 'non', 'false', '0']);
 
+// Les clés ci-dessous correspondent aux préfixes des noms de champs du
+// questionnaire (cf. PrivateQuestionnairePage) afin que chaque domaine reflète
+// une section réelle. Une section sans correspondance retombe sur la complétion.
 const DOMAIN_BUCKETS: { key: string; label: string }[] = [
   { key: 'policy', label: 'Policy alignment' },
   { key: 'general', label: 'Data reporting' },
-  { key: 'section-four', label: 'Teacher training' },
-  { key: 'section-five', label: 'Digital tools' },
-  { key: 'section-six', label: 'STI innovation' },
+  { key: 'piliers', label: 'Teacher training' },
+  { key: 'objectifs', label: 'Digital tools' },
+  { key: 'cibles', label: 'STI innovation' },
 ];
 
 const BLOCKER_COLORS: Record<string, string> = {
@@ -41,17 +45,26 @@ const BLOCKER_COLORS: Record<string, string> = {
   Infrastructure: '#9ad1ff',
 };
 
+const normalize = (value: string): string => value.trim().toLowerCase();
+
 const score = (value: string): number => {
-  const v = value.trim().toLowerCase();
+  const v = normalize(value);
   if (POSITIVE.has(v)) return 1;
   if (PARTIAL.has(v)) return 0.5;
   return 0;
 };
 
-const isAnswered = (value: string): boolean => value != null && value.trim() !== '';
+/** Une « case de décision » : seul ce vocabulaire alimente les indicateurs (le
+ *  texte libre — notes, métadonnées — est ignoré pour ne pas fausser les calculs). */
+const isDecision = (value: string): boolean => {
+  const v = normalize(value);
+  return POSITIVE.has(v) || PARTIAL.has(v) || NEGATIVE.has(v);
+};
 
 export function deriveStatsFromAnswers(answers: QuestionnaireAnswers): CountryStatsOverride {
-  const entries = Object.entries(answers).filter(([, v]) => isAnswered(v));
+  // On ne tient compte que des cases de décision (oui / non / partiel) ;
+  // les champs libres et métadonnées sont écartés du calcul.
+  const entries = Object.entries(answers).filter(([, v]) => isDecision(v));
   const total = entries.length || 1;
 
   // Complétion globale
