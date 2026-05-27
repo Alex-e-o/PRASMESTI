@@ -1,12 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { getPrivateUser } from '../../private/auth';
+import { privateProfiles } from '../../data/countryProfiles';
+import {
+  getQuestionnaire,
+  saveQuestionnaire,
+  type QuestionnaireAnswers,
+} from '../../lib/countryStore';
 
-type TriState = null | 'oui' | 'non';
+type TriState = '' | 'oui' | 'non';
 
-function TriStateCell({ name }: { name: string }) {
-  const [value, setValue] = useState<TriState>(null);
+function TriStateCell({ name, initial }: { name: string; initial?: string }) {
+  const [value, setValue] = useState<TriState>((initial as TriState) || '');
   const cycle = () =>
-    setValue((current) => (current === null ? 'oui' : current === 'oui' ? 'non' : null));
-  const stateClass = value === null ? 'is-empty' : `is-${value}`;
+    setValue((current) => (current === '' ? 'oui' : current === 'oui' ? 'non' : ''));
+  const stateClass = value === '' ? 'is-empty' : `is-${value}`;
   return (
     <>
       <button
@@ -17,7 +24,7 @@ function TriStateCell({ name }: { name: string }) {
       >
         {value === 'oui' ? 'Oui' : value === 'non' ? 'Non' : ''}
       </button>
-      <input type="hidden" name={name} value={value ?? ''} />
+      <input type="hidden" name={name} value={value} readOnly />
     </>
   );
 }
@@ -99,21 +106,17 @@ const sectionSixRows = [
   "4.c D'ici à 2030, accroître considérablement le nombre d'enseignants qualifiés, notamment au moyen de la coopération internationale ?",
 ];
 
-function CheckboxCell({ name }: { name: string }) {
-  return (
-    <label className="private-questionnaire-check">
-      <input type="checkbox" name={name} />
-      <span />
-    </label>
-  );
-}
-
 function MatrixSection({
   title,
+  name,
   rows,
+  answers,
 }: {
   title: string;
+  /** Préfixe stable des noms de champs (sert au calcul des indicateurs). */
+  name: string;
   rows: string[];
+  answers: QuestionnaireAnswers;
 }) {
   return (
     <section className="private-questionnaire-section">
@@ -136,13 +139,16 @@ function MatrixSection({
             {rows.map((row, index) => (
               <tr key={row}>
                 <td className="is-question">{row}</td>
-                {sectorColumns.map((column, columnIndex) => (
-                  <td key={`${row}-${column}`} className="is-tristate">
-                    <TriStateCell name={`${title}-sector-${index}-${columnIndex}`} />
-                  </td>
-                ))}
+                {sectorColumns.map((column, columnIndex) => {
+                  const field = `${name}-sector-${index}-${columnIndex}`;
+                  return (
+                    <td key={`${row}-${column}`} className="is-tristate">
+                      <TriStateCell name={field} initial={answers[field]} />
+                    </td>
+                  );
+                })}
                 <td className="is-notes">
-                  <textarea rows={2} name={`${title}-note-${index}`} />
+                  <textarea rows={2} name={`${name}-note-${index}`} defaultValue={answers[`${name}-note-${index}`] ?? ''} />
                 </td>
               </tr>
             ))}
@@ -153,12 +159,67 @@ function MatrixSection({
   );
 }
 
+function countryLabelFromSlug(slug: string): string {
+  const profile = privateProfiles.find((p) => p.countrySlug === slug);
+  if (profile) return profile.name.replace('Point focal — ', '');
+  return slug.charAt(0).toUpperCase() + slug.slice(1);
+}
+
 function PrivateQuestionnairePage() {
+  const user = getPrivateUser();
+  const slug = user.countrySlug ?? 'gabon';
+  const countryLabel = countryLabelFromSlug(slug);
+
+  const [answers, setAnswers] = useState<QuestionnaireAnswers | null>(null);
+  const [status, setStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    let active = true;
+    getQuestionnaire(slug).then((data) => {
+      if (active) setAnswers(data ?? {});
+    });
+    return () => {
+      active = false;
+    };
+  }, [slug]);
+
+  const save = async () => {
+    if (!formRef.current) return;
+    setStatus('saving');
+    const formData = new FormData(formRef.current);
+    const next: QuestionnaireAnswers = {};
+    formData.forEach((value, key) => {
+      next[key] = typeof value === 'string' ? value : '';
+    });
+    await saveQuestionnaire(slug, next);
+    setAnswers(next);
+    setStatus('saved');
+    window.setTimeout(() => setStatus('idle'), 3000);
+  };
+
+  if (!answers) {
+    return (
+      <div className="private-page-stack">
+        <section className="private-surface-card private-questionnaire-shell">
+          <p className="private-section-body">Chargement du questionnaire…</p>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="private-page-stack">
-      <section className="private-surface-card private-questionnaire-shell">
+      <form
+        ref={formRef}
+        onSubmit={(event) => {
+          event.preventDefault();
+          void save();
+        }}
+        className="private-surface-card private-questionnaire-shell"
+      >
         <div className="private-questionnaire-header">
-          <p className="private-section-kicker">Collecte regionale harmonisee</p>
+          <p className="private-section-kicker">Collecte regionale harmonisee — {countryLabel}</p>
           <h2 className="private-section-title">Questionnaire sur l'alignement aux documents cadres en education</h2>
           <p className="private-section-body">
             Premiere reunion des Ministres en charge de l'education, des sciences, de la technologie et de l'innovation.
@@ -169,15 +230,15 @@ function PrivateQuestionnairePage() {
         <section className="private-questionnaire-meta">
           <label className="private-form-field">
             <span>Pays</span>
-            <input placeholder="Renseigner le pays" />
+            <input name="meta-pays" defaultValue={answers['meta-pays'] || countryLabel} placeholder="Renseigner le pays" />
           </label>
           <label className="private-form-field">
             <span>Point focal</span>
-            <input placeholder="Nom du responsable" />
+            <input name="meta-point-focal" defaultValue={answers['meta-point-focal'] ?? ''} placeholder="Nom du responsable" />
           </label>
           <label className="private-form-field">
             <span>Email de retour</span>
-            <input defaultValue="david.ossene@ceeac-eccas.org" />
+            <input name="meta-email" defaultValue={answers['meta-email'] || 'david.ossene@ceeac-eccas.org'} />
           </label>
         </section>
 
@@ -216,11 +277,14 @@ function PrivateQuestionnairePage() {
                 {generalRows.map((row, index) => (
                   <tr key={row}>
                     <td className="is-question">{row}</td>
-                    {Array.from({ length: 12 }).map((_, cellIndex) => (
-                      <td key={cellIndex} className="is-tristate">
-                        <TriStateCell name={`general-${index}-${cellIndex}`} />
-                      </td>
-                    ))}
+                    {Array.from({ length: 12 }).map((_, cellIndex) => {
+                      const field = `general-${index}-${cellIndex}`;
+                      return (
+                        <td key={cellIndex} className="is-tristate">
+                          <TriStateCell name={field} initial={answers[field]} />
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>
@@ -257,14 +321,14 @@ function PrivateQuestionnairePage() {
                 {policyRows.map((row, index) => (
                   <tr key={row}>
                     <td className="is-question">{row}</td>
-                    <td className="is-notes"><textarea rows={2} name={`policy-dispositions-${index}`} /></td>
-                    <td className="is-tristate"><TriStateCell name={`policy-pol-before-${index}`} /></td>
-                    <td className="is-tristate"><TriStateCell name={`policy-pol-after-${index}`} /></td>
-                    <td className="is-tristate"><TriStateCell name={`policy-fin-before-${index}`} /></td>
-                    <td className="is-tristate"><TriStateCell name={`policy-fin-after-${index}`} /></td>
-                    <td className="is-tristate"><TriStateCell name={`policy-admin-before-${index}`} /></td>
-                    <td className="is-tristate"><TriStateCell name={`policy-admin-after-${index}`} /></td>
-                    <td className="is-notes"><textarea rows={2} name={`policy-note-${index}`} /></td>
+                    <td className="is-notes"><textarea rows={2} name={`policy-dispositions-${index}`} defaultValue={answers[`policy-dispositions-${index}`] ?? ''} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-pol-before-${index}`} initial={answers[`policy-pol-before-${index}`]} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-pol-after-${index}`} initial={answers[`policy-pol-after-${index}`]} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-fin-before-${index}`} initial={answers[`policy-fin-before-${index}`]} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-fin-after-${index}`} initial={answers[`policy-fin-after-${index}`]} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-admin-before-${index}`} initial={answers[`policy-admin-before-${index}`]} /></td>
+                    <td className="is-tristate"><TriStateCell name={`policy-admin-after-${index}`} initial={answers[`policy-admin-after-${index}`]} /></td>
+                    <td className="is-notes"><textarea rows={2} name={`policy-note-${index}`} defaultValue={answers[`policy-note-${index}`] ?? ''} /></td>
                   </tr>
                 ))}
               </tbody>
@@ -274,22 +338,30 @@ function PrivateQuestionnairePage() {
 
         <MatrixSection
           title="III - Prise en compte des six principes directeurs de la CESA 26-35"
+          name="principes"
           rows={sectionThreeRows}
+          answers={answers}
         />
 
         <MatrixSection
           title="IV - Prise en compte des sept piliers de la CESA 26-35"
+          name="piliers"
           rows={sectionFourRows}
+          answers={answers}
         />
 
         <MatrixSection
           title="V - Tendance vers la realisation des douze objectifs strategiques de la CESA 26-35"
+          name="objectifs"
           rows={sectionFiveRows}
+          answers={answers}
         />
 
         <MatrixSection
           title="VI - Prise en compte des cibles specifiques en education des ODD"
+          name="cibles"
           rows={sectionSixRows}
+          answers={answers}
         />
 
         <section className="private-questionnaire-section">
@@ -301,24 +373,39 @@ function PrivateQuestionnairePage() {
           <div className="private-form-grid">
             <label className="private-form-field">
               <span>Loi</span>
-              <textarea rows={4} placeholder="Preciser les lois concernees..." />
+              <textarea rows={4} name="extra-loi" defaultValue={answers['extra-loi'] ?? ''} placeholder="Preciser les lois concernees..." />
             </label>
             <label className="private-form-field">
               <span>Chartes / decrets</span>
-              <textarea rows={4} placeholder="Preciser les chartes ou decrets..." />
+              <textarea rows={4} name="extra-chartes" defaultValue={answers['extra-chartes'] ?? ''} placeholder="Preciser les chartes ou decrets..." />
             </label>
             <label className="private-form-field private-form-field-wide">
               <span>Commentaires complementaires</span>
-              <textarea rows={5} placeholder="Ajouter toute precision utile..." />
+              <textarea rows={5} name="extra-commentaires" defaultValue={answers['extra-commentaires'] ?? ''} placeholder="Ajouter toute precision utile..." />
             </label>
           </div>
         </section>
 
         <div className="private-form-actions">
-          <button type="button" className="private-button private-button-secondary">Enregistrer en brouillon</button>
-          <button type="button" className="private-button">Soumettre le questionnaire</button>
+          <button
+            type="button"
+            className="private-button private-button-secondary"
+            onClick={() => void save()}
+            disabled={status === 'saving'}
+          >
+            Enregistrer en brouillon
+          </button>
+          <button type="submit" className="private-button" disabled={status === 'saving'}>
+            {status === 'saving' ? 'Enregistrement…' : status === 'saved' ? 'Enregistré ✓' : 'Soumettre le questionnaire'}
+          </button>
         </div>
-      </section>
+
+        {status === 'saved' && (
+          <p className="private-section-body" style={{ marginTop: '0.75rem', color: '#2b7f5c', fontWeight: 600 }}>
+            Réponses enregistrées. Les indicateurs publics « État de mise en œuvre » du {countryLabel} ont été recalculés.
+          </p>
+        )}
+      </form>
     </div>
   );
 }

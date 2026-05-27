@@ -5,7 +5,10 @@ import { ArrowLeft, CircleCheck, Clock3, TrendingUp, TriangleAlert } from 'lucid
 import PresSubPageHeader from './PresSubPageHeader';
 import { useLanguage } from '../../languageContext';
 import { localizeDomainLabel, localizeBlockerLabel } from '../../data/implementationCountries';
+import { getCountryStatsOverride, type CountryStatsOverride } from '../../lib/countryStore';
 
+// Valeurs de démonstration utilisées en repli tant que le questionnaire du pays
+// n'a pas été renseigné (cf. getCountryStatsOverride('gabon')).
 const monthlyCompletion = [38, 44, 49, 55, 61, 66, 70];
 const domainProgress = [
   { label: 'Policy alignment', value: 82 },
@@ -45,8 +48,40 @@ function ImplementationGabonStats() {
   const [wikiLoading, setWikiLoading] = React.useState(false);
   const [wikiError, setWikiError] = React.useState('');
   const [wikiSummary, setWikiSummary] = React.useState<WikiSummary | null>(null);
-  const maxDomain = Math.max(...domainProgress.map((item) => item.value));
-  const linePoints = monthlyCompletion
+
+  // Indicateurs pilotés par le questionnaire privé du Gabon (repli sur le mock).
+  const [override, setOverride] = React.useState<CountryStatsOverride | null>(null);
+  React.useEffect(() => {
+    let active = true;
+    getCountryStatsOverride('gabon').then((data) => {
+      if (active) setOverride(data);
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const effDomain = override?.domainProgress?.length ? override.domainProgress : domainProgress;
+  const effBlockers = override?.blockers?.length ? override.blockers : blockers;
+  const completionValue = override?.completion ?? monthlyCompletion[monthlyCompletion.length - 1];
+  const blockerCount = override ? effBlockers.filter((item) => item.value > 0).length : 4;
+  // La courbe garde l'historique de démo et se termine sur la valeur du questionnaire.
+  const trend = override ? [...monthlyCompletion.slice(0, -1), completionValue] : monthlyCompletion;
+
+  // Dégradé du donut reconstruit à partir des proportions réelles des blocages.
+  const donutGradient = (() => {
+    let acc = 0;
+    const stops = effBlockers.map((item, index) => {
+      const start = acc;
+      acc += item.value;
+      const end = index === effBlockers.length - 1 ? 100 : acc;
+      return `${item.color} ${start}% ${end}%`;
+    });
+    return `conic-gradient(${stops.join(', ')})`;
+  })();
+
+  const maxDomain = Math.max(...effDomain.map((item) => item.value), 1);
+  const linePoints = trend
     .map((value, idx) => `${idx * 90},${280 - value * 2.1}`)
     .join(' ');
   const isFr = language === 'fr';
@@ -157,7 +192,7 @@ function ImplementationGabonStats() {
           <article className="impl-gabon-kpi-card">
             <CircleCheck size={20} />
             <p>{copy.kpiCompletion}</p>
-            <strong>70%</strong>
+            <strong>{completionValue}%</strong>
           </article>
           <article className="impl-gabon-kpi-card">
             <Clock3 size={20} />
@@ -172,7 +207,7 @@ function ImplementationGabonStats() {
           <article className="impl-gabon-kpi-card">
             <TriangleAlert size={20} />
             <p>{copy.kpiBlockers}</p>
-            <strong>4</strong>
+            <strong>{blockerCount}</strong>
           </article>
         </div>
 
@@ -185,7 +220,7 @@ function ImplementationGabonStats() {
               <line x1="0" y1="160" x2="540" y2="160" />
               <line x1="0" y1="100" x2="540" y2="100" />
               <polyline points={linePoints} />
-              {monthlyCompletion.map((value, idx) => (
+              {trend.map((value, idx) => (
                 <circle key={`${value}-${idx}`} cx={idx * 90} cy={280 - value * 2.1} r="5" />
               ))}
             </svg>
@@ -197,7 +232,7 @@ function ImplementationGabonStats() {
           <motion.article className="impl-gabon-panel" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}>
             <h2>{copy.domains}</h2>
             <div className="impl-gabon-bars">
-              {domainProgress.map((item) => (
+              {effDomain.map((item) => (
                 <div key={item.label} className="impl-gabon-bar-row">
                   <div className="impl-gabon-bar-copy">
                     <span>{localizeDomainLabel(item.label, language)}</span>
@@ -214,9 +249,9 @@ function ImplementationGabonStats() {
           <motion.article className="impl-gabon-panel" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }}>
             <h2>{copy.blockers}</h2>
             <div className="impl-gabon-donut-wrap">
-              <div className="impl-gabon-donut" />
+              <div className="impl-gabon-donut" style={override ? { background: donutGradient } : undefined} />
               <div className="impl-gabon-donut-legend">
-                {blockers.map((item) => (
+                {effBlockers.map((item) => (
                   <span key={item.label}>
                     <i style={{ background: item.color }} />
                     {localizeBlockerLabel(item.label, language)} ({item.value}%)
