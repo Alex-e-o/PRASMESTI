@@ -35,7 +35,7 @@ function DirectorSection() {
         >
           <div className="director-image-glow" />
           <img
-            src={`${import.meta.env.BASE_URL}assets/prasmesti/home/director/director.jpg`}
+            src={`${import.meta.env.BASE_URL}assets/prasmesti/home/director/director.jpg?v=2`}
             alt="Director portrait"
             className="director-image"
           />
