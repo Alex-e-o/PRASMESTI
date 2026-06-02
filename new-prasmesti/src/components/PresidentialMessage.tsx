@@ -16,11 +16,11 @@ function PresidentialMessage() {
           transition={{ duration: 0.7 }}
           className="president-portrait"
         >
-          <div className="photo-frame photo-frame-portrait">
+          <div className="president-champion-frame">
             <img
-              src={`${import.meta.env.BASE_URL}assets/prasmesti/home/president/president.jpg`}
+              src={`${import.meta.env.BASE_URL}assets/prasmesti/home/president/president-champion.png`}
               alt="PRASMESTI presidential portrait"
-              className="photo-frame-img"
+              className="president-champion-img"
             />
           </div>
           <div className="president-portrait-caption">

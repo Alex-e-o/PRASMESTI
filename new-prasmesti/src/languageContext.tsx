@@ -39,6 +39,17 @@ export function pickArray(obj: Record<string, unknown>, base: string, language: 
   return Array.isArray(value) ? (value as string[]) : [];
 }
 
+/**
+ * Typographie française : remplace l'espace normale précédant une ponctuation
+ * haute (? ! ; :) — et autour des guillemets « » — par une espace insécable,
+ * pour que le point d'interrogation reste collé à sa phrase (pas de retour à la
+ * ligne isolé). Sans effet sur EN/ES/PT, qui n'ont pas cette espace.
+ */
+const applyFrTypography = (value: string): string =>
+  value
+    .replace(/ ([?!;:»])/g, ' $1')
+    .replace(/(«) /g, '$1 ');
+
 const translations: Dictionary = {
   navHome: { en: 'Home', fr: 'Accueil', es: 'Inicio', pt: 'Início' },
   navPresentation: { en: 'Presentation', fr: 'Présentation', es: 'Presentación', pt: 'Apresentação' },
@@ -806,7 +817,11 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
           const order: Language[] = ['fr', 'en', 'es', 'pt'];
           return order[(order.indexOf(current) + 1) % order.length];
         }),
-      translate: (key: string) => translations[key]?.[language] ?? key,
+      translate: (key: string) => {
+        const value = translations[key]?.[language] ?? key;
+        if (language !== 'fr') return value;
+        return Array.isArray(value) ? value.map(applyFrTypography) : applyFrTypography(value);
+      },
     }),
     [language],
   );
