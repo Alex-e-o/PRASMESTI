@@ -3,3 +3,6 @@ new-prasmesti/dist/
 new-prasmesti/.env
 new-prasmesti/.env.local
 _deploy/
+
+# Réglages locaux Claude Code (gardés en local, jamais publiés)
+.claude/
