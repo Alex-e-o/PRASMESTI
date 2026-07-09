@@ -66,7 +66,7 @@ const translations: Dictionary = {
   navSectoralStrategy: { en: 'Sectoral strategy', fr: 'Stratégie sectorielle', es: 'Estrategia sectorial', pt: 'Estratégia setorial' },
   navSectoralProjects: { en: 'Sectoral projects', fr: 'Projets sectoriels', es: 'Proyectos sectoriales', pt: 'Projetos setoriais' },
   navFrameworkStrategies: { en: 'Framework strategies', fr: 'Stratégies-cadres', es: 'Estrategias marco', pt: 'Estratégias-quadro' },
-  navImplementation: { en: 'Implementation Status', fr: 'État de mise en oeuvre', es: 'Estado de implementación', pt: 'Estado de implementação' },
+  navImplementation: { en: 'Implementation Status', fr: 'État de mise en œuvre', es: 'Estado de implementación', pt: 'Estado de implementação' },
   implEyebrow: { en: 'Monitoring', fr: 'Suivi', es: 'Seguimiento', pt: 'Acompanhamento' },
   implTitle: { en: 'Implementation Status', fr: 'État de mise en œuvre', es: 'Estado de implementación', pt: 'Estado de implementação' },
   implSubtitle: {
@@ -732,7 +732,7 @@ const translations: Dictionary = {
   },
   pdetAccessMemberState: {
     en: 'For a Member State, it is a question of presenting the progress made in the implementation of regional, continental, and international texts',
-    fr: "Pour un État membre, il s'agit de présenter les progrès effectués dans la mise en oeuvre des textes régionaux, continentaux, et internationaux",
+    fr: "Pour un État membre, il s'agit de présenter les progrès effectués dans la mise en œuvre des textes régionaux, continentaux, et internationaux",
     es: 'Para un Estado miembro, se trata de presentar los progresos realizados en la implementación de los textos regionales, continentales e internacionales',
     pt: 'Para um Estado-membro, trata-se de apresentar os progressos realizados na aplicação dos textos regionais, continentais e internacionais',
   },
