@@ -11,9 +11,14 @@ function wrap(min: number, max: number, v: number) {
 function HomeFlagStrip() {
   const { language, translate } = useLanguage();
   const setRef = useRef<HTMLDivElement | null>(null);
+  const marqueeRef = useRef<HTMLDivElement | null>(null);
   const baseX = useMotionValue(0);
   const [loopWidth, setLoopWidth] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [inView, setInView] = useState(true);
+  const prefersReduced = useRef(
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  );
 
   useEffect(() => {
     if (!setRef.current) return;
@@ -35,24 +40,38 @@ function HomeFlagStrip() {
   }, []);
 
   useAnimationFrame((_, delta) => {
-    if (!loopWidth || isPaused) return;
+    if (!loopWidth || isPaused || !inView || prefersReduced.current) return;
     baseX.set(baseX.get() - 54 * (delta / 1000));
   });
+
+  // Suspend la boucle quand le bandeau est hors écran (perf).
+  useEffect(() => {
+    const el = marqueeRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold: 0 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // Listener wheel non-passif : preventDefault fonctionne (contrairement à onWheel React passif).
+  useEffect(() => {
+    const el = marqueeRef.current;
+    if (!el) return;
+    const onWheel = (event: WheelEvent) => {
+      if (!loopWidth) return;
+      const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      if (!delta) return;
+      event.preventDefault();
+      baseX.set(baseX.get() - delta);
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, [loopWidth]);
 
   const x = useTransform(baseX, (v) => {
     if (!loopWidth) return '0px';
     return `${wrap(-loopWidth, 0, v)}px`;
   });
-
-  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-    if (!loopWidth) return;
-
-    const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
-    if (!delta) return;
-
-    event.preventDefault();
-    baseX.set(baseX.get() - delta);
-  };
 
   const cards = eccasFlags.map((flag) => (
     <article key={flag.image} className="home-flag-card">
@@ -74,10 +93,10 @@ function HomeFlagStrip() {
           </h2>
 
           <div
+            ref={marqueeRef}
             className="home-flag-marquee"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            onWheel={handleWheel}
           >
             <motion.div className="home-flag-track" style={{ x }}>
               <div ref={setRef} className="home-flag-set">

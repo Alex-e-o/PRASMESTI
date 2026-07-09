@@ -87,33 +87,33 @@ function ImplementationGabonStats() {
   const isFr = language === 'fr';
   const L = (o: { fr: string; en: string; es: string; pt: string }) => o[language];
   const copy = {
-    title: L({ fr: 'Gabon - Statistiques de mise en oeuvre', en: 'Gabon - Implementation Statistics', es: 'Gabón - Estadísticas de implementación', pt: 'Gabão - Estatísticas de implementação' }),
-    subtitle: L({ fr: 'Apercu base sur le questionnaire pour le suivi CESA 26-35 et ODD4.', en: 'Questionnaire-driven snapshot for CESA 26-35 and SDG4 follow-up.', es: 'Resumen basado en el cuestionario para el seguimiento CESA 26-35 y ODS4.', pt: 'Resumo baseado no questionário para o acompanhamento CESA 26-35 e ODS4.' }),
-    back: L({ fr: 'Retour a tous les Etats membres', en: 'Back to all member states', es: 'Volver a todos los Estados miembros', pt: 'Voltar a todos os Estados-membros' }),
-    mapTitle: L({ fr: 'Carte structurelle de mise en oeuvre du Gabon', en: 'Gabon implementation structure map', es: 'Mapa estructural de implementación de Gabón', pt: 'Mapa estrutural de implementação do Gabão' }),
+    title: L({ fr: 'Gabon - Statistiques de mise en œuvre', en: 'Gabon - Implementation Statistics', es: 'Gabón - Estadísticas de implementación', pt: 'Gabão - Estatísticas de implementação' }),
+    subtitle: L({ fr: 'Aperçu basé sur le questionnaire pour le suivi CESA 26-35 et ODD4.', en: 'Questionnaire-driven snapshot for CESA 26-35 and SDG4 follow-up.', es: 'Resumen basado en el cuestionario para el seguimiento CESA 26-35 y ODS4.', pt: 'Resumo baseado no questionário para o acompanhamento CESA 26-35 e ODS4.' }),
+    back: L({ fr: 'Retour à tous les États membres', en: 'Back to all member states', es: 'Volver a todos los Estados miembros', pt: 'Voltar a todos os Estados-membros' }),
+    mapTitle: L({ fr: 'Carte structurelle de mise en œuvre du Gabon', en: 'Gabon implementation structure map', es: 'Mapa estructural de implementación de Gabón', pt: 'Mapa estrutural de implementação do Gabão' }),
     mapSub: L({ fr: 'Points focaux indicatifs issus de la couverture du questionnaire et des rapports terrain.', en: 'Indicative focal points from questionnaire coverage and field reporting.', es: 'Puntos focales indicativos derivados de la cobertura del cuestionario y de los informes de terreno.', pt: 'Pontos focais indicativos resultantes da cobertura do questionário e dos relatórios de terreno.' }),
-    kpiCompletion: L({ fr: 'Taux global de mise en oeuvre', en: 'Overall completion', es: 'Tasa global de implementación', pt: 'Taxa global de implementação' }),
+    kpiCompletion: L({ fr: 'Taux global de mise en œuvre', en: 'Overall completion', es: 'Tasa global de implementación', pt: 'Taxa global de implementação' }),
     kpiProgress: L({ fr: 'Actions en cours', en: 'Actions in progress', es: 'Acciones en curso', pt: 'Ações em curso' }),
     kpiGrowth: L({ fr: 'Progression trimestrielle', en: 'Quarterly growth', es: 'Progresión trimestral', pt: 'Progressão trimestral' }),
     kpiBlockers: L({ fr: 'Blocages critiques', en: 'Critical blockers', es: 'Bloqueos críticos', pt: 'Bloqueios críticos' }),
-    trend: L({ fr: 'Tendance de mise en oeuvre (2026)', en: 'Implementation trend (2026)', es: 'Tendencia de implementación (2026)', pt: 'Tendência de implementação (2026)' }),
-    domains: L({ fr: 'Progres par domaine', en: 'Progress by domain', es: 'Progreso por ámbito', pt: 'Progresso por domínio' }),
-    blockers: L({ fr: 'Repartition des blocages', en: 'Blocker distribution', es: 'Distribución de los bloqueos', pt: 'Distribuição dos bloqueios' }),
+    trend: L({ fr: 'Tendance de mise en œuvre (2026)', en: 'Implementation trend (2026)', es: 'Tendencia de implementación (2026)', pt: 'Tendência de implementação (2026)' }),
+    domains: L({ fr: 'Progrès par domaine', en: 'Progress by domain', es: 'Progreso por ámbito', pt: 'Progresso por domínio' }),
+    blockers: L({ fr: 'Répartition des blocages', en: 'Blocker distribution', es: 'Distribución de los bloqueos', pt: 'Distribuição dos bloqueios' }),
     actions: L({ fr: 'Actions prioritaires issues du questionnaire', en: 'Priority actions from questionnaire', es: 'Acciones prioritarias del cuestionario', pt: 'Ações prioritárias do questionário' }),
     owner: L({ fr: 'Responsable', en: 'Owner', es: 'Responsable', pt: 'Responsável' }),
     status: L({ fr: 'Statut', en: 'Status', es: 'Estado', pt: 'Estado' }),
-    due: L({ fr: 'Echeance', en: 'Due', es: 'Plazo', pt: 'Prazo' }),
+    due: L({ fr: 'Échéance', en: 'Due', es: 'Plazo', pt: 'Prazo' }),
     openWiki: L({ fr: 'Ouvrir la page Wikipedia complete', en: 'Open full Wikipedia page', es: 'Abrir la página completa de Wikipedia', pt: 'Abrir a página completa da Wikipédia' }),
     modalTitle: L({ fr: 'Wikipedia : Gabon', en: 'Wikipedia: Gabon', es: 'Wikipedia: Gabón', pt: 'Wikipédia: Gabão' }),
     close: L({ fr: 'Fermer', en: 'Close', es: 'Cerrar', pt: 'Fechar' }),
-    loading: L({ fr: "Chargement de l'apercu...", en: 'Loading preview...', es: 'Cargando la vista previa...', pt: 'A carregar a pré-visualização...' }),
-    loadError: L({ fr: "Impossible de charger l'apercu Wikipedia pour le moment.", en: 'Unable to load Wikipedia preview right now.', es: 'No se puede cargar la vista previa de Wikipedia en este momento.', pt: 'Não é possível carregar a pré-visualização da Wikipédia neste momento.' }),
+    loading: L({ fr: "Chargement de l'aperçu...", en: 'Loading preview...', es: 'Cargando la vista previa...', pt: 'A carregar a pré-visualização...' }),
+    loadError: L({ fr: "Impossible de charger l'aperçu Wikipedia pour le moment.", en: 'Unable to load Wikipedia preview right now.', es: 'No se puede cargar la vista previa de Wikipedia en este momento.', pt: 'Não é possível carregar a pré-visualização da Wikipédia neste momento.' }),
     statusInProgress: L({ fr: 'En cours', en: 'In progress', es: 'En curso', pt: 'Em curso' }),
-    statusAtRisk: L({ fr: 'A risque', en: 'At risk', es: 'En riesgo', pt: 'Em risco' }),
-    statusPlanned: L({ fr: 'Planifie', en: 'Planned', es: 'Planificado', pt: 'Planeado' }),
-    action1: L({ fr: 'Deploiement de la formation continue des enseignants en zones rurales', en: 'Teacher CPD rollout in rural zones', es: 'Despliegue de la formación continua de docentes en zonas rurales', pt: 'Implantação da formação contínua de docentes em zonas rurais' }),
+    statusAtRisk: L({ fr: 'À risque', en: 'At risk', es: 'En riesgo', pt: 'Em risco' }),
+    statusPlanned: L({ fr: 'Planifié', en: 'Planned', es: 'Planificado', pt: 'Planeado' }),
+    action1: L({ fr: 'Déploiement de la formation continue des enseignants en zones rurales', en: 'Teacher CPD rollout in rural zones', es: 'Despliegue de la formación continua de docentes en zonas rurales', pt: 'Implantação da formação contínua de docentes em zonas rurais' }),
     action2: L({ fr: 'Harmonisation nationale des indicateurs ODD4', en: 'National SDG4 indicator harmonization', es: 'Armonización nacional de los indicadores ODS4', pt: 'Harmonização nacional dos indicadores ODS4' }),
-    action3: L({ fr: 'Boite a outils de reporting numerique des ecoles', en: 'School digital reporting toolkit', es: 'Kit de herramientas de reporte digital escolar', pt: 'Conjunto de ferramentas de comunicação digital das escolas' }),
+    action3: L({ fr: 'Boîte à outils de reporting numérique des écoles', en: 'School digital reporting toolkit', es: 'Kit de herramientas de reporte digital escolar', pt: 'Conjunto de ferramentas de comunicação digital das escolas' }),
   };
   const wikiDomain = isFr ? 'fr.wikipedia.org' : 'en.wikipedia.org';
   const wikiUrl = wikiSummary?.content_urls?.desktop?.page ?? `https://${wikiDomain}/wiki/Gabon`;
@@ -124,7 +124,7 @@ function ImplementationGabonStats() {
 
     setWikiLoading(true);
     setWikiError('');
-    fetch(`https://${wikiDomain}/api/rest_v1/page/summary/Gabon`)
+    fetch(`https://${wikiDomain}/api/rest_v1/page/summary/Gabon`, { signal: AbortSignal.timeout(8000) })
       .then((response) => {
         if (!response.ok) throw new Error('Failed to load Wikipedia summary');
         return response.json();
