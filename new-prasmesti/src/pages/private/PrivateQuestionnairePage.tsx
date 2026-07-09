@@ -367,7 +367,7 @@ function PrivateQuestionnairePage() {
         <section className="private-questionnaire-section">
           <div className="private-questionnaire-section-head">
             <h3 className="private-questionnaire-section-title">
-              3 - Ces documents sont-ils devenus des instruments normatifs adoptes et mis en oeuvre ?
+              3 - Ces documents sont-ils devenus des instruments normatifs adoptés et mis en œuvre ?
             </h3>
           </div>
           <div className="private-form-grid">

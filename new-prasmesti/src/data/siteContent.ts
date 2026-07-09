@@ -135,7 +135,7 @@ export const newsItems = [
     bodyFr: "Une nouvelle initiative pour identifier, développer et promouvoir le capital humain d'excellence dans la région d'Afrique centrale.",
     bodyEs: 'Una nueva iniciativa para identificar, desarrollar y promover el capital humano de excelencia en la región de África Central.',
     bodyPt: 'Uma nova iniciativa para identificar, desenvolver e promover o capital humano de excelência na região da África Central.',
-    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-2.jpg`,
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/objectifs/obj-training.jpg`,
   },
   {
     dateFr: '18 Novembre 2024',
@@ -150,7 +150,7 @@ export const newsItems = [
     bodyFr: "Les États membres et partenaires se sont réunis pour aligner les priorités scientifiques et renforcer la collaboration transfrontalière en matière de recherche.",
     bodyEs: 'Los Estados miembros y los socios se reunieron para alinear las prioridades científicas y reforzar la colaboración transfronteriza en materia de investigación.',
     bodyPt: 'Os Estados-membros e os parceiros reuniram-se para alinhar as prioridades científicas e reforçar a colaboração transfronteiriça em matéria de investigação.',
-    image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-3.jpg`,
+    image: `${import.meta.env.BASE_URL}assets/prasmesti/attentes/att-governance.jpg`,
   },
   {
     dateFr: '16 Novembre 2024',
