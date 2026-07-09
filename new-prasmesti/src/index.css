@@ -4505,3 +4505,38 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* ==========================================================================
+   Accessibilité (audit §7)
+   ========================================================================== */
+/* Menus déroulants ouvrables au clavier (miroir du :hover). */
+.site-nav-dropdown-wrap:focus-within .site-nav-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Focus clavier visible sur tous les éléments interactifs de l'espace privé. */
+.private-shell button:focus-visible,
+.private-shell a:focus-visible,
+.private-shell input:focus-visible,
+.private-shell select:focus-visible,
+.private-shell textarea:focus-visible {
+  outline: 2px solid #1e5299;
+  outline-offset: 2px;
+}
+
+/* Lien d'évitement vers le contenu principal. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: #1e5299;
+  color: #fff;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+}

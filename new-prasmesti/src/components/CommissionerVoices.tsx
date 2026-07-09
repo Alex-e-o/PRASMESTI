@@ -40,7 +40,7 @@ function VoiceCard({ voice, language }: { voice: VoiceEntry; language: Language 
   const record = voice as unknown as Record<string, unknown>;
   return (
     <div className="voice-marquee-card">
-      <img src={voice.image} alt={voice.nameFirst} className="voice-marquee-photo" />
+      <img src={voice.image} alt={`${voice.nameFirst} ${voice.nameLast}`} className="voice-marquee-photo" />
       <div className="voice-marquee-body">
         <p className="voice-marquee-quote">
           {pick(record, 'quote', language)}

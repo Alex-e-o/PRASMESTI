@@ -19,7 +19,7 @@ function PresidentialMessage() {
           <div className="president-champion-frame">
             <img
               src={`${import.meta.env.BASE_URL}assets/prasmesti/home/president/president-champion.png?v=2`}
-              alt="PRASMESTI presidential portrait"
+              alt="Portrait du président champion régional du PRASMESTI"
               className="president-champion-img"
             />
           </div>
