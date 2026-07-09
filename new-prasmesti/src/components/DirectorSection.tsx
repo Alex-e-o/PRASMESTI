@@ -36,7 +36,7 @@ function DirectorSection() {
           <div className="director-image-glow" />
           <img
             src={`${import.meta.env.BASE_URL}assets/prasmesti/home/director/director.jpg?v=2`}
-            alt="Director portrait"
+            alt="Portrait du directeur du PRASMESTI"
             className="director-image"
           />
         </motion.div>

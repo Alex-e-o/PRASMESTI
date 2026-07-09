@@ -80,7 +80,7 @@ function ImplementationStatus() {
                 >
                   <img
                     src={flag.image}
-                    alt={pick(flag, 'name', language)}
+                    alt=""
                     className="impl-country-flag"
                   />
                   <div className="impl-country-info">

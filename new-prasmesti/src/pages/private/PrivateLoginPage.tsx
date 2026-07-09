@@ -67,7 +67,13 @@ function PrivateLoginPage() {
             <span className="private-field-label">Identifiant</span>
             <span className="private-field-input-wrap">
               <User size={18} />
-              <input value={username} onChange={(event) => setUsername(event.target.value)} />
+              <input
+                type="text"
+                name="username"
+                autoComplete="username"
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+              />
             </span>
           </label>
 
@@ -75,7 +81,13 @@ function PrivateLoginPage() {
             <span className="private-field-label">Mot de passe</span>
             <span className="private-field-input-wrap">
               <LockKeyhole size={18} />
-              <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <input
+                type="password"
+                name="password"
+                autoComplete="current-password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
             </span>
           </label>
 
