@@ -2,14 +2,8 @@ import React from 'react';
 import { Globe, ChevronDown, LogIn } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import AnimatedThemeToggle from './AnimatedThemeToggle';
-import { useLanguage, LANGUAGES } from '../languageContext';
-
-const COUNTRIES = [
-  'Angola', 'Burundi', 'Cameroun', 'Centrafrique',
-  'République du Congo', 'Gabon', 'Guinée Équatoriale',
-  'République Démocratique du Congo', 'Rwanda',
-  'Sao Tomé et Principe', 'Tchad',
-];
+import { useLanguage, LANGUAGES, pick } from '../languageContext';
+import { eccasFlags } from '../data/eccasFlags';
 
 function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -91,26 +85,27 @@ function Navbar() {
     { label: t('navFrameworkStrategies') },
   ];
 
-  const countrySlugByLabel: Record<string, string> = {
+  // Slug de route indexé par le nom FR canonique d'eccasFlags (clé stable, non traduite).
+  const countrySlugByFr: Record<string, string> = {
     Angola: 'angola',
     Burundi: 'burundi',
     Cameroun: 'cameroon',
     Centrafrique: 'central-african-republic',
-    'République du Congo': 'congo',
+    Congo: 'congo',
     Gabon: 'gabon',
-    'Guinée Équatoriale': 'equatorial-guinea',
-    'République Démocratique du Congo': 'drc',
+    'Guinée équatoriale': 'equatorial-guinea',
+    RDC: 'drc',
     Rwanda: 'rwanda',
-    'Sao Tomé et Principe': 'sao-tome',
+    'Sao Tomé-et-Principe': 'sao-tome',
     Tchad: 'chad',
   };
 
-  const countryItems: DropdownItem[] = COUNTRIES.map((name) => {
-    const slug = countrySlugByLabel[name];
-    if (slug) {
-      return { label: name, onClick: () => navigate(`/presentation/implementation/${slug}`) };
-    }
-    return { label: name, onClick: () => navigate('/presentation/implementation') };
+  const countryItems: DropdownItem[] = eccasFlags.map((flag) => {
+    const slug = countrySlugByFr[flag.nameFr];
+    const label = pick(flag, 'name', language);
+    return slug
+      ? { label, onClick: () => navigate(`/presentation/implementation/${slug}`) }
+      : { label, onClick: () => navigate('/presentation/implementation') };
   });
 
   const goToImplementation = () => navigate('/presentation/implementation');

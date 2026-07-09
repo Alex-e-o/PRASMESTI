@@ -58,13 +58,13 @@ function Hero() {
   const current = slides[slide];
   const slideKey = `${slide}-${language}`;
   const decadeLabel = {
-    fr: 'ans pour renaitre et batir',
+    fr: 'ans pour renaître et bâtir',
     en: 'years to be reborn and build',
     es: 'años para renacer y construir',
     pt: 'anos para renascer e construir',
   }[language];
   const helperPillars = {
-    fr: ['Eclairer', 'Orienter', 'Informer', 'Transformer'],
+    fr: ['Éclairer', 'Orienter', 'Informer', 'Transformer'],
     en: ['Illuminate', 'Orient', 'Inform', 'Transform'],
     es: ['Iluminar', 'Orientar', 'Informar', 'Transformar'],
     pt: ['Iluminar', 'Orientar', 'Informar', 'Transformar'],
@@ -155,7 +155,7 @@ function Hero() {
           <div className="hero-pillars-helper">
             <p className="hero-pillars-helper-title">
               {{
-                fr: 'Les 4 piliers helpers du PRASMESTI',
+                fr: 'Les 4 piliers d\'appui du PRASMESTI',
                 en: 'The 4 PRASMESTI helper pillars',
                 es: 'Los 4 pilares auxiliares del PRASMESTI',
                 pt: 'Os 4 pilares auxiliares do PRASMESTI',

@@ -9,15 +9,16 @@ interface ThemeContextValue {
 
 const ThemeContext = React.createContext<ThemeContextValue | undefined>(undefined);
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = React.useState<Theme>('dark');
+const getInitialTheme = (): Theme => {
+  if (typeof window === 'undefined') return 'dark';
+  const saved = window.localStorage.getItem('new-prasmesti-theme');
+  return saved === 'light' || saved === 'dark' ? saved : 'dark';
+};
 
-  React.useEffect(() => {
-    const saved = window.localStorage.getItem('new-prasmesti-theme');
-    if (saved === 'light' || saved === 'dark') {
-      setTheme(saved);
-    }
-  }, []);
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  // Init paresseux depuis localStorage (comme LanguageProvider) : évite le flash
+  // sombre→clair et la perte de préférence au rechargement.
+  const [theme, setTheme] = React.useState<Theme>(getInitialTheme);
 
   React.useEffect(() => {
     document.documentElement.dataset.theme = theme;

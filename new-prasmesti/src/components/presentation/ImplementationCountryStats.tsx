@@ -6,6 +6,7 @@ import PresSubPageHeader from './PresSubPageHeader';
 import { useLanguage, pick } from '../../languageContext';
 import type { CountryConfig } from '../../data/implementationCountries';
 import { localizeDomainLabel, localizeBlockerLabel } from '../../data/implementationCountries';
+import { getCountryStatsOverride, type CountryStatsOverride } from '../../lib/countryStore';
 
 type WikiSummary = {
   title: string;
@@ -23,6 +24,18 @@ function ImplementationCountryStats({ country }: Props) {
   const [wikiError, setWikiError] = React.useState('');
   const [wikiSummary, setWikiSummary] = React.useState<WikiSummary | null>(null);
 
+  // Indicateurs pilotés par le questionnaire privé du pays (repli sur le mock statique).
+  const [override, setOverride] = React.useState<CountryStatsOverride | null>(null);
+  React.useEffect(() => {
+    let active = true;
+    getCountryStatsOverride(country.slug).then((data) => {
+      if (active) setOverride(data);
+    });
+    return () => {
+      active = false;
+    };
+  }, [country.slug]);
+
   const isFr = language === 'fr';
   const L = (o: { fr: string; en: string; es: string; pt: string }) => o[language];
   const countryName = pick(country as unknown as Record<string, unknown>, 'name', language);
@@ -31,27 +44,36 @@ function ImplementationCountryStats({ country }: Props) {
   const wikiUrl = wikiSummary?.content_urls?.desktop?.page
     ?? `https://${wikiDomain}/wiki/${encodeURIComponent(wikiTitle.replace(/\s+/g, '_'))}`;
 
-  const maxDomain = Math.max(...country.domainProgress.map((item) => item.value));
-  const linePoints = country.monthlyCompletion
+  // Valeurs effectives : override du questionnaire si présent, sinon données statiques.
+  const effCompletion = override?.completion ?? country.kpis.completion;
+  const effDomain = override?.domainProgress?.length ? override.domainProgress : country.domainProgress;
+  const effBlockers = override?.blockers?.length ? override.blockers : country.blockers;
+  const effBlockerCount = override ? effBlockers.filter((item) => item.value > 0).length : country.kpis.blockers;
+  const effTrend = override
+    ? [...country.monthlyCompletion.slice(0, -1), effCompletion]
+    : country.monthlyCompletion;
+
+  const maxDomain = Math.max(...effDomain.map((item) => item.value), 1);
+  const linePoints = effTrend
     .map((value, idx) => `${idx * 90},${280 - value * 2.1}`)
     .join(' ');
 
   const copy = {
     title: L({
-      fr: `${countryName} - Statistiques de mise en oeuvre`,
+      fr: `${countryName} - Statistiques de mise en œuvre`,
       en: `${countryName} - Implementation Statistics`,
       es: `${countryName} - Estadísticas de implementación`,
       pt: `${countryName} - Estatísticas de implementação`,
     }),
     subtitle: L({
-      fr: 'Apercu base sur le questionnaire pour le suivi CESA 26-35 et ODD4.',
+      fr: 'Aperçu basé sur le questionnaire pour le suivi CESA 26-35 et ODD4.',
       en: 'Questionnaire-driven snapshot for CESA 26-35 and SDG4 follow-up.',
       es: 'Resumen basado en el cuestionario para el seguimiento CESA 26-35 y ODS4.',
       pt: 'Resumo baseado no questionário para o acompanhamento CESA 26-35 e ODS4.',
     }),
-    back: L({ fr: 'Retour a tous les Etats membres', en: 'Back to all member states', es: 'Volver a todos los Estados miembros', pt: 'Voltar a todos os Estados-membros' }),
+    back: L({ fr: 'Retour à tous les États membres', en: 'Back to all member states', es: 'Volver a todos los Estados miembros', pt: 'Voltar a todos os Estados-membros' }),
     mapTitle: L({
-      fr: `Carte structurelle de mise en oeuvre - ${countryName}`,
+      fr: `Carte structurelle de mise en œuvre - ${countryName}`,
       en: `${countryName} implementation structure map`,
       es: `Mapa estructural de implementación - ${countryName}`,
       pt: `Mapa estrutural de implementação - ${countryName}`,
@@ -62,31 +84,31 @@ function ImplementationCountryStats({ country }: Props) {
       es: 'Puntos focales indicativos derivados de la cobertura del cuestionario y de los informes de terreno.',
       pt: 'Pontos focais indicativos resultantes da cobertura do questionário e dos relatórios de terreno.',
     }),
-    kpiCompletion: L({ fr: 'Taux global de mise en oeuvre', en: 'Overall completion', es: 'Tasa global de implementación', pt: 'Taxa global de implementação' }),
+    kpiCompletion: L({ fr: 'Taux global de mise en œuvre', en: 'Overall completion', es: 'Tasa global de implementación', pt: 'Taxa global de implementação' }),
     kpiProgress: L({ fr: 'Actions en cours', en: 'Actions in progress', es: 'Acciones en curso', pt: 'Ações em curso' }),
     kpiGrowth: L({ fr: 'Progression trimestrielle', en: 'Quarterly growth', es: 'Progresión trimestral', pt: 'Progressão trimestral' }),
     kpiBlockers: L({ fr: 'Blocages critiques', en: 'Critical blockers', es: 'Bloqueos críticos', pt: 'Bloqueios críticos' }),
-    trend: L({ fr: 'Tendance de mise en oeuvre (2026)', en: 'Implementation trend (2026)', es: 'Tendencia de implementación (2026)', pt: 'Tendência de implementação (2026)' }),
-    domains: L({ fr: 'Progres par domaine', en: 'Progress by domain', es: 'Progreso por ámbito', pt: 'Progresso por domínio' }),
-    blockersTitle: L({ fr: 'Repartition des blocages', en: 'Blocker distribution', es: 'Distribución de los bloqueos', pt: 'Distribuição dos bloqueios' }),
+    trend: L({ fr: 'Tendance de mise en œuvre (2026)', en: 'Implementation trend (2026)', es: 'Tendencia de implementación (2026)', pt: 'Tendência de implementação (2026)' }),
+    domains: L({ fr: 'Progrès par domaine', en: 'Progress by domain', es: 'Progreso por ámbito', pt: 'Progresso por domínio' }),
+    blockersTitle: L({ fr: 'Répartition des blocages', en: 'Blocker distribution', es: 'Distribución de los bloqueos', pt: 'Distribuição dos bloqueios' }),
     actions: L({ fr: 'Actions prioritaires issues du questionnaire', en: 'Priority actions from questionnaire', es: 'Acciones prioritarias del cuestionario', pt: 'Ações prioritárias do questionário' }),
     actionCol: L({ fr: 'Action', en: 'Action', es: 'Acción', pt: 'Ação' }),
     owner: L({ fr: 'Responsable', en: 'Owner', es: 'Responsable', pt: 'Responsável' }),
     status: L({ fr: 'Statut', en: 'Status', es: 'Estado', pt: 'Estado' }),
-    due: L({ fr: 'Echeance', en: 'Due', es: 'Plazo', pt: 'Prazo' }),
+    due: L({ fr: 'Échéance', en: 'Due', es: 'Plazo', pt: 'Prazo' }),
     openWiki: L({ fr: 'Ouvrir la page Wikipedia complete', en: 'Open full Wikipedia page', es: 'Abrir la página completa de Wikipedia', pt: 'Abrir a página completa da Wikipédia' }),
     modalTitle: L({ fr: `Wikipedia : ${countryName}`, en: `Wikipedia: ${countryName}`, es: `Wikipedia: ${countryName}`, pt: `Wikipédia: ${countryName}` }),
     close: L({ fr: 'Fermer', en: 'Close', es: 'Cerrar', pt: 'Fechar' }),
-    loading: L({ fr: "Chargement de l'apercu...", en: 'Loading preview...', es: 'Cargando la vista previa...', pt: 'A carregar a pré-visualização...' }),
+    loading: L({ fr: "Chargement de l'aperçu...", en: 'Loading preview...', es: 'Cargando la vista previa...', pt: 'A carregar a pré-visualização...' }),
     loadError: L({
-      fr: "Impossible de charger l'apercu Wikipedia pour le moment.",
+      fr: "Impossible de charger l'aperçu Wikipedia pour le moment.",
       en: 'Unable to load Wikipedia preview right now.',
       es: 'No se puede cargar la vista previa de Wikipedia en este momento.',
       pt: 'Não é possível carregar a pré-visualização da Wikipédia neste momento.',
     }),
     statusInProgress: L({ fr: 'En cours', en: 'In progress', es: 'En curso', pt: 'Em curso' }),
-    statusAtRisk: L({ fr: 'A risque', en: 'At risk', es: 'En riesgo', pt: 'Em risco' }),
-    statusPlanned: L({ fr: 'Planifie', en: 'Planned', es: 'Planificado', pt: 'Planeado' }),
+    statusAtRisk: L({ fr: 'À risque', en: 'At risk', es: 'En riesgo', pt: 'Em risco' }),
+    statusPlanned: L({ fr: 'Planifié', en: 'Planned', es: 'Planificado', pt: 'Planeado' }),
   };
 
   const statusLabel = (status: 'progress' | 'risk' | 'planned') =>
@@ -101,11 +123,11 @@ function ImplementationCountryStats({ country }: Props) {
 
   const gradientId = `countryMapFill-${country.slug}`;
 
-  const blockerSum = country.blockers.reduce((acc, b) => acc + b.value, 0) || 1;
+  const blockerSum = effBlockers.reduce((acc, b) => acc + b.value, 0) || 1;
   const donutGradient = (() => {
     let start = 0;
     const stops: string[] = [];
-    country.blockers.forEach((b) => {
+    effBlockers.forEach((b) => {
       const end = start + (b.value / blockerSum) * 360;
       stops.push(`${b.color} ${start}deg ${end}deg`);
       start = end;
@@ -119,7 +141,9 @@ function ImplementationCountryStats({ country }: Props) {
 
     setWikiLoading(true);
     setWikiError('');
-    fetch(`https://${wikiDomain}/api/rest_v1/page/summary/${encodeURIComponent(wikiTitle.replace(/\s+/g, '_'))}`)
+    fetch(`https://${wikiDomain}/api/rest_v1/page/summary/${encodeURIComponent(wikiTitle.replace(/\s+/g, '_'))}`, {
+      signal: AbortSignal.timeout(8000),
+    })
       .then((response) => {
         if (!response.ok) throw new Error('Failed to load Wikipedia summary');
         return response.json();
@@ -182,7 +206,7 @@ function ImplementationCountryStats({ country }: Props) {
           <article className="impl-gabon-kpi-card">
             <CircleCheck size={20} />
             <p>{copy.kpiCompletion}</p>
-            <strong>{country.kpis.completion}%</strong>
+            <strong>{effCompletion}%</strong>
           </article>
           <article className="impl-gabon-kpi-card">
             <Clock3 size={20} />
@@ -197,7 +221,7 @@ function ImplementationCountryStats({ country }: Props) {
           <article className="impl-gabon-kpi-card">
             <TriangleAlert size={20} />
             <p>{copy.kpiBlockers}</p>
-            <strong>{country.kpis.blockers}</strong>
+            <strong>{effBlockerCount}</strong>
           </article>
         </div>
 
@@ -219,7 +243,7 @@ function ImplementationCountryStats({ country }: Props) {
               <line x1="0" y1="160" x2="540" y2="160" />
               <line x1="0" y1="100" x2="540" y2="100" />
               <polyline points={linePoints} />
-              {country.monthlyCompletion.map((value, idx) => (
+              {effTrend.map((value, idx) => (
                 <circle key={`${value}-${idx}`} cx={idx * 90} cy={280 - value * 2.1} r="5" />
               ))}
             </svg>
@@ -236,7 +260,7 @@ function ImplementationCountryStats({ country }: Props) {
           >
             <h2>{copy.domains}</h2>
             <div className="impl-gabon-bars">
-              {country.domainProgress.map((item) => (
+              {effDomain.map((item) => (
                 <div key={item.label} className="impl-gabon-bar-row">
                   <div className="impl-gabon-bar-copy">
                     <span>{localizeDomainLabel(item.label, language)}</span>
@@ -260,7 +284,7 @@ function ImplementationCountryStats({ country }: Props) {
             <div className="impl-gabon-donut-wrap">
               <div className="impl-gabon-donut" style={{ background: donutGradient }} />
               <div className="impl-gabon-donut-legend">
-                {country.blockers.map((item) => (
+                {effBlockers.map((item) => (
                   <span key={item.label}>
                     <i style={{ background: item.color }} />
                     {localizeBlockerLabel(item.label, language)} ({item.value}%)

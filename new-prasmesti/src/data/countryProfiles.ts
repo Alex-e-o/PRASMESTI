@@ -46,7 +46,7 @@ export const privateProfiles: PrivateProfile[] = [
   country('cameroun', 'cameroon', 'Point focal — Cameroun'),
   country('centrafrique', 'central-african-republic', 'Point focal — Centrafrique'),
   country('congo', 'congo', 'Point focal — République du Congo'),
-  country('guinee-equatoriale', 'equatorial-guinea', 'Point focal — Guinée Équatoriale'),
+  country('guinee-equatoriale', 'equatorial-guinea', 'Point focal — Guinée équatoriale'),
   country('rdc', 'drc', 'Point focal — République Démocratique du Congo'),
   country('rwanda', 'rwanda', 'Point focal — Rwanda'),
   country('sao-tome', 'sao-tome', 'Point focal — Sao Tomé-et-Principe'),

@@ -134,12 +134,6 @@ const translations: Dictionary = {
     es: 'La Comunidad Económica de los Estados de África Central prosigue su marcha, impulsada por una ambición a la vez sencilla e inmensa: elevar de forma duradera el bienestar de las poblaciones, tejiendo entre sus pueblos los sólidos vínculos de una solidaridad activa, de un desarrollo compartido y de una esperanza viva. En el corazón de esta dinámica, una convicción profunda se impone como una brújula: sin saber, no hay desarrollo; sin compartir el saber, no hay integración. Allí donde las fronteras se encuentran y los pueblos se responden, surge una evidencia, clara y luminosa: el saber constituye el cimiento de toda integración verdadera. Así se diseña un espacio vivo, donde las ideas dialogan, donde las experiencias se fecundan, donde los saberes circulan y se transforman. De este espacio nace un soplo, discreto pero poderoso, portador de futuro y de promesas. En África Central, este soplo toma cuerpo desde ahora. Tiene un nombre: ¡PRASMESTI!',
     pt: 'A Comunidade Económica dos Estados da África Central prossegue a sua marcha, movida por uma ambição simultaneamente simples e imensa: elevar de forma duradoura o bem-estar das populações, tecendo entre os seus povos os sólidos laços de uma solidariedade ativa, de um desenvolvimento partilhado e de uma esperança viva. No coração desta dinâmica, uma convicção profunda impõe-se como uma bússola: sem saber, não há desenvolvimento; sem partilha do saber, não há integração. Onde as fronteiras se encontram e os povos se respondem, ergue-se uma evidência, clara e luminosa: o saber constitui o alicerce de toda a integração verdadeira. Assim se desenha um espaço vivo, onde as ideias dialogam, onde as experiências se fecundam, onde os saberes circulam e se transformam. Deste espaço nasce um sopro, discreto mas poderoso, portador de futuro e de promessas. Na África Central, este sopro ganha agora corpo. Tem um nome: PRASMESTI!',
   },
-  presidentQuote: {
-    en: 'Without knowledge, there is no development; without the sharing of knowledge, there is no integration.',
-    fr: "Sans savoir, il n'est point de développement ; sans partage du savoir, il n'est point d'intégration.",
-    es: 'Sin saber, no hay desarrollo; sin la compartición del saber, no hay integración.',
-    pt: 'Sem saber, não há desenvolvimento; sem a partilha do saber, não há integração.',
-  },
   presidentName: {
     en: 'Félix Antoine TSHISEKEDI TSHILOMBO',
     fr: 'Félix Antoine TSHISEKEDI TSHILOMBO',
@@ -571,7 +565,7 @@ const translations: Dictionary = {
   },
   pdetMissionItem6: {
     en: 'allow each Member State to share its successes, or simply its challenges in terms of education and training: initial training, early childhood development, work-study training, continuous training, lifelong learning, innovation, science, technology, innovation, etc.',
-    fr: "permettre à chaque État membre de partager ses réussites, ou tout simplement ses challenges en matière d'éducation et de formation : formation initiale, développement de la petite enfance, formatien en alternance, formation continue, formation tout au long de la vie, innovation, sciences, technologie, innovation, etc.",
+    fr: "permettre à chaque État membre de partager ses réussites, ou tout simplement ses challenges en matière d'éducation et de formation : formation initiale, développement de la petite enfance, formation en alternance, formation continue, formation tout au long de la vie, innovation, sciences, technologie, innovation, etc.",
     es: 'permitir a cada Estado miembro compartir sus éxitos, o simplemente sus retos en materia de educación y formación: formación inicial, desarrollo de la primera infancia, formación en alternancia, formación continua, formación a lo largo de la vida, innovación, ciencias, tecnología, innovación, etc.',
     pt: 'permitir a cada Estado-membro partilhar os seus êxitos, ou simplesmente os seus desafios em matéria de educação e formação: formação inicial, desenvolvimento da primeira infância, formação em alternância, formação contínua, formação ao longo da vida, inovação, ciências, tecnologia, inovação, etc.',
   },
@@ -782,7 +776,7 @@ const translations: Dictionary = {
   respEccasCommission: { en: 'ECCAS Commission', fr: 'Commission CEEAC', es: 'Comisión CEEAC', pt: 'Comissão CEEAC' },
 
   // ── Auth / divers ──
-  navLogin: { en: 'Login', fr: 'Connexion', es: 'Conexión', pt: 'Entrar' },
+  navLogin: { en: 'Login', fr: 'Connexion', es: 'Iniciar sesión', pt: 'Entrar' },
 };
 
 interface LanguageContextValue {

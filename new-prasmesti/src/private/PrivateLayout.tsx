@@ -15,6 +15,16 @@ import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-do
 import AnimatedThemeToggle from '../components/AnimatedThemeToggle';
 import { getPrivateUser, logoutPrivate } from './auth';
 
+// Monogramme d'initiales dérivé du nom (évite une photo unique codée en dur pour tous).
+const initialsOf = (name: string): string =>
+  name
+    .replace(/[—–-]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => /[A-Za-zÀ-ÿ]/.test(w.charAt(0)))
+    .slice(0, 2)
+    .map((w) => w.charAt(0).toUpperCase())
+    .join('') || 'PR';
+
 const navigation = [
   { to: '/private/dashboard', label: 'Tableau de bord', icon: LayoutGrid },
   { to: '/private/questionnaire', label: 'Questionnaire', icon: ClipboardList },
@@ -113,11 +123,9 @@ function PrivateLayout() {
             <AnimatedThemeToggle />
 
             <div className="private-user-card">
-              <img
-                src={`${import.meta.env.BASE_URL}assets/prasmesti/private/blaise-ossene.jpg`}
-                alt={user.name}
-                className="private-user-avatar"
-              />
+              <div className="private-user-avatar private-user-avatar-initials" aria-hidden="true">
+                {initialsOf(user.name)}
+              </div>
               <div className="private-user-copy">
                 <p className="private-user-name">{user.name}</p>
                 <p className="private-user-email">{user.email}</p>
