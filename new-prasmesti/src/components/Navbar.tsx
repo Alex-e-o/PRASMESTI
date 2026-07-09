@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, ChevronDown, LogIn } from 'lucide-react';
+import { Globe, ChevronDown, LogIn, Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import AnimatedThemeToggle from './AnimatedThemeToggle';
 import { useLanguage, LANGUAGES, pick } from '../languageContext';
@@ -47,6 +47,7 @@ function NavDropdown({ label, items, onLabelClick }: { label: string; items: Dro
 function Navbar() {
   const { language, setLanguage, translate } = useLanguage();
   const [scrolled, setScrolled] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -56,7 +57,23 @@ function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Ferme le menu mobile à chaque changement de route.
+  React.useEffect(() => setMenuOpen(false), [location.pathname]);
+
   const t = (key: string) => translate(key) as string;
+  // Exécute l'action puis ferme le menu mobile.
+  const closeAnd = (fn?: () => void) => () => {
+    fn?.();
+    setMenuOpen(false);
+  };
+  const goToNews = () => {
+    if (location.pathname === '/') {
+      scrollToSection('news');
+    } else {
+      navigate('/');
+      setTimeout(() => scrollToSection('news'), 350);
+    }
+  };
 
   const goToPresSection = (sectionId: string) => {
     if (location.pathname === '/presentation') {
@@ -141,18 +158,7 @@ function Navbar() {
           <button type="button" className="site-nav-link">{t('navIntellectualProperty')}</button>
           <button type="button" className="site-nav-link">{t('navInnovations')}</button>
 
-          <button
-            type="button"
-            onClick={() => {
-              if (location.pathname === '/') {
-                scrollToSection('news');
-              } else {
-                navigate('/');
-                setTimeout(() => scrollToSection('news'), 350);
-              }
-            }}
-            className="site-nav-link"
-          >
+          <button type="button" onClick={goToNews} className="site-nav-link">
             {t('navNews')}
           </button>
         </nav>
@@ -194,8 +200,66 @@ function Navbar() {
               ))}
             </div>
           </div>
+          <button
+            type="button"
+            className="site-mobile-toggle"
+            aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
+
+      {menuOpen && (
+        <nav className="site-mobile-nav" aria-label="Navigation mobile">
+          <button type="button" className="site-mobile-link" onClick={closeAnd(goHome)}>
+            {t('navHome')}
+          </button>
+
+          <p className="site-mobile-group">{t('navPresentation')}</p>
+          <button type="button" className="site-mobile-link is-sub" onClick={closeAnd(() => navigate('/presentation'))}>
+            {t('navPresentation')}
+          </button>
+          {presentationItems.map((item) => (
+            <button key={item.label} type="button" className="site-mobile-link is-sub" onClick={closeAnd(item.onClick)}>
+              {item.label}
+            </button>
+          ))}
+
+          <p className="site-mobile-group">{t('navNormativeTexts')}</p>
+          {normativeItems.map((item) => (
+            <span key={item.label} className="site-mobile-link is-sub is-disabled">
+              {item.label}
+            </span>
+          ))}
+
+          <p className="site-mobile-group">{t('navImplementation')}</p>
+          <button type="button" className="site-mobile-link is-sub" onClick={closeAnd(goToImplementation)}>
+            {t('navImplementation')}
+          </button>
+          {countryItems.map((item) => (
+            <button key={item.label} type="button" className="site-mobile-link is-sub" onClick={closeAnd(item.onClick)}>
+              {item.label}
+            </button>
+          ))}
+
+          <button type="button" className="site-mobile-link" onClick={closeAnd()}>
+            {t('navIntellectualProperty')}
+          </button>
+          <button type="button" className="site-mobile-link" onClick={closeAnd()}>
+            {t('navInnovations')}
+          </button>
+          <button type="button" className="site-mobile-link" onClick={closeAnd(goToNews)}>
+            {t('navNews')}
+          </button>
+
+          <button type="button" className="site-mobile-link is-login" onClick={closeAnd(() => navigate('/private/login'))}>
+            {t('navLogin')}
+          </button>
+        </nav>
+      )}
     </header>
   );
 }
