@@ -34,6 +34,10 @@ function RegionalOverview() {
               src={`${import.meta.env.BASE_URL}assets/prasmesti/shared/ceeac-emblem.png`}
               alt="CEEAC-ECCAS"
               className="community-ceeac-logo"
+              width={2044}
+              height={2043}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </motion.div>

@@ -10,32 +10,43 @@ import NewsSection from '../components/NewsSection';
 import Footer from '../components/Footer';
 function HomePage() {
   React.useEffect(() => {
-    const handlePointerMove = (event: PointerEvent) => {
-      const target = event.target as HTMLElement | null;
+    // Throttlé en rAF : plus de querySelectorAll à chaque mouvement, on ne
+    // réinitialise que la section précédemment active (évite le reflow forcé).
+    let activeSection: HTMLElement | null = null;
+    let frame = 0;
+    let pending: { x: number; y: number; target: HTMLElement | null } | null = null;
+
+    const apply = () => {
+      frame = 0;
+      if (!pending) return;
+      const { x, y, target } = pending;
       const section = target?.closest('.site-glow-section') as HTMLElement | null;
-
-      document.querySelectorAll<HTMLElement>('.site-glow-section').forEach((el) => {
-        if (el !== section) el.style.setProperty('--section-glow-opacity', '0');
-      });
-
+      if (section !== activeSection) {
+        activeSection?.style.setProperty('--section-glow-opacity', '0');
+        activeSection = section;
+      }
       if (!section) return;
-
       const rect = section.getBoundingClientRect();
-      section.style.setProperty('--section-cursor-x', `${event.clientX - rect.left}px`);
-      section.style.setProperty('--section-cursor-y', `${event.clientY - rect.top}px`);
+      section.style.setProperty('--section-cursor-x', `${x - rect.left}px`);
+      section.style.setProperty('--section-cursor-y', `${y - rect.top}px`);
       section.style.setProperty('--section-glow-opacity', '1');
     };
 
-    const handlePointerLeave = () => {
-      document.querySelectorAll<HTMLElement>('.site-glow-section').forEach((el) => {
-        el.style.setProperty('--section-glow-opacity', '0');
-      });
+    const handlePointerMove = (event: PointerEvent) => {
+      pending = { x: event.clientX, y: event.clientY, target: event.target as HTMLElement | null };
+      if (!frame) frame = requestAnimationFrame(apply);
     };
 
-    window.addEventListener('pointermove', handlePointerMove);
+    const handlePointerLeave = () => {
+      activeSection?.style.setProperty('--section-glow-opacity', '0');
+      activeSection = null;
+    };
+
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
     window.addEventListener('pointerleave', handlePointerLeave);
 
     return () => {
+      if (frame) cancelAnimationFrame(frame);
       window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('pointerleave', handlePointerLeave);
     };
@@ -45,7 +56,7 @@ function HomePage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main">
+      <main id="main" className="site-main">
         <Hero />
         <RegionalOverview />
         <PresidentialMessage />

@@ -146,7 +146,7 @@ function PrivateLayout() {
           </div>
         </header>
 
-        <main className="private-content">
+        <main id="main" className="private-content">
           <Outlet />
         </main>
       </div>

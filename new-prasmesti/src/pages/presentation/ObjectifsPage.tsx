@@ -10,7 +10,7 @@ function ObjectifsPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main"><Objectifs /></main>
+      <main id="main" className="site-main"><Objectifs /></main>
       <Footer />
     </div>
   );

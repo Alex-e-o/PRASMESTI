@@ -10,7 +10,7 @@ function AttentesPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main"><Attentes /></main>
+      <main id="main" className="site-main"><Attentes /></main>
       <Footer />
     </div>
   );

@@ -10,7 +10,7 @@ function EnjeuxPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main"><Enjeux /></main>
+      <main id="main" className="site-main"><Enjeux /></main>
       <Footer />
     </div>
   );

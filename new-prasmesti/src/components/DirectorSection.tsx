@@ -38,6 +38,10 @@ function DirectorSection() {
             src={`${import.meta.env.BASE_URL}assets/prasmesti/home/director/director.jpg?v=2`}
             alt="Portrait du directeur du PRASMESTI"
             className="director-image"
+            width={1325}
+            height={1520}
+            loading="lazy"
+            decoding="async"
           />
         </motion.div>
       </div>
