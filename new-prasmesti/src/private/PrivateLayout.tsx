@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import AnimatedThemeToggle from '../components/AnimatedThemeToggle';
 import { getPrivateUser, logoutPrivate } from './auth';
 
 // Monogramme d'initiales dérivé du nom (évite une photo unique codée en dur pour tous).
@@ -119,8 +118,6 @@ function PrivateLayout() {
               <Bell size={18} />
               <span className="private-notification-dot" />
             </button>
-
-            <AnimatedThemeToggle />
 
             <div className="private-user-card">
               <div className="private-user-avatar private-user-avatar-initials" aria-hidden="true">

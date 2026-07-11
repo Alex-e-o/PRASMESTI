@@ -4540,3 +4540,60 @@
 .skip-link:focus {
   left: 0;
 }
+
+/* ==========================================================================
+   Dark mode : curseur custom + tableaux d'implémentation en clair (audit §10)
+   ========================================================================== */
+/* Curseur custom : couleur dépendante du thème (invisible en sombre auparavant). */
+:root {
+  --cursor-fill: #f5f0e8;
+  --cursor-stroke: rgba(0, 0, 0, 0.4);
+}
+[data-theme='light'] {
+  --cursor-fill: #0c1b36;
+  --cursor-stroke: rgba(255, 255, 255, 0.6);
+}
+
+/* Les surfaces d'implémentation (.impl-gabon-*) n'étaient stylées que pour le
+   sombre ; overrides pour le thème clair afin de rester lisibles. */
+[data-theme='light'] .impl-gabon-panel,
+[data-theme='light'] .impl-gabon-kpi-card,
+[data-theme='light'] .impl-gabon-map-panel,
+[data-theme='light'] .impl-gabon-modal {
+  background: #ffffff;
+  border-color: rgba(22, 57, 128, 0.12);
+  color: #0c1b36;
+}
+[data-theme='light'] .impl-gabon-kpi-card strong,
+[data-theme='light'] .impl-gabon-panel h2,
+[data-theme='light'] .impl-gabon-map-head h2,
+[data-theme='light'] .impl-gabon-backlink,
+[data-theme='light'] .impl-gabon-bar-copy strong,
+[data-theme='light'] .impl-gabon-table,
+[data-theme='light'] .impl-gabon-table th,
+[data-theme='light'] .impl-gabon-table td,
+[data-theme='light'] .impl-gabon-donut-legend,
+[data-theme='light'] .impl-gabon-modal-body,
+[data-theme='light'] .impl-gabon-modal-body p,
+[data-theme='light'] .impl-gabon-modal-head h3,
+[data-theme='light'] .impl-gabon-map-svg text {
+  color: #0c1b36;
+}
+[data-theme='light'] .impl-gabon-kpi-card p,
+[data-theme='light'] .impl-gabon-map-head p,
+[data-theme='light'] .impl-gabon-axis-labels,
+[data-theme='light'] .impl-gabon-bar-copy span {
+  color: #47597a;
+}
+[data-theme='light'] .impl-gabon-map-wrap {
+  background: #f4f7fc;
+}
+[data-theme='light'] .impl-gabon-bar-track {
+  background: rgba(22, 57, 128, 0.08);
+}
+[data-theme='light'] .impl-gabon-donut::after {
+  background: #ffffff;
+}
+[data-theme='light'] .impl-gabon-table th {
+  background: rgba(22, 57, 128, 0.05);
+}
