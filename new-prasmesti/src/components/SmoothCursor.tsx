@@ -74,7 +74,7 @@ const SmoothCursor: React.FC = () => {
   return (
     <div ref={dotRef} className="smooth-cursor-dot" aria-hidden="true">
       <svg viewBox="0 0 18 26" className="smooth-cursor-arrow">
-        <path d="M2 1.5L2.9 19.8L7.6 15.3L10.7 23.6L14 22.1L10.9 13.9L17 13.2L2 1.5Z" fill="#050816" />
+        <path d="M2 1.5L2.9 19.8L7.6 15.3L10.7 23.6L14 22.1L10.9 13.9L17 13.2L2 1.5Z" fill="var(--cursor-fill, #f5f0e8)" stroke="var(--cursor-stroke, rgba(0,0,0,0.35))" strokeWidth="0.8" />
       </svg>
     </div>
   );
