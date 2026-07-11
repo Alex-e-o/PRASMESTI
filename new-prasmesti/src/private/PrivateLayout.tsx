@@ -40,7 +40,7 @@ function PrivateLayout() {
 
   const pageTitle = useMemo(() => {
     const match = navigation.find((item) => location.pathname.startsWith(item.to));
-    return match?.label ?? 'PRASMESTI Prive';
+    return match?.label ?? 'PRASMESTI Privé';
   }, [location.pathname]);
 
   return (
@@ -52,7 +52,7 @@ function PrivateLayout() {
           <Link to="/private/dashboard" className="private-brand">
             <img src={`${import.meta.env.BASE_URL}assets/prasmesti/shared/logo.png`} alt="PRASMESTI" className="private-brand-mark" />
             <div className="private-sidebar-copy">
-              <p className="private-brand-kicker">Espace prive</p>
+              <p className="private-brand-kicker">Espace privé</p>
               <p className="private-brand-name">PRASMESTI</p>
             </div>
           </Link>
@@ -86,7 +86,7 @@ function PrivateLayout() {
               type="button"
               className="private-menu-button"
               onClick={() => setIsSidebarOpen((current) => !current)}
-              aria-label="Ouvrir le menu prive"
+              aria-label="Ouvrir le menu privé"
             >
               <Menu size={18} />
             </button>
@@ -95,15 +95,15 @@ function PrivateLayout() {
               type="button"
               className="private-collapse-button"
               onClick={() => setIsSidebarCollapsed((current) => !current)}
-              aria-label={isSidebarCollapsed ? 'Deployer le menu lateral' : 'Retracter le menu lateral'}
+              aria-label={isSidebarCollapsed ? 'Déployer le menu latéral' : 'Rétracter le menu latéral'}
               aria-pressed={isSidebarCollapsed}
             >
               {isSidebarCollapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
-              <span>{isSidebarCollapsed ? 'Deployer le menu' : 'Retracter le menu'}</span>
+              <span>{isSidebarCollapsed ? 'Déployer le menu' : 'Rétracter le menu'}</span>
             </button>
 
             <div>
-              <p className="private-topbar-label">Administration securisee</p>
+              <p className="private-topbar-label">Administration sécurisée</p>
               <h1 className="private-topbar-title">{pageTitle}</h1>
             </div>
           </div>
@@ -138,7 +138,7 @@ function PrivateLayout() {
               }}
             >
               <LogOut size={16} />
-              <span>Deconnexion</span>
+              <span>Déconnexion</span>
             </button>
           </div>
         </header>

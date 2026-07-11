@@ -38,13 +38,13 @@ function PrivateLoginPage() {
       <div className="private-login-panel">
         <div className="private-login-copy">
           <p className="private-login-kicker">PRASMESTI Admin</p>
-          <h1 className="private-login-title">Connectez-vous a l'espace prive</h1>
+          <h1 className="private-login-title">Connectez-vous à l'espace privé</h1>
           <p className="private-login-body">
-            Migration React du tableau de bord interne, avec une interface plus claire, plus stable et adaptee au suivi des donnees.
+            Migration React du tableau de bord interne, avec une interface plus claire, plus stable et adaptée au suivi des données.
           </p>
 
           <div className="private-login-note">
-            <p className="private-login-note-title">Comptes de demonstration</p>
+            <p className="private-login-note-title">Comptes de démonstration</p>
             <p className="private-login-note-body">
               Admin : <strong>admin</strong> — Pays : <strong>gabon</strong>, <strong>cameroun</strong>, <strong>rdc</strong>, <strong>tchad</strong>… (un par État membre)
             </p>

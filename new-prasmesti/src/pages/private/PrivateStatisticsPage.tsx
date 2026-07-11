@@ -1,5 +1,5 @@
 const sectorRows = [
-  ['Rehabilitation', '76%'],
+  ['Réhabilitation', '76%'],
   ['Formation', '52%'],
   ['Innovation', '68%'],
   ['Recherche', '61%'],
@@ -11,7 +11,7 @@ function PrivateStatisticsPage() {
       <section className="private-stats-visual-grid">
         <article className="private-surface-card">
           <div className="private-surface-head">
-            <h2 className="private-surface-title">Evolution des projets</h2>
+            <h2 className="private-surface-title">Évolution des projets</h2>
           </div>
           <div
             className="private-mini-chart private-line-chart"
@@ -45,7 +45,7 @@ function PrivateStatisticsPage() {
 
         <article className="private-surface-card">
           <div className="private-surface-head">
-            <h2 className="private-surface-title">Repartition geographique</h2>
+            <h2 className="private-surface-title">Répartition géographique</h2>
           </div>
           <div className="private-donut-wrap">
             <div
