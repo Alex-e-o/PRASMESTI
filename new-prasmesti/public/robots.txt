@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap : à activer une fois le domaine de production connu et le sitemap
+# généré (dépend de la migration HashRouter -> BrowserRouter).
+# Sitemap: https://exemple-prod/new-prasmesti/sitemap.xml

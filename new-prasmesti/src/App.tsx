@@ -1,6 +1,34 @@
-import { lazy, Suspense } from 'react';
-import { HashRouter as Router, Navigate, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
+import { HashRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
 import RequirePrivateAuth from './private/RequirePrivateAuth';
+
+// Titre de document par page (onglet, favoris, partage). Une seule source,
+// indexée par la route, plutôt qu'un <title> statique unique.
+const PAGE_TITLES: Record<string, string> = {
+  '/': 'Accueil',
+  '/presentation': 'Présentation',
+  '/presentation/what': "Qu'est-ce que le PRASMESTI ?",
+  '/presentation/why': 'Pourquoi le PRASMESTI ?',
+  '/presentation/objectives': 'Objectifs',
+  '/presentation/expectations': 'Attentes',
+  '/presentation/issues': 'Enjeux',
+  '/presentation/design': 'Conception et opérationnalisation',
+  '/presentation/leads': 'Responsables',
+  '/presentation/implementation': 'État de mise en œuvre',
+};
+
+function RouteTitle() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    let sub = PAGE_TITLES[pathname];
+    if (!sub && pathname.startsWith('/presentation/implementation/')) sub = 'État de mise en œuvre';
+    else if (!sub && pathname.startsWith('/private')) sub = 'Espace privé';
+    document.title = sub
+      ? `${sub} — PRASMESTI`
+      : 'PRASMESTI — Portail régional CEEAC de suivi (Afrique centrale)';
+  }, [pathname]);
+  return null;
+}
 
 // Code-splitting : chaque page est chargée à la demande (bundle initial allégé).
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -26,6 +54,7 @@ const PrivateHistoryPage = lazy(() => import('./pages/private/PrivateHistoryPage
 function App() {
   return (
     <Router>
+      <RouteTitle />
       <a href="#main" className="skip-link">Aller au contenu</a>
       <Suspense fallback={null}>
         <Routes>
