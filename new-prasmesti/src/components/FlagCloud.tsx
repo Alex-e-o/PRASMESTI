@@ -53,7 +53,7 @@ const AFRICA_ISO3 = [
 ] as const;
 
 export function FlagCloud() {
-  const { language } = useLanguage();
+  const { language, translate } = useLanguage();
   const n = eccasFlags.length;
   const mapData = React.useMemo(() => {
     const dottedMap = new DottedMap({
@@ -126,7 +126,7 @@ export function FlagCloud() {
           viewBox={`0 0 ${mapData.image.width} ${mapData.image.height}`}
           className="flag-map-svg"
           role="img"
-          aria-label="CEEAC countries in Central Africa"
+          aria-label={translate('ariaFlagCloud')}
         >
           {mapData.points.map((point, index) => (
             <circle key={`p-${index}`} cx={point.x} cy={point.y} r={0.38} fill="#7f89a0" />

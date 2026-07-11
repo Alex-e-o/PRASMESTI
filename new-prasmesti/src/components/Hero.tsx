@@ -12,18 +12,21 @@ const SLIDE_DURATION = 6000;
 function TextAnimate({ text, slideKey }: { text: string; slideKey: string }) {
   const words = text.split(' ');
   return (
-    <span aria-label={text} style={{ display: 'inline' }}>
-      {words.map((word, i) => (
-        <motion.span
-          key={`${slideKey}-${i}`}
-          style={{ display: 'inline-block', marginRight: '0.28em' }}
-          initial={{ x: 28, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.45, delay: i * 0.055, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {word}
-        </motion.span>
-      ))}
+    <span style={{ display: 'inline' }}>
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true">
+        {words.map((word, i) => (
+          <motion.span
+            key={`${slideKey}-${i}`}
+            style={{ display: 'inline-block', marginRight: '0.28em' }}
+            initial={{ x: 28, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.45, delay: i * 0.055, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {word}
+          </motion.span>
+        ))}
+      </span>
     </span>
   );
 }
@@ -173,7 +176,7 @@ function Hero() {
               <button
                 key={i}
                 type="button"
-                aria-label={`Slide ${i + 1}`}
+                aria-label={`${translate('ariaSlide')} ${i + 1}`}
                 className={`hero-slide-dot${i === slide ? ' hero-slide-dot-active' : ''}`}
                 onClick={() => {
                   setSlide(i);

@@ -15,8 +15,8 @@ function PrivateHistoryPage() {
             <h2 className="private-surface-title">Historique des actions</h2>
           </div>
           <div className="private-filter-row">
-            <input className="private-filter-input" defaultValue="01/11/2026 - 30/11/2026" />
-            <input className="private-filter-input" placeholder="Rechercher une action" />
+            <input className="private-filter-input" defaultValue="01/11/2026 - 30/11/2026" aria-label="Plage de dates" />
+            <input className="private-filter-input" type="search" placeholder="Rechercher une action" aria-label="Rechercher une action" />
           </div>
         </div>
 

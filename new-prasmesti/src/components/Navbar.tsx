@@ -178,7 +178,7 @@ function Navbar() {
               type="button"
               className="site-language-toggle"
               aria-haspopup="listbox"
-              aria-label="Choose language"
+              aria-label={t('ariaChooseLanguage')}
             >
               <Globe size={16} />
               {language.toUpperCase()}

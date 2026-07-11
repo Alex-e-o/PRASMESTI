@@ -2,18 +2,21 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Moon, SunMedium } from 'lucide-react';
 import { useTheme } from '../theme-context';
+import { useLanguage } from '../languageContext';
 
 const AnimatedThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
+  const { translate } = useLanguage();
   const isLight = theme === 'light';
+  const label = translate(isLight ? 'ariaThemeDark' : 'ariaThemeLight') as string;
 
   return (
     <button
       type="button"
       onClick={toggleTheme}
       className="theme-toggle"
-      aria-label={`Switch to ${isLight ? 'dark' : 'light'} mode`}
-      title={`Switch to ${isLight ? 'dark' : 'light'} mode`}
+      aria-label={label}
+      title={label}
     >
       <motion.div
         className="theme-toggle-thumb"

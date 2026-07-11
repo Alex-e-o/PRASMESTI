@@ -106,7 +106,7 @@ function CommissionerVoices() {
         >
           <button
             type="button"
-            aria-label="Previous testimonial"
+            aria-label={translate('ariaPrevTestimonial')}
             className="voices-single-arrow voices-single-arrow-prev"
             onClick={prev}
           >
@@ -130,7 +130,7 @@ function CommissionerVoices() {
 
           <button
             type="button"
-            aria-label="Next testimonial"
+            aria-label={translate('ariaNextTestimonial')}
             className="voices-single-arrow voices-single-arrow-next"
             onClick={next}
           >
@@ -143,7 +143,7 @@ function CommissionerVoices() {
             <button
               key={i}
               type="button"
-              aria-label={`Testimonial ${i + 1}`}
+              aria-label={`${translate('ariaTestimonial')} ${i + 1}`}
               className={`voices-single-dot${i === index ? ' voices-single-dot-active' : ''}`}
               onClick={() => goTo(i)}
             />
