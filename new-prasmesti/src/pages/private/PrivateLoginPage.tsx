@@ -2,6 +2,7 @@ import { ArrowLeft, LockKeyhole, User } from 'lucide-react';
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { isPrivateAuthenticated, loginPrivate } from '../../private/auth';
+import { usePrivateI18n } from '../../private/privateI18n';
 
 function PrivateLoginPage() {
   const [username, setUsername] = useState('admin');
@@ -10,6 +11,7 @@ function PrivateLoginPage() {
   const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = usePrivateI18n();
 
   useEffect(() => {
     if (isPrivateAuthenticated()) {
@@ -37,18 +39,16 @@ function PrivateLoginPage() {
     <div className="private-login-page">
       <div className="private-login-panel">
         <div className="private-login-copy">
-          <p className="private-login-kicker">PRASMESTI Admin</p>
-          <h1 className="private-login-title">Connectez-vous à l'espace privé</h1>
-          <p className="private-login-body">
-            Migration React du tableau de bord interne, avec une interface plus claire, plus stable et adaptée au suivi des données.
-          </p>
+          <p className="private-login-kicker">{t('loginAdmin')}</p>
+          <h1 className="private-login-title">{t('loginTitle')}</h1>
+          <p className="private-login-body">{t('loginBody')}</p>
 
           <div className="private-login-note">
-            <p className="private-login-note-title">Comptes de démonstration</p>
+            <p className="private-login-note-title">{t('loginDemoTitle')}</p>
+            <p className="private-login-note-body">{t('loginDemoAccounts')}</p>
             <p className="private-login-note-body">
-              Admin : <strong>admin</strong> — Pays : <strong>gabon</strong>, <strong>cameroun</strong>, <strong>rdc</strong>, <strong>tchad</strong>… (un par État membre)
+              {t('loginDemoPassword')} : <strong>Prasmesti@2026</strong>
             </p>
-            <p className="private-login-note-body">Mot de passe commun : <strong>Prasmesti@2026</strong></p>
           </div>
         </div>
 
@@ -57,14 +57,14 @@ function PrivateLoginPage() {
             <img src={`${import.meta.env.BASE_URL}assets/prasmesti/shared/logo.png`} alt="PRASMESTI" className="private-login-brand-mark" />
             <div>
               <p className="private-login-brand-title">PRASMESTI</p>
-              <p className="private-login-brand-subtitle">Espace de pilotage et de reporting</p>
+              <p className="private-login-brand-subtitle">{t('loginBrandSubtitle')}</p>
             </div>
           </div>
 
           {error ? <div className="private-login-error">{error}</div> : null}
 
           <label className="private-field">
-            <span className="private-field-label">Identifiant</span>
+            <span className="private-field-label">{t('loginIdentifier')}</span>
             <span className="private-field-input-wrap">
               <User size={18} />
               <input
@@ -78,7 +78,7 @@ function PrivateLoginPage() {
           </label>
 
           <label className="private-field">
-            <span className="private-field-label">Mot de passe</span>
+            <span className="private-field-label">{t('loginPassword')}</span>
             <span className="private-field-input-wrap">
               <LockKeyhole size={18} />
               <input
@@ -92,12 +92,12 @@ function PrivateLoginPage() {
           </label>
 
           <button type="submit" className="private-login-submit" disabled={submitting}>
-            {submitting ? 'Connexion…' : 'Se connecter'}
+            {submitting ? t('loginConnecting') : t('loginConnect')}
           </button>
 
           <Link to="/" className="private-login-back">
             <ArrowLeft size={16} />
-            <span>Retour a l'accueil</span>
+            <span>{t('loginBack')}</span>
           </Link>
         </form>
       </div>

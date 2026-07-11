@@ -1,20 +1,21 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Activity, ArrowLeft, BookOpen, FolderKanban, GraduationCap } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { usePrivateI18n, type PVKey } from '../../private/privateI18n';
 
 type Tone = 'positive' | 'negative' | 'neutral';
 type Row = { pays: string; valeur: string; delta: string; tone: Tone };
 
 type Indicator = {
-  label: string;
+  labelKey: PVKey;
   value: string;
   delta: string;
   tone: Tone;
   icon: LucideIcon;
-  intro: string;
-  kpis: { label: string; value: string }[];
-  tableTitle: string;
-  columns: [string, string, string];
+  introKey: PVKey;
+  kpis: { labelKey: PVKey; value: string }[];
+  tableTitleKey: PVKey;
+  columns: [PVKey, PVKey, PVKey];
   rows: Row[];
 };
 
@@ -28,7 +29,7 @@ const COUNTRIES = [
   'Rwanda',
   'Burundi',
   'Centrafrique',
-  'Guinée Équatoriale',
+  'Guinée équatoriale',
   'Sao Tomé-et-Principe',
 ];
 
@@ -37,20 +38,19 @@ const build = (values: [string, string, Tone][]): Row[] =>
 
 const INDICATORS: Record<string, Indicator> = {
   etablissements: {
-    label: 'Établissements',
+    labelKey: 'statEstablishments',
     value: '34 123',
     delta: '+8,34%',
     tone: 'positive',
     icon: BookOpen,
-    intro:
-      "Répartition des établissements d'éducation, de formation, de sciences et de technologie recensés dans l'espace CEEAC.",
+    introKey: 'indIntroEstab',
     kpis: [
-      { label: 'Public', value: '71%' },
-      { label: 'Privé', value: '29%' },
-      { label: 'Zones rurales', value: '46%' },
+      { labelKey: 'kpiPublic', value: '71%' },
+      { labelKey: 'kpiPrivate', value: '29%' },
+      { labelKey: 'kpiRural', value: '46%' },
     ],
-    tableTitle: 'Établissements recensés par État membre',
-    columns: ['État membre', 'Établissements', 'Évolution'],
+    tableTitleKey: 'tableEstab',
+    columns: ['colMemberState', 'statEstablishments', 'colEvolution'],
     rows: build([
       ['9 240', '+9,1%', 'positive'],
       ['5 180', '+7,4%', 'positive'],
@@ -66,20 +66,19 @@ const INDICATORS: Record<string, Indicator> = {
     ]),
   },
   projets: {
-    label: 'Projets en cours',
+    labelKey: 'statProjects',
     value: '63',
     delta: '+12',
     tone: 'positive',
     icon: FolderKanban,
-    intro:
-      'Projets régionaux et nationaux actuellement financés et en cours de mise en œuvre dans le secteur EFSTI.',
+    introKey: 'indIntroProjects',
     kpis: [
-      { label: 'Régionaux', value: '21' },
-      { label: 'Nationaux', value: '42' },
-      { label: 'Cofinancés', value: '37' },
+      { labelKey: 'kpiRegional', value: '21' },
+      { labelKey: 'kpiNational', value: '42' },
+      { labelKey: 'kpiCofunded', value: '37' },
     ],
-    tableTitle: 'Projets actifs par État membre',
-    columns: ['État membre', 'Projets', 'Nouveaux'],
+    tableTitleKey: 'tableProjects',
+    columns: ['colMemberState', 'colProjectsShort', 'colNew'],
     rows: build([
       ['11', '+2', 'positive'],
       ['8', '+1', 'positive'],
@@ -95,20 +94,19 @@ const INDICATORS: Record<string, Indicator> = {
     ]),
   },
   alphabetisation: {
-    label: 'Alphabétisation',
+    labelKey: 'statLiteracy',
     value: '78%',
     delta: '-2,64%',
     tone: 'negative',
     icon: Activity,
-    intro:
-      "Taux d'alphabétisation moyen de la région et son évolution récente par État membre.",
+    introKey: 'indIntroLiteracy',
     kpis: [
-      { label: 'Femmes', value: '74%' },
-      { label: 'Hommes', value: '82%' },
-      { label: 'Jeunes 15-24', value: '85%' },
+      { labelKey: 'kpiWomen', value: '74%' },
+      { labelKey: 'kpiMen', value: '82%' },
+      { labelKey: 'kpiYouth', value: '85%' },
     ],
-    tableTitle: "Taux d'alphabétisation par État membre",
-    columns: ['État membre', 'Taux', 'Évolution'],
+    tableTitleKey: 'tableLiteracy',
+    columns: ['colMemberState', 'colRate', 'colEvolution'],
     rows: build([
       ['79%', '-1,8%', 'negative'],
       ['72%', '-3,1%', 'negative'],
@@ -124,20 +122,19 @@ const INDICATORS: Record<string, Indicator> = {
     ]),
   },
   formation: {
-    label: 'Formation',
+    labelKey: 'statTraining',
     value: '6 482',
     delta: '+5,79%',
     tone: 'positive',
     icon: GraduationCap,
-    intro:
-      'Enseignants et formateurs formés dans le cadre des programmes régionaux de renforcement des capacités.',
+    introKey: 'indIntroTraining',
     kpis: [
-      { label: 'Présentiel', value: '64%' },
-      { label: 'À distance', value: '36%' },
-      { label: 'Certifiés', value: '88%' },
+      { labelKey: 'kpiInPerson', value: '64%' },
+      { labelKey: 'kpiRemote', value: '36%' },
+      { labelKey: 'kpiCertified', value: '88%' },
     ],
-    tableTitle: 'Enseignants formés par État membre',
-    columns: ['État membre', 'Formés', 'Évolution'],
+    tableTitleKey: 'tableTraining',
+    columns: ['colMemberState', 'colTrained', 'colEvolution'],
     rows: build([
       ['1 640', '+6,2%', 'positive'],
       ['820', '+4,8%', 'positive'],
@@ -156,6 +153,7 @@ const INDICATORS: Record<string, Indicator> = {
 
 function PrivateIndicatorPage() {
   const { slug } = useParams<{ slug: string }>();
+  const { t } = usePrivateI18n();
   const data = slug ? INDICATORS[slug] : undefined;
 
   if (!data) {
@@ -168,14 +166,14 @@ function PrivateIndicatorPage() {
     <div className="private-page-stack">
       <Link to="/private/dashboard" className="private-backlink">
         <ArrowLeft size={16} />
-        <span>Retour au tableau de bord</span>
+        <span>{t('indBack')}</span>
       </Link>
 
       <section className="private-hero-card">
         <div>
-          <p className="private-section-kicker">Indicateur</p>
-          <h2 className="private-section-title">{data.label}</h2>
-          <p className="private-section-body">{data.intro}</p>
+          <p className="private-section-kicker">{t('indKicker')}</p>
+          <h2 className="private-section-title">{t(data.labelKey)}</h2>
+          <p className="private-section-body">{t(data.introKey)}</p>
         </div>
         <div className="private-hero-badge">
           <Icon size={30} />
@@ -190,12 +188,12 @@ function PrivateIndicatorPage() {
             </div>
             <span className={`private-stat-delta is-${data.tone}`}>{data.delta}</span>
           </div>
-          <p className="private-stat-label">Valeur régionale</p>
+          <p className="private-stat-label">{t('indRegionalValue')}</p>
           <h3 className="private-stat-value">{data.value}</h3>
         </article>
         {data.kpis.map((kpi) => (
-          <article key={kpi.label} className="private-stat-card">
-            <p className="private-stat-label">{kpi.label}</p>
+          <article key={kpi.labelKey} className="private-stat-card">
+            <p className="private-stat-label">{t(kpi.labelKey)}</p>
             <h3 className="private-stat-value">{kpi.value}</h3>
           </article>
         ))}
@@ -203,21 +201,21 @@ function PrivateIndicatorPage() {
 
       <section className="private-surface-card">
         <div className="private-surface-head">
-          <h3 className="private-surface-title">{data.tableTitle}</h3>
+          <h3 className="private-surface-title">{t(data.tableTitleKey)}</h3>
         </div>
         <div className="private-table-wrap">
           <table className="private-questionnaire-table">
             <thead>
               <tr>
-                <th className="is-question">{data.columns[0]}</th>
-                <th>{data.columns[1]}</th>
-                <th>{data.columns[2]}</th>
+                <th scope="col" className="is-question">{t(data.columns[0])}</th>
+                <th scope="col">{t(data.columns[1])}</th>
+                <th scope="col">{t(data.columns[2])}</th>
               </tr>
             </thead>
             <tbody>
               {data.rows.map((row) => (
                 <tr key={row.pays}>
-                  <td className="is-question">{row.pays}</td>
+                  <th scope="row" className="is-question">{row.pays}</th>
                   <td>{row.valeur}</td>
                   <td>
                     <span className={`private-stat-delta is-${row.tone}`}>{row.delta}</span>

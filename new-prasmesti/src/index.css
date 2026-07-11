@@ -4620,3 +4620,20 @@
 .private-login-title {
   color: #17233f;
 }
+
+/* Sélecteur de langue de l'espace privé. */
+.private-lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+}
+.private-lang-toggle select {
+  border: 1px solid rgba(22, 57, 128, 0.18);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #17233f;
+  padding: 6px 10px;
+  font: inherit;
+  cursor: pointer;
+}

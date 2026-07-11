@@ -1,22 +1,26 @@
-const historyRows = [
-  ['18 nov. 2026', 'Questionnaire Gabon', 'Validation', 'Marie T. MFOULA', 'Terminé'],
-  ['17 nov. 2026', 'Rapport Éducation', 'Mise à jour', 'David B. OSSENE', 'Terminé'],
-  ['15 nov. 2026', 'Projet régional ESTI', 'Création', 'Equipe PRASMESTI', 'En revue'],
-  ['14 nov. 2026', 'Statistiques ETFP', 'Correction', 'Point focal Cameroun', 'Terminé'],
-];
+import { usePrivateI18n } from '../../private/privateI18n';
 
 function PrivateHistoryPage() {
+  const { t } = usePrivateI18n();
+
+  const historyRows: { date: string; element: string; action: string; author: string; status: string }[] = [
+    { date: '18 nov. 2026', element: t('histQGabon'), action: t('actValidation'), author: 'Marie T. MFOULA', status: t('statusDone') },
+    { date: '17 nov. 2026', element: t('histReport'), action: t('actUpdate'), author: 'David B. OSSENE', status: t('statusDone') },
+    { date: '15 nov. 2026', element: t('histProject'), action: t('actCreation'), author: t('authorTeam'), status: t('statusInReview') },
+    { date: '14 nov. 2026', element: t('histStats'), action: t('actCorrection'), author: t('authorFocalCmr'), status: t('statusDone') },
+  ];
+
   return (
     <div className="private-page-stack">
       <section className="private-surface-card">
         <div className="private-surface-head">
           <div>
-            <p className="private-section-kicker">Traçabilité</p>
-            <h2 className="private-surface-title">Historique des actions</h2>
+            <p className="private-section-kicker">{t('traceability')}</p>
+            <h2 className="private-surface-title">{t('historyTitle')}</h2>
           </div>
           <div className="private-filter-row">
-            <input className="private-filter-input" defaultValue="01/11/2026 - 30/11/2026" aria-label="Plage de dates" />
-            <input className="private-filter-input" type="search" placeholder="Rechercher une action" aria-label="Rechercher une action" />
+            <input className="private-filter-input" defaultValue="01/11/2026 - 30/11/2026" aria-label={t('dateRange')} />
+            <input className="private-filter-input" type="search" placeholder={t('searchAction')} aria-label={t('searchAction')} />
           </div>
         </div>
 
@@ -24,21 +28,21 @@ function PrivateHistoryPage() {
           <table className="private-table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Élément</th>
-                <th>Action</th>
-                <th>Auteur</th>
-                <th>Statut</th>
+                <th scope="col">{t('colDate')}</th>
+                <th scope="col">{t('colElement')}</th>
+                <th scope="col">{t('colAction')}</th>
+                <th scope="col">{t('colAuthor')}</th>
+                <th scope="col">{t('colStatus')}</th>
               </tr>
             </thead>
             <tbody>
               {historyRows.map((row) => (
-                <tr key={row.join('-')}>
-                  {row.map((cell, index) => (
-                    <td key={index}>
-                      {index === 4 ? <span className="private-table-badge">{cell}</span> : cell}
-                    </td>
-                  ))}
+                <tr key={row.date}>
+                  <td>{row.date}</td>
+                  <td>{row.element}</td>
+                  <td>{row.action}</td>
+                  <td>{row.author}</td>
+                  <td><span className="private-table-badge">{row.status}</span></td>
                 </tr>
               ))}
             </tbody>
