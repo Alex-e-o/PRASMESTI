@@ -13,6 +13,8 @@ import {
 import { useMemo, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { getPrivateUser, logoutPrivate } from './auth';
+import { usePrivateI18n, type PVKey } from './privateI18n';
+import PrivateLangToggle from './PrivateLangToggle';
 
 // Monogramme d'initiales dérivé du nom (évite une photo unique codée en dur pour tous).
 const initialsOf = (name: string): string =>
@@ -24,11 +26,11 @@ const initialsOf = (name: string): string =>
     .map((w) => w.charAt(0).toUpperCase())
     .join('') || 'PR';
 
-const navigation = [
-  { to: '/private/dashboard', label: 'Tableau de bord', icon: LayoutGrid },
-  { to: '/private/questionnaire', label: 'Questionnaire', icon: ClipboardList },
-  { to: '/private/statistiques', label: 'Statistiques', icon: BarChart3 },
-  { to: '/private/historique', label: 'Historique', icon: History },
+const navigation: { to: string; labelKey: PVKey; icon: typeof LayoutGrid }[] = [
+  { to: '/private/dashboard', labelKey: 'navDashboard', icon: LayoutGrid },
+  { to: '/private/questionnaire', labelKey: 'navQuestionnaire', icon: ClipboardList },
+  { to: '/private/statistiques', labelKey: 'navStatistics', icon: BarChart3 },
+  { to: '/private/historique', labelKey: 'navHistory', icon: History },
 ];
 
 function PrivateLayout() {
@@ -37,10 +39,11 @@ function PrivateLayout() {
   const location = useLocation();
   const navigate = useNavigate();
   const user = useMemo(() => getPrivateUser(), []);
+  const { t } = usePrivateI18n();
 
-  const pageTitle = useMemo(() => {
+  const pageTitleKey = useMemo<PVKey>(() => {
     const match = navigation.find((item) => location.pathname.startsWith(item.to));
-    return match?.label ?? 'PRASMESTI Privé';
+    return match?.labelKey ?? 'privateFallbackTitle';
   }, [location.pathname]);
 
   return (
@@ -52,14 +55,14 @@ function PrivateLayout() {
           <Link to="/private/dashboard" className="private-brand">
             <img src={`${import.meta.env.BASE_URL}assets/prasmesti/shared/logo.png`} alt="PRASMESTI" className="private-brand-mark" />
             <div className="private-sidebar-copy">
-              <p className="private-brand-kicker">Espace privé</p>
+              <p className="private-brand-kicker">{t('privateSpace')}</p>
               <p className="private-brand-name">PRASMESTI</p>
             </div>
           </Link>
         </div>
 
         <nav className="private-nav">
-          {navigation.map(({ to, label, icon: Icon }) => (
+          {navigation.map(({ to, labelKey, icon: Icon }) => (
             <NavLink
               key={to}
               to={to}
@@ -67,14 +70,14 @@ function PrivateLayout() {
               onClick={() => setIsSidebarOpen(false)}
             >
               <Icon size={18} />
-              <span className="private-sidebar-copy">{label}</span>
+              <span className="private-sidebar-copy">{t(labelKey)}</span>
             </NavLink>
           ))}
         </nav>
 
         <div className="private-sidebar-foot">
           <Link to="/" className="private-return-link">
-            <span className="private-sidebar-copy">Retour au site public</span>
+            <span className="private-sidebar-copy">{t('returnPublic')}</span>
           </Link>
         </div>
       </aside>
@@ -86,7 +89,7 @@ function PrivateLayout() {
               type="button"
               className="private-menu-button"
               onClick={() => setIsSidebarOpen((current) => !current)}
-              aria-label="Ouvrir le menu privé"
+              aria-label={t('openMenu')}
             >
               <Menu size={18} />
             </button>
@@ -95,29 +98,31 @@ function PrivateLayout() {
               type="button"
               className="private-collapse-button"
               onClick={() => setIsSidebarCollapsed((current) => !current)}
-              aria-label={isSidebarCollapsed ? 'Déployer le menu latéral' : 'Rétracter le menu latéral'}
+              aria-label={isSidebarCollapsed ? t('expandSidebar') : t('collapseSidebar')}
               aria-pressed={isSidebarCollapsed}
             >
               {isSidebarCollapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
-              <span>{isSidebarCollapsed ? 'Déployer le menu' : 'Rétracter le menu'}</span>
+              <span>{isSidebarCollapsed ? t('expandMenu') : t('collapseMenu')}</span>
             </button>
 
             <div>
-              <p className="private-topbar-label">Administration sécurisée</p>
-              <h1 className="private-topbar-title">{pageTitle}</h1>
+              <p className="private-topbar-label">{t('adminSecure')}</p>
+              <h1 className="private-topbar-title">{t(pageTitleKey)}</h1>
             </div>
           </div>
 
           <div className="private-topbar-actions">
             <div className="private-topbar-chip">
               <ShieldCheck size={16} />
-              <span>Session active</span>
+              <span>{t('sessionActive')}</span>
             </div>
 
-            <button type="button" className="private-icon-button" aria-label="Notifications">
+            <button type="button" className="private-icon-button" aria-label={t('notifications')}>
               <Bell size={18} />
               <span className="private-notification-dot" />
             </button>
+
+            <PrivateLangToggle />
 
             <div className="private-user-card">
               <div className="private-user-avatar private-user-avatar-initials" aria-hidden="true">
@@ -138,7 +143,7 @@ function PrivateLayout() {
               }}
             >
               <LogOut size={16} />
-              <span>Déconnexion</span>
+              <span>{t('logout')}</span>
             </button>
           </div>
         </header>
