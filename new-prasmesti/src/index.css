@@ -4637,3 +4637,18 @@
   font: inherit;
   cursor: pointer;
 }
+
+/* Historique privé : la barre de filtres se replie sous le titre en mobile (fix +10px). */
+@media (max-width: 640px) {
+  .private-surface-head {
+    flex-wrap: wrap;
+  }
+  .private-filter-row {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .private-filter-input {
+    flex: 1 1 140px;
+    min-width: 0;
+  }
+}
