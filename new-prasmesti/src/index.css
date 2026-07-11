@@ -4608,3 +4608,15 @@
   opacity: 0.5;
   cursor: default;
 }
+
+/* Titres de l'espace privé : couleur sombre explicite. Ils héritaient de la
+   couleur de titre du thème sombre (crème #f5f0e8) alors que l'espace privé est
+   toujours clair -> titres illisibles (audit / retour client contraste). */
+.private-section-title,
+.private-surface-title,
+.private-questionnaire-section-title,
+.private-topbar-title,
+.private-stat-value,
+.private-login-title {
+  color: #17233f;
+}

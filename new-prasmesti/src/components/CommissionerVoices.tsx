@@ -61,19 +61,42 @@ function CommissionerVoices() {
   const { language, translate } = useLanguage();
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const reducedMotion = useRef(
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  );
 
   const total = commissionerVoices.length;
 
+  // À chaque entrée dans le viewport : on repart de la première carte, afin que
+  // la 1re carte soit toujours affichée en arrivant sur la section.
   useEffect(() => {
-    if (isPaused) return;
-    timerRef.current = setInterval(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIndex(0);
+          setInView(true);
+        } else {
+          setInView(false);
+        }
+      },
+      { threshold: 0.35 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // Défilement automatique uniquement quand la section est visible (et hors reduced-motion).
+  useEffect(() => {
+    if (isPaused || !inView || reducedMotion.current) return;
+    const id = setInterval(() => {
       setIndex((i) => (i + 1) % total);
     }, SLIDE_DURATION);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [isPaused, total]);
+    return () => clearInterval(id);
+  }, [isPaused, inView, total]);
 
   const goTo = (i: number) => setIndex(((i % total) + total) % total);
   const next = () => goTo(index + 1);
@@ -83,6 +106,7 @@ function CommissionerVoices() {
 
   return (
     <section
+      ref={sectionRef}
       id="voices"
       className="site-glow-section section-shell section-with-divider voices-marquee-section"
     >

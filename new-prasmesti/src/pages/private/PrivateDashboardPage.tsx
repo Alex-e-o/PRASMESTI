@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import { Activity, BookOpen, FolderKanban, GraduationCap } from 'lucide-react';
 
 const stats = [
-  { slug: 'etablissements', label: 'Etablissements', value: '34 123', delta: '+8.34%', tone: 'positive', icon: BookOpen, detail: 'Liste des etablissements' },
-  { slug: 'projets', label: 'Projets en cours', value: '63', delta: '+12', tone: 'positive', icon: FolderKanban, detail: 'Projets finances' },
-  { slug: 'alphabetisation', label: 'Alphabetisation', value: '78%', delta: '-2.64%', tone: 'negative', icon: Activity, detail: "Taux d'alphabetisation" },
-  { slug: 'formation', label: 'Formation', value: '6 482', delta: '+5.79%', tone: 'positive', icon: GraduationCap, detail: 'Enseignants formes' },
+  { slug: 'etablissements', label: 'Établissements', value: '34 123', delta: '+8.34%', tone: 'positive', icon: BookOpen, detail: 'Liste des établissements' },
+  { slug: 'projets', label: 'Projets en cours', value: '63', delta: '+12', tone: 'positive', icon: FolderKanban, detail: 'Projets financés' },
+  { slug: 'alphabetisation', label: 'Alphabétisation', value: '78%', delta: '-2.64%', tone: 'negative', icon: Activity, detail: "Taux d'alphabétisation" },
+  { slug: 'formation', label: 'Formation', value: '6 482', delta: '+5.79%', tone: 'positive', icon: GraduationCap, detail: 'Enseignants formés' },
 ];
 
 function PrivateDashboardPage() {
@@ -14,9 +14,9 @@ function PrivateDashboardPage() {
       <section className="private-hero-card">
         <div>
           <p className="private-section-kicker">Vue d'ensemble</p>
-          <h2 className="private-section-title">Tableau de bord decisionnel</h2>
+          <h2 className="private-section-title">Tableau de bord décisionnel</h2>
           <p className="private-section-body">
-            Un point d'entree plus lisible pour suivre les indicateurs de l'ecosysteme regional, les projets actifs et les zones qui demandent une intervention rapide.
+            Un point d'entrée plus lisible pour suivre les indicateurs de l'écosystème régional, les projets actifs et les zones qui demandent une intervention rapide.
           </p>
         </div>
         <div className="private-hero-badge">2026</div>
