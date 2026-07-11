@@ -163,7 +163,19 @@ export async function getQuestionnaire(slug: string): Promise<QuestionnaireAnswe
   return readLocal<QuestionnaireAnswers>(ANSWERS_KEY(slug));
 }
 
-/** Enregistre les réponses ET recalcule + enregistre les stats dérivées. */
+/** Enregistre les réponses en BROUILLON : ni recalcul ni publication des stats. */
+export async function saveQuestionnaireDraft(slug: string, answers: QuestionnaireAnswers): Promise<void> {
+  if (isSupabaseConfigured && supabase) {
+    await supabase.from('questionnaire_submissions').upsert({
+      country_slug: slug,
+      answers,
+      submitted_at: null,
+    });
+  }
+  writeLocal(ANSWERS_KEY(slug), answers);
+}
+
+/** SOUMISSION : enregistre les réponses ET recalcule + publie les stats dérivées. */
 export async function saveQuestionnaire(slug: string, answers: QuestionnaireAnswers): Promise<CountryStatsOverride> {
   const derived = deriveStatsFromAnswers(answers);
   if (isSupabaseConfigured && supabase) {

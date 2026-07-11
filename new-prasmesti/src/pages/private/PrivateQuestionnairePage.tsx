@@ -4,6 +4,7 @@ import { privateProfiles } from '../../data/countryProfiles';
 import {
   getQuestionnaire,
   saveQuestionnaire,
+  saveQuestionnaireDraft,
   type QuestionnaireAnswers,
 } from '../../lib/countryStore';
 
@@ -172,7 +173,7 @@ function PrivateQuestionnairePage() {
   const countryLabel = countryLabelFromSlug(slug);
 
   const [answers, setAnswers] = useState<QuestionnaireAnswers | null>(null);
-  const [status, setStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
+  const [status, setStatus] = useState<'idle' | 'savingDraft' | 'draftSaved' | 'submitting' | 'submitted'>('idle');
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -185,18 +186,22 @@ function PrivateQuestionnairePage() {
     };
   }, [slug]);
 
-  const save = async () => {
+  const save = async (mode: 'draft' | 'submit') => {
     if (!formRef.current) return;
-    setStatus('saving');
+    setStatus(mode === 'submit' ? 'submitting' : 'savingDraft');
     const formData = new FormData(formRef.current);
     const next: QuestionnaireAnswers = {};
     formData.forEach((value, key) => {
       next[key] = typeof value === 'string' ? value : '';
     });
-    await saveQuestionnaire(slug, next);
+    if (mode === 'submit') {
+      await saveQuestionnaire(slug, next); // recalcule + publie les indicateurs publics
+    } else {
+      await saveQuestionnaireDraft(slug, next); // réponses seules, rien de publié
+    }
     setAnswers(next);
-    setStatus('saved');
-    window.setTimeout(() => setStatus('idle'), 3000);
+    setStatus(mode === 'submit' ? 'submitted' : 'draftSaved');
+    window.setTimeout(() => setStatus('idle'), 4000);
   };
 
   if (!answers) {
@@ -215,7 +220,7 @@ function PrivateQuestionnairePage() {
         ref={formRef}
         onSubmit={(event) => {
           event.preventDefault();
-          void save();
+          void save('submit');
         }}
         className="private-surface-card private-questionnaire-shell"
       >
@@ -223,8 +228,8 @@ function PrivateQuestionnairePage() {
           <p className="private-section-kicker">Collecte régionale harmonisée — {countryLabel}</p>
           <h2 className="private-section-title">Questionnaire sur l'alignement aux documents cadres en éducation</h2>
           <p className="private-section-body">
-            Premiere reunion des Ministres en charge de l'education, des sciences, de la technologie et de l'innovation.
-            Ce formulaire numerique reprend la structure du questionnaire de reference pour une saisie plus lisible.
+            Première réunion des Ministres en charge de l'éducation, des sciences, de la technologie et de l'innovation.
+            Ce formulaire numérique reprend la structure du questionnaire de référence pour une saisie plus lisible.
           </p>
         </div>
 
@@ -391,19 +396,36 @@ function PrivateQuestionnairePage() {
           <button
             type="button"
             className="private-button private-button-secondary"
-            onClick={() => void save()}
-            disabled={status === 'saving'}
+            onClick={() => void save('draft')}
+            disabled={status === 'savingDraft' || status === 'submitting'}
           >
-            Enregistrer en brouillon
+            {status === 'savingDraft'
+              ? 'Enregistrement…'
+              : status === 'draftSaved'
+                ? 'Brouillon enregistré ✓'
+                : 'Enregistrer en brouillon'}
           </button>
-          <button type="submit" className="private-button" disabled={status === 'saving'}>
-            {status === 'saving' ? 'Enregistrement…' : status === 'saved' ? 'Enregistré ✓' : 'Soumettre le questionnaire'}
+          <button
+            type="submit"
+            className="private-button"
+            disabled={status === 'savingDraft' || status === 'submitting'}
+          >
+            {status === 'submitting'
+              ? 'Soumission…'
+              : status === 'submitted'
+                ? 'Soumis ✓'
+                : 'Soumettre le questionnaire'}
           </button>
         </div>
 
-        {status === 'saved' && (
+        {status === 'draftSaved' && (
+          <p className="private-section-body" style={{ marginTop: '0.75rem', color: '#47597a', fontWeight: 600 }}>
+            Brouillon enregistré. Vos réponses sont sauvegardées ; les indicateurs publics ne sont pas encore mis à jour.
+          </p>
+        )}
+        {status === 'submitted' && (
           <p className="private-section-body" style={{ marginTop: '0.75rem', color: '#2b7f5c', fontWeight: 600 }}>
-            Réponses enregistrées. Les indicateurs publics « État de mise en œuvre » du {countryLabel} ont été recalculés.
+            Questionnaire soumis. Les indicateurs publics « État de mise en œuvre » du {countryLabel} ont été recalculés.
           </p>
         )}
       </form>
