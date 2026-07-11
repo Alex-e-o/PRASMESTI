@@ -10,7 +10,7 @@ function ResponsablesPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main"><Responsables /></main>
+      <main id="main" className="site-main"><Responsables /></main>
       <Footer />
     </div>
   );

@@ -10,7 +10,7 @@ function ConceptionPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main"><Conception /></main>
+      <main id="main" className="site-main"><Conception /></main>
       <Footer />
     </div>
   );

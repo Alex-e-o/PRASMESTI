@@ -10,7 +10,7 @@ function PresentationDetailPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main"><PresentationDetail /></main>
+      <main id="main" className="site-main"><PresentationDetail /></main>
       <Footer />
     </div>
   );

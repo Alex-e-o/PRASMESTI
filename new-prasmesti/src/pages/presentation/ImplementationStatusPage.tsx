@@ -11,7 +11,7 @@ function ImplementationStatusPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main">
+      <main id="main" className="site-main">
         <ImplementationStatus />
       </main>
       <Footer />

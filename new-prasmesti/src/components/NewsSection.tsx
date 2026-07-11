@@ -29,7 +29,7 @@ function NewsSection() {
               transition={{ duration: 0.6, delay: index * 0.08 }}
               className="news-card"
             >
-              <img src={item.image} alt="" className="news-card-image" />
+              <img src={item.image} alt="" className="news-card-image" loading="lazy" decoding="async" />
               <div className="news-card-copy">
                 <p className="news-card-date">{pick(item, 'date', language)}</p>
                 <h3 className="news-card-title">{pick(item, 'title', language)}</h3>

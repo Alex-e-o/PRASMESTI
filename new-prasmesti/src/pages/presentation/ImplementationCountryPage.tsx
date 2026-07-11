@@ -19,7 +19,7 @@ function ImplementationCountryPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main">
+      <main id="main" className="site-main">
         <ImplementationCountryStats country={country} />
       </main>
       <Footer />

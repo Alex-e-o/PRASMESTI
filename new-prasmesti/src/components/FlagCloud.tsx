@@ -36,6 +36,15 @@ const ceeacMarkers: CeeacMarker[] = [
   { code: 'st', label: 'Sao Tome', lat: 0.3365, lng: 6.7273 },
 ];
 
+// Drapeaux servis en local (supprime la dépendance réseau à flagcdn.com).
+const FLAG_FILE: Record<string, string> = {
+  ao: 'Angola.png', bi: 'Burundi.png', cm: 'Cameroun.png', cf: 'Centrafrique.png',
+  td: 'Tchad.png', cg: 'Congo.png', cd: 'RDC.png', gq: 'Guinee-Equatoriale.png',
+  ga: 'Gabon.png', rw: 'Rwanda.png', st: 'Sao-Tome.png',
+};
+const flagSrc = (code: string): string =>
+  `${import.meta.env.BASE_URL}assets/prasmesti/home/flags/${FLAG_FILE[code] ?? `${code}.png`}`;
+
 const AFRICA_ISO3 = [
   'DZA', 'AGO', 'BEN', 'BWA', 'BFA', 'BDI', 'CMR', 'CAF', 'TCD', 'COD', 'COG', 'CIV', 'DJI',
   'EGY', 'GNQ', 'ERI', 'SWZ', 'ETH', 'GAB', 'GMB', 'GHA', 'GIN', 'GNB', 'KEN', 'LSO', 'LBR',
@@ -131,7 +140,7 @@ export function FlagCloud() {
                 <circle cx={marker.x} cy={marker.y} r={1.45} />
               </clipPath>
               <image
-                href={`https://flagcdn.com/w80/${marker.code}.png`}
+                href={flagSrc(marker.code)}
                 x={marker.x - 1.45}
                 y={marker.y - 1.45}
                 width={2.9}

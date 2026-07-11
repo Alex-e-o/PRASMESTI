@@ -10,7 +10,7 @@ function WhyPage() {
     <div className="site-root">
       <SmoothCursor />
       <Navbar />
-      <main className="site-main"><WhyPrasmesti /></main>
+      <main id="main" className="site-main"><WhyPrasmesti /></main>
       <Footer />
     </div>
   );
