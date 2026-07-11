@@ -4597,3 +4597,14 @@
 [data-theme='light'] .impl-gabon-table th {
   background: rgba(22, 57, 128, 0.05);
 }
+
+/* Éléments de navigation non encore disponibles : visiblement inertes (audit §4.2/§4.3). */
+.site-nav-link:disabled,
+.site-nav-link.is-disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.footer-link-pill-disabled {
+  opacity: 0.5;
+  cursor: default;
+}

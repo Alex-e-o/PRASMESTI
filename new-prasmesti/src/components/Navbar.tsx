@@ -69,10 +69,16 @@ function Navbar() {
   const goToNews = () => {
     if (location.pathname === '/') {
       scrollToSection('news');
-    } else {
-      navigate('/');
-      setTimeout(() => scrollToSection('news'), 350);
+      return;
     }
+    navigate('/');
+    // La home est chargée en lazy : on attend l'apparition de #news (polling).
+    let attempts = 0;
+    const tryScroll = () => {
+      if (document.getElementById('news')) scrollToSection('news');
+      else if (attempts++ < 20) setTimeout(tryScroll, 100);
+    };
+    setTimeout(tryScroll, 100);
   };
 
   const goToPresSection = (sectionId: string) => {
@@ -155,8 +161,8 @@ function Navbar() {
           <NavDropdown label={t('navNormativeTexts')} items={normativeItems} />
           <NavDropdown label={t('navImplementation')} items={countryItems} onLabelClick={goToImplementation} />
 
-          <button type="button" className="site-nav-link">{t('navIntellectualProperty')}</button>
-          <button type="button" className="site-nav-link">{t('navInnovations')}</button>
+          <button type="button" className="site-nav-link is-disabled" disabled title="Bientôt disponible">{t('navIntellectualProperty')}</button>
+          <button type="button" className="site-nav-link is-disabled" disabled title="Bientôt disponible">{t('navInnovations')}</button>
 
           <button type="button" onClick={goToNews} className="site-nav-link">
             {t('navNews')}
@@ -245,12 +251,8 @@ function Navbar() {
             </button>
           ))}
 
-          <button type="button" className="site-mobile-link" onClick={closeAnd()}>
-            {t('navIntellectualProperty')}
-          </button>
-          <button type="button" className="site-mobile-link" onClick={closeAnd()}>
-            {t('navInnovations')}
-          </button>
+          <span className="site-mobile-link is-disabled">{t('navIntellectualProperty')}</span>
+          <span className="site-mobile-link is-disabled">{t('navInnovations')}</span>
           <button type="button" className="site-mobile-link" onClick={closeAnd(goToNews)}>
             {t('navNews')}
           </button>

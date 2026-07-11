@@ -54,7 +54,7 @@ function PrivateDashboardPage() {
             <div className="private-alert-row">
               <span className="private-alert-dot is-positive" />
               <div>
-                <p className="private-alert-title">Campagne de mise a jour relancee</p>
+                <p className="private-alert-title">Campagne de mise à jour relancée</p>
                 <p className="private-alert-body">Le questionnaire harmonise est pret pour une nouvelle collecte.</p>
               </div>
             </div>
@@ -70,7 +70,7 @@ function PrivateDashboardPage() {
 
         <article className="private-surface-card">
           <div className="private-surface-head">
-            <h3 className="private-surface-title">Progression regionale</h3>
+            <h3 className="private-surface-title">Progression régionale</h3>
           </div>
           <div className="private-progress-stack">
             <div className="private-progress-row">

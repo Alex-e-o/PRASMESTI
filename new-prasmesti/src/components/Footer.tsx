@@ -1,9 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '../languageContext';
 
 function Footer() {
   const { language, translate } = useLanguage();
+  const navigate = useNavigate();
+
+  const goToNews = () => {
+    navigate('/');
+    // La home est chargée en lazy : on attend l'apparition de #news (polling).
+    let attempts = 0;
+    const tryScroll = () => {
+      const el = document.getElementById('news');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      else if (attempts++ < 20) setTimeout(tryScroll, 100);
+    };
+    setTimeout(tryScroll, 100);
+  };
 
   const footerKicker = {
     fr: 'Éclairer pour Orienter',
@@ -26,7 +39,7 @@ function Footer() {
   const newsLabel = { fr: 'Actualités', en: 'News', es: 'Actualidad', pt: 'Notícias' }[language];
   const projectsLabel = { fr: 'Projets', en: 'Projects', es: 'Proyectos', pt: 'Projetos' }[language];
   const moreLinks = [
-    { label: newsLabel, to: '/' },
+    { label: newsLabel, onClick: goToNews },
     { label: 'FAQ' },
     { label: projectsLabel },
     { label: 'ORESTI' },
@@ -52,7 +65,11 @@ function Footer() {
             <h3 className="footer-contact-title">{footerMoreTitle}</h3>
             <div className="footer-pill-list">
               {moreLinks.map((item) => (
-                item.to ? (
+                item.onClick ? (
+                  <button key={item.label} type="button" onClick={item.onClick} className="footer-link-pill">
+                    {item.label}
+                  </button>
+                ) : item.to ? (
                   <Link key={item.label} to={item.to} className="footer-link-pill">
                     {item.label}
                   </Link>

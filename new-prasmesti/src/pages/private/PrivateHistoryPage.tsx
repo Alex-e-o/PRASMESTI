@@ -1,8 +1,8 @@
 const historyRows = [
-  ['18 nov. 2026', 'Questionnaire Gabon', 'Validation', 'Marie T. MFOULA', 'Termine'],
-  ['17 nov. 2026', 'Rapport Education', 'Mise a jour', 'David B. OSSENE', 'Termine'],
-  ['15 nov. 2026', 'Projet regional ESTI', 'Creation', 'Equipe PRASMESTI', 'En revue'],
-  ['14 nov. 2026', 'Statistiques ETFP', 'Correction', 'Point focal Cameroun', 'Termine'],
+  ['18 nov. 2026', 'Questionnaire Gabon', 'Validation', 'Marie T. MFOULA', 'Terminé'],
+  ['17 nov. 2026', 'Rapport Éducation', 'Mise à jour', 'David B. OSSENE', 'Terminé'],
+  ['15 nov. 2026', 'Projet régional ESTI', 'Création', 'Equipe PRASMESTI', 'En revue'],
+  ['14 nov. 2026', 'Statistiques ETFP', 'Correction', 'Point focal Cameroun', 'Terminé'],
 ];
 
 function PrivateHistoryPage() {
@@ -11,7 +11,7 @@ function PrivateHistoryPage() {
       <section className="private-surface-card">
         <div className="private-surface-head">
           <div>
-            <p className="private-section-kicker">Traçabilite</p>
+            <p className="private-section-kicker">Traçabilité</p>
             <h2 className="private-surface-title">Historique des actions</h2>
           </div>
           <div className="private-filter-row">
@@ -25,7 +25,7 @@ function PrivateHistoryPage() {
             <thead>
               <tr>
                 <th>Date</th>
-                <th>Element</th>
+                <th>Élément</th>
                 <th>Action</th>
                 <th>Auteur</th>
                 <th>Statut</th>

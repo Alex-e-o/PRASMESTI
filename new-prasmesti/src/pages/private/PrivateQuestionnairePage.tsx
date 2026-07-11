@@ -220,8 +220,8 @@ function PrivateQuestionnairePage() {
         className="private-surface-card private-questionnaire-shell"
       >
         <div className="private-questionnaire-header">
-          <p className="private-section-kicker">Collecte regionale harmonisee — {countryLabel}</p>
-          <h2 className="private-section-title">Questionnaire sur l'alignement aux documents cadres en education</h2>
+          <p className="private-section-kicker">Collecte régionale harmonisée — {countryLabel}</p>
+          <h2 className="private-section-title">Questionnaire sur l'alignement aux documents cadres en éducation</h2>
           <p className="private-section-body">
             Premiere reunion des Ministres en charge de l'education, des sciences, de la technologie et de l'innovation.
             Ce formulaire numerique reprend la structure du questionnaire de reference pour une saisie plus lisible.
@@ -245,7 +245,7 @@ function PrivateQuestionnairePage() {
 
         <section className="private-questionnaire-section">
           <div className="private-questionnaire-section-head">
-            <h3 className="private-questionnaire-section-title">I - Generalites</h3>
+            <h3 className="private-questionnaire-section-title">I - Généralités</h3>
           </div>
 
           <div className="private-table-wrap">
