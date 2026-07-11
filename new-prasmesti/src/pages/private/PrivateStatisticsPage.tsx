@@ -13,7 +13,11 @@ function PrivateStatisticsPage() {
           <div className="private-surface-head">
             <h2 className="private-surface-title">Evolution des projets</h2>
           </div>
-          <div className="private-mini-chart private-line-chart">
+          <div
+            className="private-mini-chart private-line-chart"
+            role="img"
+            aria-label="Évolution des projets : progression de 36 % à 86 % (36, 55, 48, 72, 86)."
+          >
             <span style={{ height: '36%' }} />
             <span style={{ height: '55%' }} />
             <span style={{ height: '48%' }} />
@@ -44,7 +48,11 @@ function PrivateStatisticsPage() {
             <h2 className="private-surface-title">Repartition geographique</h2>
           </div>
           <div className="private-donut-wrap">
-            <div className="private-donut-chart" />
+            <div
+              className="private-donut-chart"
+              role="img"
+              aria-label="Répartition géographique : Gabon, Cameroun, RDC."
+            />
             <div className="private-donut-legend">
               <span><i className="is-one" /> Gabon</span>
               <span><i className="is-two" /> Cameroun</span>

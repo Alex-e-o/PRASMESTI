@@ -9,18 +9,19 @@ import {
 
 type TriState = '' | 'oui' | 'non';
 
-function TriStateCell({ name, initial }: { name: string; initial?: string }) {
+function TriStateCell({ name, initial, label }: { name: string; initial?: string; label?: string }) {
   const [value, setValue] = useState<TriState>((initial as TriState) || '');
   const cycle = () =>
     setValue((current) => (current === '' ? 'oui' : current === 'oui' ? 'non' : ''));
   const stateClass = value === '' ? 'is-empty' : `is-${value}`;
+  const stateText = value === 'oui' ? 'Oui' : value === 'non' ? 'Non' : 'non renseigné';
   return (
     <>
       <button
         type="button"
         onClick={cycle}
         className={`private-questionnaire-tristate ${stateClass}`}
-        aria-label={name}
+        aria-label={`${label ?? name} : ${stateText}`}
       >
         {value === 'oui' ? 'Oui' : value === 'non' ? 'Non' : ''}
       </button>
@@ -128,22 +129,22 @@ function MatrixSection({
         <table className="private-questionnaire-table private-questionnaire-table-matrix">
           <thead>
             <tr>
-              <th className="is-question">Question / axe</th>
+              <th scope="col" className="is-question">Question / axe</th>
               {sectorColumns.map((column) => (
-                <th key={column}>{column}</th>
+                <th scope="col" key={column}>{column}</th>
               ))}
-              <th className="is-notes">Observations</th>
+              <th scope="col" className="is-notes">Observations</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((row, index) => (
               <tr key={row}>
-                <td className="is-question">{row}</td>
+                <th scope="row" className="is-question">{row}</th>
                 {sectorColumns.map((column, columnIndex) => {
                   const field = `${name}-sector-${index}-${columnIndex}`;
                   return (
                     <td key={`${row}-${column}`} className="is-tristate">
-                      <TriStateCell name={field} initial={answers[field]} />
+                      <TriStateCell name={field} initial={answers[field]} label={`${row} — ${column}`} />
                     </td>
                   );
                 })}

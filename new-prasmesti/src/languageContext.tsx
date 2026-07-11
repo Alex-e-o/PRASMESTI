@@ -777,6 +777,14 @@ const translations: Dictionary = {
 
   // ── Auth / divers ──
   navLogin: { en: 'Login', fr: 'Connexion', es: 'Iniciar sesión', pt: 'Entrar' },
+  ariaChooseLanguage: { en: 'Choose language', fr: 'Choisir la langue', es: 'Elegir el idioma', pt: 'Escolher o idioma' },
+  ariaThemeLight: { en: 'Switch to light mode', fr: 'Passer au thème clair', es: 'Cambiar al tema claro', pt: 'Mudar para o tema claro' },
+  ariaThemeDark: { en: 'Switch to dark mode', fr: 'Passer au thème sombre', es: 'Cambiar al tema oscuro', pt: 'Mudar para o tema escuro' },
+  ariaPrevTestimonial: { en: 'Previous testimonial', fr: 'Témoignage précédent', es: 'Testimonio anterior', pt: 'Testemunho anterior' },
+  ariaNextTestimonial: { en: 'Next testimonial', fr: 'Témoignage suivant', es: 'Testimonio siguiente', pt: 'Testemunho seguinte' },
+  ariaTestimonial: { en: 'Testimonial', fr: 'Témoignage', es: 'Testimonio', pt: 'Testemunho' },
+  ariaSlide: { en: 'Slide', fr: 'Diapositive', es: 'Diapositiva', pt: 'Diapositivo' },
+  ariaFlagCloud: { en: 'ECCAS countries in Central Africa', fr: 'Pays de la CEEAC en Afrique centrale', es: 'Países de la CEEAC en África Central', pt: 'Países da CEEAC na África Central' },
 };
 
 interface LanguageContextValue {
