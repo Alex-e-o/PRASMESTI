@@ -99,10 +99,10 @@ function PrivateLayout() {
               className="private-collapse-button"
               onClick={() => setIsSidebarCollapsed((current) => !current)}
               aria-label={isSidebarCollapsed ? t('expandSidebar') : t('collapseSidebar')}
+              title={isSidebarCollapsed ? t('expandSidebar') : t('collapseSidebar')}
               aria-pressed={isSidebarCollapsed}
             >
               {isSidebarCollapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
-              <span>{isSidebarCollapsed ? t('expandMenu') : t('collapseMenu')}</span>
             </button>
 
             <div>

@@ -4492,16 +4492,26 @@
   max-width: 100%;
 }
 
-/* Empêche la barre du haut de l'espace privé de déborder à droite (audit §9.4). */
-.private-topbar {
-  flex-wrap: wrap;
-}
-.private-topbar-main,
-.private-topbar-actions {
+/* Barre du haut de l'espace privé : une seule ligne propre (titre extensible qui
+   tronque, actions fixées à droite) au lieu d'un repli désordonné. */
+.private-topbar-main {
+  flex: 1;
   min-width: 0;
 }
+.private-topbar-main > div:last-child {
+  min-width: 0;
+}
+.private-topbar-title,
+.private-topbar-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.private-topbar-actions {
+  flex-shrink: 0;
+}
 .private-user-email {
-  max-width: 200px;
+  max-width: 180px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
