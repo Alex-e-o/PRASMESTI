@@ -1191,7 +1191,8 @@
 .voice-marquee-card {
   display: inline-flex;
   flex-direction: row;
-  width: 1080px;
+  width: 100%;
+  max-width: 1520px;
   min-height: 620px;
   border-radius: 20px;
   border: 1px solid rgba(70, 120, 200, 0.16);
@@ -1275,14 +1276,14 @@
 
 .voices-single-slide {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1520px;
   display: flex;
   justify-content: center;
 }
 
 .voices-single-slide .voice-marquee-card {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1520px;
 }
 
 .voices-single-arrow {
@@ -4651,4 +4652,9 @@
     flex: 1 1 140px;
     min-width: 0;
   }
+}
+
+/* Section témoignages : conteneur élargi pour des cartes nettement plus larges. */
+.voices-marquee-section .site-container {
+  width: min(1560px, calc(100% - 48px));
 }
