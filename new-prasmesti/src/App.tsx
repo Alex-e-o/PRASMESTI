@@ -22,6 +22,7 @@ function RouteTitle() {
   useEffect(() => {
     let sub = PAGE_TITLES[pathname];
     if (!sub && pathname.startsWith('/presentation/implementation/')) sub = 'État de mise en œuvre';
+    else if (!sub && pathname.startsWith('/news/')) sub = 'Actualités';
     else if (!sub && pathname.startsWith('/private')) sub = 'Espace privé';
     document.title = sub
       ? `${sub} — PRASMESTI`
@@ -43,6 +44,7 @@ const ResponsablesPage = lazy(() => import('./pages/presentation/ResponsablesPag
 const ImplementationStatusPage = lazy(() => import('./pages/presentation/ImplementationStatusPage'));
 const ImplementationGabonPage = lazy(() => import('./pages/presentation/ImplementationGabonPage'));
 const ImplementationCountryPage = lazy(() => import('./pages/presentation/ImplementationCountryPage'));
+const NewsDetailPage = lazy(() => import('./pages/news/NewsDetailPage'));
 const PrivateLayout = lazy(() => import('./private/PrivateLayout'));
 const PrivateLoginPage = lazy(() => import('./pages/private/PrivateLoginPage'));
 const PrivateDashboardPage = lazy(() => import('./pages/private/PrivateDashboardPage'));
@@ -70,6 +72,7 @@ function App() {
           <Route path="/presentation/implementation" element={<ImplementationStatusPage />} />
           <Route path="/presentation/implementation/gabon" element={<ImplementationGabonPage />} />
           <Route path="/presentation/implementation/:slug" element={<ImplementationCountryPage />} />
+          <Route path="/news/:slug" element={<NewsDetailPage />} />
           <Route path="/private/login" element={<PrivateLoginPage />} />
           <Route element={<RequirePrivateAuth />}>
             <Route path="/private" element={<PrivateLayout />}>

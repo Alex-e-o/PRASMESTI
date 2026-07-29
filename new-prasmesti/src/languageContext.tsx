@@ -775,6 +775,35 @@ const translations: Dictionary = {
   respTitleH2: { en: 'PRASMESTI Leads 2020-2025', fr: 'Responsables PRASMESTI 2020-2025', es: 'Responsables PRASMESTI 2020-2025', pt: 'Responsáveis PRASMESTI 2020-2025' },
   respEccasCommission: { en: 'ECCAS Commission', fr: 'Commission CEEAC', es: 'Comisión CEEAC', pt: 'Comissão CEEAC' },
 
+  // ── News detail page ──
+  newsCardRead: { en: 'Read the article', fr: "Lire l'article", es: 'Leer el artículo', pt: 'Ler o artigo' },
+  newsDetailVideoTitle: { en: 'The evening in video', fr: 'La soirée en vidéo', es: 'La velada en vídeo', pt: 'A noite em vídeo' },
+  newsDetailVideoHint: {
+    en: 'Press play to watch the report on the event.',
+    fr: "Lancez la lecture pour voir le reportage consacré à l'événement.",
+    es: 'Inicie la reproducción para ver el reportaje dedicado al evento.',
+    pt: 'Inicie a reprodução para ver a reportagem dedicada ao evento.',
+  },
+  newsDetailVideoFallback: {
+    en: 'Your browser cannot play this video.',
+    fr: 'Votre navigateur ne peut pas lire cette vidéo.',
+    es: 'Su navegador no puede reproducir este vídeo.',
+    pt: 'O seu navegador não consegue reproduzir este vídeo.',
+  },
+  newsDetailDownload: { en: 'Download the video', fr: 'Télécharger la vidéo', es: 'Descargar el vídeo', pt: 'Descarregar o vídeo' },
+  newsDetailDate: { en: 'Date', fr: 'Date', es: 'Fecha', pt: 'Data' },
+  newsDetailPlace: { en: 'Venue', fr: 'Lieu', es: 'Lugar', pt: 'Local' },
+  newsDetailHost: { en: 'Organised by', fr: 'Organisation', es: 'Organización', pt: 'Organização' },
+  newsDetailHighlights: { en: 'On the programme', fr: 'Au programme', es: 'En el programa', pt: 'No programa' },
+  newsDetailSpeakers: { en: 'Speakers', fr: 'Ils ont pris la parole', es: 'Tomaron la palabra', pt: 'Tomaram a palavra' },
+  newsDetailBack: { en: 'Back to news', fr: 'Retour aux actualités', es: 'Volver a la actualidad', pt: 'Voltar às notícias' },
+  newsDetailMissing: {
+    en: 'This news item has no dedicated page.',
+    fr: "Cette actualité n'a pas de page dédiée.",
+    es: 'Esta noticia no tiene página dedicada.',
+    pt: 'Esta notícia não tem página dedicada.',
+  },
+
   // ── Auth / divers ──
   navLogin: { en: 'Login', fr: 'Connexion', es: 'Iniciar sesión', pt: 'Entrar' },
   ariaChooseLanguage: { en: 'Choose language', fr: 'Choisir la langue', es: 'Elegir el idioma', pt: 'Escolher o idioma' },

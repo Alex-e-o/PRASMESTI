@@ -108,6 +108,8 @@ export const newsItems = [
     image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-2.jpg`,
   },
   {
+    // Seule actualité dotée d'une page dédiée pour l'instant (cf. newsDetails).
+    slug: 'diner-scientifique-2026',
     dateFr: '15 Mai 2026',
     dateEn: '15 May 2026',
     dateEs: '15 de mayo de 2026',
@@ -168,6 +170,139 @@ export const newsItems = [
     image: `${import.meta.env.BASE_URL}assets/prasmesti/home/news/news-1.jpg`,
   },
 ];
+
+/**
+ * Pages d'actualité détaillées, indexées par `slug` (cf. le champ `slug` de
+ * newsItems). Une actualité sans entrée ici reste une simple carte non
+ * cliquable sur la page d'accueil.
+ */
+export const newsDetails: Record<string, NewsDetail> = {
+  'diner-scientifique-2026': {
+    dateFr: '15 mai 2026',
+    dateEn: '15 May 2026',
+    dateEs: '15 de mayo de 2026',
+    datePt: '15 de maio de 2026',
+    placeFr: 'Jardins de la Commission de la CEEAC',
+    placeEn: 'Gardens of the ECCAS Commission',
+    placeEs: 'Jardines de la Comisión de la CEEAC',
+    placePt: 'Jardins da Comissão da CEEAC',
+    hostFr: 'Réseau UNITWIN — Chaire UNESCO',
+    hostEn: 'UNITWIN Network — UNESCO Chair',
+    hostEs: 'Red UNITWIN — Cátedra UNESCO',
+    hostPt: 'Rede UNITWIN — Cátedra UNESCO',
+    kickerFr: "En prélude à l'École d'été régionale",
+    kickerEn: 'A prelude to the regional Summer School',
+    kickerEs: 'En preludio a la Escuela de Verano regional',
+    kickerPt: 'Em prelúdio à Escola de Verão regional',
+    titleFr: 'Sauver les langues, protéger les forêts, transmettre les savoirs',
+    titleEn: 'Saving languages, protecting forests, passing on knowledge',
+    titleEs: 'Salvar las lenguas, proteger los bosques, transmitir los saberes',
+    titlePt: 'Salvar as línguas, proteger as florestas, transmitir os saberes',
+    subtitleFr: 'Langues, savoirs endogènes et biodiversité',
+    subtitleEn: 'Languages, endogenous knowledge and biodiversity',
+    subtitleEs: 'Lenguas, saberes endógenos y biodiversidad',
+    subtitlePt: 'Línguas, saberes endógenos e biodiversidade',
+    video: `${import.meta.env.BASE_URL}assets/prasmesti/news/diner-scientifique/diner-scientifique-2026.mp4`,
+    poster: `${import.meta.env.BASE_URL}assets/prasmesti/news/diner-scientifique/poster.jpg`,
+    bodyFr: [
+      "Le 15 mai 2026, les jardins de la Commission de la CEEAC ont accueilli un dîner scientifique organisé sous l'égide du Réseau UNITWIN et de la Chaire UNESCO, en prélude à l'École d'été régionale. Une soirée pensée comme un trait d'union entre la table et la recherche : diplomates, universitaires, chercheurs et partenaires techniques y ont partagé le même repas et la même question — que perdons-nous, exactement, quand une langue s'éteint ?",
+      "La réception s'est ouverte sur une exposition d'ouvrages et de revues consacrés aux civilisations d'Afrique centrale, parmi lesquels les publications du CICIBA et la revue MUNTU. Les allocutions officielles ont réuni M. Marco Patricio Zambrano, Représentant résident de l'UNESCO au Gabon et auprès de la CEEAC, et S.E. Mariam Mahamat Nour, Ambassadeur et Vice-Présidente de la Commission de la CEEAC, avant la conférence scientifique de la soirée.",
+      "Portée par le Pr Patrick Mouguiama-Daouda, coordonnateur international, cette conférence a défendu une thèse simple et exigeante : les langues d'Afrique centrale sont des archives vivantes de la biodiversité. Les mots qui désignaient le lion, la hyène rayée, le ratel ou l'oryctérope témoignent d'espèces devenues rares ou disparues ; les savoirs endogènes, eux, anticipent souvent des catégories que la science formalisera plus tard — le cas du cercopithèque à queue de soleil, le Mbaya en langue pouvi, ou celui du koulou kamba, en font des précurseurs plutôt que des curiosités.",
+      "La soirée s'est achevée sur la présentation des activités de formation et de recherche adossées à ce programme : un master et une formation doctorale en sciences du patrimoine, et le laboratoire Langue, Culture & Cognition (LCC) créé en 2008, dont les axes de travail — dynamique des langues et des cultures, catégorisation endogène, sauvegarde des langues et des savoirs en danger — dessinent une approche pluridisciplinaire mêlant langues, gènes et culture bantu.",
+    ],
+    bodyEn: [
+      'On 15 May 2026, the gardens of the ECCAS Commission hosted a scientific dinner organised under the aegis of the UNITWIN Network and the UNESCO Chair, as a prelude to the regional Summer School. The evening was conceived as a bridge between the dinner table and research: diplomats, academics, researchers and technical partners shared the same meal and the same question — what exactly do we lose when a language dies?',
+      'The reception opened with an exhibition of books and journals devoted to the civilisations of Central Africa, among them the publications of CICIBA and the journal MUNTU. The official addresses brought together Mr Marco Patricio Zambrano, UNESCO Resident Representative in Gabon and to ECCAS, and H.E. Mariam Mahamat Nour, Ambassador and Vice-President of the ECCAS Commission, ahead of the evening lecture.',
+      'Delivered by Prof. Patrick Mouguiama-Daouda, international coordinator, the lecture defended a simple but demanding thesis: the languages of Central Africa are living archives of biodiversity. The words that once named the lion, the striped hyena, the honey badger or the aardvark bear witness to species now rare or vanished; endogenous knowledge, for its part, often anticipates categories that science will formalise later — the case of the sun-tailed monkey, Mbaya in the Pouvi language, or that of the koulou kamba, makes them forerunners rather than curiosities.',
+      'The evening closed with a presentation of the training and research activities attached to the programme: a master’s degree and doctoral training in heritage sciences, and the Language, Culture & Cognition laboratory (LCC) founded in 2008, whose lines of work — the dynamics of languages and cultures, endogenous categorisation, and the safeguarding of endangered languages and knowledge — outline a multidisciplinary approach combining languages, genes and Bantu culture.',
+    ],
+    bodyEs: [
+      'El 15 de mayo de 2026, los jardines de la Comisión de la CEEAC acogieron una cena científica organizada bajo los auspicios de la Red UNITWIN y de la Cátedra UNESCO, como preludio de la Escuela de Verano regional. Una velada concebida como un puente entre la mesa y la investigación: diplomáticos, universitarios, investigadores y socios técnicos compartieron la misma comida y la misma pregunta: ¿qué perdemos exactamente cuando se extingue una lengua?',
+      'La recepción se abrió con una exposición de obras y revistas dedicadas a las civilizaciones de África Central, entre ellas las publicaciones del CICIBA y la revista MUNTU. Las alocuciones oficiales reunieron al Sr. Marco Patricio Zambrano, Representante Residente de la UNESCO en Gabón y ante la CEEAC, y a S.E. Mariam Mahamat Nour, Embajadora y Vicepresidenta de la Comisión de la CEEAC, antes de la conferencia científica de la velada.',
+      'Impartida por el Pr. Patrick Mouguiama-Daouda, coordinador internacional, la conferencia defendió una tesis sencilla y exigente: las lenguas de África Central son archivos vivos de la biodiversidad. Las palabras que designaban al león, a la hiena rayada, al ratel o al oricteropo dan testimonio de especies hoy raras o desaparecidas; los saberes endógenos, por su parte, anticipan a menudo categorías que la ciencia formalizará más tarde: el caso del cercopiteco de cola solar, el Mbaya en lengua pouvi, o el del koulou kamba, los convierte en precursores más que en curiosidades.',
+      'La velada concluyó con la presentación de las actividades de formación e investigación asociadas al programa: un máster y una formación doctoral en ciencias del patrimonio, y el laboratorio Lengua, Cultura y Cognición (LCC), creado en 2008, cuyos ejes de trabajo —dinámica de las lenguas y las culturas, categorización endógena, salvaguarda de las lenguas y los saberes en peligro— dibujan un enfoque pluridisciplinar que combina lenguas, genes y cultura bantú.',
+    ],
+    bodyPt: [
+      'A 15 de maio de 2026, os jardins da Comissão da CEEAC acolheram um jantar científico organizado sob a égide da Rede UNITWIN e da Cátedra UNESCO, em prelúdio à Escola de Verão regional. Uma noite pensada como uma ponte entre a mesa e a investigação: diplomatas, universitários, investigadores e parceiros técnicos partilharam a mesma refeição e a mesma pergunta — o que perdemos, exatamente, quando uma língua se extingue?',
+      'A receção abriu com uma exposição de obras e revistas dedicadas às civilizações da África Central, entre as quais as publicações do CICIBA e a revista MUNTU. As alocuções oficiais reuniram o Sr. Marco Patricio Zambrano, Representante Residente da UNESCO no Gabão e junto da CEEAC, e S.E. Mariam Mahamat Nour, Embaixadora e Vice-Presidente da Comissão da CEEAC, antes da conferência científica da noite.',
+      'Conduzida pelo Prof. Patrick Mouguiama-Daouda, coordenador internacional, a conferência defendeu uma tese simples e exigente: as línguas da África Central são arquivos vivos da biodiversidade. As palavras que designavam o leão, a hiena-listrada, o ratel ou o oricteropo testemunham espécies hoje raras ou desaparecidas; os saberes endógenos, por seu turno, antecipam muitas vezes categorias que a ciência formalizará mais tarde — o caso do cercopiteco de cauda solar, o Mbaya em língua pouvi, ou o do koulou kamba, faz deles precursores e não curiosidades.',
+      'A noite terminou com a apresentação das atividades de formação e investigação ligadas ao programa: um mestrado e uma formação doutoral em ciências do património, e o laboratório Língua, Cultura & Cognição (LCC), criado em 2008, cujos eixos de trabalho — dinâmica das línguas e das culturas, categorização endógena, salvaguarda das línguas e dos saberes em perigo — desenham uma abordagem pluridisciplinar que combina línguas, genes e cultura banta.',
+    ],
+    highlightsFr: [
+      "Les langues comme témoins de la perte de la biodiversité : la disparition du lion, la raréfaction de la hyène rayée, du ratel et de l'oryctérope.",
+      'Les savoirs endogènes comme précurseurs de la science : le cas du cercopithèque à queue de soleil, le Mbaya en langue pouvi.',
+      "L'intérêt de la cryptobiologie : le cas du koulou kamba.",
+      'Une exposition de publications sur les civilisations bantu (CICIBA, revue MUNTU).',
+    ],
+    highlightsEn: [
+      'Languages as witnesses to the loss of biodiversity: the disappearance of the lion, the growing rarity of the striped hyena, the honey badger and the aardvark.',
+      'Endogenous knowledge as a forerunner of science: the case of the sun-tailed monkey, Mbaya in the Pouvi language.',
+      'The relevance of cryptobiology: the case of the koulou kamba.',
+      'An exhibition of publications on Bantu civilisations (CICIBA, the journal MUNTU).',
+    ],
+    highlightsEs: [
+      'Las lenguas como testigos de la pérdida de biodiversidad: la desaparición del león, la rarefacción de la hiena rayada, el ratel y el oricteropo.',
+      'Los saberes endógenos como precursores de la ciencia: el caso del cercopiteco de cola solar, el Mbaya en lengua pouvi.',
+      'El interés de la criptobiología: el caso del koulou kamba.',
+      'Una exposición de publicaciones sobre las civilizaciones bantúes (CICIBA, revista MUNTU).',
+    ],
+    highlightsPt: [
+      'As línguas como testemunhas da perda de biodiversidade: o desaparecimento do leão, a rarefação da hiena-listrada, do ratel e do oricteropo.',
+      'Os saberes endógenos como precursores da ciência: o caso do cercopiteco de cauda solar, o Mbaya em língua pouvi.',
+      'O interesse da criptobiologia: o caso do koulou kamba.',
+      'Uma exposição de publicações sobre as civilizações bantas (CICIBA, revista MUNTU).',
+    ],
+    speakers: [
+      {
+        name: 'Marco Patricio Zambrano',
+        roleFr: "Représentant résident de l'UNESCO au Gabon et auprès de la CEEAC",
+        roleEn: 'UNESCO Resident Representative in Gabon and to ECCAS',
+        roleEs: 'Representante Residente de la UNESCO en Gabón y ante la CEEAC',
+        rolePt: 'Representante Residente da UNESCO no Gabão e junto da CEEAC',
+      },
+      {
+        name: 'S.E. Mariam Mahamat Nour',
+        roleFr: 'Ambassadeur, Vice-Présidente de la Commission de la CEEAC',
+        roleEn: 'Ambassador, Vice-President of the ECCAS Commission',
+        roleEs: 'Embajadora, Vicepresidenta de la Comisión de la CEEAC',
+        rolePt: 'Embaixadora, Vice-Presidente da Comissão da CEEAC',
+      },
+      {
+        name: 'Pr Patrick Mouguiama-Daouda',
+        roleFr: 'Coordonnateur international',
+        roleEn: 'International coordinator',
+        roleEs: 'Coordinador internacional',
+        rolePt: 'Coordenador internacional',
+      },
+    ],
+  },
+};
+
+// L'index signature permet à pick()/pickArray() (qui adressent les champs par
+// « base + suffixe de langue ») d'accepter ces objets.
+export interface NewsDetailSpeaker {
+  [key: string]: unknown;
+  name: string;
+  roleFr: string;
+  roleEn: string;
+  roleEs: string;
+  rolePt: string;
+}
+
+export interface NewsDetail {
+  [key: string]: unknown;
+  dateFr: string; dateEn: string; dateEs: string; datePt: string;
+  placeFr: string; placeEn: string; placeEs: string; placePt: string;
+  hostFr: string; hostEn: string; hostEs: string; hostPt: string;
+  kickerFr: string; kickerEn: string; kickerEs: string; kickerPt: string;
+  titleFr: string; titleEn: string; titleEs: string; titlePt: string;
+  subtitleFr: string; subtitleEn: string; subtitleEs: string; subtitlePt: string;
+  video: string;
+  poster: string;
+  bodyFr: string[]; bodyEn: string[]; bodyEs: string[]; bodyPt: string[];
+  highlightsFr: string[]; highlightsEn: string[]; highlightsEs: string[]; highlightsPt: string[];
+  speakers: NewsDetailSpeaker[];
+}
 
 export const conceptionSteps = [
   {
