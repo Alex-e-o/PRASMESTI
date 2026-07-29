@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { getPrivateUser } from '../../private/auth';
-import { privateProfiles } from '../../data/countryProfiles';
+import { usePrivateAuth } from '../../private/PrivateAuthContext';
+import { countryNameBySlug } from '../../data/eccasFlags';
 import { usePrivateI18n } from '../../private/privateI18n';
 import {
-  getQuestionnaire,
-  saveQuestionnaire,
-  saveQuestionnaireDraft,
+  getCountryReport,
+  saveDraft,
+  submitReport,
   type QuestionnaireAnswers,
+  type ReportStatus,
 } from '../../lib/countryStore';
 
 type TriState = '' | 'oui' | 'non';
@@ -92,21 +93,26 @@ function MatrixSection({
   );
 }
 
-function countryLabelFromSlug(slug: string): string {
-  const profile = privateProfiles.find((p) => p.countrySlug === slug);
-  if (profile) return profile.name.replace('Point focal — ', '');
-  return slug.charAt(0).toUpperCase() + slug.slice(1);
-}
-
 function PrivateQuestionnairePage() {
-  const user = getPrivateUser();
-  const slug = user.countrySlug ?? 'gabon';
-  const countryLabel = countryLabelFromSlug(slug);
-  const { t, list } = usePrivateI18n();
+  const { user } = usePrivateAuth();
+  const { t, list, language } = usePrivateI18n();
+  // Un compte pays remplit son propre questionnaire ; l'admin, faute de pays
+  // rattaché, travaille sur celui du pays hôte du siège de la CEEAC.
+  const slug = user?.countrySlug ?? 'gabon';
+  const countryLabel = countryNameBySlug(slug, language);
 
   const [answers, setAnswers] = useState<QuestionnaireAnswers | null>(null);
-  const [status, setStatus] = useState<'idle' | 'savingDraft' | 'draftSaved' | 'submitting' | 'submitted'>('idle');
+  const [reportStatus, setReportStatus] = useState<ReportStatus | null>(null);
+  const [savedAt, setSavedAt] = useState<string | undefined>(undefined);
+  const [status, setStatus] = useState<'idle' | 'savingDraft' | 'draftSaved' | 'submitting' | 'submitted' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
+  // Sans cette référence, la minuterie d'un message précédent efface le suivant :
+  // soumettre juste après avoir enregistré un brouillon faisait disparaître la
+  // confirmation de soumission au bout du délai restant du premier message.
+  const resetTimer = useRef<number | undefined>(undefined);
+
+  useEffect(() => () => window.clearTimeout(resetTimer.current), []);
 
   const generalRows = list('generalRows');
   const policyRows = list('policyRows');
@@ -117,8 +123,11 @@ function PrivateQuestionnairePage() {
 
   useEffect(() => {
     let active = true;
-    getQuestionnaire(slug).then((data) => {
-      if (active) setAnswers(data ?? {});
+    void getCountryReport(slug).then((report) => {
+      if (!active) return;
+      setAnswers(report?.answers ?? {});
+      setReportStatus(report?.status ?? null);
+      setSavedAt(report?.updatedAt);
     });
     return () => {
       active = false;
@@ -127,20 +136,34 @@ function PrivateQuestionnairePage() {
 
   const save = async (mode: 'draft' | 'submit') => {
     if (!formRef.current) return;
+    window.clearTimeout(resetTimer.current);
     setStatus(mode === 'submit' ? 'submitting' : 'savingDraft');
+    setErrorMessage('');
+
     const formData = new FormData(formRef.current);
     const next: QuestionnaireAnswers = {};
     formData.forEach((value, key) => {
       next[key] = typeof value === 'string' ? value : '';
     });
-    if (mode === 'submit') {
-      await saveQuestionnaire(slug, next); // recalcule + publie les indicateurs publics
-    } else {
-      await saveQuestionnaireDraft(slug, next); // réponses seules, rien de publié
+
+    const result =
+      mode === 'submit'
+        ? await submitReport(slug, next) // recalcule et publie les indicateurs publics
+        : await saveDraft(slug, next); // réponses seules, rien n'est publié
+
+    // Un échec doit se voir : la version précédente laissait croire à un
+    // enregistrement réussi même quand la base l'avait refusé.
+    if (!result.ok) {
+      setErrorMessage(result.error);
+      setStatus('error');
+      return;
     }
+
     setAnswers(next);
+    setReportStatus(mode === 'submit' ? 'submitted' : 'draft');
+    setSavedAt(new Date().toISOString());
     setStatus(mode === 'submit' ? 'submitted' : 'draftSaved');
-    window.setTimeout(() => setStatus('idle'), 4000);
+    resetTimer.current = window.setTimeout(() => setStatus('idle'), 6000);
   };
 
   if (!answers) {
@@ -167,6 +190,18 @@ function PrivateQuestionnairePage() {
           <p className="private-section-kicker">{t('qKicker')} — {countryLabel}</p>
           <h2 className="private-section-title">{t('qTitle')}</h2>
           <p className="private-section-body">{t('qBody')}</p>
+          {reportStatus ? (
+            <p className="private-questionnaire-state">
+              <span className={`private-table-badge is-${reportStatus === 'submitted' ? 'statusSubmitted' : 'statusDraft'}`}>
+                {reportStatus === 'submitted' ? t('qStatusSubmitted') : t('qStatusDraft')}
+              </span>
+              {savedAt ? (
+                <span className="private-questionnaire-state-date">
+                  {t('qSavedAt')} {new Date(savedAt).toLocaleString(language)}
+                </span>
+              ) : null}
+            </p>
+          ) : null}
         </div>
 
         <section className="private-questionnaire-meta">
@@ -313,13 +348,16 @@ function PrivateQuestionnairePage() {
         </div>
 
         {status === 'draftSaved' && (
-          <p className="private-section-body" style={{ marginTop: '0.75rem', color: '#47597a', fontWeight: 600 }}>
-            {t('msgDraft')}
-          </p>
+          <p className="private-form-message is-draft">{t('msgDraft')}</p>
         )}
         {status === 'submitted' && (
-          <p className="private-section-body" style={{ marginTop: '0.75rem', color: '#2b7f5c', fontWeight: 600 }}>
+          <p className="private-form-message is-success">
             {t('msgSubmittedA')} {countryLabel} {t('msgSubmittedB')}
+          </p>
+        )}
+        {status === 'error' && (
+          <p className="private-form-message is-error" role="alert">
+            {t('msgError')} {errorMessage}
           </p>
         )}
       </form>

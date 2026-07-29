@@ -1,29 +1,33 @@
 import { ArrowLeft, LockKeyhole, User } from 'lucide-react';
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { isPrivateAuthenticated, loginPrivate } from '../../private/auth';
+import { isSupabaseConfigured } from '../../lib/supabase';
+import { usePrivateAuth } from '../../private/PrivateAuthContext';
 import { usePrivateI18n } from '../../private/privateI18n';
 
 function PrivateLoginPage() {
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('Prasmesti@2026');
+  // Le pré-remplissage n'a de sens qu'en démonstration ; dès qu'un backend réel
+  // est branché, les champs partent vides.
+  const [username, setUsername] = useState(isSupabaseConfigured ? '' : 'admin');
+  const [password, setPassword] = useState(isSupabaseConfigured ? '' : 'Prasmesti@2026');
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = usePrivateI18n();
+  const { status, signIn } = usePrivateAuth();
 
   useEffect(() => {
-    if (isPrivateAuthenticated()) {
+    if (status === 'authenticated') {
       navigate('/private/dashboard', { replace: true });
     }
-  }, [navigate]);
+  }, [status, navigate]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
     setError('');
-    const result = await loginPrivate(username, password);
+    const result = await signIn(username, password);
     setSubmitting(false);
 
     if (!result.ok) {
@@ -43,13 +47,17 @@ function PrivateLoginPage() {
           <h1 className="private-login-title">{t('loginTitle')}</h1>
           <p className="private-login-body">{t('loginBody')}</p>
 
-          <div className="private-login-note">
-            <p className="private-login-note-title">{t('loginDemoTitle')}</p>
-            <p className="private-login-note-body">{t('loginDemoAccounts')}</p>
-            <p className="private-login-note-body">
-              {t('loginDemoPassword')} : <strong>Prasmesti@2026</strong>
-            </p>
-          </div>
+          {/* Identifiants de démonstration : masqués dès que les comptes réels
+              existent, pour ne pas publier un mot de passe sur une page ouverte. */}
+          {!isSupabaseConfigured && (
+            <div className="private-login-note">
+              <p className="private-login-note-title">{t('loginDemoTitle')}</p>
+              <p className="private-login-note-body">{t('loginDemoAccounts')}</p>
+              <p className="private-login-note-body">
+                {t('loginDemoPassword')} : <strong>Prasmesti@2026</strong>
+              </p>
+            </div>
+          )}
         </div>
 
         <form className="private-login-form" onSubmit={handleSubmit}>

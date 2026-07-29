@@ -1,6 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { HashRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
-import RequirePrivateAuth from './private/RequirePrivateAuth';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 // Titre de document par page (onglet, favoris, partage). Une seule source,
 // indexée par la route, plutôt qu'un <title> statique unique.
@@ -45,13 +44,8 @@ const ImplementationStatusPage = lazy(() => import('./pages/presentation/Impleme
 const ImplementationGabonPage = lazy(() => import('./pages/presentation/ImplementationGabonPage'));
 const ImplementationCountryPage = lazy(() => import('./pages/presentation/ImplementationCountryPage'));
 const NewsDetailPage = lazy(() => import('./pages/news/NewsDetailPage'));
-const PrivateLayout = lazy(() => import('./private/PrivateLayout'));
-const PrivateLoginPage = lazy(() => import('./pages/private/PrivateLoginPage'));
-const PrivateDashboardPage = lazy(() => import('./pages/private/PrivateDashboardPage'));
-const PrivateIndicatorPage = lazy(() => import('./pages/private/PrivateIndicatorPage'));
-const PrivateQuestionnairePage = lazy(() => import('./pages/private/PrivateQuestionnairePage'));
-const PrivateStatisticsPage = lazy(() => import('./pages/private/PrivateStatisticsPage'));
-const PrivateHistoryPage = lazy(() => import('./pages/private/PrivateHistoryPage'));
+// L'espace privé déclare ses propres sous-routes (cf. private/PrivateArea).
+const PrivateArea = lazy(() => import('./private/PrivateArea'));
 
 function App() {
   return (
@@ -73,17 +67,7 @@ function App() {
           <Route path="/presentation/implementation/gabon" element={<ImplementationGabonPage />} />
           <Route path="/presentation/implementation/:slug" element={<ImplementationCountryPage />} />
           <Route path="/news/:slug" element={<NewsDetailPage />} />
-          <Route path="/private/login" element={<PrivateLoginPage />} />
-          <Route element={<RequirePrivateAuth />}>
-            <Route path="/private" element={<PrivateLayout />}>
-              <Route index element={<Navigate to="dashboard" replace />} />
-              <Route path="dashboard" element={<PrivateDashboardPage />} />
-              <Route path="indicateur/:slug" element={<PrivateIndicatorPage />} />
-              <Route path="questionnaire" element={<PrivateQuestionnairePage />} />
-              <Route path="statistiques" element={<PrivateStatisticsPage />} />
-              <Route path="historique" element={<PrivateHistoryPage />} />
-            </Route>
-          </Route>
+          <Route path="/private/*" element={<PrivateArea />} />
         </Routes>
       </Suspense>
     </Router>

@@ -1,59 +1,68 @@
 # Configuration Supabase — espace privé PRASMESTI
 
-L'application fonctionne **sans Supabase** (fallback local `localStorage`, comptes de
-démonstration ci-dessous). Pour activer la persistance partagée (cloud), suivre ces étapes.
+L'application fonctionne **sans Supabase** : elle bascule alors sur un mode démonstration
+(`localStorage`, comptes de l'annuaire `src/data/countryProfiles.ts`). Les étapes ci-dessous
+activent la persistance partagée réelle.
+
+## Ce que la base gère
+
+| Table | Rôle |
+|---|---|
+| `profiles` | rôle (`admin` / `country`), pays rattaché, nom, photo de profil |
+| `country_reports` | questionnaires versionnés, statut `draft` / `submitted` |
+| `country_stats` | indicateurs publiés, **lecture publique** (pages « État de mise en œuvre ») |
+| `activity_log` | journal en ajout seul, **lecture réservée à l'admin** |
+| bucket `avatars` | photos de profil, privé, servi par URL signée |
 
 ## 1. Créer le projet
-1. Aller sur https://supabase.com → **New project** (région Europe conseillée).
-2. Une fois créé : **Project Settings → API**, récupérer :
-   - **Project URL** → `VITE_SUPABASE_URL`
-   - **anon public** → `VITE_SUPABASE_ANON_KEY`
+1. https://supabase.com → **New project** (région Europe conseillée).
+2. **Project Settings → API** : relever **Project URL** et la clé **anon public**.
 
 ## 2. Variables d'environnement
-Créer un fichier `new-prasmesti/.env` :
+Créer `new-prasmesti/.env` :
 
 ```
 VITE_SUPABASE_URL=https://xxxx.supabase.co
 VITE_SUPABASE_ANON_KEY=eyJhbGci...
 ```
 
-> La clé `anon` est **publiable** (la sécurité repose sur les règles RLS). Pour une démo
-> portable via GitHub, tu peux committer ces valeurs (dans `.env` ou en dur), c'est sans risque.
+> La clé `anon` est publiable : la sécurité repose sur les règles RLS.
+> La clé **`service_role`**, elle, contourne toute la RLS — ne jamais la committer
+> ni la préfixer `VITE_` (tout `VITE_*` se retrouve dans le bundle public).
 
 ## 3. Schéma
-Dans **SQL Editor**, exécuter le contenu de [`schema.sql`](./schema.sql).
+Dans **SQL Editor**, exécuter [`schema.sql`](./schema.sql). Le fichier est rejouable.
+
+Points à connaître :
+- les fonctions `auth_role()` / `is_admin()` sont en `SECURITY DEFINER` — sans cela, une
+  politique de `profiles` qui interroge `profiles` provoque une récursion infinie ;
+- un trigger empêche un compte pays de se promouvoir admin ou de changer de pays ;
+- les enregistrements de questionnaires et les publications d'indicateurs sont journalisés
+  par des triggers, pas par le navigateur.
 
 ## 4. Créer les 12 comptes
-Dans **Authentication → Users → Add user** (email + mot de passe, "Auto-confirm" activé),
-créer les comptes suivants, puis insérer leur profil (voir SQL plus bas).
 
-Mot de passe de démonstration commun : **`Prasmesti@2026`**
-
-| Rôle | Email | Pays |
-|------|-------|------|
-| admin | admin@prasmesti.ceeac-eccas.org | — |
-| country | gabon@prasmesti.ceeac-eccas.org | gabon |
-| country | angola@prasmesti.ceeac-eccas.org | angola |
-| country | burundi@prasmesti.ceeac-eccas.org | burundi |
-| country | cameroun@prasmesti.ceeac-eccas.org | cameroon |
-| country | centrafrique@prasmesti.ceeac-eccas.org | central-african-republic |
-| country | congo@prasmesti.ceeac-eccas.org | congo |
-| country | guinee-equatoriale@prasmesti.ceeac-eccas.org | equatorial-guinea |
-| country | rdc@prasmesti.ceeac-eccas.org | drc |
-| country | rwanda@prasmesti.ceeac-eccas.org | rwanda |
-| country | sao-tome@prasmesti.ceeac-eccas.org | sao-tome |
-| country | tchad@prasmesti.ceeac-eccas.org | chad |
-
-Puis lier chaque utilisateur à un profil (remplacer les UUID par ceux créés) :
-
-```sql
--- exemple : insert into public.profiles (id, role, country_slug, name)
--- values ('<uuid-auth-user>', 'country', 'gabon', 'Point focal — Gabon');
+```bash
+SUPABASE_URL="https://xxxx.supabase.co" SUPABASE_SERVICE_ROLE_KEY="eyJ..." node scripts/seed-supabase.mjs
 ```
 
-> Astuce : on peut aussi automatiser cette création via un script `supabase` admin
-> (clé service_role) — à ne **pas** committer. Demandez-moi si vous voulez ce script.
+Le script crée 1 admin + 1 compte par État membre, génère un **mot de passe unique par
+compte** et l'affiche une seule fois — à transmettre à chaque point focal par un canal sûr.
+Il est rejouable : un compte déjà présent voit simplement son profil mis à jour.
 
-## 5. Vérifier
-Relancer `npm run dev`. Au login, les comptes ci-dessus fonctionnent via Supabase.
-Sans `.env`, ce sont les **mêmes identifiants** qui fonctionnent en fallback local.
+Pour un mot de passe commun (démonstration seulement) : ajouter `SEED_PASSWORD="…"`.
+
+## 5. Données de départ : aucune, volontairement
+
+Aucun indicateur n'est pré-rempli pour un État membre. Tant qu'un pays n'a rien soumis, il
+n'a pas de ligne dans `country_stats` et l'interface affiche « données non encore
+transmises » — un état distinct d'un score de zéro, qui se lirait comme un mauvais résultat.
+Chaque État reste ainsi l'unique source de ses propres chiffres, et aucun classement
+inter-pays ne repose sur des valeurs estimées.
+
+## 6. Vérifier
+
+Relancer `npm run dev`, se connecter, enregistrer un brouillon puis soumettre le
+questionnaire : la page publique du pays doit passer de « données non encore transmises »
+aux indicateurs calculés, et l'historique (compte admin) doit montrer la connexion,
+l'enregistrement du brouillon, la soumission et la publication.

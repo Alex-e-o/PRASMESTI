@@ -10,9 +10,10 @@ import {
   PanelLeftOpen,
   ShieldCheck,
 } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { getPrivateUser, logoutPrivate } from './auth';
+import { usePrivateAuth } from './PrivateAuthContext';
+import { uploadAvatar } from './avatar';
 import { usePrivateI18n, type PVKey } from './privateI18n';
 import PrivateLangToggle from './PrivateLangToggle';
 
@@ -26,25 +27,45 @@ const initialsOf = (name: string): string =>
     .map((w) => w.charAt(0).toUpperCase())
     .join('') || 'PR';
 
-const navigation: { to: string; labelKey: PVKey; icon: typeof LayoutGrid }[] = [
+type NavItem = { to: string; labelKey: PVKey; icon: typeof LayoutGrid; adminOnly?: boolean };
+
+const navigation: NavItem[] = [
   { to: '/private/dashboard', labelKey: 'navDashboard', icon: LayoutGrid },
   { to: '/private/questionnaire', labelKey: 'navQuestionnaire', icon: ClipboardList },
   { to: '/private/statistiques', labelKey: 'navStatistics', icon: BarChart3 },
-  { to: '/private/historique', labelKey: 'navHistory', icon: History },
+  // Le journal d'activité couvre tous les comptes : il ne regarde que l'admin.
+  { to: '/private/historique', labelKey: 'navHistory', icon: History, adminOnly: true },
 ];
 
 function PrivateLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [avatarError, setAvatarError] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
-  const user = useMemo(() => getPrivateUser(), []);
+  const { user, isAdmin, signOut, refresh } = usePrivateAuth();
   const { t } = usePrivateI18n();
+
+  const visibleNavigation = useMemo(
+    () => navigation.filter((item) => !item.adminOnly || isAdmin),
+    [isAdmin],
+  );
 
   const pageTitleKey = useMemo<PVKey>(() => {
     const match = navigation.find((item) => location.pathname.startsWith(item.to));
     return match?.labelKey ?? 'privateFallbackTitle';
   }, [location.pathname]);
+
+  const handleAvatarChange = async (file: File | undefined) => {
+    if (!file) return;
+    setAvatarError('');
+    const result = await uploadAvatar(file);
+    if (result.ok) await refresh();
+    else setAvatarError(result.error);
+  };
+
+  if (!user) return null;
 
   return (
     <div className={`private-shell${isSidebarCollapsed ? ' is-sidebar-collapsed' : ''}`}>
@@ -62,7 +83,7 @@ function PrivateLayout() {
         </div>
 
         <nav className="private-nav">
-          {navigation.map(({ to, labelKey, icon: Icon }) => (
+          {visibleNavigation.map(({ to, labelKey, icon: Icon }) => (
             <NavLink
               key={to}
               to={to}
@@ -125,12 +146,34 @@ function PrivateLayout() {
             <PrivateLangToggle />
 
             <div className="private-user-card">
-              <div className="private-user-avatar private-user-avatar-initials" aria-hidden="true">
-                {initialsOf(user.name)}
-              </div>
+              <button
+                type="button"
+                className="private-user-avatar-button"
+                onClick={() => fileInputRef.current?.click()}
+                title={t('avatarChange')}
+                aria-label={t('avatarChange')}
+              >
+                {user.avatarUrl ? (
+                  <img src={user.avatarUrl} alt="" className="private-user-avatar" />
+                ) : (
+                  <span className="private-user-avatar private-user-avatar-initials" aria-hidden="true">
+                    {initialsOf(user.name)}
+                  </span>
+                )}
+              </button>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                className="private-visually-hidden"
+                onChange={(event) => {
+                  void handleAvatarChange(event.target.files?.[0]);
+                  event.target.value = '';
+                }}
+              />
               <div className="private-user-copy">
                 <p className="private-user-name">{user.name}</p>
-                <p className="private-user-email">{user.email}</p>
+                <p className="private-user-email">{avatarError || user.email}</p>
               </div>
             </div>
 
@@ -138,8 +181,7 @@ function PrivateLayout() {
               type="button"
               className="private-logout-button"
               onClick={() => {
-                logoutPrivate();
-                navigate('/private/login', { replace: true });
+                void signOut().then(() => navigate('/private/login', { replace: true }));
               }}
             >
               <LogOut size={16} />

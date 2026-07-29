@@ -1,28 +1,33 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FlagCloud } from '../FlagCloud';
 import { eccasFlags } from '../../data/eccasFlags';
+import { listCountryStats, type CountryStats } from '../../lib/countryStore';
 import { useLanguage, pick } from '../../languageContext';
-
-const countrySlugByNameEn: Record<string, string> = {
-  Gabon: 'gabon',
-  Angola: 'angola',
-  Burundi: 'burundi',
-  Cameroon: 'cameroon',
-  'Central African Republic': 'central-african-republic',
-  'Republic of the Congo': 'congo',
-  'Equatorial Guinea': 'equatorial-guinea',
-  'DR Congo': 'drc',
-  Rwanda: 'rwanda',
-  'Sao Tome and Principe': 'sao-tome',
-  Chad: 'chad',
-};
 
 function ImplementationStatus() {
   const { language, translate } = useLanguage();
   const linkHint = {
     fr: 'Voir les statistiques', en: 'View statistics', es: 'Ver las estadísticas', pt: 'Ver as estatísticas',
   }[language];
+
+  // Le badge reflète l'état réel de la collecte plutôt qu'un « Actif » uniforme.
+  const [stats, setStats] = useState<Record<string, CountryStats>>({});
+  useEffect(() => {
+    let active = true;
+    void listCountryStats().then((data) => {
+      if (active) setStats(data);
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const badge = {
+    submitted: { fr: 'Données transmises', en: 'Data submitted', es: 'Datos transmitidos', pt: 'Dados transmitidos' }[language],
+    pending: { fr: 'En attente de transmission', en: 'Awaiting submission', es: 'A la espera de transmisión', pt: 'A aguardar transmissão' }[language],
+  };
 
   return (
     <>
@@ -68,7 +73,7 @@ function ImplementationStatus() {
 
           <div className="impl-countries-grid">
             {eccasFlags.map((flag, i) => {
-              const slug = countrySlugByNameEn[flag.nameEn];
+              const { slug } = flag;
               const card = (
                 <motion.div
                   key={flag.nameEn}
@@ -87,8 +92,10 @@ function ImplementationStatus() {
                     <p className="impl-country-name">
                       {pick(flag, 'name', language)}
                     </p>
-                    <span className="impl-status-badge impl-status-active">
-                      {translate('implStatusActive') as string}
+                    <span
+                      className={`impl-status-badge ${stats[slug] ? 'impl-status-active' : 'impl-status-pending'}`}
+                    >
+                      {stats[slug] ? badge.submitted : badge.pending}
                     </span>
                     {slug && <span className="impl-country-link-hint">{linkHint}</span>}
                   </div>

@@ -1,28 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CircleCheck, Clock3, TrendingUp, TriangleAlert } from 'lucide-react';
+import { ArrowLeft, CircleCheck, ListChecks, TriangleAlert } from 'lucide-react';
 import PresSubPageHeader from './PresSubPageHeader';
 import { useLanguage } from '../../languageContext';
-import { localizeDomainLabel, localizeBlockerLabel } from '../../data/implementationCountries';
-import { getCountryStatsOverride, type CountryStatsOverride } from '../../lib/countryStore';
-
-// Valeurs de démonstration utilisées en repli tant que le questionnaire du pays
-// n'a pas été renseigné (cf. getCountryStatsOverride('gabon')).
-const monthlyCompletion = [38, 44, 49, 55, 61, 66, 70];
-const domainProgress = [
-  { label: 'Policy alignment', value: 82 },
-  { label: 'Data reporting', value: 74 },
-  { label: 'Teacher training', value: 63 },
-  { label: 'Digital tools', value: 58 },
-  { label: 'STI innovation', value: 47 },
-];
-const blockers = [
-  { label: 'Financial', value: 34, color: '#d4641a' },
-  { label: 'Administrative', value: 28, color: '#1e5299' },
-  { label: 'Policy', value: 22, color: '#5a8ec8' },
-  { label: 'Infrastructure', value: 16, color: '#9ad1ff' },
-];
+import {
+  getCountryStats,
+  localizeBlockerLabel,
+  localizeDomainLabel,
+  subscribeToCountryStats,
+  type CountryStats,
+} from '../../lib/countryStore';
 
 type WikiSummary = {
   title: string;
@@ -30,16 +18,18 @@ type WikiSummary = {
   content_urls?: { desktop?: { page?: string } };
   thumbnail?: { source?: string };
 };
+
+// Chefs-lieux de province : repères géographiques, sans indicateur associé.
 const gabonPoints = [
-  { name: 'Libreville', province: 'Estuaire', x: 102, y: 108, status: 'high', labelAnchor: 'start' as const },
-  { name: 'Port-Gentil', province: 'Ogooué-Maritime', x: 78, y: 132, status: 'medium', labelAnchor: 'start' as const },
-  { name: 'Lambaréné', province: 'Moyen-Ogooué', x: 132, y: 145, status: 'medium', labelAnchor: 'start' as const },
-  { name: 'Oyem', province: 'Woleu-Ntem', x: 172, y: 54, status: 'high', labelAnchor: 'start' as const },
-  { name: 'Mouila', province: 'Ngounié', x: 150, y: 188, status: 'low', labelAnchor: 'start' as const },
-  { name: 'Tchibanga', province: 'Nyanga', x: 124, y: 232, status: 'low', labelAnchor: 'start' as const },
-  { name: 'Makokou', province: 'Ogooué-Ivindo', x: 226, y: 96, status: 'high', labelAnchor: 'end' as const },
-  { name: 'Koulamoutou', province: 'Ogooué-Lolo', x: 214, y: 162, status: 'medium', labelAnchor: 'end' as const },
-  { name: 'Franceville', province: 'Haut-Ogooué', x: 252, y: 218, status: 'medium', labelAnchor: 'end' as const },
+  { name: 'Libreville', province: 'Estuaire', x: 102, y: 108, labelAnchor: 'start' as const },
+  { name: 'Port-Gentil', province: 'Ogooué-Maritime', x: 78, y: 132, labelAnchor: 'start' as const },
+  { name: 'Lambaréné', province: 'Moyen-Ogooué', x: 132, y: 145, labelAnchor: 'start' as const },
+  { name: 'Oyem', province: 'Woleu-Ntem', x: 172, y: 54, labelAnchor: 'start' as const },
+  { name: 'Mouila', province: 'Ngounié', x: 150, y: 188, labelAnchor: 'start' as const },
+  { name: 'Tchibanga', province: 'Nyanga', x: 124, y: 232, labelAnchor: 'start' as const },
+  { name: 'Makokou', province: 'Ogooué-Ivindo', x: 226, y: 96, labelAnchor: 'end' as const },
+  { name: 'Koulamoutou', province: 'Ogooué-Lolo', x: 214, y: 162, labelAnchor: 'end' as const },
+  { name: 'Franceville', province: 'Haut-Ogooué', x: 252, y: 218, labelAnchor: 'end' as const },
 ];
 
 function ImplementationGabonStats() {
@@ -49,41 +39,42 @@ function ImplementationGabonStats() {
   const [wikiError, setWikiError] = React.useState('');
   const [wikiSummary, setWikiSummary] = React.useState<WikiSummary | null>(null);
 
-  // Indicateurs pilotés par le questionnaire privé du Gabon (repli sur le mock).
-  const [override, setOverride] = React.useState<CountryStatsOverride | null>(null);
+  // Indicateurs issus du questionnaire soumis par le Gabon lui-même.
+  const [stats, setStats] = React.useState<CountryStats | null>(null);
+  const [loaded, setLoaded] = React.useState(false);
+
   React.useEffect(() => {
     let active = true;
-    getCountryStatsOverride('gabon').then((data) => {
-      if (active) setOverride(data);
-    });
+    const load = () =>
+      getCountryStats('gabon').then((data) => {
+        if (!active) return;
+        setStats(data);
+        setLoaded(true);
+      });
+    void load();
+    const unsubscribe = subscribeToCountryStats('gabon', () => void load());
     return () => {
       active = false;
+      unsubscribe();
     };
   }, []);
 
-  const effDomain = override?.domainProgress?.length ? override.domainProgress : domainProgress;
-  const effBlockers = override?.blockers?.length ? override.blockers : blockers;
-  const completionValue = override?.completion ?? monthlyCompletion[monthlyCompletion.length - 1];
-  const blockerCount = override ? effBlockers.filter((item) => item.value > 0).length : 4;
-  // La courbe garde l'historique de démo et se termine sur la valeur du questionnaire.
-  const trend = override ? [...monthlyCompletion.slice(0, -1), completionValue] : monthlyCompletion;
+  const domains = stats?.domainProgress ?? [];
+  const declaredBlockers = (stats?.blockers ?? []).filter((item) => item.value > 0);
 
   // Dégradé du donut reconstruit à partir des proportions réelles des blocages.
   const donutGradient = (() => {
     let acc = 0;
-    const stops = effBlockers.map((item, index) => {
+    const stops = declaredBlockers.map((item, index) => {
       const start = acc;
       acc += item.value;
-      const end = index === effBlockers.length - 1 ? 100 : acc;
+      const end = index === declaredBlockers.length - 1 ? 100 : acc;
       return `${item.color} ${start}% ${end}%`;
     });
     return `conic-gradient(${stops.join(', ')})`;
   })();
 
-  const maxDomain = Math.max(...effDomain.map((item) => item.value), 1);
-  const linePoints = trend
-    .map((value, idx) => `${idx * 90},${280 - value * 2.1}`)
-    .join(' ');
+  const maxDomain = Math.max(...domains.map((item) => item.value), 1);
   const isFr = language === 'fr';
   const L = (o: { fr: string; en: string; es: string; pt: string }) => o[language];
   const copy = {
@@ -93,27 +84,23 @@ function ImplementationGabonStats() {
     mapTitle: L({ fr: 'Carte structurelle de mise en œuvre du Gabon', en: 'Gabon implementation structure map', es: 'Mapa estructural de implementación de Gabón', pt: 'Mapa estrutural de implementação do Gabão' }),
     mapSub: L({ fr: 'Points focaux indicatifs issus de la couverture du questionnaire et des rapports terrain.', en: 'Indicative focal points from questionnaire coverage and field reporting.', es: 'Puntos focales indicativos derivados de la cobertura del cuestionario y de los informes de terreno.', pt: 'Pontos focais indicativos resultantes da cobertura do questionário e dos relatórios de terreno.' }),
     kpiCompletion: L({ fr: 'Taux global de mise en œuvre', en: 'Overall completion', es: 'Tasa global de implementación', pt: 'Taxa global de implementação' }),
-    kpiProgress: L({ fr: 'Actions en cours', en: 'Actions in progress', es: 'Acciones en curso', pt: 'Ações em curso' }),
-    kpiGrowth: L({ fr: 'Progression trimestrielle', en: 'Quarterly growth', es: 'Progresión trimestral', pt: 'Progressão trimestral' }),
-    kpiBlockers: L({ fr: 'Blocages critiques', en: 'Critical blockers', es: 'Bloqueos críticos', pt: 'Bloqueios críticos' }),
-    trend: L({ fr: 'Tendance de mise en œuvre (2026)', en: 'Implementation trend (2026)', es: 'Tendencia de implementación (2026)', pt: 'Tendência de implementação (2026)' }),
+    kpiCoverage: L({ fr: 'Couverture du questionnaire', en: 'Questionnaire coverage', es: 'Cobertura del cuestionario', pt: 'Cobertura do questionário' }),
+    kpiBlockers: L({ fr: 'Types de blocages déclarés', en: 'Reported blocker types', es: 'Tipos de bloqueos declarados', pt: 'Tipos de bloqueios declarados' }),
     domains: L({ fr: 'Progrès par domaine', en: 'Progress by domain', es: 'Progreso por ámbito', pt: 'Progresso por domínio' }),
     blockers: L({ fr: 'Répartition des blocages', en: 'Blocker distribution', es: 'Distribución de los bloqueos', pt: 'Distribuição dos bloqueios' }),
-    actions: L({ fr: 'Actions prioritaires issues du questionnaire', en: 'Priority actions from questionnaire', es: 'Acciones prioritarias del cuestionario', pt: 'Ações prioritárias do questionário' }),
-    owner: L({ fr: 'Responsable', en: 'Owner', es: 'Responsable', pt: 'Responsável' }),
-    status: L({ fr: 'Statut', en: 'Status', es: 'Estado', pt: 'Estado' }),
-    due: L({ fr: 'Échéance', en: 'Due', es: 'Plazo', pt: 'Prazo' }),
+    updatedOn: L({ fr: 'Données transmises le', en: 'Data submitted on', es: 'Datos transmitidos el', pt: 'Dados transmitidos em' }),
+    pendingTitle: L({ fr: 'Données non encore transmises', en: 'Data not submitted yet', es: 'Datos aún no transmitidos', pt: 'Dados ainda não transmitidos' }),
+    pendingBody: L({
+      fr: "Les indicateurs seront publiés dès que le point focal aura soumis le questionnaire. Aucune valeur n'est estimée en attendant.",
+      en: 'Indicators will be published as soon as the focal point submits the questionnaire. No value is estimated in the meantime.',
+      es: 'Los indicadores se publicarán en cuanto el punto focal envíe el cuestionario. Ningún valor se estima mientras tanto.',
+      pt: 'Os indicadores serão publicados assim que o ponto focal submeter o questionário. Nenhum valor é estimado entretanto.',
+    }),
     openWiki: L({ fr: 'Ouvrir la page Wikipedia complete', en: 'Open full Wikipedia page', es: 'Abrir la página completa de Wikipedia', pt: 'Abrir a página completa da Wikipédia' }),
     modalTitle: L({ fr: 'Wikipedia : Gabon', en: 'Wikipedia: Gabon', es: 'Wikipedia: Gabón', pt: 'Wikipédia: Gabão' }),
     close: L({ fr: 'Fermer', en: 'Close', es: 'Cerrar', pt: 'Fechar' }),
     loading: L({ fr: "Chargement de l'aperçu...", en: 'Loading preview...', es: 'Cargando la vista previa...', pt: 'A carregar a pré-visualização...' }),
     loadError: L({ fr: "Impossible de charger l'aperçu Wikipedia pour le moment.", en: 'Unable to load Wikipedia preview right now.', es: 'No se puede cargar la vista previa de Wikipedia en este momento.', pt: 'Não é possível carregar a pré-visualização da Wikipédia neste momento.' }),
-    statusInProgress: L({ fr: 'En cours', en: 'In progress', es: 'En curso', pt: 'Em curso' }),
-    statusAtRisk: L({ fr: 'À risque', en: 'At risk', es: 'En riesgo', pt: 'Em risco' }),
-    statusPlanned: L({ fr: 'Planifié', en: 'Planned', es: 'Planificado', pt: 'Planeado' }),
-    action1: L({ fr: 'Déploiement de la formation continue des enseignants en zones rurales', en: 'Teacher CPD rollout in rural zones', es: 'Despliegue de la formación continua de docentes en zonas rurales', pt: 'Implantação da formação contínua de docentes em zonas rurais' }),
-    action2: L({ fr: 'Harmonisation nationale des indicateurs ODD4', en: 'National SDG4 indicator harmonization', es: 'Armonización nacional de los indicadores ODS4', pt: 'Harmonização nacional dos indicadores ODS4' }),
-    action3: L({ fr: 'Boîte à outils de reporting numérique des écoles', en: 'School digital reporting toolkit', es: 'Kit de herramientas de reporte digital escolar', pt: 'Conjunto de ferramentas de comunicação digital das escolas' }),
   };
   const wikiDomain = isFr ? 'fr.wikipedia.org' : 'en.wikipedia.org';
   const wikiUrl = wikiSummary?.content_urls?.desktop?.page ?? `https://${wikiDomain}/wiki/Gabon`;
@@ -176,7 +163,7 @@ function ImplementationGabonStats() {
                 const labelX = point.labelAnchor === 'end' ? -10 : 10;
                 return (
                   <g key={point.name} transform={`translate(${point.x} ${point.y})`}>
-                    <circle className={`impl-gabon-point ${point.status}`} r="6">
+                    <circle className="impl-gabon-point" r="6">
                       <title>{`${point.name} (${point.province})`}</title>
                     </circle>
                     <text x={labelX} y={-4} textAnchor={point.labelAnchor}>{point.name}</text>
@@ -188,113 +175,78 @@ function ImplementationGabonStats() {
           </button>
         </article>
 
-        <div className="impl-gabon-kpi-grid">
-          <article className="impl-gabon-kpi-card">
-            <CircleCheck size={20} />
-            <p>{copy.kpiCompletion}</p>
-            <strong>{completionValue}%</strong>
-          </article>
-          <article className="impl-gabon-kpi-card">
-            <Clock3 size={20} />
-            <p>{copy.kpiProgress}</p>
-            <strong>22</strong>
-          </article>
-          <article className="impl-gabon-kpi-card">
-            <TrendingUp size={20} />
-            <p>{copy.kpiGrowth}</p>
-            <strong>+9 pts</strong>
-          </article>
-          <article className="impl-gabon-kpi-card">
-            <TriangleAlert size={20} />
-            <p>{copy.kpiBlockers}</p>
-            <strong>{blockerCount}</strong>
-          </article>
-        </div>
+        {loaded && !stats ? (
+          <div className="impl-pending-card">
+            <h2>{copy.pendingTitle}</h2>
+            <p>{copy.pendingBody}</p>
+          </div>
+        ) : null}
 
-        <div className="impl-gabon-main-grid">
-          <motion.article className="impl-gabon-panel" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}>
-            <h2>{copy.trend}</h2>
-            <svg viewBox="0 0 540 300" className="impl-gabon-line-chart" role="img" aria-label="Implementation trend line">
-              <line x1="0" y1="280" x2="540" y2="280" />
-              <line x1="0" y1="220" x2="540" y2="220" />
-              <line x1="0" y1="160" x2="540" y2="160" />
-              <line x1="0" y1="100" x2="540" y2="100" />
-              <polyline points={linePoints} />
-              {trend.map((value, idx) => (
-                <circle key={`${value}-${idx}`} cx={idx * 90} cy={280 - value * 2.1} r="5" />
-              ))}
-            </svg>
-            <div className="impl-gabon-axis-labels">
-              <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+        {stats ? (
+          <>
+            <div className="impl-gabon-kpi-grid">
+              <article className="impl-gabon-kpi-card">
+                <CircleCheck size={20} />
+                <p>{copy.kpiCompletion}</p>
+                <strong>{stats.completion}%</strong>
+              </article>
+              <article className="impl-gabon-kpi-card">
+                <ListChecks size={20} />
+                <p>{copy.kpiCoverage}</p>
+                <strong>{stats.coverage}%</strong>
+              </article>
+              <article className="impl-gabon-kpi-card">
+                <TriangleAlert size={20} />
+                <p>{copy.kpiBlockers}</p>
+                <strong>{declaredBlockers.length}</strong>
+              </article>
             </div>
-          </motion.article>
 
-          <motion.article className="impl-gabon-panel" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}>
-            <h2>{copy.domains}</h2>
-            <div className="impl-gabon-bars">
-              {effDomain.map((item) => (
-                <div key={item.label} className="impl-gabon-bar-row">
-                  <div className="impl-gabon-bar-copy">
-                    <span>{localizeDomainLabel(item.label, language)}</span>
-                    <strong>{item.value}%</strong>
+            {stats.updatedAt ? (
+              <p className="impl-updated-note">
+                {copy.updatedOn} {new Date(stats.updatedAt).toLocaleDateString(language)}
+              </p>
+            ) : null}
+
+            <div className="impl-gabon-main-grid">
+              {domains.length ? (
+                <motion.article className="impl-gabon-panel" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}>
+                  <h2>{copy.domains}</h2>
+                  <div className="impl-gabon-bars">
+                    {domains.map((item) => (
+                      <div key={item.label} className="impl-gabon-bar-row">
+                        <div className="impl-gabon-bar-copy">
+                          <span>{localizeDomainLabel(item.label, language)}</span>
+                          <strong>{item.value}%</strong>
+                        </div>
+                        <div className="impl-gabon-bar-track">
+                          <span style={{ width: `${(item.value / maxDomain) * 100}%` }} />
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div className="impl-gabon-bar-track">
-                    <span style={{ width: `${(item.value / maxDomain) * 100}%` }} />
+                </motion.article>
+              ) : null}
+
+              {declaredBlockers.length ? (
+                <motion.article className="impl-gabon-panel" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}>
+                  <h2>{copy.blockers}</h2>
+                  <div className="impl-gabon-donut-wrap">
+                    <div className="impl-gabon-donut" style={{ background: donutGradient }} />
+                    <div className="impl-gabon-donut-legend">
+                      {declaredBlockers.map((item) => (
+                        <span key={item.label}>
+                          <i style={{ background: item.color }} />
+                          {localizeBlockerLabel(item.label, language)} ({item.value}%)
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                </motion.article>
+              ) : null}
             </div>
-          </motion.article>
-
-          <motion.article className="impl-gabon-panel" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }}>
-            <h2>{copy.blockers}</h2>
-            <div className="impl-gabon-donut-wrap">
-              <div className="impl-gabon-donut" style={override ? { background: donutGradient } : undefined} />
-              <div className="impl-gabon-donut-legend">
-                {effBlockers.map((item) => (
-                  <span key={item.label}>
-                    <i style={{ background: item.color }} />
-                    {localizeBlockerLabel(item.label, language)} ({item.value}%)
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.article>
-
-          <motion.article className="impl-gabon-panel" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-            <h2>{copy.actions}</h2>
-            <table className="impl-gabon-table">
-              <thead>
-                <tr>
-                  <th>{isFr ? 'Action' : 'Action'}</th>
-                  <th>{copy.owner}</th>
-                  <th>{copy.status}</th>
-                  <th>{copy.due}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{copy.action1}</td>
-                  <td>MENIC</td>
-                  <td><span className="impl-tag is-progress">{copy.statusInProgress}</span></td>
-                  <td>Sep 2026</td>
-                </tr>
-                <tr>
-                  <td>{copy.action2}</td>
-                  <td>{isFr ? 'Unite statistique' : 'Statistics Unit'}</td>
-                  <td><span className="impl-tag is-risk">{copy.statusAtRisk}</span></td>
-                  <td>Nov 2026</td>
-                </tr>
-                <tr>
-                  <td>{copy.action3}</td>
-                  <td>{isFr ? 'Point focal PRASMESTI' : 'PRASMESTI focal point'}</td>
-                  <td><span className="impl-tag is-planned">{copy.statusPlanned}</span></td>
-                  <td>Dec 2026</td>
-                </tr>
-              </tbody>
-            </table>
-          </motion.article>
-        </div>
+          </>
+        ) : null}
       </div>
 
       {isWikiOpen && (
