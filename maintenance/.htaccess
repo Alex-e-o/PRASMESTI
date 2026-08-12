@@ -12,9 +12,14 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # index.html est la page d'indisponibilité : elle doit rester servie,
-  # sinon la sous-requête ErrorDocument boucle sur elle-même.
-  RewriteCond %{REQUEST_URI} !^/new-prasmesti/index\.html$
+  # La règle ne doit s'appliquer qu'à la requête entrante, jamais à la
+  # redirection interne qui sert la page d'erreur — sinon celle-ci est
+  # bloquée à son tour et le visiteur reçoit un 503 au corps vide.
+  # REDIRECT_STATUS est vide sur la requête initiale et vaut 503 pendant
+  # la sous-requête ErrorDocument : c'est ce qui distingue les deux.
+  # (Filtrer sur REQUEST_URI ne marche pas : la sous-requête conserve
+  # l'URI d'origine.)
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
   RewriteRule ^ - [R=503,L]
 </IfModule>
 
