@@ -2,9 +2,9 @@
 #
 # Toute requête du répertoire (page, route, asset JS/CSS/image resté sur le
 # serveur d'un déploiement précédent) reçoit un 503 « Service Unavailable »,
-# et Apache renvoie index.html comme page d'erreur. Le 503 est le bon code
-# ici : il signale une interruption temporaire, donc les moteurs de recherche
-# ne désindexent pas le site.
+# et Apache renvoie indisponible.html comme page d'erreur. Le 503 est le bon
+# code ici : il signale une interruption temporaire, donc les moteurs de
+# recherche ne désindexent pas le site.
 #
 # Pour rétablir : supprimer ce fichier et rétablir l'étape de build dans
 # .github/workflows/deploy.yml (voir le commit qui a introduit ce dossier).
@@ -12,24 +12,32 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # La règle ne doit s'appliquer qu'à la requête entrante, jamais à la
-  # redirection interne qui sert la page d'erreur — sinon celle-ci est
-  # bloquée à son tour et le visiteur reçoit un 503 au corps vide.
-  # REDIRECT_STATUS est vide sur la requête initiale et vaut 503 pendant
-  # la sous-requête ErrorDocument : c'est ce qui distingue les deux.
-  # (Filtrer sur REQUEST_URI ne marche pas : la sous-requête conserve
-  # l'URI d'origine.)
+  # La page d'erreur doit rester servie, sinon la sous-requête ErrorDocument
+  # est bloquée à son tour et le visiteur reçoit un 503 au corps vide.
+  # Deux garde-fous, parce qu'aucun des deux n'est fiable seul ici :
+  #
+  #  - le motif exclut indisponible.html par son nom. C'est le garde-fou qui
+  #    compte : pendant la sous-requête, le chemin analysé est bien
+  #    « indisponible.html », donc la règle ne s'y applique pas.
+  #  - REDIRECT_STATUS, vide sur la requête entrante et censé valoir 503
+  #    pendant la sous-requête. Constaté sans effet sur ce serveur (la page
+  #    revenait vide), gardé en ceinture-bretelles car inoffensif.
+  #
+  # Filtrer sur REQUEST_URI, en revanche, ne marche pas du tout : la
+  # sous-requête conserve l'URI d'origine.
   RewriteCond %{ENV:REDIRECT_STATUS} ^$
-  RewriteRule ^ - [R=503,L]
+  RewriteRule !^indisponible\.html$ - [R=503,L]
 </IfModule>
 
-ErrorDocument 503 /new-prasmesti/index.html
+ErrorDocument 503 /new-prasmesti/indisponible.html
 
 <IfModule mod_headers.c>
   Header always set Retry-After "86400"
   Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
 </IfModule>
 
-# Pas d'indexation du répertoire si le rewrite venait à être indisponible.
+# Filet si mod_rewrite venait à être indisponible : pas de listing du
+# répertoire, et index.html (une copie de la page d'indisponibilité) est
+# ce qui est servi à la racine.
 Options -Indexes
 DirectoryIndex index.html
