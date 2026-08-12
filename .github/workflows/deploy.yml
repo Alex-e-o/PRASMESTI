@@ -30,9 +30,6 @@ jobs:
         rm -rf new-prasmesti
         mkdir new-prasmesti
         cp -r maintenance/. new-prasmesti/
-        # Le .htaccess sert cette copie comme ErrorDocument : c'est le seul
-        # fichier du répertoire qu'il laisse passer, d'où le nom distinct.
-        cp maintenance/index.html new-prasmesti/indisponible.html
         ls -la new-prasmesti
 
     - name: 🚀 SFTP Deploy

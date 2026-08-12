@@ -1,43 +1,24 @@
 # Maintenance — aucun fichier de /new-prasmesti/ n'est servi.
 #
-# Toute requête du répertoire (page, route, asset JS/CSS/image resté sur le
-# serveur d'un déploiement précédent) reçoit un 503 « Service Unavailable »,
-# et Apache renvoie indisponible.html comme page d'erreur. Le 503 est le bon
-# code ici : il signale une interruption temporaire, donc les moteurs de
-# recherche ne désindexent pas le site.
+# Toute requête du répertoire — page, route de la SPA, asset JS/CSS/image resté
+# sur le serveur d'un déploiement précédent (le dépôt SFTP n'efface jamais) —
+# est réécrite vers 503.php, qui répond « 503 Service Unavailable » avec la page
+# d'indisponibilité. Réécriture interne, donc l'URL demandée n'est jamais servie.
 #
-# Pour rétablir : supprimer ce fichier et rétablir l'étape de build dans
-# .github/workflows/deploy.yml (voir le commit qui a introduit ce dossier).
+# Pour rétablir : supprimer ce fichier sur le serveur (le SFTP ne supprime pas,
+# il survivrait à un simple revert) et rétablir l'étape de build dans
+# .github/workflows/deploy.yml.
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # La page d'erreur doit rester servie, sinon la sous-requête ErrorDocument
-  # est bloquée à son tour et le visiteur reçoit un 503 au corps vide.
-  # Deux garde-fous, parce qu'aucun des deux n'est fiable seul ici :
-  #
-  #  - le motif exclut indisponible.html par son nom. C'est le garde-fou qui
-  #    compte : pendant la sous-requête, le chemin analysé est bien
-  #    « indisponible.html », donc la règle ne s'y applique pas.
-  #  - REDIRECT_STATUS, vide sur la requête entrante et censé valoir 503
-  #    pendant la sous-requête. Constaté sans effet sur ce serveur (la page
-  #    revenait vide), gardé en ceinture-bretelles car inoffensif.
-  #
-  # Filtrer sur REQUEST_URI, en revanche, ne marche pas du tout : la
-  # sous-requête conserve l'URI d'origine.
-  RewriteCond %{ENV:REDIRECT_STATUS} ^$
-  RewriteRule !^indisponible\.html$ - [R=503,L]
+  # Tout sauf 503.php lui-même — sans cette exclusion, la réécriture se
+  # relancerait sur sa propre cible.
+  RewriteRule !^503\.php$ /new-prasmesti/503.php [L]
 </IfModule>
 
-ErrorDocument 503 /new-prasmesti/indisponible.html
-
-<IfModule mod_headers.c>
-  Header always set Retry-After "86400"
-  Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-</IfModule>
-
-# Filet si mod_rewrite venait à être indisponible : pas de listing du
-# répertoire, et index.html (une copie de la page d'indisponibilité) est
-# ce qui est servi à la racine.
+# Filets si mod_rewrite venait à manquer : pas de listing du répertoire, et
+# c'est 503.php qui répond à la racine (index.html, la page servie par
+# readfile(), n'est là qu'en dernier recours).
 Options -Indexes
-DirectoryIndex index.html
+DirectoryIndex 503.php index.html
