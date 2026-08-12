@@ -1,0 +1,30 @@
+# Maintenance — aucun fichier de /new-prasmesti/ n'est servi.
+#
+# Toute requête du répertoire (page, route, asset JS/CSS/image resté sur le
+# serveur d'un déploiement précédent) reçoit un 503 « Service Unavailable »,
+# et Apache renvoie index.html comme page d'erreur. Le 503 est le bon code
+# ici : il signale une interruption temporaire, donc les moteurs de recherche
+# ne désindexent pas le site.
+#
+# Pour rétablir : supprimer ce fichier et rétablir l'étape de build dans
+# .github/workflows/deploy.yml (voir le commit qui a introduit ce dossier).
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # index.html est la page d'indisponibilité : elle doit rester servie,
+  # sinon la sous-requête ErrorDocument boucle sur elle-même.
+  RewriteCond %{REQUEST_URI} !^/new-prasmesti/index\.html$
+  RewriteRule ^ - [R=503,L]
+</IfModule>
+
+ErrorDocument 503 /new-prasmesti/index.html
+
+<IfModule mod_headers.c>
+  Header always set Retry-After "86400"
+  Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+</IfModule>
+
+# Pas d'indexation du répertoire si le rewrite venait à être indisponible.
+Options -Indexes
+DirectoryIndex index.html
